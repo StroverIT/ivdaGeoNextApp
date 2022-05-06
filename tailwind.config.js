@@ -24,10 +24,7 @@ module.exports = {
       'bg-color': 'hsl(200, 35%, 92%)',
       'primary-color': 'hsl(215, 80%, 33%)',
       'secondary-color': 'hsl(358, 83%, 56%)',
-      'green': '#13ce66',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
+   
     },
     extend: {},
   },
