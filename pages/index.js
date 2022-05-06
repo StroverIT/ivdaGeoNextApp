@@ -8,11 +8,10 @@ export default function Home() {
       <Head>
         <title>IvdaGeo</title>
         <meta name="description" content="Онлайн магазин IvdaGeo" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-      <h1 className="text-3xl font-bold underline">
+      <h1 className="text-3xl font-bold md:underline">
       Hello world!
     </h1>
       </main>
