@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 // import styles from '../styles/Home.module.css'
-export default function Home() {
+export default function About() {
   return (
     <>
       <Head>
@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
      <main className="container">
-       <div>Ne brat</div>
+       <div>This is about page</div>
      </main>
 
     </>
