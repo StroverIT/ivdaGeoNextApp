@@ -9,30 +9,38 @@ import NavLinks from "./NavLinks"
 
 const Hamburger = () => {
   const router = useRouter()
-  const [open, setOpen] = useState(false)
+
+  const [isOpen, menuState] = useState(false)
   const hamburger = useRef(null)
   const navLinks = useRef(null)
 
   useEffect(()=>{
-    if(open){
+    menuState(false)
+  }, [ router.pathname])
+  
+  useEffect(()=>{
+   console.log(router);
+    console.log(router.pathname);
+    if(isOpen){
      hamburger.current.classList.add(styles.open)
-     navLinks.current.classList.remove(styles.closed)
+     navLinks.current.classList.add(styles.menuOpen)
 
-    }else{
-      console.log("closed")
-      hamburger.current.classList.remove(styles.open)
-      navLinks.current.classList.add(styles.closed)
 
     }
-  }, [open])
+    if(!isOpen){
+      hamburger.current.classList.remove(styles.open)
+      navLinks.current.classList.remove(styles.menuOpen)
+    }
+    
+  }, [isOpen])
     return (
       <>
-      <div className={`space-y-1 px-2 cursor-pointer ${styles.hamburger} ${router.route == "/" ?"md:hidden" : ""}`} onClick={()=> setOpen(!open)} ref={hamburger}>
+      <div className={`space-y-1 px-2 cursor-pointer ${styles.hamburger} ${router.route == "/" ?"md:hidden" : ""}`} onClick={()=> menuState(!isOpen)} ref={hamburger}>
       <div className="block w-5 h-0.5 bg-primary-lighter"></div>
       <div className="block w-5 h-0.5 bg-primary-lighter"></div>
       <div className="block w-3 h-0.5 bg-primary-lighter"></div>
     </div>
-    <div className={`${styles.navLinks} ${styles.closed} test`} ref={navLinks}>
+    <div className={`${styles.navLinks} -z-10`} ref={navLinks}>
       <NavLinks />
     </div>
     </>
