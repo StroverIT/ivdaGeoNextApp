@@ -20,3 +20,16 @@ a {
 * {
   box-sizing: border-box;
 }
+.blue-white-theme > *{
+  color: #A5C4D6;
+}
+.blue-white-theme > div > div > div > *:hover{
+  color:rgb(255,255,255);
+
+}
+.blue-white-theme h2{
+    color:rgb(255,255,255);
+}
+.blue-white-theme ul li{
+  color: #A5C4D6;
+}
