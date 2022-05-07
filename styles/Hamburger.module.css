@@ -1,0 +1,17 @@
+.hamburger > div{
+    transition: all 0.2s ease-in-out;
+}
+.open div:first-child {
+    width: 25px;
+    transform: rotate(45deg) translate(5px, 4px);
+}
+.open div:nth-child(2) {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.open div:last-child {
+    width: 25px;
+
+    transform: rotate(-45deg) translate(5px, -4px);
+}
