@@ -9,8 +9,10 @@ export default function Home() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
 
-     <main className="container">
-       <div>Ne brat</div>
+     <main className="bg-primary">
+       <div className="container">
+         Home page
+       </div>
      </main>
 
     </>

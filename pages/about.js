@@ -9,8 +9,11 @@ export default function About() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
 
-     <main className="container">
-       <div>This is about page</div>
+     <main className="bg-primary">
+       <div className="container">
+         This is about page
+
+       </div>
      </main>
 
     </>
