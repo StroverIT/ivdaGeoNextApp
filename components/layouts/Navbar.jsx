@@ -6,12 +6,13 @@ import Hamburger from "./navComponents/Hamburger"
 
 const Navbar = () => {
   
+    
 
     return (
-        <nav className="bg-primary py-3 relative">
+        <nav className="bg-primary py-3 relative z-50">
             <div className="container flex flex-center items-center">
             <Hamburger />
-                <ul>
+                <ul >
                 <Link href="/">Home</Link>
                 <Link href="/about">About</Link>
                 </ul>
