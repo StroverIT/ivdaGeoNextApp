@@ -11,13 +11,17 @@ const Hamburger = () => {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const hamburger = useRef(null)
+  const navLinks = useRef(null)
 
   useEffect(()=>{
     if(open){
      hamburger.current.classList.add(styles.open)
+     navLinks.current.classList.remove(styles.closed)
+
     }else{
       console.log("closed")
-     hamburger.current.classList.remove(styles.open)
+      hamburger.current.classList.remove(styles.open)
+      navLinks.current.classList.add(styles.closed)
 
     }
   }, [open])
@@ -28,7 +32,10 @@ const Hamburger = () => {
       <div className="block w-5 h-0.5 bg-primary-lighter"></div>
       <div className="block w-3 h-0.5 bg-primary-lighter"></div>
     </div>
+    <div className={`${styles.navLinks} ${styles.closed} test`} ref={navLinks}>
       <NavLinks />
+
+    </div>
     </>
     );
 }
