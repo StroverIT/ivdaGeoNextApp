@@ -7,7 +7,7 @@ import styles from "../../../styles/navigation/Hamburger.module.css"
 // Components
 import NavLinks from "./NavLinks"
 
-const Hamburger = () => {
+const Hamburger = ({headRef}) => {
   const router = useRouter()
 
   const [isOpen, menuState] = useState(false)
@@ -22,8 +22,7 @@ const Hamburger = () => {
     if(isOpen){
      hamburger.current.classList.add(styles.open)
      navLinks.current.classList.add(styles.menuOpen)
-
-
+     navLinks.current.style.top = `${headRef.current.offsetHeight}px` 
     }
     if(!isOpen){
       hamburger.current.classList.remove(styles.open)
@@ -38,7 +37,7 @@ const Hamburger = () => {
       <div className="block w-5 h-0.5 bg-primary-lighter"></div>
       <div className="block w-3 h-0.5 bg-primary-lighter"></div>
     </div>
-    <div className={`${styles.navLinks} -z-10`} ref={navLinks}>
+    <div className={`${styles.navLinks} fixed -z-10`} ref={navLinks}>
       <NavLinks />
     </div>
     </>
