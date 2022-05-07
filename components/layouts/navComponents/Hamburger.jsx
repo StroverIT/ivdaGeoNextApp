@@ -17,10 +17,8 @@ const Hamburger = () => {
   useEffect(()=>{
     menuState(false)
   }, [ router.pathname])
-  
+
   useEffect(()=>{
-   console.log(router);
-    console.log(router.pathname);
     if(isOpen){
      hamburger.current.classList.add(styles.open)
      navLinks.current.classList.add(styles.menuOpen)
