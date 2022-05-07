@@ -9,7 +9,7 @@ export default function Home() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
 
-     <main className="bg-primary">
+     <main className="bg-primary mb-auto">
        <div className="container">
          Home page
        </div>
