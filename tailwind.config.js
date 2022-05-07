@@ -1,6 +1,7 @@
 const customColors = {
   'bg-color': 'hsl(200, 35%, 92%)',
   'primary-color': 'hsl(215, 80%, 33%)',
+  'primary-lighter': 'hsl(215, 80%, 60%)',
   'secondary-color': 'hsl(358, 83%, 56%)',
 }
 module.exports = {
@@ -25,6 +26,7 @@ module.exports = {
     backgroundColor: theme => ({
       ...theme('colors'),
       'primary': customColors["primary-color"],
+      'primary-lighter': customColors["primary-lighter"],
       'secondary': customColors["secondary-color"],
       'danger': '#e3342f',
      }),
