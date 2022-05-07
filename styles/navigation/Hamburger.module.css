@@ -20,9 +20,9 @@
 
 }
 .navLinks{
+    background-color:red;
     transform: translateY(-500px);
     transition: transform 0.2s ease-in-out;
-    position: fixed;
-    top: 0;
+    position: absolute;
     left: 0;
 }
