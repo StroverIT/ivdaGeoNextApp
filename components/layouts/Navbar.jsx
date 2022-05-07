@@ -8,7 +8,7 @@ const Navbar = () => {
   
 
     return (
-        <nav className="bg-primary py-3">
+        <nav className="bg-primary py-3 relative">
             <div className="container flex flex-center items-center">
             <Hamburger />
                 <ul>
