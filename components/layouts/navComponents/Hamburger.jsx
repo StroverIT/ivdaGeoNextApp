@@ -34,7 +34,6 @@ const Hamburger = () => {
     </div>
     <div className={`${styles.navLinks} ${styles.closed} test`} ref={navLinks}>
       <NavLinks />
-
     </div>
     </>
     );
