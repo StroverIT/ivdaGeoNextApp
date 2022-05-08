@@ -25,9 +25,9 @@ module.exports = {
     colors: customColors,
     backgroundColor: theme => ({
       ...theme('colors'),
-      'primary': customColors["primary-color"],
+      'primary': customColors.primary,
       'primary-lighter': customColors["primary-lighter"],
-      'secondary': customColors["secondary-color"],
+      'secondary': customColors.secondary,
       'danger': '#e3342f',
      }),
     container: {
