@@ -21,6 +21,14 @@ const dictionary = [
           ["Градински мебели", "/"],
         ],
         icon: "",
+    },
+    {
+        title: "Кухня",
+        mainRoute: "kitchen",
+        articles: [
+          ["Кухненски мебели", "/"],
+        ],
+        icon: "",
     }
 ]
 const NavLinks = () => {
