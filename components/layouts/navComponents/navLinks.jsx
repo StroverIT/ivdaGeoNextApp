@@ -16,6 +16,7 @@ const dictionary = [
     },
     {
         title: "Градина",
+        mainRoute: "garden",
         articles: [
           ["Градински мебели", "/"],
         ],
