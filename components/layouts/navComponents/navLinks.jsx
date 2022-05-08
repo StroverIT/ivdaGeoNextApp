@@ -1,6 +1,5 @@
 // React and nextJs things
 import React from 'react';
-import Link from "next/link"
 
 // Styles
 // Components
@@ -9,16 +8,16 @@ import NavLinkMenu from "./NavLinkMenu"
 const dictionary = [
      {
         title: "Интрументи и железария",
+        mainRoute: "toolsAndHardware",
         articles: [
-            "Акумулаторни комплекти",
-            "Test"
+            [ "Акумулаторни комплекти", "/"],
         ],
         icon: "",
     },
     {
         title: "Градина",
         articles: [
-            "Градински мебели",
+          ["Градински мебели", "/"],
         ],
         icon: "",
     }
@@ -29,7 +28,7 @@ const NavLinks = () => {
     return (
         <ul className="navigation" >
             {dictionary.map(article=>{
-            return <NavLinkMenu title={article.title} articles={article.articles} key={article.title}/>
+            return <NavLinkMenu title={article.title} articles={article.articles} key={article.title} mainRoute={article.mainRoute}/>
             })}
 </ul>
 
