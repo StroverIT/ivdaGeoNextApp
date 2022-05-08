@@ -1,0 +1,16 @@
+.menu{
+    cursor: pointer;
+}
+
+@media screen('lg'){
+    .menu:hover + ul{
+        /* background-color: #fff; */
+        display: block !important;
+    
+    }
+
+    .submenu:hover{
+        display: block !important;
+
+    }
+}
