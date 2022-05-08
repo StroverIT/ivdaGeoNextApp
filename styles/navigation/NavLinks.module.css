@@ -1,16 +1,24 @@
 .menu{
     cursor: pointer;
 }
+.submenu{
+    position: absolute;
+}
 
 @media screen('lg'){
+    .submenu{
+        right: -200px;
+        background-color: #fff;
+        width: 100%;
+        top: 0;
+    }
     .menu:hover + ul{
-        /* background-color: #fff; */
-        display: block !important;
-    
+        display: block;
+        
     }
 
     .submenu:hover{
-        display: block !important;
+        display: block;
 
     }
 }
