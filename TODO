@@ -12,3 +12,7 @@ Navigation:
     Full width and height. Menu onClick show submenu
     - Submenu is on menu and left arrow onClick back to the menu
     MD or LG is HomeCatecory. Menu onHover show submenu. Out of hover is removing the subMenu
+
+Bugs: 
+
+    Navigation when is opened and on router click, it's not going to his default statement
