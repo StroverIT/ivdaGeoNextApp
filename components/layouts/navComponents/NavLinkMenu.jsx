@@ -9,9 +9,15 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
         const siblingEl = e.target.nextElementSibling
         siblingEl.classList.remove("hidden")
     }
+    function addSpacing(e){
+        const parentEl = e.target.parentElement
+       parentEl.offsetWidth
+        const siblingEl = e.target.nextElementSibling
+        siblingEl.style.left= `${parentEl.offsetWidth}px`
+    }
     return (
         <>
-    <li className={` ${style.menu} ${style.menu}`} onClick={showMenu}>{title}</li>
+    <li className={` ${style.menu} ${style.menu}`} onClick={showMenu} onMouseOver={addSpacing}>{title}</li>
                 <ul className={`${style.submenu} hidden`}>
                     {articles.map(article=>{
                         return (
