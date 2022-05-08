@@ -16,3 +16,4 @@ Navigation:
 Bugs: 
 
     Navigation when is opened and on router click, it's not going to his default statement
+    Navigation on mobile when is toggling is bugging with his bgc
