@@ -37,7 +37,7 @@ const Hamburger = ({headRef}) => {
       <div className="block w-5 h-0.5 bg-primary-lighter"></div>
       <div className="block w-3 h-0.5 bg-primary-lighter"></div>
     </div>
-    <div className={`${styles.navLinks} fixed -z-10`} ref={navLinks}>
+    <div className={`fixed -z-10 ${styles.navLinks} ${router.route == "/" ?"md:hidden" : ""} `} ref={navLinks}>
       <NavLinks />
     </div>
     </>
