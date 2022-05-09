@@ -35,7 +35,7 @@ const NavLinks = () => {
 
 
     return (
-        <ul className="navigation" >
+        <ul className="navigation container" >
             {dictionary.map(article=>{
             return <NavLinkMenu title={article.title} articles={article.articles} key={article.title} mainRoute={article.mainRoute}/>
             })}
