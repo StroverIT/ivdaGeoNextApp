@@ -2,6 +2,27 @@
 
 Navbar:
 [ x ] Navbar menu is same in every page except in home, where in home in MD or LG is hidden
+[  ] Nav items except home PC == lg{
+    [ ] Hamburger
+    [ ] IvdaGeoLogo
+    [ ] Search (showing the search)
+    [ ] Login (First icon, second Вход)(Color: primary)
+    [ ] Cart (First cart icon, second Количка)(Color: orange)
+}
+[  ] Nav items except home Tablet == md{
+    [ ] Hamburger
+    [ ] Home (No text, only icon)(Color: black)
+    [ ] Search (No text, showing the search)(Color: green)
+    [ ] Login (No text)(Color: primary)
+    [ ] Cart (No text)(Color: orange)
+}
+[  ] Nav items except home Mobile < md{
+    [ ] Hamburger
+    [ ] Home (No text, only icon)(Color: black)
+    [ ] Search (No text, only icon)(Color: green)
+    [ ] Login (No text, only icon)(Color: primary)
+    [ ] Cart (No text, only icon)(Color: orange)
+}
 
 Hamburger:
 [ x ] Hamburger for all devices
