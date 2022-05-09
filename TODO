@@ -2,7 +2,6 @@
 
 Navbar:
 [ x ] Navbar menu is same in every page except in home, where in home in MD or LG is hidden
-[  ] in home is different menu
 
 Hamburger:
 [ x ] Hamburger for all devices
@@ -15,7 +14,7 @@ Footer:
 [  ]  social media Icons links
 
 Home Content:
-
+[  ] In home is same as navLink.jsx, but BELOW LG is hidden
 <------ Hints ------>
 
 In every page in main must be a className mb-auto. Except in Authentication pages. So the pages should be in the center
