@@ -1,16 +1,20 @@
-Work:
+<------ Work ------>
 
+Navbar:
 [  ] Navbar menu is same in every page except in home, where in home in MD or LG is hidden
 [  ] in home is different menu
 
+Hamburger:
 [ x ] Hamburger for all devices
 [ x ] Hamburger funcionality
 [  ] Hamburger information
 
-[  ] Footer information
-[  ] Footer Links
+Footer:
+[  ]  information
+[  ]  Links
+[  ]  social media Icons
 
-Hints: 
+<------ Hints ------>
 
 In every page in main must be a className mb-auto. Except in Authentication pages. So the pages should be in the center
 
