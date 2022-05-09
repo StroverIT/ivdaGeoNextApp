@@ -22,14 +22,14 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
     const menu = useRef(null)
     const subMenu = useRef(null)
     
-    const [hidden, setHidden] = useState(true)
     const [left, setLeft] = useState(`0px`)
+    const [xAnim, setXAnims] = useState(false)
     // Resizing bug fix
     useEffect(() => {
         function handleResize() {
         if(window.innerWidth >= lg){
 
-            setHidden(true)
+            setXAnims(false)
             setLeft( `${menu.offsetWidth}px`)
            
         }
@@ -41,7 +41,7 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
     })
     // On router change to hide the submenu
     useEffect(()=>{
-        setHidden(true)
+        setXAnims(false)
 
     }, [router.pathname])
 
@@ -50,9 +50,12 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
 
         if(window.innerWidth >= lg) return
 
-        setHidden(false)
+        // setHidden(false)
         setLeft(`0px`)
+         setXAnims(true)
+           
 
+        
     }
     // Add submenu spacing on hover LG version
     function addSpacing(e){
@@ -62,16 +65,19 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
         setLeft(`${parentEl.offsetWidth}px`)
     }
     function returnMenu(e){
-        setHidden(true)
-    }
-    const isHidden = classNames({
-        "hidden": hidden,
-    })
+     
+        setXAnims(false)
 
+
+    }
+   
+    const isXAnim = classNames({
+        [style.subOpen]:  xAnim
+    })
     return (
         <>
     <li className={` ${style.menu}`} onClick={showMenu} onMouseOver={addSpacing} ref={menu}>{title}</li>
-    <div className={`fixed lg:absolute lg:invisible ${style.submenu} ${isHidden}`} style={{left: left}} ref={subMenu}>
+    <div className={`fixed lg:absolute lg:invisible ${style.submenu} ${isXAnim}`} style={{left: left}} ref={subMenu}>
                 <ul className={`container`}>
                 <li className={`flex items-center lg:hidden`}>
                     <span type="button" className={`${style.icon} flex py-2 px-2`}>
