@@ -13,13 +13,16 @@ const fullConfig = resolveConfig(tailwindConfig)
 const lg = fullConfig.theme.screens.lg.min.split("px")[0]
 
 const NavLinkMenu = ({title, articles,mainRoute}) => {
+
     const router = useRouter()
 
     const [hidden, setHidden] = useState(true)
     const [left, setLeft] = useState(`0px`)
+
     const menu = useRef(null)
     const subMenu = useRef(null)
 
+    // Resizing bug fix
     useEffect(() => {
         function handleResize() {
         if(window.innerWidth >= lg){
@@ -34,27 +37,33 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
             window.removeEventListener("resize", handleResize)
         }
     })
+    // On router change to hide the submenu
     useEffect(()=>{
         setHidden(true)
 
     }, [router.pathname])
+
+    // Remove submenu spacing on click BELOW LG version
     function showMenu(e){
+        
         if(window.innerWidth >= lg) return
 
         setHidden(false)
-setLeft
         setLeft(`0px`)
 
     }
+    // Add submenu spacing on hover LG version
     function addSpacing(e){
         if(window.innerWidth < lg) return
       
-            const parentEl = e.target.parentElement
-            setLeft(`${parentEl.offsetWidth}px`)
+        const parentEl = e.target.parentElement
+        setLeft(`${parentEl.offsetWidth}px`)
     }
+
     const isHidden = classNames({
         "hidden": hidden,
     })
+
     return (
         <>
     <li className={` ${style.menu} ${style.menu}`} onClick={showMenu} onMouseOver={addSpacing} ref={menu}>{title}</li>
