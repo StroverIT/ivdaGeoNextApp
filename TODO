@@ -1,7 +1,7 @@
 <------ Work ------>
 
 Navbar:
-[  ] Navbar menu is same in every page except in home, where in home in MD or LG is hidden
+[ x ] Navbar menu is same in every page except in home, where in home in MD or LG is hidden
 [  ] in home is different menu
 
 Hamburger:
