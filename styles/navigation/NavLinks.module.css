@@ -2,23 +2,29 @@
     cursor: pointer;
 }
 .submenu{
-    position: absolute;
+    height: 100%;
+    width: 100%;
+    left:0;
     top:0;
+    background-color: theme("colors.primary");
 }
-
+.icon{
+    border-right: 1px solid black;
+    
+}
 @media screen('lg'){
     .submenu{
-        background-color: #fff;
         width: 100%;
         top: 0;
     }
-    .menu:hover + ul{
-        display: block;
+    .menu:hover + div{
+        display: block !important;
+        visibility: visible;
         
     }
-
     .submenu:hover{
-        display: block;
-
+        display: block !important;
+        visibility: visible;
     }
+ 
 }
