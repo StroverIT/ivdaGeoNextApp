@@ -7,6 +7,9 @@ Work:
 [ x ] Hamburger funcionality
 [  ] Hamburger information
 
+[  ] Footer information
+[  ] Footer Links
+
 Hints: 
 
 In every page in main must be a className mb-auto. Except in Authentication pages. So the pages should be in the center
