@@ -7,6 +7,12 @@
     left:0;
     top:0;
     background-color: theme("colors.primary");
+    transform: translateX(100vh);
+    transition: transform 0.2s ease-in-out;
+}
+.subOpen{
+    transform: translateX(0);
+
 }
 .icon{
     border-right: 1px solid black;
@@ -16,6 +22,8 @@
     .submenu{
         width: 100%;
         top: 0;
+    transform: translateX(0);
+
     }
     .menu:hover + div{
         display: block !important;
