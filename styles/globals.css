@@ -33,3 +33,6 @@ a {
 .blue-white-theme ul li{
   color: #A5C4D6;
 }
+.icon{
+  cursor: pointer;
+}
