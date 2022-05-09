@@ -15,6 +15,7 @@ Footer:
 
 Home Content:
 [  ] In home is same as navLink.jsx, but BELOW LG is hidden
+
 <------ Hints ------>
 
 In every page in main must be a className mb-auto. Except in Authentication pages. So the pages should be in the center
