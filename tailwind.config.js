@@ -4,6 +4,7 @@ const customColors = {
   'primary-lighter': 'hsl(215, 80%, 60%)',
   'secondary': 'hsl(358, 83%, 56%)',
   "dark": "hsl(0, 0%, 8%)",
+  "white": "hsl(0, 0%, 100%)",
 }
 module.exports = {
   content: [
@@ -31,6 +32,7 @@ module.exports = {
       'primary-lighter': customColors["primary-lighter"],
       'secondary': customColors.secondary,
       'dark': customColors.dark,
+      'white': customColors.white,
      }),
     container: {
       center: true,
