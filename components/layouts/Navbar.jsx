@@ -21,12 +21,11 @@ const Navbar = () => {
 
                     <div className="logo flex items-center">
                     <Hamburger headRef={headerRef}/>
-                    <div className="flex items-center justify-between hidden lg:block">
-                        <Link href="/" >
-                    <Image  src="/images/logo.png" width={250} height={50}className="cursor-pointer"/>
-                        </Link>
-
-                    </div>
+                    <Link href="/" >
+                        <div className="flex items-center justify-between hidden lg:block">
+                            <Image  src="/images/logo.png" width={250} height={50}className="cursor-pointer"/>
+                         </div>
+                    </Link>
                     </div>
 
             <div className="flex items-center justify-center hidden md:block">
