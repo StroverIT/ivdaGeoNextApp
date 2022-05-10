@@ -25,6 +25,7 @@ module.exports = {
     colors: customColors,
     backgroundColor: theme => ({
       ...theme('colors'),
+      "color": customColors["bg-color"],
       'primary': customColors.primary,
       'primary-lighter': customColors["primary-lighter"],
       'secondary': customColors.secondary,
