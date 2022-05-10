@@ -32,7 +32,7 @@ const Hamburger = ({headRef}) => {
   }, [isOpen])
     return (
       <>
-      <div className={`space-y-1 px-2 cursor-pointer ${styles.hamburger} ${router.route == "/" ?"md:hidden" : ""}`} onClick={()=> menuState(!isOpen)} ref={hamburger}>
+      <div className={`space-y-1 px-2 cursor-pointer ${styles.hamburger} ${router.route == "/" ?"lg:hidden" : ""}`} onClick={()=> menuState(!isOpen)} ref={hamburger}>
       <div className="block w-5 h-0.5 bg-primary-lighter"></div>
       <div className="block w-5 h-0.5 bg-primary-lighter"></div>
       <div className="block w-3 h-0.5 bg-primary-lighter"></div>
