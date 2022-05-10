@@ -51,3 +51,5 @@ Navigation:
     SEARCH: 
         Below MD icon on click to open menu for searching
 Bugs: 
+    Navigation: 
+        When is on lg and FIRST hover, menu is glitching (it's bcs of left:0 and transition to left: (something)).
