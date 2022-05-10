@@ -5,6 +5,7 @@ const customColors = {
   'secondary': 'hsl(358, 83%, 56%)',
   "dark": "hsl(0, 0%, 8%)",
   "white": "hsl(0, 0%, 100%)",
+  "white-lighter-trans": "hsl(0, 0%, 100%, 30%)",
   "blue": "hsl(203, 76%, 48%)",
   "orange": "hsl(33, 89%, 52%)",
   "green": "hsl(92, 50%, 54%)",

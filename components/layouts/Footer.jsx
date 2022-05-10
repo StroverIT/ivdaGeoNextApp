@@ -115,7 +115,7 @@ const Footer = () => {
             <div className="flex items-center justify-center w-full">
                 <div className="flex border-2 border-gray-200 rounded w-full ">
                   <input type="text" className="px-4 py-2 w-full" placeholder="И-мейл" />
-                  <button className="px-4 text-white bg-gray-600 border-l  hover:bg-white-lighter transition-colors">
+                  <button className="px-4 text-white bg-gray-600 border-l  hover:bg-white-lighter-trans transition-colors">
                     Изпрати
                   </button>
                 </div>
