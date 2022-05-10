@@ -77,7 +77,7 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
     return (
         <>
     <li className={` ${style.menu} lg:hover:text-dark lg:hover:bg-white px-3 py-1`} onClick={showMenu} onMouseOver={addSpacing} ref={menu}>{title}</li>
-    <div className={`fixed lg:absolute lg:invisible py-4 ${style.submenu} ${isXAnim}`} style={{left: left}} ref={subMenu}>
+    <div className={`fixed lg:absolute lg:invisible py-2 ${style.submenu} ${isXAnim}`} style={{left: left}} ref={subMenu}>
                 <ul className={`container`}>
                 <li className={`flex items-center lg:hidden`}>
                     <span type="button" className={`${style.icon} flex py-2 px-2`}>
