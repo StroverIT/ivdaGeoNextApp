@@ -35,7 +35,7 @@ const NavLinks = () => {
 
 
     return (
-        <ul className="navigation container text-bg-color">
+        <ul className="navigation container text-bg-color text-lg">
             {dictionary.map(article=>{
             return <NavLinkMenu title={article.title} articles={article.articles} key={article.title} mainRoute={article.mainRoute}/>
             })}
