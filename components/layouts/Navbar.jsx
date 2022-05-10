@@ -22,7 +22,9 @@ const Navbar = () => {
                     <div className="logo flex items-center">
                     <Hamburger headRef={headerRef}/>
                     <div className="flex items-center justify-between hidden lg:block">
-                    <Image  src="/images/logo.png" width={250} height={50}/>
+                        <Link href="/" >
+                    <Image  src="/images/logo.png" width={250} height={50}className="cursor-pointer"/>
+                        </Link>
 
                     </div>
                     </div>
