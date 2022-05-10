@@ -21,13 +21,13 @@ const Navbar = () => {
 
                     <div className="logo flex items-center">
                     <Hamburger headRef={headerRef}/>
-                    <div className="flex items-center justify-between hidden md:block">
+                    <div className="flex items-center justify-between hidden lg:block">
                     <Image  src="/images/logo.png" width={250} height={50}/>
 
                     </div>
                     </div>
 
-            <div className="flex items-center justify-center hidden lg:block">
+            <div className="flex items-center justify-center hidden md:block">
                 <div className="flex rounded">
                     <input type="text" className="px-4 py-2 w-80" placeholder="Search..."/>
                     <button className="flex items-center justify-center px-4 ">
@@ -39,8 +39,15 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
-                <ul className={`${style.list} flex items-center justify-center`}>
-                    <li className="flex items-center justify-center lg:hidden px-4">
+                <ul className={`${style.list} flex items-center justify-center `}>
+              
+                    
+                <Link href="/">
+                <li className="flex flex-col items-center justify-center px-4 lg:hidden h-14 lg:h-20">
+                        <div className="text-3xl"><BiHomeAlt className="icon"/></div>
+                    </li>
+                    </Link>
+                    <li className="flex items-center justify-center md:hidden px-4 text-green">
                     <button >
                         <svg className="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24">
@@ -49,22 +56,15 @@ const Navbar = () => {
                         </svg>
                     </button>
                     </li>
-                    
                 <Link href="/">
-                <li className="flex flex-col items-center justify-center px-4 md:hidden">
-                        <div className="text-3xl"><BiHomeAlt className="icon"/></div>
-                        <div className={`text-sm hidden lg:block`}>Вход</div>
-                    </li>
-                    </Link>
-                <Link href="/">
-                <li className="flex flex-col items-center justify-center px-4">
+                <li className="flex flex-col items-center justify-center px-4 text-blue hover:bg-blue hover:text-white h-14 lg:h-20">
                         <div className="text-3xl"><AiOutlineUser className="icon"/></div>
                         <div className={`text-sm hidden lg:block`}>Вход</div>
                     </li>
                     </Link>
 
                 <Link href="/about">
-                <li className="flex flex-col items-center justify-center px-4">
+                <li className="flex flex-col items-center justify-center px-4 text-orange hover:bg-orange hover:text-white h-14 lg:h-20">
                         <div className="text-3xl"><BsCart3 className="icon"/></div>
                         <div className={`text-sm hidden lg:block`}>Количка</div>
                     </li>
