@@ -6,7 +6,8 @@
     width: 100%;
     left:0;
     top:0;
-    background-color: theme("colors.primary");
+    background-color: theme("colors.white");
+    color: theme('colors.dark');
     transform: translateX(100vh);
     transition: transform 0.2s ease-in-out;
 }
@@ -17,6 +18,10 @@
 .icon{
     border-right: 1px solid black;
     
+}
+.subHover{
+    background-color: theme("colors.white");
+    color: theme('colors.dark');
 }
 @media screen('lg'){
     .submenu{
@@ -33,6 +38,7 @@
     .submenu:hover{
         display: block !important;
         visibility: visible;
+
     }
- 
+    
 }

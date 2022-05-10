@@ -24,6 +24,7 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
     
     const [left, setLeft] = useState(`0px`)
     const [xAnim, setXAnims] = useState(false)
+    const [subIsHover, setSubIsHover] = useState(false)
     // Resizing bug fix
     useEffect(() => {
         function handleResize() {
@@ -68,16 +69,25 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
      
         setXAnims(false)
 
+    }
+    function subHover(){
+        setSubIsHover(true)
+    }
+    function subHoverOut(){
+        setSubIsHover(false)
 
     }
    
     const isXAnim = classNames({
         [style.subOpen]:  xAnim
     })
+    const isHover = classNames({
+        [style.subHover]: subIsHover
+    })
     return (
         <>
-    <li className={` ${style.menu} lg:hover:text-dark lg:hover:bg-white px-3 py-1`} onClick={showMenu} onMouseOver={addSpacing} ref={menu}>{title}</li>
-    <div className={`fixed lg:absolute lg:invisible py-2 ${style.submenu} ${isXAnim}`} style={{left: left}} ref={subMenu}>
+    <li className={` ${style.menu} ${isHover} lg:hover:text-dark lg:hover:bg-white px-3 py-1`} onClick={showMenu} onMouseOver={addSpacing, subHover} onMouseOut={subHoverOut} ref={menu}>{title}</li>
+    <div className={`fixed lg:absolute lg:invisible py-2 ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
                 <ul className={`container`}>
                 <li className={`flex items-center lg:hidden`}>
                     <span type="button" className={`${style.icon} flex py-2 px-2`}>
