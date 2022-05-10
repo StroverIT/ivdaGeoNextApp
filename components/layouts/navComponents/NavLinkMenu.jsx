@@ -50,13 +50,10 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
     function showMenu(e){
 
         if(window.innerWidth >= lg) return
-
         // setHidden(false)
         setLeft(`0px`)
          setXAnims(true)
            
-
-        
     }
     // Add submenu spacing on hover LG version
     function addSpacing(e){
@@ -71,13 +68,20 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
 
     }
     function subHover(){
+        if(window.innerWidth < lg) return
+
         setSubIsHover(true)
     }
     function subHoverOut(){
+        if(window.innerWidth < lg) return
+
         setSubIsHover(false)
 
     }
-   
+   function bundle(e){
+    addSpacing(e)
+    subHover()
+   }
     const isXAnim = classNames({
         [style.subOpen]:  xAnim
     })
@@ -86,7 +90,7 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
     })
     return (
         <>
-    <li className={` ${style.menu} ${isHover} lg:hover:text-dark lg:hover:bg-white px-3 py-1`} onClick={showMenu} onMouseOver={addSpacing, subHover} onMouseOut={subHoverOut} ref={menu}>{title}</li>
+    <li className={` ${style.menu} ${isHover} lg:hover:text-dark lg:hover:bg-white px-3 py-1`} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>{title}</li>
     <div className={`fixed lg:absolute lg:invisible py-2 ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
                 <ul className={`container`}>
                 <li className={`flex items-center lg:hidden`}>
