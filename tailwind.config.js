@@ -3,6 +3,7 @@ const customColors = {
   'primary': 'hsl(215, 80%, 33%)',
   'primary-lighter': 'hsl(215, 80%, 60%)',
   'secondary': 'hsl(358, 83%, 56%)',
+  "dark": "hsl(0, 0%, 8%)",
 }
 module.exports = {
   content: [
@@ -29,7 +30,7 @@ module.exports = {
       'primary': customColors.primary,
       'primary-lighter': customColors["primary-lighter"],
       'secondary': customColors.secondary,
-      'danger': '#e3342f',
+      'dark': customColors.dark,
      }),
     container: {
       center: true,
