@@ -5,6 +5,7 @@ const customColors = {
   'secondary': 'hsl(358, 83%, 56%)',
   "dark": "hsl(0, 0%, 8%)",
   "white": "hsl(0, 0%, 100%)",
+  "blue": "hsl(203, 76%, 48%)",
 }
 module.exports = {
   content: [
@@ -33,6 +34,7 @@ module.exports = {
       'secondary': customColors.secondary,
       'dark': customColors.dark,
       'white': customColors.white,
+      "blue": customColors.blue,
      }),
     container: {
       center: true,
