@@ -29,8 +29,8 @@ const Navbar = () => {
 
             <div className="flex items-center justify-center hidden md:block">
                 <div className="flex rounded">
-                    <input type="text" className="px-4 py-2 w-80" placeholder="Search..."/>
-                    <button className="flex items-center justify-center px-4 ">
+                    <input type="text" className="px-4 py-2 w-80 bg-transparent border-green border rounded-full" placeholder="Search..."/>
+                    <button className="flex items-center justify-center px-4 bg-green text-white rounded-full ml-2">
                         <svg className="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24">
                             <path
