@@ -1,5 +1,5 @@
 const customColors = {
-  'bg-color': 'hsl(200, 35%, 92%)',
+  'bg-color': '#f3f3f3',
   'primary': 'hsl(215, 80%, 33%)',
   'primary-lighter': 'hsl(215, 80%, 60%)',
   'primary-trans': 'hsl(215, 80%, 60%, 100%)',
