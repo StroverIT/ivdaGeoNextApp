@@ -31,13 +31,13 @@ const dictionary = [
         icon: "",
     }
 ]
-const NavLinks = () => {
+const NavLinks = ({isHome}) => {
 
 
     return (
-        <ul className="navigation text-bg-color text-lg ">
+        <ul className={`navigation text-bg-color text-lg ${isHome ? "hidden lg:block" : ""}`}>
             {dictionary.map(article=>{
-            return <NavLinkMenu title={article.title} articles={article.articles} key={article.title} mainRoute={article.mainRoute}/>
+            return <NavLinkMenu title={article.title} articles={article.articles} key={article.title} mainRoute={article.mainRoute} isHome={isHome}/>
             })}
 </ul>
 
