@@ -11,6 +11,7 @@ body {
 }
 body {
     background-color: theme('colors.bg-color');
+    overflow-x: hidden;
 }
 a {
   color: inherit;
@@ -36,4 +37,10 @@ a {
 .logo{
 
   object-fit: contain;
+}
+
+@media screen("lg"){
+  .custom-border{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 87% 100%, 0 100%, 0% 50%);
+  }
 }
