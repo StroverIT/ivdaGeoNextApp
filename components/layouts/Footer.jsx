@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <footer className="bg-primary blue-white-theme">
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8 lg:grid-cols-4">
+        <div className="grid sm:grid-cols-2 gap-4 md:flex justify-between py-8">
           <div>
-            <h2 className="mb-6 text-sm font-semibold uppercase">IvdaGeo</h2>
+            <h2 className="mb-6 text-sm font-semibold uppercase">ИвдаГео</h2>
             <ul className="text-gray-300">
               <li className="mb-4">
                 <a href="#" className=" hover:underline">
@@ -15,29 +15,7 @@ const Footer = () => {
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">
-                  Доставка
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Как да пазарувам
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
-              Контакти и Помощ
-            </h2>
-            <ul className="text-gray-300">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Помощ
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Контакти
+                  Работа при нас
                 </a>
               </li>
               <li className="mb-4">
@@ -45,13 +23,88 @@ const Footer = () => {
                   Общи условия
                 </a>
               </li>
-              <a href="#" className="hover:underline"></a>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
+              Контакти
+            </h2>
+            <ul className="text-gray-300">
               <li className="mb-4">
-                <a href="#" className="hover:underline"></a>
                 <a href="#" className="hover:underline">
-                  Политика за поверителност
+                  Контакти
                 </a>
               </li>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                  Магазини
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                Празнично работно време
+                </a>
+              </li>
+         
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
+              За клиента
+            </h2>
+            <ul className="text-gray-300">
+            <li className="mb-4">
+                <a href="#" className="hover:underline">
+                Вземи от магазин
+                </a>
+              </li>
+             
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                  Транспорт
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                  Съвети
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                  Връщане на поръчка
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                Доставка при онлайн покупка
+                </a>
+              </li>
+             
+         
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
+              Обща информация
+            </h2>
+            <ul className="text-gray-300">
+            <li className="mb-4">
+                <a href="#" className="hover:underline">
+                Услуги
+                </a>
+              </li>
+             
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                  Как да поръчвам
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">
+                  Как да върна продукт?
+                </a>
+              </li>
+            
             </ul>
           </div>
           <div>
@@ -108,19 +161,7 @@ const Footer = () => {
           </div>
          
 
-          <div className="w-full">
-              <div className="mb-5">
-              Запишете се за нашият онлайн бюлетин където ще изпращаме промоции.
-              </div>
-            <div className="flex items-center justify-center w-full">
-                <div className="flex border-2 border-gray-200 rounded w-full ">
-                  <input type="text" className="px-4 py-2 w-full" placeholder="И-мейл" />
-                  <button className="px-4 text-white bg-gray-600 border-l  hover:bg-white-lighter-trans transition-colors">
-                    Абонирай ме
-                  </button>
-                </div>
-            </div>
-          </div>
+        
         </div>
         <div className="py-6 bg-gray-700 flex items-center justify-center">
           <div className="text-sm text-center">
