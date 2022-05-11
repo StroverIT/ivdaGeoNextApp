@@ -89,10 +89,10 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
         [style.subHover]: subIsHover
     })
     return (
-        <>
-    <li className={` ${style.menu} ${isHover} lg:hover:text-dark lg:hover:bg-white px-3 py-1`} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>{title}</li>
-    <div className={`fixed lg:absolute lg:invisible py-2 ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
-                <ul className={`px-4`}>
+        <li className={`item w-full lg:w-64`}>
+    <div className={` ${style.menu} ${isHover} lg:hover:text-dark lg:hover:bg-white px-3 py-1 flex w-full`} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>{title}</div>
+    <div className={`fixed lg:absolute lg:invisible py-2 overflow-auto  ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
+                <ul className={`px-5 flex-wrap flex flex-initial`}>
                 <li className={`flex items-center lg:hidden`}>
                     <span type="button" className={`${style.icon} flex py-2 px-2`}>
                     <AiOutlineArrowLeft onClick={returnMenu} className="icon text-xl"/>
@@ -104,7 +104,7 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
                         return (
 
                         <Link href={`/${mainRoute}/Add${article[1]}`} key={article[0]}> 
-                    <li >
+                    <li  className="text-sm m-2">
                             <a href="#">{article[0]}</a>
                             </li>
                             </Link>
@@ -113,7 +113,7 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
                 </ul>
     </div>
 
-    </>
+    </li>
     );
 }
 
