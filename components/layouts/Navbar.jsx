@@ -15,8 +15,8 @@ const Navbar = () => {
     return (
         <header className={`z-50 `} ref={headerRef}>
 
-        <nav className={`flex bg-color ${style.cShadow}`}>
-            <div className="flex items-center justify-between container relative bg-color">
+        <nav className={`flex bg-color ${style.cShadow} `}>
+            <div className="container relative flex items-center justify-between ">
              
 
                     <div className="logo flex items-center">
