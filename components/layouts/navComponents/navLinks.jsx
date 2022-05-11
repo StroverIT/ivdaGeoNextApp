@@ -27,15 +27,17 @@ const dictionary = [
         mainRoute: "kitchen",
         articles: [
           ["Кухненски мебели", "/"],
+        
         ],
         icon: "",
-    }
+    },
+
 ]
 const NavLinks = ({isHome}) => {
 
 
     return (
-        <ul className={`navigation text-bg-color text-lg ${isHome ? "hidden lg:block" : ""}`}>
+        <ul className={` text-bg-color text-lg flex flex-col w-full ${isHome ? "hidden lg:block" : ""}`}>
             {dictionary.map(article=>{
             return <NavLinkMenu title={article.title} articles={article.articles} key={article.title} mainRoute={article.mainRoute} isHome={isHome}/>
             })}
