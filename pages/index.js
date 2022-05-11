@@ -27,7 +27,8 @@ export default function Home() {
       </Head>
 
      <main className="mb-auto h-full">
-       <div className="container  ">
+       <section className="bg-white">
+       <div className="container">
           <section  className="lg:grid lg:grid-cols-[25%75%] w-full relative">
           
                       <section className="z-10  w-full">
@@ -40,8 +41,12 @@ export default function Home() {
 
      
           </section>
-          <section>
-          <div className="lg:flex justify-between">
+       </div>
+       </section>
+       <section className="bg-color">
+
+          <div className="container">
+          <div className="lg:flex justify-between ">
 
             <section className="flex flex-col sm:flex-row items-center justify-center sm:justify-start bg-green custom-border w-full h-full p-3">
               <div className="">
@@ -62,8 +67,9 @@ export default function Home() {
             <div className="my-5 text-center">
             С абонамента се съгласявате предоставените от Вас лични данни да бъдат обработвани за целите и по начина посочени в общите условия, включително, но не само, за да получавате информация за актуални промоции и други активности на ИвдаГео.
               </div>
-          </section>
-       </div>
+          </div>
+       </section>
+
      </main>
 
     </>
