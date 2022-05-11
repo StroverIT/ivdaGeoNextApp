@@ -15,7 +15,7 @@ import tailwindConfig from '../../../tailwind.config.js'
 const fullConfig = resolveConfig(tailwindConfig)
 const lg = fullConfig.theme.screens.lg.min.split("px")[0]
 
-const NavLinkMenu = ({title, articles,mainRoute}) => {
+const NavLinkMenu = ({title, articles,mainRoute, isHome}) => {
 
     const router = useRouter()
     
@@ -89,7 +89,7 @@ const NavLinkMenu = ({title, articles,mainRoute}) => {
         [style.subHover]: subIsHover
     })
     return (
-        <li className={`item w-full lg:w-64`}>
+        <li className={`item w-full ${!isHome ? "lg:w-64" : ""}`}>
     <div className={` ${style.menu} ${isHover} lg:hover:text-dark lg:hover:bg-white px-3 py-1 flex w-full`} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>{title}</div>
     <div className={`fixed lg:absolute lg:invisible py-2 overflow-auto  ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
                 <ul className={`px-5 flex-wrap flex flex-initial`}>
