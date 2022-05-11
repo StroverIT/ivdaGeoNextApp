@@ -1,6 +1,7 @@
-import React,{useRef} from 'react';
+import React,{useRef, useState, useEffect} from 'react';
 import Link from "next/link"
 import Image from 'next/image'
+import classNames from "classnames"
 
 // Nav Components
 import Hamburger from "./navComponents/Hamburger"
@@ -12,10 +13,36 @@ import {BiHomeAlt} from "react-icons/bi"
 
 const Navbar = () => {
     const headerRef = useRef(null)
-    return (
-        <header className={`z-50 `} ref={headerRef}>
+    const [fixed, setFixed] = useState(false)
+    const [show, setShow] = useState(null);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const controlNavbar = ()=>{
+        if(window.scrollY > lastScrollY ){
+          setShow(false)
+        }else{
+            setShow(true)
+        }
+        setLastScrollY(window.scrollY)
+      }
+      useEffect(()=>{
 
-        <nav className={`flex bg-color ${style.cShadow} `}>
+        if(typeof window !== "undefined"){
+          window.addEventListener("scroll", controlNavbar)
+        }
+        if(lastScrollY > 0){
+            setFixed(true)
+        }else{
+            setFixed(false)
+        }
+        return()=>{
+          window.removeEventListener("scroll", controlNavbar)
+        }
+      }, [lastScrollY])
+   
+    return (
+        <header className={`z-50 animate ${fixed? "fixed w-full" : ""} ${ !show ? "animateUp" : "" }`} ref={headerRef}>
+
+        <nav className={`flex bg-color ${style.cShadow}`}>
             <div className="container relative flex items-center justify-between ">
              
 
