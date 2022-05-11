@@ -10,7 +10,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 body {
-    background-color: theme('colors.bg-color');
+    background-color: theme('colors.white');
     overflow-x: hidden;
 }
 a {
