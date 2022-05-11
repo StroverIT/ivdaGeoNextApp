@@ -1,12 +1,14 @@
 .menu{
     cursor: pointer;
+    background-color:theme("colors.primary");
+
 }
 .submenu{
     height: 100%;
     width: 100%;
     left:0;
     top:0;
-    background-color: theme("colors.white");
+    background-color: theme("colors.white");   
     color: theme('colors.dark');
     transform: translateX(100vw);
     transition: transform 0.2s ease-in-out;
@@ -26,6 +28,8 @@
 @media screen('lg'){
     .submenu{
         width: 100%;
+        max-width: 750px;
+        /* width: 76%; */
         top: 0;
     transform: translateX(0);
 
@@ -41,4 +45,10 @@
 
     }
     
+}
+@media screen("xl"){
+    .submenu{
+        max-width: 950px;
+
+    }
 }
