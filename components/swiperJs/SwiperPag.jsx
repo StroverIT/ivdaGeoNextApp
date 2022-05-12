@@ -19,19 +19,19 @@ export default function SwiperPag({images}) {
     <>
       <Swiper
         pagination={{
-          type: "fraction",
+          type: "bullets",
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className={`mySwiper`}
+        className={`mySwiper ${style.swiper}`}
       >
           {images.map(image=>{
               console.log(image.src);
         return (
         <SwiperSlide key={image.key}>
             <Image src={image.src}
-            //  layout="fill" 
-            height={750}
+            //  layout="fill"  
+            height={600}
             width={1100}
              alt={image.key} 
              className={`${style.swiperSlideImg}`}/>
