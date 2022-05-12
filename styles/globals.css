@@ -49,7 +49,12 @@ a {
   transform:skewy(2deg) skewx(20deg)  translateY(-140%);
   
 }
-
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom:0 !important; 
+}
+.swiper-pagination-bullets{
+  margin-bottom: 0 !important;
+}
 @media screen("lg"){
   .custom-border{
     clip-path: polygon(0 0, 100% 0, 100% 0, 87% 100%, 0 100%, 0% 50%);
