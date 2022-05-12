@@ -90,9 +90,14 @@ const NavLinkMenu = ({title, articles,mainRoute, isHome}) => {
     })
     return (
         <li className={`item w-full ${!isHome ? "lg:w-64" : ""}`}>
-    <div className={` ${style.menu} ${isHover} bg-primary cursor-pointer lg:hover:text-dark lg:hover:bg-color px-3 py-1 flex w-full`} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>{title}</div>
-    <div className={`fixed lg:absolute lg:invisible py-2 overflow-auto  ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
-                <ul className={`px-5 flex-wrap flex flex-initial`}>
+    <div className={` ${style.menu} ${isHover} bg-primary cursor-pointer lg:hover:text-dark lg:hover:bg-color px-3 py-1 flex w-full `} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>
+        <div className={`${!isHome ? "max-lg:container": ""}`}>
+
+        {title}
+        </div>
+        </div>
+    <div className={`fixed  lg:absolute lg:invisible py-2 overflow-auto  ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
+                <ul className={`px-5  flex-wrap flex flex-initial`}>
                 <li className={`flex items-center lg:hidden`}>
                     <span type="button" className={`${style.icon} flex py-2 px-2`}>
                     <AiOutlineArrowLeft onClick={returnMenu} className="icon text-xl"/>
