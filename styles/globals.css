@@ -5,7 +5,7 @@
 :root {
   --pag-max-width: 140px;
   --pag-height: 8px;
-  --pag-height-active: calc(var(--pag-height) -  2px);
+  --pag-height-active: calc(var(--pag-height) -  4px);
   
 }
 
