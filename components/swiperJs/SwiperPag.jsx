@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import style from "../../styles/swiperJs/SwiperPag.module.css"
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 export default function SwiperPag({images}) {
   return (
@@ -21,12 +21,16 @@ export default function SwiperPag({images}) {
         pagination={{
           type: "bullets",
         }}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false
+      }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         className={`mySwiper ${style.swiper}`}
       >
           {images.map(image=>{
-              console.log(image.src);
         return (
         <SwiperSlide key={image.key}>
             <Image src={image.src}
