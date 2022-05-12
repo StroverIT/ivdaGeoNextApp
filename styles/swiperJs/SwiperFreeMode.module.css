@@ -1,0 +1,5 @@
+.pagination > span{
+    background-color: theme("colors.primary");
+    height:12px;
+    width:12px;
+}
