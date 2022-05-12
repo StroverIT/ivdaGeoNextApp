@@ -20,7 +20,7 @@ export default function SwiperFreeMode({images}) {
       <Swiper
         
         slidesPerView={3}
-        spaceBetween={30}
+        spaceBetween={10}
         freeMode={true}
         pagination={{
             el: `.${style.pagination}`,
@@ -38,7 +38,7 @@ export default function SwiperFreeMode({images}) {
             },
             // when window width is >= 768px
             768: {
-              slidesPerView: 2.5,
+              slidesPerView: 3.5,
             },
           }}
         modules={[FreeMode, Pagination]}
@@ -50,10 +50,11 @@ export default function SwiperFreeMode({images}) {
         <SwiperSlide key={image.key}>
             <Image src={image.src}
             //  layout="fill"  
-            height={600}
-            width={1100}
+            height={280}
+            width={400}
              alt={image.key} 
             />
+            <div>tesada</div>
         </SwiperSlide>
           )})}
           <div className={`${style.pagination} flex justify-center gap-2 my-2`}></div>
