@@ -40,7 +40,7 @@ const Navbar = () => {
       }, [lastScrollY])
    
     return (
-        <header className={`z-50 animate ${fixed? "fixed w-full" : ""} ${ !show ? "animateUp" : "" }`} ref={headerRef}>
+        <header className={`z-50 animate ${fixed? "fixed w-full" : ""} ${ !show && fixed ? "animateUp" : "" }`} ref={headerRef}>
 
         <nav className={`flex bg-color ${style.cShadow}`}>
             <div className="container relative flex items-center justify-between ">
