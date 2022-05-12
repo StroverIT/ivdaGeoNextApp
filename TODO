@@ -74,6 +74,8 @@ Navigation:
             When is clicked to hide the overflow-Y
     SEARCH: 
         Below MD icon on click to open menu for searching
+HomePage: 
+        Swiper carousel change the arrows styling
 Bugs: 
     Navigation: 
         When is on lg and FIRST hover, menu is glitching (it's bcs of left:0 and transition to left: (something)).
