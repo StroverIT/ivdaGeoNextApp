@@ -15,11 +15,17 @@ import style from "../../styles/swiperJs/SwiperPag.module.css"
 import { Pagination, Navigation, Autoplay } from "swiper";
 
 export default function SwiperPag({images}) {
+  let menu = ['Slide 1', 'Slide 2', 'Slide 3']
   return (
     <>
       <Swiper
         pagination={{
-          type: "bullets",
+          el: `.${style.pagination}`,
+          bulletActiveClass: `${style.paginationActive}`,
+          clickable: true,
+          // renderBullet: function (index, className) {
+          //   return `<span class="${className} ${style.test}"> ${menu[index]}</span>`
+          // },
         }}
         loop={true}
         autoplay={{
@@ -30,6 +36,8 @@ export default function SwiperPag({images}) {
         modules={[Pagination, Navigation, Autoplay]}
         className={`mySwiper ${style.swiper}`}
       >
+        <div className={`${style.pagination}`}></div>
+
           {images.map(image=>{
         return (
         <SwiperSlide key={image.key}>
