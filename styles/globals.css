@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities; 
 
+:root {
+  --pag-height: 8px;
+  --pag-height-active: calc(var(--pag-height) -  2px);
+}
 
 html,
 body {
