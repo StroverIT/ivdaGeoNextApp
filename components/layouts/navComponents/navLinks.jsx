@@ -31,6 +31,71 @@ const dictionary = [
         ],
         icon: "",
     },
+    {
+        title: "Баня",
+        mainRoute: "bathroom",
+        articles: [
+          ["Мебели и огледала за баня", "/"],
+        
+        ],
+        icon: "",
+    },    
+    {
+        title: "Отопление, Охлаждане и Вик",
+        mainRoute: "heatingCoolingAndVick",
+        articles: [
+          ["Климатици", "/"],
+        
+        ],
+        icon: "",
+    },
+    {
+        title: "Подови и стенни покрития",
+        mainRoute: "floorAndWallCoverings",
+        articles: [
+          ["Плочки и лайсни", "/"],
+        
+        ],
+        icon: "",
+    },
+    {
+        title: "Осветление",
+        mainRoute: "lighting",
+        articles: [
+          ["Вътрешно осветление", "/"],
+        
+        ],
+        icon: "",
+    },
+    
+    {
+        title: "Електроматериали",
+        mainRoute: "electricalMaterials",
+        articles: [
+          ["Ключове и контакти", "/"],
+        
+        ],
+        icon: "",
+    },
+    {
+        title: "Строителни материали",
+        mainRoute: "buildingMaterials",
+        articles: [
+          ["Сухи строителни смеси", "/"],
+        
+        ],
+        icon: "",
+    },
+    {
+        title: "Бои и лакове",
+        mainRoute: "paintsAndVarnishes",
+        articles: [
+          ["Интериорни бои", "/"],
+        
+        ],
+        icon: "",
+    },
+    
 
 ]
 const NavLinks = ({isHome}) => {
