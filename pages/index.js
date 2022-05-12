@@ -10,11 +10,27 @@ import Image from "next/image"
 const swiperPag = [
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday"
+    key: "test carousel for my monday 1"
   },
   {
     src:"/images/testCarousel.jpg",
     key: "test carousel for my monday version 2"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 3"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 4"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 5"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 6"
   },
 ]
 const swiperFreeImages = [
