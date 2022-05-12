@@ -4,9 +4,10 @@ import Head from 'next/head'
 import NavLinks from "../components/layouts/navComponents/NavLinks"
 // Import Swiper React components
 import SwiperPag from "../components/swiperJs/SwiperPag"
+import SwiperFreeMode from "../components/swiperJs/SwiperFreeMode"
 // Images 
 import Image from "next/image"
-const dicSwiper = [
+const swiperPag = [
   {
     src:"/images/testCarousel.jpg",
     key: "test carousel for my monday"
@@ -15,8 +16,32 @@ const dicSwiper = [
     src:"/images/testCarousel.jpg",
     key: "test carousel for my monday version 2"
   },
-
-
+]
+const swiperFreeImages = [
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday 1"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 2"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 3"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 4"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 5"
+  },
+  {
+    src:"/images/testCarousel.jpg",
+    key: "test carousel for my monday version 6"
+  },
 ]
 export default function Home() {
   return (
@@ -29,13 +54,13 @@ export default function Home() {
      <main className="mb-auto">
        <section className="bg-white">
        <div className="container ">
-          <section  className="lg:grid lg:gap-4 lg:grid-cols-[25%75%] w-full relative ">
+          <section  className="lg:grid lg:gap-2 lg:grid-cols-[25%75%] w-full relative ">
           
                       <section className="z-10">
                       <NavLinks isHome={true} />
                       </section>
                     <section className="flex justify-center items-center">
-                    <SwiperPag images={dicSwiper}/>
+                    <SwiperPag images={swiperPag}/>
 
                     </section>
 
@@ -43,12 +68,12 @@ export default function Home() {
           </section>
        </div>
        </section>
-       <section className="bg-color ">
+       <section className="bg-color pt-10 pb-2">
 
           <div className="container h-full">
           <div className="lg:flex justify-between ">
 
-            <section className="flex flex-col sm:flex-row items-center justify-center sm:justify-start bg-green custom-border w-full h-full p-3">
+            <section className="flex flex-col sm:flex-row items-center justify-center sm:justify-start bg-green custom-border w-full p-3">
               <div className="">
               <Image src="/images/logo.png" width="280" height="70" />
               </div>
@@ -56,8 +81,8 @@ export default function Home() {
             </section>
 
             <div className="flex items-center justify-center w-full">
-                <div className="flex justify-end w-full ">
-                  <input type="text" className="px-4 py-2 w-full lg:w-64" placeholder="Вашият и-мейл" />
+                <div className="flex justify-end w-full">
+                  <input type="text" className="px-4 py-2 w-full lg:w-64 border border-gray" placeholder="Вашият и-мейл" />
                   <button type="button" className="px-4 w-52 bg-primary text-white hover:bg-primary-trans transition-colors">
                     Абонирай ме
                   </button>
@@ -69,7 +94,12 @@ export default function Home() {
               </div>
           </div>
        </section>
-     
+      <section className="bg-color">
+        <div className="container">
+
+      <SwiperFreeMode images={swiperFreeImages}/>
+        </div>
+      </section>
 
      </main>
 
