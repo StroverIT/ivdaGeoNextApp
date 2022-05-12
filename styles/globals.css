@@ -38,7 +38,15 @@ a {
 
   object-fit: contain;
 }
+.animate{
+  transform: translateY(0);
 
+  transition: transform 0.4s ease-in-out;
+}
+.animateUp{
+  transform:skewy(2deg) skewx(20deg)  translateY(-140%);
+  
+}
 @media screen("lg"){
   .custom-border{
     clip-path: polygon(0 0, 100% 0, 100% 0, 87% 100%, 0 100%, 0% 50%);
