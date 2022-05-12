@@ -1,8 +1,4 @@
-.menu{
-    cursor: pointer;
-    background-color:theme("colors.primary");
 
-}
 .submenu{
     height: 100%;
     width: 100%;
