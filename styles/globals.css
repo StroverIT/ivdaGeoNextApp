@@ -49,6 +49,7 @@ a {
   transform:skewy(2deg) skewx(20deg)  translateY(-140%);
   
 }
+
 @media screen("lg"){
   .custom-border{
     clip-path: polygon(0 0, 100% 0, 100% 0, 87% 100%, 0 100%, 0% 50%);
