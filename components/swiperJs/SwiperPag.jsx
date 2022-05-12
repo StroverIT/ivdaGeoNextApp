@@ -15,7 +15,6 @@ import style from "../../styles/swiperJs/SwiperPag.module.css"
 import { Pagination, Navigation, Autoplay } from "swiper";
 
 export default function SwiperPag({images}) {
-  let menu = ['Slide 1', 'Slide 2', 'Slide 3']
   return (
     <>
       <Swiper
