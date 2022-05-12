@@ -26,15 +26,15 @@ export default function Home() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
 
-     <main className="mb-auto h-full">
+     <main className="mb-auto">
        <section className="bg-white">
-       <div className="container">
-          <section  className="lg:grid lg:grid-cols-[25%75%] w-full relative">
+       <div className="container ">
+          <section  className="lg:grid lg:gap-4 lg:grid-cols-[25%75%] w-full relative ">
           
-                      <section className="z-10  w-full">
+                      <section className="z-10">
                       <NavLinks isHome={true} />
                       </section>
-                    <section className="lg:grid-span-8">
+                    <section className="flex justify-center items-center">
                     <SwiperPag images={dicSwiper}/>
 
                     </section>
@@ -43,9 +43,9 @@ export default function Home() {
           </section>
        </div>
        </section>
-       <section className="bg-color">
+       <section className="bg-color ">
 
-          <div className="container">
+          <div className="container h-full">
           <div className="lg:flex justify-between ">
 
             <section className="flex flex-col sm:flex-row items-center justify-center sm:justify-start bg-green custom-border w-full h-full p-3">
@@ -69,6 +69,7 @@ export default function Home() {
               </div>
           </div>
        </section>
+     
 
      </main>
 
