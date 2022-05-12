@@ -18,6 +18,7 @@ export default function SwiperFreeMode({images}) {
     <>
      <div className="swipebody">
       <Swiper
+        
         slidesPerView={3}
         spaceBetween={30}
         freeMode={true}
