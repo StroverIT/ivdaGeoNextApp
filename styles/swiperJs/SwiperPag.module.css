@@ -34,19 +34,20 @@
   }
   .pagination{
     z-index: 10;
+
     position: absolute;
-    bottom: 0;
+    top: auto;
+    bottom: -10px !important;
     left: 50% !important;
     transform: translate(-50%, -50%);
-    background-color: theme("colors.primary");
-    max-width: 140px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1.25rem;
-    margin:0 !important;
-
-    margin: 10px 0;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    background-color: theme("colors.primary");
+    max-width: var(--pag-max-width);
   }
   .pagination span{
     height:var(--pag-height);
