@@ -28,6 +28,7 @@ export default function SwiperFreeMode({images}) {
         navigation={{
           nextEl: `.${navStyle.swiperNext}`,
           prevEl: `.${navStyle.swiperPrev}`,
+          disabledClass: `${navStyle.swiperDisabled}`
         }}
         pagination={{
             el: `.${style.pagination}`,
