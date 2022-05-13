@@ -36,29 +36,42 @@ const swiperPag = [
 const swiperFreeImages = [
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday 1"
+    title: "Боя за коса",
+    price: 123,
+    isPromo: false
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 2"
+    title: "ШКАФ ЗА БАНЯ С ОГЛЕДАЛО SYNCHRO Т2108-80К",
+    price: 123,
+    isPromo: false
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 3"
+    title: "СМЕСИТЕЛ ЗА КУХНЯ FORMA VITA КРИСТАЛ",
+    price: 23.94,
+    isPromo: true
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 4"
+    title: "СМЕСИТЕЛ ЗА КУХНЯ FORMA VITA Диамант",
+    price: 1000.94,
+    isPromo: false
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 5"
+    title: "Шкаф за обувки",
+    price: 10,
+    isPromo: false
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 6"
+    title: "Шкаф за дрехи",
+    price: 15,
+    isPromo: false
   },
 ]
+
 export default function Home() {
   return (
     <>
@@ -93,7 +106,7 @@ export default function Home() {
               <div className="">
               <Image src="/images/logo.png" width="280" height="70" />
               </div>
-              <div className="w-full mt-2 text-sm text-center text-white sm:mt-0 sm:ml-4 lg:text-left">АБОНИРАЙТЕ СЕ ЗА НАШИТЕ СПЕЦИАЛНИ ОФЕРТИ</div>
+              <div className="w-full mt-2 text-center text-white sm:mt-0 sm:ml-4 lg:text-left">АБОНИРАЙТЕ СЕ ЗА НАШИТЕ СПЕЦИАЛНИ ОФЕРТИ</div>
             </section>
 
             <div className="flex items-center justify-center w-full">
@@ -110,7 +123,7 @@ export default function Home() {
               </div>
           </div>
        </section>
-      <section className="bg-color">
+      <section className="py-5 bg-color">
         <div className="container">
 
       <SwiperFreeMode images={swiperFreeImages}/>
