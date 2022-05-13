@@ -77,6 +77,8 @@ Navigation:
         Search Icon when is Below MD on click to open menu for searching
 HomePage: 
         Swiper carousel change the arrows styling
+
+How to create a button in home page, which on click to open hamburger menu ? 
 Bugs: 
     Navigation: 
         When is on lg and FIRST hover, menu is glitching (it's bcs of left:0 and transition to left: (something)).
