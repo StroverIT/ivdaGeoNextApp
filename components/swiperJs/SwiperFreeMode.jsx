@@ -11,12 +11,13 @@ import "swiper/css/pagination";
 import style from "../../styles/swiperJs/SwiperFreeMode.module.css"
 // import required modules
 import { FreeMode, Pagination } from "swiper";
-
+// Comptonents
+import Pricing from "../priceStyling/Pricing"
 export default function SwiperFreeMode({images}) {
-   
+  
   return (
     <>
-     <div className="swipebody">
+     <div className="flex flex-row items-stretch py-5 swipebody">
       <Swiper
         
         slidesPerView={3}
@@ -46,20 +47,26 @@ export default function SwiperFreeMode({images}) {
       >
 
          {images.map(image=>{
+           let [price, priceDec] = image.price.toFixed(2).split(".")
         return (
-        <SwiperSlide key={image.key}>
+        <SwiperSlide key={image.title} className="flex flex-col h-full bg-white">
             <Image src={image.src}
             //  layout="fill"  
-            height={280}
-            width={400}
-             alt={image.key} 
+            height={700}
+            width={1000}
+            alt={image.title} 
             />
-            <div>tesada</div>
+
+            <div className="container py-2 font-medium text-center border-t border-gray">
+              {image.title}
+              </div>
+              <Pricing isPromo={image.isPromo} price={price} priceDec={priceDec}/>
         </SwiperSlide>
           )})}
-          <div className={`${style.pagination} flex justify-center gap-2 my-2`}></div>
       </Swiper>
       </div>
+      <div className={`${style.pagination} z-10 flex justify-center gap-2 my-2`}></div>
+
     </>
   );
 }
