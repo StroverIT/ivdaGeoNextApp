@@ -75,7 +75,7 @@ export default function Home() {
                       <section className="z-10">
                       <NavLinks isHome={true} />
                       </section>
-                    <section className="flex justify-center items-center">
+                    <section className="flex justify-center items-center relative">
                     <SwiperPag images={swiperPag}/>
 
                     </section>
