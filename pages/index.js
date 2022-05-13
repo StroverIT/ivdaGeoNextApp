@@ -69,13 +69,13 @@ export default function Home() {
 
      <main className="mb-auto">
        <section className="bg-white">
-       <div className="container ">
+       <div className="container">
           <section  className="lg:grid lg:gap-2 lg:grid-cols-[25%75%] w-full relative ">
           
                       <section className="z-10">
                       <NavLinks isHome={true} />
                       </section>
-                    <section className="flex justify-center items-center relative">
+                    <section className="relative flex items-center justify-center">
                     <SwiperPag images={swiperPag}/>
 
                     </section>
@@ -84,22 +84,22 @@ export default function Home() {
           </section>
        </div>
        </section>
-       <section className="bg-color pt-10 pb-2">
+       <section className="pt-10 pb-2 bg-color">
 
           <div className="container h-full">
-          <div className="lg:flex justify-between ">
+          <div className="justify-between lg:flex ">
 
-            <section className="flex flex-col sm:flex-row items-center justify-center sm:justify-start bg-green custom-border w-full p-3">
+            <section className="flex flex-col items-center justify-center w-full p-3 sm:flex-row sm:justify-start bg-green custom-border">
               <div className="">
               <Image src="/images/logo.png" width="280" height="70" />
               </div>
-              <div className="w-full text-sm mt-2 sm:mt-0 sm:ml-4 text-white text-center lg:text-left">АБОНИРАЙТЕ СЕ ЗА НАШИТЕ СПЕЦИАЛНИ ОФЕРТИ</div>
+              <div className="w-full mt-2 text-sm text-center text-white sm:mt-0 sm:ml-4 lg:text-left">АБОНИРАЙТЕ СЕ ЗА НАШИТЕ СПЕЦИАЛНИ ОФЕРТИ</div>
             </section>
 
             <div className="flex items-center justify-center w-full">
                 <div className="flex justify-end w-full">
-                  <input type="text" className="px-4 py-2 w-full lg:w-64 border border-gray" placeholder="Вашият и-мейл" />
-                  <button type="button" className="px-4 w-52 bg-primary text-white hover:bg-primary-trans transition-colors">
+                  <input type="text" className="w-full px-4 py-2 border lg:w-64 border-gray" placeholder="Вашият и-мейл" />
+                  <button type="button" className="px-4 text-white transition-colors w-52 bg-primary hover:bg-primary-trans">
                     Абонирай ме
                   </button>
                 </div>
