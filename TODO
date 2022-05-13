@@ -71,9 +71,10 @@ Navigation:
     - Submenu is on menu and left arrow onClick back to the menu
     MD or LG is HomeCatecory. Menu onHover show submenu. Out of hover is removing the subMenu
         Hamburger:
+            Only when is not fixed to show the hamburger menu
             When is clicked to hide the overflow-Y
     SEARCH: 
-        Below MD icon on click to open menu for searching
+        Search Icon when is Below MD on click to open menu for searching
 HomePage: 
         Swiper carousel change the arrows styling
 Bugs: 
