@@ -9,10 +9,12 @@ import "swiper/css/pagination";
 
 // Custom styles
 import style from "../../styles/swiperJs/SwiperFreeMode.module.css"
+import navStyle from "../../styles/swiperJs/SwiperNav.module.css"
 // import required modules
-import { FreeMode, Pagination } from "swiper";
-// Comptonents
+import { FreeMode, Pagination, Navigation } from "swiper";
+// Components
 import Pricing from "../priceStyling/Pricing"
+import SwiperNav from "./SwiperNav"
 export default function SwiperFreeMode({images}) {
   
   return (
@@ -23,6 +25,10 @@ export default function SwiperFreeMode({images}) {
         slidesPerView={3}
         spaceBetween={10}
         freeMode={true}
+        navigation={{
+          nextEl: `.${navStyle.swiperNext}`,
+          prevEl: `.${navStyle.swiperPrev}`,
+        }}
         pagination={{
             el: `.${style.pagination}`,
           clickable: true,
@@ -42,7 +48,7 @@ export default function SwiperFreeMode({images}) {
               slidesPerView: 3.5,
             },
           }}
-        modules={[FreeMode, Pagination]}
+        modules={[FreeMode, Pagination, Navigation]}
         className={`mySwiper`}
       >
 
@@ -63,7 +69,9 @@ export default function SwiperFreeMode({images}) {
               <Pricing isPromo={image.isPromo} price={price} priceDec={priceDec}/>
         </SwiperSlide>
           )})}
-      </Swiper>
+         {/* Nav */}
+         <SwiperNav />
+        </Swiper>
       </div>
       <div className={`${style.pagination} z-10 flex justify-center gap-2 my-2`}></div>
 
