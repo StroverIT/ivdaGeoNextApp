@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DecAbove = ({isPromo, price, priceDec}) => {
+const Pricing = ({isPromo, price, priceDec}) => {
     return (
         <div  className="flex mt-auto border-t border-gray">
         <div className={`h-full flex items-center px-2 py-2 ml-auto text-white ${!isPromo ?"bg-primary" :" bg-secondary"}`}>
@@ -15,4 +15,4 @@ const DecAbove = ({isPromo, price, priceDec}) => {
     );
 }
 
-export default DecAbove;
+export default Pricing;
