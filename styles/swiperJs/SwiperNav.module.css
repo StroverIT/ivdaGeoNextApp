@@ -1,0 +1,16 @@
+.swiperNav{
+    top: 50%;
+    color:theme("colors.bg-color");
+
+}
+.swiperNav > div{
+    background-color: theme("colors.primary");
+
+}
+.swiperNext{
+    right: 0;
+}
+.swiperPrev{
+    transform: rotate(180deg);
+    
+}
