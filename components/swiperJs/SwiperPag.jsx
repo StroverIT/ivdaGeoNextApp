@@ -35,7 +35,11 @@ export default function SwiperPag({images}) {
         modules={[Pagination, Navigation, Autoplay]}
         className={`mySwiper ${style.swiper}`}
       >
-        <div className={`${style.pagination}`}></div>
+        <div className={`${style.paginationCont}`}>
+          <div className={`${style.pagination}`}>
+
+          </div>
+        </div>
 
           {images.map(image=>{
         return (
