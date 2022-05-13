@@ -89,7 +89,7 @@ const NavLinkMenu = ({title, articles,mainRoute, isHome}) => {
         [style.subHover]: subIsHover
     })
     return (
-        <li className={`item w-full ${!isHome ? "lg:w-64" : ""}`}>
+        <li className={`item w-full font-thin ${!isHome ? "lg:w-64" : ""}`}>
     <div className={` ${style.menu} ${isHover} bg-primary cursor-pointer lg:hover:text-dark lg:hover:bg-color px-3 py-1 flex w-full `} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>
         <div className={`${!isHome ? "max-lg:container": ""}`}>
 
@@ -100,7 +100,7 @@ const NavLinkMenu = ({title, articles,mainRoute, isHome}) => {
                 <ul className={`px-5  flex-wrap flex flex-initial`}>
                 <li className={`flex items-center lg:hidden`}>
                     <span type="button" className={`${style.icon} flex py-2 px-2`}>
-                    <AiOutlineArrowLeft onClick={returnMenu} className="icon text-xl"/>
+                    <AiOutlineArrowLeft onClick={returnMenu} className="text-xl icon"/>
                     </span>
                     <span className="pl-4">{title}</span>
 
@@ -109,7 +109,7 @@ const NavLinkMenu = ({title, articles,mainRoute, isHome}) => {
                         return (
 
                         <Link href={`/${mainRoute}/Add${article[1]}`} key={article[0]}> 
-                    <li  className="text-sm m-2">
+                    <li  className="m-2 text-sm">
                             <a href="#">{article[0]}</a>
                             </li>
                             </Link>
