@@ -147,6 +147,9 @@ export default function Home() {
         </div>
 
     </section>
+    <section>
+      <button onClick={()=> openMenu(true)}>Избери продукт</button>
+    </section>
      </main>
 
     </>
