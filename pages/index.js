@@ -139,6 +139,8 @@ export default function Home() {
             </div>
 
             <div className="relative flex items-center justify-center w-full h-60">
+              {/* Image  of the shop*/}
+
               <Image src="/images/testCarousel.jpg" alt="atasda" layout="fill" objectFit='contain'/>
             </div>
           </section>
