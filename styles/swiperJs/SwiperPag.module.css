@@ -2,7 +2,6 @@
 .swiper {
     width: 100%;
     height: 100%;
-    margin-bottom: -4px;  /*Must fix that*/
     padding:0;
   }
   
@@ -32,22 +31,26 @@
     height: 100%;
     object-fit: cover;
   }
-  .pagination{
+  .paginationCont{
     z-index: 10;
 
     position: absolute;
-    top: auto;
-    bottom: -10px !important;
+    bottom: 0 !important;
     left: 50% !important;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding: 0.5rem 0.5rem;
     background-color: theme("colors.primary");
-    max-width: var(--pag-max-width);
+    
+  }
+  .pagination{
+   
+    display:flex;
+    justify-content: center;
+    align-items: center;
   }
   .pagination span{
     height:var(--pag-height);
