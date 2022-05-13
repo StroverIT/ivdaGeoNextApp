@@ -125,7 +125,7 @@ export default function Home() {
        </section>
       <section className="py-5 bg-color">
         <div className="container">
-
+        <h1 className="text-3xl">Месечни топ предложения</h1>
       <SwiperFreeMode images={swiperFreeImages}/>
         </div>
       </section>
