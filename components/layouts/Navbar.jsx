@@ -86,7 +86,7 @@ const Navbar = () => {
                     </button>
                     </li>
                     {/* Account */}
-                <Link href="/">
+                <Link href="/account/login">
                 <li className="flex flex-col items-center justify-center px-4 text-blue hover:bg-blue hover:text-white h-14 lg:h-20">
                         <div className="text-3xl"><AiOutlineUser className="icon"/></div>
                         <div className={`text-sm hidden lg:block`}>Вход</div>
