@@ -1,9 +1,18 @@
+// React
 import React from 'react';
+import {AiOutlineSearch} from "react-icons/ai"
+// Next
 import Link from "next/link"
-const Pricing = ({isPromo, price, priceDec}) => {
+
+const Pricing = ({isPromo, price, priceDec, pageUrl}) => {
     return (
-        <div  className="flex items-center justify-center mt-auto border-t border-gray">
-         
+        <div  className="flex mt-auto border-t border-gray">
+          <Link href={pageUrl}>
+          <div className="flex items-center justify-center ml-5 cursor-pointer">
+            <AiOutlineSearch />
+            <span className="ml-1 text-sm">Виж</span>
+          </div>
+          </Link>
         <div className={`h-full flex items-center px-2 py-2 ml-auto text-white ${!isPromo ?"bg-primary" :" bg-secondary"}`}>
         <div className="text-2xl font-semibold">{price}</div>
         <div className="relative flex flex-col items-center h-full text-sm">
