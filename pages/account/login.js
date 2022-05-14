@@ -19,7 +19,7 @@ const Login = () => {
       <main>
         <div className="container justify-center grid-cols-2 lg:grid ">
           <div className="w-full bg-white rounded shadow-md">
-            <div className="mt-5 ml-8">
+            <div className="my-5 ml-8">
               <h3 className="text-3xl">Влезте във вашият акаунт</h3>
               <p className="mt-1">
                 Все още нямате профил?
@@ -47,7 +47,7 @@ const Login = () => {
                   isReq={true}
                   iconType="password"
                 />
-              <div className="flex justify-between my-4">
+              <div className="flex justify-between my-8">
                 <div>
                   <input
                     className="w-4 h-4 mt-1 mr-2 align-top border-gray accent-primary-lighter"
