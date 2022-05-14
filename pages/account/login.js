@@ -47,7 +47,7 @@ const Login = () => {
                   isReq={true}
                   iconType="password"
                 />
-              <div className="flex justify-between my-8">
+              <div className="flex justify-between my-8 select-none">
                 <div>
                   <input
                     className="w-4 h-4 mt-1 mr-2 align-top border-gray accent-primary-lighter"
@@ -76,7 +76,7 @@ const Login = () => {
               </div>
               <div className="flex items-center justify-center ">
                 <button
-                  className="w-full px-4 py-2 font-bold text-white rounded bg-primary hover:bg-primary focus:outline-none focus:shadow-outline"
+                  className="w-full px-4 py-2 font-bold text-white rounded shadow-md bg-primary hover:bg-primary focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   Вход
