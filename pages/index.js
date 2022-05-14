@@ -1,4 +1,6 @@
+// NextJS
 import Head from 'next/head'
+import Image from "next/image"
 
 // Components
 import NavLinks from "../components/layouts/navComponents/NavLinks"
@@ -6,7 +8,6 @@ import NavLinks from "../components/layouts/navComponents/NavLinks"
 import SwiperPag from "../components/swiperJs/SwiperPag"
 import SwiperFreeMode from "../components/swiperJs/SwiperFreeMode"
 // Images 
-import Image from "next/image"
 const swiperPag = [
   {
     src:"/images/testCarousel.jpg",
