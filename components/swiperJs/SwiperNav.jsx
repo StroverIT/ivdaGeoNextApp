@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from "next/link"
+// Icons
 import {IoMdArrowDropright, IoMdArrowDropleft} from "react-icons/io"
+// Styles
 import style from "../../styles/swiperJs/SwiperNav.module.css"
 
 const SwiperNav = () => {
