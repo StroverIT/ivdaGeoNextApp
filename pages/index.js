@@ -38,37 +38,48 @@ const swiperFreeImages = [
     src:"/images/testCarousel.jpg",
     title: "Боя за коса",
     price: 123,
-    isPromo: false
+    isPromo: false,
+    pageUrl: "/products/main/product"
   },
   {
     src:"/images/testCarousel.jpg",
     title: "ШКАФ ЗА БАНЯ С ОГЛЕДАЛО SYNCHRO Т2108-80К",
     price: 123,
-    isPromo: false
+    isPromo: false,
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
     title: "СМЕСИТЕЛ ЗА КУХНЯ FORMA VITA КРИСТАЛ",
     price: 23.94,
-    isPromo: true
+    isPromo: true,
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
     title: "СМЕСИТЕЛ ЗА КУХНЯ FORMA VITA Диамант",
     price: 1000.94,
-    isPromo: false
+    isPromo: false,
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
     title: "Шкаф за обувки",
     price: 10,
-    isPromo: false
+    isPromo: false,
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
     title: "Шкаф за дрехи",
     price: 15,
-    isPromo: false
+    isPromo: false,
+    pageUrl: "/products/main/product"
+
   },
 ]
 
@@ -147,9 +158,7 @@ export default function Home() {
         </div>
 
     </section>
-    <section>
-      <button onClick={()=> openMenu(true)}>Избери продукт</button>
-    </section>
+    
      </main>
 
     </>
