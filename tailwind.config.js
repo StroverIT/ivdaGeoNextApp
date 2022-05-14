@@ -11,7 +11,7 @@ const customColors = {
   "orange": "hsl(33, 89%, 52%)",
   "green": "hsl(92, 50%, 54%)",
   "gray": "hsl(0, 0%, 85%)",
-  "gray-darker": "hsl(0, 0%, 30%)",
+  "gray-darker": "hsl(0, 0%, 50%)",
   "transparent": "transparent",
 }
 module.exports = {
