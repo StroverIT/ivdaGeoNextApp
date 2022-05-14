@@ -6,12 +6,12 @@ import style from "../../styles/swiperJs/SwiperNav.module.css"
 
 const SwiperNav = () => {
     return (
-        <div className={`${style.swiperNav} z-10  absolute flex w-full justify-between text-4xl`}>
+        <div className={`${style.swiperNav} z-10 text-4xl`}>
 
-        <div className={`${style.swiperPrev} flex items-center justify-center cursor-pointer`}>
+        <div className={`${style.swiperPrev} flex items-center justify-center cursor-pointer absolute z-10 select-none`}>
             <IoMdArrowDropleft/>
             </div>
-        <div className={`${style.swiperNext} flex items-center justify-center cursor-pointer`}>
+        <div className={`${style.swiperNext} flex items-center justify-center cursor-pointer absolute z-10 select-none`}>
 
             <IoMdArrowDropright/>
             </div>
