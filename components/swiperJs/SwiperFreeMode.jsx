@@ -73,7 +73,7 @@ export default function SwiperFreeMode({images}) {
               {image.title}
               </div>
             
-              <Pricing isPromo={image.isPromo} price={price} priceDec={priceDec}/>
+              <Pricing isPromo={image.isPromo} price={price} priceDec={priceDec} pageUrl={image.pageUrl}/>
         </SwiperSlide>
           )})}
          {/* Nav */}
