@@ -1,7 +1,8 @@
 import React from 'react';
+// Icons
 import { HiOutlineMail } from "react-icons/hi";
 import {AiOutlineLock} from "react-icons/ai"
-import classNames from "classnames"
+
 const Input = ({type, placeholder, id, isReq,iconType}) => {
     
     const iconDictionary={
