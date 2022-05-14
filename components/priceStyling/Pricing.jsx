@@ -8,7 +8,7 @@ const Pricing = ({isPromo, price, priceDec, pageUrl}) => {
     return (
         <div  className="flex mt-auto border-t border-gray">
           <Link href={pageUrl}>
-          <div className="flex items-center justify-center ml-5 cursor-pointer">
+          <div className="flex items-center justify-center cursor-pointer ml-7">
             <AiOutlineSearch />
             <span className="ml-1 text-sm">Виж</span>
           </div>
