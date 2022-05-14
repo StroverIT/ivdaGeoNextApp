@@ -10,27 +10,39 @@ import Image from "next/image"
 const swiperPag = [
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday 1"
+    key: "test carousel for my monday 1",
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 2"
+    key: "test carousel for my monday version 2",
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 3"
+    key: "test carousel for my monday version 3",
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 4"
+    key: "test carousel for my monday version 4",
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 5"
+    key: "test carousel for my monday version 5",
+    pageUrl: "/products/main/product"
+
   },
   {
     src:"/images/testCarousel.jpg",
-    key: "test carousel for my monday version 6"
+    key: "test carousel for my monday version 6",
+    pageUrl: "/products/main/product"
+
   },
 ]
 const swiperFreeImages = [
