@@ -52,23 +52,27 @@ export default function SwiperFreeMode({images}) {
             },
           }}
         modules={[FreeMode, Pagination, Navigation]}
-        className={`mySwiper`}
+        className={`mySwiper relative`}
       >
 
          {images.map(image=>{
            let [price, priceDec] = image.price.toFixed(2).split(".")
         return (
         <SwiperSlide key={image.title} className="flex flex-col h-full bg-white">
+             <Link href={image.pageUrl} >
             <Image src={image.src}
             //  layout="fill"  
             height={700}
             width={1000}
             alt={image.title} 
+            className="cursor-pointer"
             />
+        </Link>
 
             <div className="container py-2 font-medium text-center border-t border-gray">
               {image.title}
               </div>
+            
               <Pricing isPromo={image.isPromo} price={price} priceDec={priceDec}/>
         </SwiperSlide>
           )})}
