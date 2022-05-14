@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="container relative flex items-center justify-between ">
              
 
-                    <div className="logo flex items-center">
+                    <div className="flex items-center logo">
                     <Hamburger headRef={headerRef}/>
                     <Link href="/" >
                         <div className="flex items-center justify-between hidden lg:block">
@@ -57,8 +57,8 @@ const Navbar = () => {
 
             <div className="flex items-center justify-center hidden md:block">
                 <div className="flex rounded">
-                    <input type="text" className="px-4 py-2 w-80 bg-transparent border-green border rounded-full placeholder-dark focus:outline-green" placeholder="Търси..."/>
-                    <button className="flex items-center justify-center px-4 bg-green text-white rounded-full ml-2">
+                    <input type="text" className="px-4 py-2 bg-transparent border rounded-full w-80 border-green placeholder-dark focus:outline-green" placeholder="Търси..."/>
+                    <button className="flex items-center justify-center px-4 ml-2 text-white rounded-full bg-green">
                         <svg className="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24">
                             <path
@@ -69,13 +69,14 @@ const Navbar = () => {
             </div>
                 <ul className={`${style.list} flex items-center justify-center `}>
               
-                    
+                    {/* Home icon */}
                 <Link href="/">
                 <li className="flex flex-col items-center justify-center px-4 lg:hidden h-14 lg:h-20">
                         <div className="text-3xl"><BiHomeAlt className="icon"/></div>
                     </li>
                     </Link>
-                    <li className="flex items-center justify-center md:hidden px-4 text-green">
+                    {/* Search icon for mobile */}
+                    <li className="flex items-center justify-center px-4 md:hidden text-green">
                     <button >
                         <svg className="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24">
@@ -84,13 +85,14 @@ const Navbar = () => {
                         </svg>
                     </button>
                     </li>
+                    {/* Account */}
                 <Link href="/">
                 <li className="flex flex-col items-center justify-center px-4 text-blue hover:bg-blue hover:text-white h-14 lg:h-20">
                         <div className="text-3xl"><AiOutlineUser className="icon"/></div>
                         <div className={`text-sm hidden lg:block`}>Вход</div>
                     </li>
                     </Link>
-
+                {/* Cart */}
                 <Link href="/about">
                 <li className="flex flex-col items-center justify-center px-4 text-orange hover:bg-orange hover:text-white h-14 lg:h-20">
                         <div className="text-3xl"><BsCart3 className="icon"/></div>
