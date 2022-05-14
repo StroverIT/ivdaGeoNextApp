@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from "next/link"
 // Icons
 import {IoMdArrowDropright, IoMdArrowDropleft} from "react-icons/io"
 // Styles
