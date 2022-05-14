@@ -52,12 +52,15 @@ export default function SwiperPag({images}) {
           {images.map(image=>{
         return (
         <SwiperSlide key={image.key}>
+          <Link href={image.pageUrl}>
             <Image src={image.src}
             //  layout="fill"  
             height={600}
             width={1100}
              alt={image.key} 
-             className={`${style.swiperSlideImg}`}/>
+             className={`${style.swiperSlideImg} cursor-pointer`}/>
+          </Link>
+
         </SwiperSlide>
           )})}
         <SwiperNav/>
