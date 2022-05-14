@@ -1,8 +1,9 @@
 import React from 'react';
-
+import Link from "next/link"
 const Pricing = ({isPromo, price, priceDec}) => {
     return (
-        <div  className="flex mt-auto border-t border-gray">
+        <div  className="flex items-center justify-center mt-auto border-t border-gray">
+         
         <div className={`h-full flex items-center px-2 py-2 ml-auto text-white ${!isPromo ?"bg-primary" :" bg-secondary"}`}>
         <div className="text-2xl font-semibold">{price}</div>
         <div className="relative flex flex-col items-center h-full text-sm">
