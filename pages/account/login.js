@@ -17,8 +17,8 @@ const Login = () => {
       </Head>
 
       <main>
-        <div className="container justify-center grid-cols-2 lg:grid ">
-          <div className="w-full bg-white rounded shadow-md">
+        <div className="container justify-center grid-cols-2 xl:grid ">
+          <div className="w-full bg-white rounded shadow-xl">
             <div className="my-5 ml-8">
               <h3 className="text-3xl">Влезте във вашият акаунт</h3>
               <p className="mt-1">
@@ -85,7 +85,7 @@ const Login = () => {
             </form>
           </div>
           {/* Image is the something of ivdaGeo */}
-          <div className="relative hidden w-full ml-2 h-80 lg:block">
+          <div className="relative hidden w-full ml-2 h-96 xl:block">
             <Image src="/images/testCarousel.jpg" layout="fill" />
           </div>
         </div>
