@@ -32,21 +32,20 @@ const Login = () => {
             </div>
 
             <form className="px-8 pt-6 pb-8 mb-4 ">
-              
-                <Input
-                  placeholder="И-мейл"
-                  type="email"
-                  id="email"
-                  isReq={true}
-                  iconType="email"
-                />
-                <Input
-                  placeholder="Парола"
-                  type="password"
-                  id="password"
-                  isReq={true}
-                  iconType="password"
-                />
+              <Input
+                placeholder="И-мейл"
+                type="email"
+                id="email"
+                isReq={true}
+                iconType="email"
+              />
+              <Input
+                placeholder="Парола"
+                type="password"
+                id="password"
+                isReq={true}
+                iconType="password"
+              />
               <div className="flex justify-between my-8 select-none">
                 <div>
                   <input
