@@ -68,21 +68,23 @@ const NavLinkMenu = ({ title, articles, mainRoute, isHome, isOpen }) => {
         } bg-color z-10 lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
         ref={subMenu}
       >
-        <ul className={`px-5  flex-wrap flex flex-initial`}>
-          <li className={`flex items-center lg:hidden`}>
-            <span
-              type="button"
-              className={`${style.icon} flex py-2 px-2`}
-              onClick={() => setMobSubMenu(false)}
-            >
-              <AiOutlineArrowLeft className="text-xl icon" />
-            </span>
-            <span className="pl-4">{title}</span>
-          </li>
+        <div className={`flex items-center `}>
+          <span
+            type="button"
+            className={`${style.icon} flex py-2 px-2 lg:hidden`}
+            onClick={() => setMobSubMenu(false)}
+          >
+            <AiOutlineArrowLeft className="text-xl icon" />
+          </span>
+          <span className="pl-4 font-semibold">{title}</span>
+        </div>
+        <ul
+          className={`px-5  flex-wrap flex flex-col flex-initial list-disc mt-2`}
+        >
           {articles.map((article) => {
             return (
               <Link href={`/${mainRoute}/Add${article[1]}`} key={article[0]}>
-                <li className="m-2 text-sm">
+                <li className="m-2 text-sm font-[400]">
                   <a href="#">{article[0]}</a>
                 </li>
               </Link>
