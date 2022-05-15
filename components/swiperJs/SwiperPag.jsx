@@ -53,14 +53,15 @@ export default function SwiperPag({images}) {
         return (
         <SwiperSlide key={image.key}>
           <Link href={image.pageUrl}>
-          <>
+            <div>
+
             <Image src={image.src}
             //  layout="fill"  
             height={600}
             width={1100}
-             alt={image.key} 
-             className={`${style.swiperSlideImg} cursor-pointer`}/>
-             </>
+            alt={image.key} 
+            className={`${style.swiperSlideImg} cursor-pointer`}/>
+            </div>
           </Link>
 
         </SwiperSlide>
