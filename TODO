@@ -43,8 +43,8 @@ Pages to create:
 [ X ] Login
 [ ] Forgotten password
 
-- [ ] Register
-      [ ] Verify account page
+- [ x ] Register
+  [ ] Verify account page
 
 [ ] Resend verify code
 [ ] Account
