@@ -10,9 +10,12 @@ import NavLinks from "./NavLinks"
 const Hamburger = ({headRef}) => {
   const router = useRouter()
 
-  const [isOpen, menuState] = useState(false)
   const hamburger = useRef(null)
   const navLinks = useRef(null)
+  
+  const [isOpen, menuState] = useState(false)
+
+
 
   useEffect(()=>{
     menuState(false)
@@ -23,10 +26,13 @@ const Hamburger = ({headRef}) => {
      hamburger.current.classList.add(styles.open)
      navLinks.current.classList.add(styles.menuOpen)
      navLinks.current.style.top = `${headRef.current.offsetHeight}px` 
+     document.body.classList.add("blury")
     }
     if(!isOpen){
       hamburger.current.classList.remove(styles.open)
       navLinks.current.classList.remove(styles.menuOpen)
+     document.body.classList.remove("blury")
+
     }
     
   }, [isOpen])
@@ -40,6 +46,7 @@ const Hamburger = ({headRef}) => {
     <div className={`w-full fixed lg:absolute  -z-20  ${styles.navLinks} ${router.route == "/" ?"lg:hidden" : ""} `} ref={navLinks}>
       <NavLinks />
     </div>
+    <div className={`blury-bg -z-30 ${!isOpen ? "hidden" : ""}`} onClick={()=> menuState(false)}></div>
     </>
     );
 }
