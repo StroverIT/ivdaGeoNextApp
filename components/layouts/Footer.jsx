@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary blue-white-theme">
       <div className="container">
-        <div className="grid sm:grid-cols-2 gap-4 md:flex justify-between py-8">
+        <div className="grid justify-between gap-4 py-8 sm:grid-cols-2 md:flex">
           <div>
             <h2 className="mb-6 text-sm font-semibold uppercase">ИвдаГео</h2>
             <ul className="text-gray-300">
@@ -42,10 +42,9 @@ const Footer = () => {
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">
-                Празнично работно време
+                  Празнично работно време
                 </a>
               </li>
-         
             </ul>
           </div>
           <div>
@@ -53,12 +52,12 @@ const Footer = () => {
               За клиента
             </h2>
             <ul className="text-gray-300">
-            <li className="mb-4">
+              <li className="mb-4">
                 <a href="#" className="hover:underline">
-                Вземи от магазин
+                  Вземи от магазин
                 </a>
               </li>
-             
+
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Транспорт
@@ -76,11 +75,9 @@ const Footer = () => {
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">
-                Доставка при онлайн покупка
+                  Доставка при онлайн покупка
                 </a>
               </li>
-             
-         
             </ul>
           </div>
           <div>
@@ -88,12 +85,12 @@ const Footer = () => {
               Обща информация
             </h2>
             <ul className="text-gray-300">
-            <li className="mb-4">
+              <li className="mb-4">
                 <a href="#" className="hover:underline">
-                Услуги
+                  Услуги
                 </a>
               </li>
-             
+
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Как да поръчвам
@@ -104,14 +101,13 @@ const Footer = () => {
                   Как да върна продукт?
                 </a>
               </li>
-            
             </ul>
           </div>
           <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
               Социални Мрежи
             </h2>
-            <ul className="flex mt-4 space-x-6  md:mt-0">
+            <ul className="flex mt-4 space-x-6 md:mt-0">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white">
                   <svg
@@ -159,11 +155,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-         
-
-        
         </div>
-        <div className="py-6 bg-gray-700 flex items-center justify-center">
+        <div className="flex items-center justify-center py-6 bg-gray-700">
           <div className="text-sm text-center">
             © 2022 <a href="/contact">IvdaGeo™</a>. Всички права запазени.
           </div>
