@@ -51,7 +51,7 @@ const Hamburger = ({ headRef }) => {
         } `}
         ref={navLinks}
       >
-        <NavLinks />
+        <NavLinks isOpen={isOpen} />
       </div>
       <div
         className={`blury-bg -z-30 ${!isOpen ? "hidden" : ""}`}
