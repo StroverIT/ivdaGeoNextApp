@@ -15,7 +15,7 @@ import tailwindConfig from "../../../tailwind.config.js";
 const fullConfig = resolveConfig(tailwindConfig);
 const lg = fullConfig.theme.screens.lg.min.split("px")[0];
 
-const NavLinkMenu = ({ title, articles, mainRoute, isHome }) => {
+const NavLinkMenu = ({ title, articles, mainRoute, isHome, isOpen }) => {
   const router = useRouter();
 
   const menu = useRef(null);
@@ -61,9 +61,9 @@ const NavLinkMenu = ({ title, articles, mainRoute, isHome }) => {
         <div className={`${!isHome ? "max-lg:container" : ""}`}>{title}</div>
       </div>
       <div
-        className={`fixed  lg:absolute py-2 overflow-auto transition-transform ${
-          !mobSubmenu ? "translate-x-full" : ""
-        } lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full left-0 top-0 lg:left-[256px] ${
+        className={`fixed  lg:absolute py-2 overflow-auto  ${
+          mobSubmenu ? "translate-x-0" : "translate-x-full"
+        } transition-transform lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full left-0 top-0 lg:left-[256px] ${
           isHome ? "xl:left-[300px]" : ""
         } bg-color z-10 lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
         ref={subMenu}
