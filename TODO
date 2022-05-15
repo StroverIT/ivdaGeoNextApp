@@ -4,25 +4,25 @@ Navbar:
 On navbar are ready just need to add Colors [ x ]
 [ x ] Navbar menu is same in every page except in home, where in home in MD or LG is hidden
 [ x ] Nav items except home PC == lg{
-    [ x ] Hamburger
-    [ x ] IvdaGeoLogo
-    [ x ] Search (showing the search)
-    [ x ] Login (First icon, second Вход)(Color: primary)
-    [ x ] Cart (First cart icon, second Количка)(Color: orange)
+[ x ] Hamburger
+[ x ] IvdaGeoLogo
+[ x ] Search (showing the search)
+[ x ] Login (First icon, second Вход)(Color: primary)
+[ x ] Cart (First cart icon, second Количка)(Color: orange)
 }
 [ x ] Nav items except home Tablet == md{
-    [ x ] Hamburger
-    [ x ] Home (No text, only icon)(Color: black)
-    [ x ] Search (No text, showing the search)(Color: green)
-    [ x ] Login (No text)(Color: primary)
-    [ x ] Cart (No text)(Color: orange)
+[ x ] Hamburger
+[ x ] Home (No text, only icon)(Color: black)
+[ x ] Search (No text, showing the search)(Color: green)
+[ x ] Login (No text)(Color: primary)
+[ x ] Cart (No text)(Color: orange)
 }
 [ x ] Nav items except home Mobile < md{
-    [ x ] Hamburger
-    [ x ] Home (No text, only icon)(Color: black)
-    [ x ] Search (No text, only icon)(Color: green)
-    [ x ] Login (No text, only icon)(Color: primary)
-    [ x ] Cart (No text, only icon)(Color: orange)
+[ x ] Hamburger
+[ x ] Home (No text, only icon)(Color: black)
+[ x ] Search (No text, only icon)(Color: green)
+[ x ] Login (No text, only icon)(Color: primary)
+[ x ] Cart (No text, only icon)(Color: orange)
 }
 
 Hamburger:
@@ -31,57 +31,59 @@ Hamburger:
 [ x ] Hamburger information
 
 Footer:
-[  ]  information
-[  ]  Links
-[  ]  social media Icons HYPER LINKS
+[ ] information
+[ ] Links
+[ ] social media Icons HYPER LINKS
 
 Home Content:
-[  ] In home is same as navLink.jsx, but BELOW LG is hidden
+[ ] In home is same as navLink.jsx, but BELOW LG is hidden
 
-Pages to create: 
+Pages to create:
 [ x ] Home - NOTE: Only need to add our partners
 [ X ] Login
-    [  ] Forget password
-[  ] Register
-    [ ] Verify account page
-[  ] Resend verify code
-[  ] Account
-    [  ] Change password
-[  ] Cart
-[  ] Products 
-[  ] Show product
-[  ] About us
-[  ] Delivery page
-[  ] How to buy
-[  ] Help
-[  ] Contact page
-[  ] Work for us to send CV and inputs
+[ ] Forget password
+[ ] Register
+[ ] Verify account page
+[ ] Resend verify code
+[ ] Account
+[ ] Change password
+[ ] Rules and privacy
+[ ] Terms and contidions
+
+[ ] Cart
+[ ] Products
+[ ] Show product
+[ ] About us
+[ ] Delivery page
+[ ] How to buy
+[ ] Help
+[ ] Contact page
+[ ] Work for us to send CV and inputs
 Functionalities:
-[  ] Search on write to show products
-[  ] On click search to go to different page and show all matched searches
-[  ] Show by filter
-[  ] Pagination
-[  ] News latter
+[ ] Search on write to show products
+[ ] On click search to go to different page and show all matched searches
+[ ] Show by filter
+[ ] Pagination
+[ ] News latter
 <------ Hints ------>
 
 In every page in main must be a className mb-auto. Except in Authentication pages. So the pages should be in the center
 
 Navigation:
-    Use effect on change to recalculate the top height of menu
-    Full width and height. Menu onClick show submenu
-    - Submenu is on menu and left arrow onClick back to the menu
-    MD or LG is HomeCatecory. Menu onHover show submenu. Out of hover is removing the subMenu
-        Hamburger:
-            Only when is not fixed to show the hamburger menu
-            When is clicked to hide the overflow-Y
-    SEARCH: 
-        Search Icon when is Below MD on click to open menu for searching
-HomePage: 
-        Swiper carousel change the arrows styling
+Use effect on change to recalculate the top height of menu
+Full width and height. Menu onClick show submenu - Submenu is on menu and left arrow onClick back to the menu
+MD or LG is HomeCatecory. Menu onHover show submenu. Out of hover is removing the subMenu
+Hamburger:
+Only when is not fixed to show the hamburger menu
+When is clicked to hide the overflow-Y
+SEARCH:
+Search Icon when is Below MD on click to open menu for searching
+HomePage:
+Swiper carousel change the arrows styling
 
-How to create a button in home page, which on click to open hamburger menu ? 
-Bugs: 
-    Navigation: 
-        When is on lg and FIRST hover, menu is glitching (it's bcs of left:0 and transition to left: (something)).
-    HomePage Nav:
-        When is grid-cols-[40%_60%] submenu cannot obtain the full width of the carousel
+How to create a button in home page, which on click to open hamburger menu ?
+Bugs:
+Navigation:
+When is on lg and FIRST hover, menu is glitching (it's bcs of left:0 and transition to left: (something)).
+HomePage Nav:
+When is grid-cols-[40%_60%] submenu cannot obtain the full width of the carousel
