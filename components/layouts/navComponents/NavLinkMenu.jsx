@@ -1,125 +1,97 @@
-import React, {useRef, useEffect, useState} from 'react';
-import Link from "next/link"
-import { useRouter } from 'next/router'
-import classNames from "classnames"
+import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import classNames from "classnames";
 // Icons
-import {AiOutlineArrowLeft} from "react-icons/ai"
+import { AiOutlineArrowLeft } from "react-icons/ai";
 // Components
 
 // Styles
-import style from "../../../styles/navigation/NavLinks.module.css"
+import style from "../../../styles/navigation/NavLinks.module.css";
 // Tailwind conf
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../../tailwind.config.js'
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../../tailwind.config.js";
 
-const fullConfig = resolveConfig(tailwindConfig)
-const lg = fullConfig.theme.screens.lg.min.split("px")[0]
+const fullConfig = resolveConfig(tailwindConfig);
+const lg = fullConfig.theme.screens.lg.min.split("px")[0];
 
-const NavLinkMenu = ({title, articles,mainRoute, isHome}) => {
+const NavLinkMenu = ({ title, articles, mainRoute, isHome }) => {
+  const router = useRouter();
 
-    const router = useRouter()
-    
-    const menu = useRef(null)
-    const subMenu = useRef(null)
-    
-    const [left, setLeft] = useState(`0px`)
-    const [xAnim, setXAnims] = useState(false)
-    const [subIsHover, setSubIsHover] = useState(false)
-    // Resizing bug fix
-    useEffect(() => {
-        function handleResize() {
-        if(window.innerWidth >= lg){
+  const menu = useRef(null);
+  const subMenu = useRef(null);
 
-            setXAnims(false)
-            setLeft( `${menu.offsetWidth}px`)
-           
-        }
+  const [xAnim, setXAnims] = useState(false);
+  const [mobSubmenu, setMobSubMenu] = useState(false);
+  // Resizing bug fix
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth >= lg) {
+        setXAnims(false);
+      }
     }
-        window.addEventListener('resize', handleResize)
-        return ()=>{
-            window.removeEventListener("resize", handleResize)
-        }
-    })
-    // On router change to hide the submenu
-    useEffect(()=>{
-        setXAnims(false)
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+  // On router change to hide the submenu
+  useEffect(() => {
+    setMobSubMenu(false);
+  }, [router.pathname]);
 
-    }, [router.pathname])
+  // Remove submenu spacing on click BELOW LG version
+  function showMenu(e) {
+    if (window.innerWidth >= lg) return;
+    setXAnims(true);
+    setMobSubMenu(true);
+  }
 
-    // Remove submenu spacing on click BELOW LG version
-    function showMenu(e){
+  const isXAnim = classNames({
+    [style.subOpen]: xAnim,
+  });
 
-        if(window.innerWidth >= lg) return
-        // setHidden(false)
-        setLeft(`0px`)
-         setXAnims(true)
-           
-    }
-    // Add submenu spacing on hover LG version
-    function addSpacing(e){
-        if(window.innerWidth < lg) return
-      
-        const parentEl = e.target.parentElement
-        setLeft(`${parentEl.offsetWidth}px`)
-    }
-    function returnMenu(e){
-     
-        setXAnims(false)
-
-    }
-    function subHover(){
-        if(window.innerWidth < lg) return
-
-        setSubIsHover(true)
-    }
-    function subHoverOut(){
-        if(window.innerWidth < lg) return
-
-        setSubIsHover(false)
-
-    }
-   function bundle(e){
-    addSpacing(e)
-    subHover()
-   }
-    const isXAnim = classNames({
-        [style.subOpen]:  xAnim
-    })
-    const isHover = classNames({
-        [style.subHover]: subIsHover
-    })
-    return (
-        <li className={`item w-full font-thin ${!isHome ? "lg:w-64" : ""}`}>
-    <div className={` ${style.menu} ${isHover} bg-primary cursor-pointer lg:hover:text-dark lg:hover:bg-color px-3 py-1 flex w-full `} onClick={showMenu} onMouseOver={bundle} onMouseOut={subHoverOut} ref={menu}>
-        <div className={`${!isHome ? "max-lg:container": ""}`}>
-
-        {title}
-        </div>
-        </div>
-    <div className={`fixed  lg:absolute lg:invisible py-2 overflow-auto  ${style.submenu} ${isXAnim} `} style={{left: left}} ref={subMenu} onMouseOver={subHover} onMouseOut={subHoverOut}>
-                <ul className={`px-5  flex-wrap flex flex-initial`}>
-                <li className={`flex items-center lg:hidden`}>
-                    <span type="button" className={`${style.icon} flex py-2 px-2`}>
-                    <AiOutlineArrowLeft onClick={returnMenu} className="text-xl icon"/>
-                    </span>
-                    <span className="pl-4">{title}</span>
-
+  return (
+    <li className={`item w-full font-thin group ${!isHome ? "lg:w-64" : ""}`}>
+      <div
+        className={`bg-primary cursor-pointer lg:hover:text-dark lg:hover:bg-color px-3 py-1 flex w-full peer group-hover:lg:bg-color group-hover:lg:text-dark `}
+        onClick={showMenu}
+        ref={menu}
+      >
+        <div className={`${!isHome ? "max-lg:container" : ""}`}>{title}</div>
+      </div>
+      <div
+        className={`fixed  lg:absolute py-2 overflow-auto transition-transform ${
+          !mobSubmenu ? "translate-x-full" : ""
+        } lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full left-0 top-0 lg:left-[256px] ${
+          isHome ? "xl:left-[300px]" : ""
+        } bg-color z-10 lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
+        ref={subMenu}
+      >
+        <ul className={`px-5  flex-wrap flex flex-initial`}>
+          <li className={`flex items-center lg:hidden`}>
+            <span
+              type="button"
+              className={`${style.icon} flex py-2 px-2`}
+              onClick={() => setMobSubMenu(false)}
+            >
+              <AiOutlineArrowLeft className="text-xl icon" />
+            </span>
+            <span className="pl-4">{title}</span>
+          </li>
+          {articles.map((article) => {
+            return (
+              <Link href={`/${mainRoute}/Add${article[1]}`} key={article[0]}>
+                <li className="m-2 text-sm">
+                  <a href="#">{article[0]}</a>
                 </li>
-                    {articles.map(article=>{
-                        return (
-
-                        <Link href={`/${mainRoute}/Add${article[1]}`} key={article[0]}> 
-                    <li  className="m-2 text-sm">
-                            <a href="#">{article[0]}</a>
-                            </li>
-                            </Link>
-                        )
-                    })}
-                </ul>
-    </div>
-
+              </Link>
+            );
+          })}
+        </ul>
+      </div>
     </li>
-    );
-}
+  );
+};
 
 export default NavLinkMenu;
