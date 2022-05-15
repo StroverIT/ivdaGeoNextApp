@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 // Next
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,15 +10,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import style from "../../styles/swiperJs/SwiperPag.module.css"
-import navStyle from "../../styles/swiperJs/SwiperNav.module.css"
+import style from "../../styles/swiperJs/SwiperPag.module.css";
+import navStyle from "../../styles/swiperJs/SwiperNav.module.css";
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper";
 // Components
-import SwiperNav from "./SwiperNav"
+import SwiperNav from "./SwiperNav";
 
-export default function SwiperPag({images}) {
+export default function SwiperPag({ images }) {
   return (
     <>
       <Swiper
@@ -33,40 +33,39 @@ export default function SwiperPag({images}) {
         loop={true}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: false
-      }}
-      navigation={{
-        nextEl: `.${navStyle.swiperNext}`,
-        prevEl: `.${navStyle.swiperPrev}`,
-        disabledClass: `${navStyle.swiperDisabled}`
-      }}
+          disableOnInteraction: false,
+        }}
+        navigation={{
+          nextEl: `.${navStyle.swiperNext}`,
+          prevEl: `.${navStyle.swiperPrev}`,
+          disabledClass: `${navStyle.swiperDisabled}`,
+        }}
         modules={[Pagination, Navigation, Autoplay]}
         className={`mySwiper ${style.swiper}`}
       >
         <div className={`${style.paginationCont}`}>
-          <div className={`${style.pagination}`}>
-
-          </div>
+          <div className={`${style.pagination}`}></div>
         </div>
 
-          {images.map(image=>{
-        return (
-        <SwiperSlide key={image.key}>
-          <Link href={image.pageUrl}>
-            <div>
-
-            <Image src={image.src}
-            //  layout="fill"  
-            height={600}
-            width={1100}
-            alt={image.key} 
-            className={`${style.swiperSlideImg} cursor-pointer`}/>
-            </div>
-          </Link>
-
-        </SwiperSlide>
-          )})}
-        <SwiperNav/>
+        {images.map((image) => {
+          return (
+            <SwiperSlide key={image.key}>
+              <Link href={image.pageUrl}>
+                <div>
+                  <Image
+                    src={image.src}
+                    //  layout="fill"
+                    height={600}
+                    width={1100}
+                    alt={image.key}
+                    className={`${style.swiperSlideImg} cursor-pointer`}
+                  />
+                </div>
+              </Link>
+            </SwiperSlide>
+          );
+        })}
+        <SwiperNav />
       </Swiper>
     </>
   );
