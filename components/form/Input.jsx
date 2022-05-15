@@ -10,7 +10,7 @@ const Input = ({ type, placeholder, id, isReq, iconType }) => {
     fullName: <HiOutlineUserCircle />,
   };
   return (
-    <div className="relative mb-4">
+    <div className="relative mb-5">
       <div className="absolute left-0 z-10 top-2.5 text-lg">
         {iconDictionary[iconType]}
       </div>
