@@ -1,4 +1,4 @@
-
+/* 
 .submenu{
     height: 100%;
     width: 100%;
@@ -12,22 +12,19 @@
 .subOpen{
     transform: translateX(0);
 
-}
+} */
 .icon{
     border-right: 1px solid black;
     
 }
-.subHover{
-    background-color: theme("colors.bg-color");
-    color: theme('colors.dark');
-}
-@media screen('lg'){
+
+/* @media screen('lg'){
     .submenu{
         width: 100%;
         max-width: 750px;
-        /* width: 76%; */
-        top: 0;
-    transform: translateX(0);
+         width: 76%; 
+        top: 0; 
+   transform: translateX(0);
 
     }
     .menu:hover + div{
@@ -40,11 +37,11 @@
         visibility: visible;
 
     }
-    
+   
 }
-@media screen("xl"){
+ @media screen("xl"){
     .submenu{
         max-width: 925px;
 
-    }
-}
+    } 
+} */
