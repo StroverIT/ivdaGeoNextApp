@@ -40,10 +40,11 @@ Home Content:
 
 Pages to create: 
 [ x ] Home - NOTE: Only need to add our partners
-[  ] Login
+[ X ] Login
     [  ] Forget password
 [  ] Register
-    [  ] Verify account
+    [ ] Verify account page
+[  ] Resend verify code
 [  ] Account
     [  ] Change password
 [  ] Cart
