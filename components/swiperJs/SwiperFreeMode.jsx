@@ -60,7 +60,7 @@ export default function SwiperFreeMode({images}) {
         return (
         <SwiperSlide key={image.title} className="flex flex-col h-full bg-white">
              <Link href={image.pageUrl} >
-               <>
+               <div>
             <Image src={image.src}
             //  layout="fill"  
             height={700}
@@ -68,7 +68,7 @@ export default function SwiperFreeMode({images}) {
             alt={image.title} 
             className="cursor-pointer"
             />
-            </>
+            </div>
         </Link>
 
             <div className="container py-2 font-medium text-center border-t border-gray">
