@@ -13,10 +13,10 @@ export default function resetPassword() {
       </Head>
       <main>
         <div className="container flex justify-center my-10">
-          <h3 className="text-2xl text-center">
-            Успешна направена регистрация!
-          </h3>
           <div className="w-full bg-white rounded shadow-xl lg:w-1/2">
+            <h3 className="text-2xl text-center">
+              Успешна направена регистрация!
+            </h3>
             Преди да продължим{" "}
           </div>
         </div>
