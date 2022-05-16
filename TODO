@@ -81,6 +81,9 @@ Functionalities:
       [ ] Show product page
 
 - [ ] Toast notification
+      [ ] While is pending
+      [ ] If succesful
+      [ ] If not succesful
 
 [ ] Auth
 [ ] Cart
