@@ -83,7 +83,7 @@ Functionalities:
 - [ ] Toast notification
       [ ] While is pending
       [ ] If succesful (Sometimes need to redirect to other page)
-      [ ] If not succesful
+      [ ] If not succesful (Maybe show what is wrong, maybe not. We'll see :D)
 
 [ ] Auth
 [ ] Cart
