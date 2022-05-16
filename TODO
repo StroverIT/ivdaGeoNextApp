@@ -69,6 +69,13 @@ Pages to create:
       [ ] Deliveries
 
 Functionalities:
+
+- [ ] Connect with restful apis
+      [ ] Login
+      [ ] register
+      [ ] Account
+      [ ] Delivery page(When user make a delivery)
+
 [ ] Auth
 [ ] Cart
 
