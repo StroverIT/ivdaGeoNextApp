@@ -27,10 +27,7 @@ export default function resetPassword() {
               </div> */}
             </div>
 
-            <form
-              className="px-8 pt-1 pb-8 mt-6 mb-4"
-              onChange={(e) => formHandler(e)}
-            >
+            <form className="px-8 pt-1 pb-8 mt-6 mb-4">
               <Input
                 placeholder="И-мейл"
                 type="email"
