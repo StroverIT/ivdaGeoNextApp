@@ -69,6 +69,7 @@ Pages to create:
 - [ ] Admin panel
       [ ] Deliveries for home
       [ ] Delivery for the shop
+      [ ] Redirect if is not admin || not logged in
 
 Functionalities:
 
