@@ -3,6 +3,9 @@ import React from "react";
 // NextJs
 import Head from "next/head";
 
+// Components
+import Input from "../../components/form/Input";
+
 export default function resetPassword() {
   return (
     <>
