@@ -82,7 +82,7 @@ Functionalities:
 
 - [ ] Toast notification
       [ ] While is pending
-      [ ] If succesful
+      [ ] If succesful (Sometimes need to redirect to other page)
       [ ] If not succesful
 
 [ ] Auth
