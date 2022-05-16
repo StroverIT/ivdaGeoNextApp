@@ -85,8 +85,8 @@ Functionalities:
       [ ] If succesful (Sometimes need to redirect to other page)
       [ ] If not succesful (Maybe show what is wrong, maybe not. We'll see :D)
 
-[ ] Auth
-
+- [ ] Auth
+      [ ] Check if is admin || not
 - [ ] Cart
       [ ] When sometinh is added to the card. Add pending and succesful toast notification
 
