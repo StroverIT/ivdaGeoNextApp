@@ -34,7 +34,7 @@ const Login = () => {
               </p>
             </div>
 
-            <form className="px-8 pt-6 pb-8 mb-4 ">
+            <form className="px-8 pt-6 mb-4 ">
               <Input
                 placeholder="И-мейл"
                 type="email"
@@ -64,17 +64,6 @@ const Login = () => {
                     Запомни ме
                   </label>
                 </div>
-
-                <div>
-                  <Link href="/account/resetPassword">
-                    <a
-                      className="inline-block text-sm align-baseline hover:font-bold text-primary-lighter"
-                      href="#"
-                    >
-                      Забравена парола
-                    </a>
-                  </Link>
-                </div>
               </div>
               <div className="flex items-center justify-center ">
                 <button
@@ -85,7 +74,30 @@ const Login = () => {
                 </button>
               </div>
             </form>
+            <div className="flex flex-col items-center justify-center pb-3">
+              <div className={` `}>
+                <Link href="/account/resetPassword">
+                  <a
+                    className="inline-block text-sm align-baseline hover:font-bold text-primary-lighter"
+                    href="#"
+                  >
+                    Забравена парола
+                  </a>
+                </Link>
+              </div>
+              <div>
+                <Link href="/account/resendVerification">
+                  <a
+                    className="inline-block text-sm align-baseline hover:font-bold text-primary-lighter"
+                    href="#"
+                  >
+                    Потвърждаване на акаунт
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
+
           {/* Image is the something of ivdaGeo */}
         </div>
       </main>
