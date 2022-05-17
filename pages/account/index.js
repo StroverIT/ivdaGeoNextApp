@@ -19,8 +19,14 @@ export default function index() {
         <div className="container justify-center ">
           <h3 className="text-3xl">Моят акаунт</h3>
 
-          <div>
-            <aside></aside>
+          <div className="flex">
+            <aside className="sticky">
+              <ul>
+                <li>{/*"Icon"*/}Моите детайли</li>
+                <li>{/*"Icon"*/}Направени поръчки</li>
+                <li>{/*"Icon"*/}Настройки на акаунта</li>
+              </ul>
+            </aside>
             <section ref={content}></section>
           </div>
         </div>
