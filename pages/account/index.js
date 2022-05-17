@@ -3,6 +3,8 @@ import React, { useRef, useState, useEffect } from "react";
 // NextJs
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 // Components
 import Input from "../../components/form/Input";
 // Account components
