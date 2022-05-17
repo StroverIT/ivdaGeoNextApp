@@ -39,35 +39,44 @@ export default function index() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
       <main className="pt-5 mb-auto bg-color h-full">
-        <div className="container justify-center">
+        <div className="container justify-center items-start">
           <h3 className="text-3xl">Моят акаунт</h3>
 
-          <div className="grid grid-cols-[20%80%]">
-            <aside className="sticky">
-              <ul>
+          <div className="md:grid grid-cols-[20%80%] mt-10">
+            <aside className=" md:sticky mb-4 md:mb-0">
+              <ul className="text-left text-sm flex md:flex-col space-x-4 md:space-x-0 justify-center md:space-y-2">
                 <li className="cursor-pointer">
                   {/*"Icon"*/}
-                  <button onClick={() => changeCategory("account-details")}>
+                  <button
+                    onClick={() => changeCategory("account-details")}
+                    type="button"
+                  >
                     Моите детайли
                   </button>
                 </li>
 
                 <li className="cursor-pointer">
                   {/*"Icon"*/}
-                  <button onClick={() => changeCategory("my-orders")}>
+                  <button
+                    onClick={() => changeCategory("my-orders")}
+                    type="button"
+                  >
                     Направени поръчки
                   </button>
                 </li>
                 <li className="cursor-pointer">
                   {/*"Icon"*/}
-                  <button onClick={() => changeCategory("account-settings")}>
+                  <button
+                    onClick={() => changeCategory("account-settings")}
+                    type="button"
+                  >
                     Настройки на акаунта
                   </button>
                 </li>
               </ul>
             </aside>
-            <section className="bg-white">
-              <div className="container">{categoryData}</div>
+            <section className="bg-white border border-gray">
+              <div className="container pt-10 pl-10 ">{categoryData}</div>
             </section>
           </div>
         </div>
