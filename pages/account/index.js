@@ -12,9 +12,27 @@ import MyDetails from "../../components/account/MyDetails";
 import MyOrders from "../../components/account/MyOrders";
 import AccountSettings from "../../components/account/AccountSettings";
 
+const categoryComp = {
+  "#account-details": <MyDetails />,
+  "#my-orders": <MyOrders />,
+  "#account-settings": <AccountSettings />,
+  default: <MyDetails />,
+};
 export default function index() {
-  const [page, setPage] = useState();
+  const router = useRouter();
+  const [categoryData, setCategoryData] = useState(null);
   const content = useRef(null);
+
+  const changeCategory = (category) => {
+    // Trigger fragment change to fetch the new data
+    router.push(`/account/#${category}`, undefined, { shallow: true });
+  };
+
+  useEffect(() => {
+    const someData =
+      categoryComp[window.location.hash] ?? categoryComp["#account-details"]; // Retrieve data based on URL fragment
+    setCategoryData(someData);
+  }, [router]);
 
   return (
     <>
@@ -29,12 +47,28 @@ export default function index() {
           <div className="flex">
             <aside className="sticky">
               <ul>
-                <li>{/*"Icon"*/}Моите детайли</li>
-                <li>{/*"Icon"*/}Направени поръчки</li>
-                <li>{/*"Icon"*/}Настройки на акаунта</li>
+                <li className="cursor-pointer">
+                  {/*"Icon"*/}
+                  <button onClick={() => changeCategory("account-details")}>
+                    Моите детайли
+                  </button>
+                </li>
+
+                <li className="cursor-pointer">
+                  {/*"Icon"*/}
+                  <button onClick={() => changeCategory("my-orders")}>
+                    Направени поръчки
+                  </button>
+                </li>
+                <li className="cursor-pointer">
+                  {/*"Icon"*/}
+                  <button onClick={() => changeCategory("account-settings")}>
+                    Настройки на акаунта
+                  </button>
+                </li>
               </ul>
             </aside>
-            <section ref={content}></section>
+            <section ref={content}>{categoryData}</section>
           </div>
         </div>
       </main>
