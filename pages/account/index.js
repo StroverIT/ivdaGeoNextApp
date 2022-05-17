@@ -7,6 +7,8 @@ import Link from "next/link";
 import Input from "../../components/form/Input";
 // Account components
 import MyDetails from "../../components/account/MyDetails";
+import MyOrders from "../../components/account/MyOrders";
+import AccountSettings from "../../components/account/AccountSettings";
 
 export default function index() {
   const [page, setPage] = useState();
