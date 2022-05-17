@@ -42,7 +42,7 @@ export default function index() {
         <div className="container justify-center">
           <h3 className="text-3xl">Моят акаунт</h3>
 
-          <div className="flex">
+          <div className="grid grid-cols-[20%80%]">
             <aside className="sticky">
               <ul>
                 <li className="cursor-pointer">
@@ -66,7 +66,9 @@ export default function index() {
                 </li>
               </ul>
             </aside>
-            <section className="bg-white">{categoryData}</section>
+            <section className="bg-white">
+              <div className="container">{categoryData}</div>
+            </section>
           </div>
         </div>
       </main>
