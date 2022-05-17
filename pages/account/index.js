@@ -5,7 +5,9 @@ import Head from "next/head";
 import Link from "next/link";
 // Components
 import Input from "../../components/form/Input";
-import MyDetails from "../../components/";
+// Account components
+import MyDetails from "../../components/account/MyDetails";
+
 export default function index() {
   const [page, setPage] = useState();
   const content = useRef(null);
