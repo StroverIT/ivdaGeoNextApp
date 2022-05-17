@@ -16,7 +16,6 @@ const categoryComp = {
   "#account-details": <MyDetails />,
   "#my-orders": <MyOrders />,
   "#account-settings": <AccountSettings />,
-  default: <MyDetails />,
 };
 export default function index() {
   const router = useRouter();
