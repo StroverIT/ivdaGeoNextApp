@@ -44,7 +44,7 @@ Pages to create:
 [ x ] Forgotten password page
 
 - [ x ] Register
-  [ ] after succefuly regigration redirect to this page ↓
+  [ ] after succefuly registration redirect to this page ↓
   [ x ] Verify account page
 
 [ x ] Resend verify code
