@@ -48,8 +48,10 @@ Pages to create:
   [ x ] Verify account page
 
 [ ] Resend verify code
-[ ] Account
 [ ] Change password
+
+- [ ] Account
+      [] Redirect to login page if no account
 
 [ ] Rules and privacy
 [ ] Terms and contidions
