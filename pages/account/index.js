@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 // NextJs
 import Head from "next/head";
@@ -21,7 +21,6 @@ const categoryComp = {
 export default function index() {
   const router = useRouter();
   const [categoryData, setCategoryData] = useState(null);
-  const content = useRef(null);
 
   const changeCategory = (category) => {
     // Trigger fragment change to fetch the new data
@@ -68,7 +67,7 @@ export default function index() {
                 </li>
               </ul>
             </aside>
-            <section ref={content}>{categoryData}</section>
+            <section>{categoryData}</section>
           </div>
         </div>
       </main>
