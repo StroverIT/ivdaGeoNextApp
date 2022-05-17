@@ -39,7 +39,7 @@ export default function index() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
       <main className="pt-5 mb-auto bg-color h-full">
-        <div className="container justify-center ">
+        <div className="container justify-center">
           <h3 className="text-3xl">Моят акаунт</h3>
 
           <div className="flex">
@@ -66,7 +66,7 @@ export default function index() {
                 </li>
               </ul>
             </aside>
-            <section>{categoryData}</section>
+            <section className="bg-white">{categoryData}</section>
           </div>
         </div>
       </main>
