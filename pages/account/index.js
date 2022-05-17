@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 // NextJs
 import Head from "next/head";
@@ -7,6 +7,7 @@ import Link from "next/link";
 import Input from "../../components/form/Input";
 
 export default function index() {
+  const [page, setPage] = useState();
   const content = useRef(null);
 
   return (
