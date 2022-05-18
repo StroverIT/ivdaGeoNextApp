@@ -51,30 +51,33 @@ export default function index() {
           <div className="md:grid grid-cols-[20%80%] mt-10">
             <aside className="mb-4 md:sticky md:mb-0">
               <ul className="flex justify-center space-x-4 text-sm text-left md:flex-col md:space-x-0 md:space-y-2">
-                <li className="pl-2 cursor-pointer" ref={myDetails}>
+                <li className="py-2 pl-2 cursor-pointer" ref={myDetails}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("account-details")}
                     type="button"
+                    className="flex w-full"
                   >
                     Моите детайли
                   </button>
                 </li>
 
-                <li className="pl-2 cursor-pointer" ref={myOrders}>
+                <li className="py-2 pl-2 cursor-pointer" ref={myOrders}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("my-orders")}
                     type="button"
+                    className="flex w-full"
                   >
                     Направени поръчки
                   </button>
                 </li>
-                <li className="pl-2 cursor-pointer" ref={mySettings}>
+                <li className="py-2 pl-2 cursor-pointer" ref={mySettings}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("account-settings")}
                     type="button"
+                    className="flex w-full"
                   >
                     Настройки на акаунта
                   </button>
