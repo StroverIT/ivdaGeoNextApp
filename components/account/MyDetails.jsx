@@ -1,5 +1,7 @@
 import React from "react";
 
+import Input from "../../components/form/Input";
+
 export default function MyDetails() {
   return (
     <section>
