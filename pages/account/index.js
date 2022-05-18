@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 // NextJs
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 // Components
@@ -38,13 +37,13 @@ export default function index() {
         <title>IvdaGeo my account</title>
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
-      <main className="pt-5 mb-auto bg-color h-full">
-        <div className="container justify-center items-start">
+      <main className="h-full pt-5 mb-auto bg-color">
+        <div className="container items-start justify-center">
           <h3 className="text-3xl">Моят акаунт</h3>
 
           <div className="md:grid grid-cols-[20%80%] mt-10">
-            <aside className=" md:sticky mb-4 md:mb-0">
-              <ul className="text-left text-sm flex md:flex-col space-x-4 md:space-x-0 justify-center md:space-y-2">
+            <aside className="mb-4  md:sticky md:mb-0">
+              <ul className="flex justify-center space-x-4 text-sm text-left md:flex-col md:space-x-0 md:space-y-2">
                 <li className="cursor-pointer">
                   {/*"Icon"*/}
                   <button
