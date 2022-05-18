@@ -4,8 +4,6 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-// Components
-import Input from "../../components/form/Input";
 // Account components
 import MyDetails from "../../components/account/MyDetails";
 import MyOrders from "../../components/account/MyOrders";
@@ -42,7 +40,7 @@ export default function index() {
           <h3 className="text-3xl">Моят акаунт</h3>
 
           <div className="md:grid grid-cols-[20%80%] mt-10">
-            <aside className="mb-4  md:sticky md:mb-0">
+            <aside className="mb-4 md:sticky md:mb-0">
               <ul className="flex justify-center space-x-4 text-sm text-left md:flex-col md:space-x-0 md:space-y-2">
                 <li className="cursor-pointer">
                   {/*"Icon"*/}
