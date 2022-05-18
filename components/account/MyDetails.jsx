@@ -5,27 +5,38 @@ import Input from "../../components/form/AccInput";
 export default function MyDetails() {
   return (
     <section>
-      <h2 className="text-3xl ">Детайли на акаунта</h2>
+      <h2 className="mb-5 text-3xl font-semibold">Детайли на акаунта</h2>
 
       <section className="">
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Лична информация
         </h4>
-        <form action="">
-          <Input
-            placeholder="Пълно име"
-            iconType="fullName"
-            isReq={true}
-            type="text"
-            id="fullname"
-          />
-          <Input
-            placeholder="Телефонен номер"
-            id="phoneNumber"
-            isReq={true}
-            iconType="phoneNumber"
-          />
-        </form>
+        <div className="grid grid-cols-2">
+          <section></section>
+          <section>
+            <form action="">
+              <Input
+                placeholder="Пълно име"
+                iconType="fullName"
+                isReq={true}
+                type="text"
+                id="fullname"
+              />
+              <Input
+                placeholder="Телефонен номер"
+                id="phoneNumber"
+                isReq={true}
+                iconType="phoneNumber"
+              />
+              <button
+                type="submmit"
+                class="bg-primary-lighter hover:bg-primary-trans py-2 px-5 text-white"
+              >
+                Запази
+              </button>
+            </form>
+          </section>
+        </div>
       </section>
       <section className="">
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
