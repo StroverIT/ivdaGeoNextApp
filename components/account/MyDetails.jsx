@@ -1,52 +1,52 @@
 import React from "react";
 
-import Input from "../../components/form/Input";
+import Input from "../../components/form/AccInput";
 
 export default function MyDetails() {
   return (
     <section>
       <h2 className="text-3xl ">Детайли на акаунта</h2>
 
-      <div className="divide-y">
-        <section className="">
-          <h4 className="text-xl">Лична информация</h4>
-          <form action="">
-            <Input
-              placeholder="Пълно име"
-              iconType="fullName"
-              isReq={true}
-              type="text"
-              id="fullname"
-            />
-            <Input
-              placeholder="Телефонен номер"
-              id="phoneNumber"
-              isReq={true}
-              iconType="phoneNumber"
-            />
-          </form>
-        </section>
-        <section className="">
-          <h4 className="text-xl">И-мейл адрес</h4>
-          <form action="">
-            <Input
-              placeholder="И-мейл адрес"
-              iconType="email"
-              id="email"
-              type="email"
-              isReq={true}
-            />
-            <Input
-              placeholder="Парола"
-              iconType="password"
-              id="password"
-              type="password"
-              isReq={true}
-            />
-          </form>
-        </section>
-        <section className="">
-          <h4 className="text-xl">Парола</h4>
+      <section className="">
+        <h4 className="text-xl border-b border-gray">Лична информация</h4>
+        <form action="">
+          <Input
+            placeholder="Пълно име"
+            iconType="fullName"
+            isReq={true}
+            type="text"
+            id="fullname"
+          />
+          <Input
+            placeholder="Телефонен номер"
+            id="phoneNumber"
+            isReq={true}
+            iconType="phoneNumber"
+          />
+        </form>
+      </section>
+      <section className="">
+        <h4 className="text-xl border-b border-gray">И-мейл адрес</h4>
+        <form action="">
+          <Input
+            placeholder="И-мейл адрес"
+            iconType="email"
+            id="email"
+            type="email"
+            isReq={true}
+          />
+          <Input
+            placeholder="Парола"
+            iconType="password"
+            id="password"
+            type="password"
+            isReq={true}
+          />
+        </form>
+      </section>
+      <section className="">
+        <h4 className="text-xl font-semibold border-b border-gray">Парола</h4>
+        <form action="">
           <Input
             placeholder="Сегашна парола"
             id="currentPassword"
@@ -68,8 +68,8 @@ export default function MyDetails() {
             isReq={true}
             iconType="password"
           />
-        </section>
-      </div>
+        </form>
+      </section>
     </section>
   );
 }
