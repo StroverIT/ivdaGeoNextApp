@@ -30,7 +30,7 @@ export default function MyDetails() {
               />
               <button
                 type="submmit"
-                class="bg-primary-lighter hover:bg-primary-trans py-2 px-5 text-white"
+                className="px-5 py-2 text-white bg-primary-lighter hover:bg-primary-trans"
               >
                 Запази
               </button>
