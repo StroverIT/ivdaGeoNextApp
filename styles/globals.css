@@ -4,7 +4,7 @@
 
 @layer components {
   .acc-active {
-    @apply bg-secondary;
+    @apply bg-primary-0 text-primary;
   }
 }
 :root {
