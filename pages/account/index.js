@@ -48,10 +48,13 @@ export default function index() {
         <div className="container items-start justify-center">
           <h3 className="text-3xl">Моят акаунт</h3>
 
-          <div className="md:grid grid-cols-[20%80%] mt-10">
+          <div className="lg:grid grid-cols-[20%80%] mt-10">
             <aside className="mb-4 md:sticky md:mb-0">
               <ul className="flex justify-center space-x-4 text-sm text-left md:flex-col md:space-x-0 md:space-y-2">
-                <li className="py-2 pl-2 cursor-pointer" ref={myDetails}>
+                <li
+                  className="px-2 py-2 font-semibold cursor-pointer"
+                  ref={myDetails}
+                >
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("account-details")}
@@ -62,7 +65,7 @@ export default function index() {
                   </button>
                 </li>
 
-                <li className="py-2 pl-2 cursor-pointer" ref={myOrders}>
+                <li className="px-2 py-2 cursor-pointer" ref={myOrders}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("my-orders")}
@@ -72,7 +75,7 @@ export default function index() {
                     Направени поръчки
                   </button>
                 </li>
-                <li className="py-2 pl-2 cursor-pointer" ref={mySettings}>
+                <li className="px-2 py-2 cursor-pointer" ref={mySettings}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("account-settings")}
