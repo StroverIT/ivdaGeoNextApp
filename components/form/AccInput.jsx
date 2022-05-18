@@ -6,10 +6,10 @@ import Icons from "../Icons/Icons";
 const AccInput = ({ type, placeholder, id, isReq, iconType, data }) => {
   return (
     <div class="w-full max-w-xs">
-      <form class="bg-white  rounded ">
+      <form class="bg-white rounded">
         <div class="mb-4">
           <label
-            class="block text-gray-700 text-sm font-bold mb-2"
+            class="block text-gray-700 text-sm font-semibold mb-2"
             for="username"
           >
             {placeholder}
