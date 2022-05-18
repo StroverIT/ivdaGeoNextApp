@@ -9,7 +9,7 @@ const AccInput = ({ type, placeholder, id, isReq, iconType, data }) => {
       <form class="bg-white rounded">
         <div class="mb-4">
           <label
-            class="block text-gray-700 text-sm font-semibold mb-2"
+            class="block text-gray-700 text-sm  mb-1 font-semibold"
             for="username"
           >
             {placeholder}
