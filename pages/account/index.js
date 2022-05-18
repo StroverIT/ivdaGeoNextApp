@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // NextJs
 import Head from "next/head";
@@ -9,14 +9,19 @@ import MyDetails from "../../components/account/MyDetails";
 import MyOrders from "../../components/account/MyOrders";
 import AccountSettings from "../../components/account/AccountSettings";
 
-const categoryComp = {
-  "#account-details": <MyDetails />,
-  "#my-orders": <MyOrders />,
-  "#account-settings": <AccountSettings />,
-};
 export default function index() {
   const router = useRouter();
   const [categoryData, setCategoryData] = useState(null);
+
+  const myDetails = useRef(null);
+  const myOrders = useRef(null);
+  const mySettings = useRef(null);
+
+  const categoryComp = {
+    "#account-details": [<MyDetails />, myDetails],
+    "#my-orders": [<MyOrders />, myOrders],
+    "#account-settings": [<AccountSettings />, mySettings],
+  };
 
   const changeCategory = (category) => {
     // Trigger fragment change to fetch the new data
@@ -26,7 +31,11 @@ export default function index() {
   useEffect(() => {
     const someData =
       categoryComp[window.location.hash] ?? categoryComp["#account-details"]; // Retrieve data based on URL fragment
-    setCategoryData(someData);
+    setCategoryData(someData[0]);
+    for (let category in categoryComp) {
+      categoryComp[category][1].current.classList.remove("acc-active");
+    }
+    someData[1].current.classList.add("acc-active");
   }, [router]);
 
   return (
@@ -42,7 +51,7 @@ export default function index() {
           <div className="md:grid grid-cols-[20%80%] mt-10">
             <aside className="mb-4 md:sticky md:mb-0">
               <ul className="flex justify-center space-x-4 text-sm text-left md:flex-col md:space-x-0 md:space-y-2">
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" ref={myDetails}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("account-details")}
@@ -52,7 +61,7 @@ export default function index() {
                   </button>
                 </li>
 
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" ref={myOrders}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("my-orders")}
@@ -61,7 +70,7 @@ export default function index() {
                     Направени поръчки
                   </button>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" ref={mySettings}>
                   {/*"Icon"*/}
                   <button
                     onClick={() => changeCategory("account-settings")}
