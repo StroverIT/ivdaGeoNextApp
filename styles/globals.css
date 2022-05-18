@@ -1,12 +1,16 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
 
+@layer components {
+  .acc-active {
+    @apply bg-secondary;
+  }
+}
 :root {
   --pag-max-width: 140px;
   --pag-height: 8px;
-  --pag-height-active: calc(var(--pag-height) -  4px);
-  
+  --pag-height-active: calc(var(--pag-height) - 4px);
 }
 
 html,
@@ -18,8 +22,8 @@ body {
 }
 
 body {
-    background-color: theme('colors.white');
-    overflow-x: hidden;
+  background-color: theme("colors.white");
+  overflow-x: hidden;
 }
 a {
   color: inherit;
@@ -29,52 +33,50 @@ a {
 * {
   box-sizing: border-box;
 }
-.blue-white-theme > *{
-  color: #A5C4D6;
+.blue-white-theme > * {
+  color: #a5c4d6;
 }
 
-.blue-white-theme h2{
-    color:rgb(255,255,255);
+.blue-white-theme h2 {
+  color: rgb(255, 255, 255);
 }
-.blue-white-theme ul li{
-  color: #A5C4D6;
+.blue-white-theme ul li {
+  color: #a5c4d6;
 }
-.icon{
+.icon {
   cursor: pointer;
 }
-.logo{
-
+.logo {
   object-fit: contain;
 }
-.animate{
+.animate {
   transform: translateY(0);
 
   transition: transform 0.4s ease-in-out;
 }
-.animateUp{
-  transform:skewy(2deg) skewx(20deg)  translateY(-140%);
-  
+.animateUp {
+  transform: skewy(2deg) skewx(20deg) translateY(-140%);
 }
 
-.swiper-pagination-bullets{
+.swiper-pagination-bullets {
   margin-bottom: 0 !important;
 }
-@media screen("lg"){
-  .custom-border{
+@media screen("lg") {
+  .custom-border {
     clip-path: polygon(0 0, 100% 0, 100% 0, 87% 100%, 0 100%, 0% 50%);
   }
 }
-.blury{
+.blury {
   overflow-y: hidden;
 }
-.blury-bg{
+.blury-bg {
   -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
-    background-color: rgba(0,0,0,.5);
-    height: 100vh;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    cursor: pointer;
-  }
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  cursor: pointer;
+}
