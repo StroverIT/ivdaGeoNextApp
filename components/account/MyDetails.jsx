@@ -12,8 +12,11 @@ export default function MyDetails() {
           Лична информация
         </h4>
         <div className="grid grid-cols-2 py-10">
-          <section>
-            <p></p>
+          <section className="text-sm text-gray-darker">
+            <p>
+              Тука може да си смените името или телефоният номер. Като
+              първоначално са показаните първоначално попълнените ви данни
+            </p>
           </section>
           <section className="">
             <form action="">
