@@ -42,7 +42,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           И-мейл адрес
         </h4>
-        <section className="">
+        <section className="py-4">
           <form action="">
             <Input
               placeholder="И-мейл адрес"
@@ -65,29 +65,31 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Парола
         </h4>
-        <form action="">
-          <Input
-            placeholder="Сегашна парола"
-            id="currentPassword"
-            type="text"
-            isReq={true}
-            iconType="password"
-          />
-          <Input
-            placeholder="Нова парола"
-            id="newPassword"
-            type="password"
-            isReq={true}
-            iconType="password"
-          />
-          <Input
-            placeholder="Потвърди новата парола"
-            id="newPasswordConf"
-            type="password"
-            isReq={true}
-            iconType="password"
-          />
-        </form>
+        <section className="py-4">
+          <form action="">
+            <Input
+              placeholder="Сегашна парола"
+              id="currentPassword"
+              type="text"
+              isReq={true}
+              iconType="password"
+            />
+            <Input
+              placeholder="Нова парола"
+              id="newPassword"
+              type="password"
+              isReq={true}
+              iconType="password"
+            />
+            <Input
+              placeholder="Потвърди новата парола"
+              id="newPasswordConf"
+              type="password"
+              isReq={true}
+              iconType="password"
+            />
+          </form>
+        </section>
       </section>
     </section>
   );
