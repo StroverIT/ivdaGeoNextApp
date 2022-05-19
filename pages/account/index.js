@@ -44,11 +44,11 @@ export default function index() {
         <title>IvdaGeo my account</title>
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
-      <main className="h-full pt-5 mb-auto bg-color">
+      <main className=" pt-5 mb-auto bg-color">
         <div className="container items-start justify-center">
           <h3 className="text-3xl">Моят акаунт</h3>
 
-          <div className="lg:grid grid-cols-[20%80%] mt-10">
+          <div className="lg:grid grid-cols-[20%80%] mt-10 ">
             <aside className="mb-4 md:sticky md:mb-0">
               <ul className="flex justify-center space-x-4 text-sm text-left lg:flex-col lg:space-x-0 lg:space-y-2">
                 <li
@@ -87,7 +87,7 @@ export default function index() {
                 </li>
               </ul>
             </aside>
-            <section className="bg-white border border-gray">
+            <section className="bg-white border border-gray min-h-full">
               <div className="container pt-10 pl-10 ">{categoryData}</div>
             </section>
           </div>

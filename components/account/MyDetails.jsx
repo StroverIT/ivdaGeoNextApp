@@ -4,7 +4,7 @@ import Input from "../../components/form/AccInput";
 
 export default function MyDetails() {
   return (
-    <section>
+    <section className="">
       <h2 className="mb-5 text-3xl font-semibold">Детайли на акаунта</h2>
 
       <section className="">
@@ -45,7 +45,7 @@ export default function MyDetails() {
         <section className="py-4 grid grid-cols-2">
           <section></section>
 
-          <section className="py-8">
+          <section className="my-8">
             <form action="">
               <Input
                 placeholder="И-мейл адрес"
@@ -72,7 +72,7 @@ export default function MyDetails() {
         <section className="py-4 grid grid-cols-2">
           <section></section>
 
-          <section className="py-8">
+          <section className="my-8">
             <form action="">
               <Input
                 placeholder="Сегашна парола"
