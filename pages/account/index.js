@@ -50,7 +50,7 @@ export default function index() {
 
           <div className="lg:grid grid-cols-[20%80%] mt-10">
             <aside className="mb-4 md:sticky md:mb-0">
-              <ul className="flex justify-center space-x-4 text-sm text-left md:flex-col md:space-x-0 md:space-y-2">
+              <ul className="flex justify-center space-x-4 text-sm text-left lg:flex-col lg:space-x-0 lg:space-y-2">
                 <li
                   className="px-2 py-2 font-semibold cursor-pointer"
                   ref={myDetails}
