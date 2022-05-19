@@ -12,8 +12,10 @@ export default function MyDetails() {
           Лична информация
         </h4>
         <div className="grid grid-cols-2">
-          <section></section>
-          <section className="pt-8">
+          <section>
+            <p></p>
+          </section>
+          <section className="">
             <form action="">
               <Input
                 placeholder="Пълно име"
@@ -45,7 +47,7 @@ export default function MyDetails() {
         <section className="py-4 grid grid-cols-2">
           <section></section>
 
-          <section className="my-8">
+          <section className="">
             <form action="">
               <Input
                 placeholder="И-мейл адрес"
@@ -78,7 +80,7 @@ export default function MyDetails() {
         <section className="py-4 grid grid-cols-2">
           <section></section>
 
-          <section className="my-8">
+          <section className="">
             <form action="">
               <Input
                 placeholder="Сегашна парола"
