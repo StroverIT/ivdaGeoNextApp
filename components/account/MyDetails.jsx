@@ -38,12 +38,13 @@ export default function MyDetails() {
           </section>
         </div>
       </section>
-      <section className="grid grid-cols-2">
-        <section></section>
-        <section className="py-4">
-          <h4 className="py-1 text-xl font-semibold border-b border-gray">
-            И-мейл адрес
-          </h4>
+      <section className="">
+        <h4 className="py-1 text-xl font-semibold border-b border-gray">
+          И-мейл адрес
+        </h4>
+        <section className="py-4 grid grid-cols-2">
+          <section></section>
+
           <form action="">
             <Input
               placeholder="И-мейл адрес"
@@ -62,12 +63,13 @@ export default function MyDetails() {
           </form>
         </section>
       </section>
-      <section className="grid grid-cols-2">
-        section
-        <section className="py-4">
-          <h4 className="py-1 text-xl font-semibold border-b border-gray">
-            Парола
-          </h4>
+      <section className="">
+        <h4 className="py-1 text-xl font-semibold border-b border-gray">
+          Парола
+        </h4>
+        <section className="py-4 grid grid-cols-2">
+          <section></section>
+
           <form action="">
             <Input
               placeholder="Сегашна парола"
