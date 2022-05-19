@@ -44,52 +44,52 @@ export default function index() {
         <title>IvdaGeo my account</title>
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
-      <main className=" pt-5 mb-auto bg-color">
-        <div className="container items-start justify-center">
-          <h3 className="text-3xl">Моят акаунт</h3>
-
-          <div className="lg:grid grid-cols-[20%80%] mt-10 ">
-            <aside className="mb-4 md:sticky md:mb-0">
-              <ul className="flex justify-center space-x-4 text-sm text-left lg:flex-col lg:space-x-0 lg:space-y-2">
-                <li
-                  className="px-2 py-2 font-semibold cursor-pointer"
-                  ref={myDetails}
-                >
-                  {/*"Icon"*/}
-                  <button
-                    onClick={() => changeCategory("account-details")}
-                    type="button"
-                    className="flex w-full"
+      <main className="mb-auto">
+        <div className="">
+          <div className="container items-start justify-center">
+            <h3 className="text-3xl">Моят акаунт</h3>
+            <div className="lg:grid grid-cols-[20%80%] my-10">
+              <aside className="mb-4 md:sticky md:mb-0">
+                <ul className="flex justify-center space-x-4 text-sm text-left lg:flex-col lg:space-x-0 lg:space-y-2">
+                  <li
+                    className="px-2 py-2 font-semibold cursor-pointer"
+                    ref={myDetails}
                   >
-                    Моите детайли
-                  </button>
-                </li>
-
-                <li className="px-2 py-2 cursor-pointer" ref={myOrders}>
-                  {/*"Icon"*/}
-                  <button
-                    onClick={() => changeCategory("my-orders")}
-                    type="button"
-                    className="flex w-full"
-                  >
-                    Направени поръчки
-                  </button>
-                </li>
-                <li className="px-2 py-2 cursor-pointer" ref={mySettings}>
-                  {/*"Icon"*/}
-                  <button
-                    onClick={() => changeCategory("account-settings")}
-                    type="button"
-                    className="flex w-full"
-                  >
-                    Настройки на акаунта
-                  </button>
-                </li>
-              </ul>
-            </aside>
-            <section className="bg-white border border-gray min-h-full">
-              <div className="container pt-10 pl-10 ">{categoryData}</div>
-            </section>
+                    {/*"Icon"*/}
+                    <button
+                      onClick={() => changeCategory("account-details")}
+                      type="button"
+                      className="flex w-full"
+                    >
+                      Моите детайли
+                    </button>
+                  </li>
+                  <li className="px-2 py-2 cursor-pointer" ref={myOrders}>
+                    {/*"Icon"*/}
+                    <button
+                      onClick={() => changeCategory("my-orders")}
+                      type="button"
+                      className="flex w-full"
+                    >
+                      Направени поръчки
+                    </button>
+                  </li>
+                  <li className="px-2 py-2 cursor-pointer" ref={mySettings}>
+                    {/*"Icon"*/}
+                    <button
+                      onClick={() => changeCategory("account-settings")}
+                      type="button"
+                      className="flex w-full"
+                    >
+                      Настройки на акаунта
+                    </button>
+                  </li>
+                </ul>
+              </aside>
+              <section className="bg-white border border-gray min-h-full">
+                <div className="container pt-10 pl-10 ">{categoryData}</div>
+              </section>
+            </div>
           </div>
         </div>
       </main>
