@@ -53,8 +53,8 @@ export default function MyDetails() {
         <section className="grid grid-cols-[45%55%] py-10 gap-5">
           <section className="text-sm text-gray-darker">
             <p>
-              Тука може да си смените и-мейл адреса и да потвърдите с текущата
-              ви парола
+              Тука може да си смените и-мейл адреса и да потвърдите като трябва
+              да потвърдите с текущата си парола
             </p>
           </section>
 
