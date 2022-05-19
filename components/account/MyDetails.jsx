@@ -61,6 +61,12 @@ export default function MyDetails() {
                 type="password"
                 isReq={true}
               />
+              <button
+                type="submmit"
+                className="px-5 py-2 text-white bg-primary-lighter hover:bg-primary-trans"
+              >
+                Запази
+              </button>
             </form>
           </section>
         </section>
@@ -95,6 +101,12 @@ export default function MyDetails() {
                 isReq={true}
                 iconType="password"
               />
+              <button
+                type="submmit"
+                className="px-5 py-2 text-white bg-primary-lighter hover:bg-primary-trans"
+              >
+                Запази
+              </button>
             </form>
           </section>
         </section>
