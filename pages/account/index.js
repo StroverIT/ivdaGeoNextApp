@@ -51,35 +51,32 @@ export default function index() {
             <div className="lg:grid grid-cols-[20%80%] gap-10 my-10">
               <aside className="mb-4 md:sticky md:mb-0">
                 <ul className="flex justify-center space-x-4 text-sm text-left lg:flex-col lg:space-x-0 lg:space-y-2">
-                  <li
-                    className="px-2 py-2 font-semibold cursor-pointer"
-                    ref={myDetails}
-                  >
+                  <li className="font-semibold cursor-pointer" ref={myDetails}>
                     {/*"Icon"*/}
                     <button
                       onClick={() => changeCategory("account-details")}
                       type="button"
-                      className="flex w-full"
+                      className="flex w-full h-full px-2 py-2"
                     >
                       Моите детайли
                     </button>
                   </li>
-                  <li className="px-2 py-2 cursor-pointer" ref={myOrders}>
+                  <li className="cursor-pointer" ref={myOrders}>
                     {/*"Icon"*/}
                     <button
                       onClick={() => changeCategory("my-orders")}
                       type="button"
-                      className="flex w-full"
+                      className="flex w-full h-full px-2 py-2"
                     >
                       Направени поръчки
                     </button>
                   </li>
-                  <li className="px-2 py-2 cursor-pointer" ref={mySettings}>
+                  <li className="cursor-pointer" ref={mySettings}>
                     {/*"Icon"*/}
                     <button
                       onClick={() => changeCategory("account-settings")}
                       type="button"
-                      className="flex w-full"
+                      className="flex w-full h-full px-2 py-2"
                     >
                       Настройки на акаунта
                     </button>
