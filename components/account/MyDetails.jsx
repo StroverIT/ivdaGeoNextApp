@@ -48,7 +48,12 @@ export default function MyDetails() {
           И-мейл адрес
         </h4>
         <section className="grid grid-cols-[45%55%] py-10 gap-5">
-          <section></section>
+          <section className="text-sm text-gray-darker">
+            <p>
+              Тука може да си смените и-мейл адреса и да потвърдите с текущата
+              ви парола
+            </p>
+          </section>
 
           <section className="">
             <form action="">
@@ -81,7 +86,9 @@ export default function MyDetails() {
           Парола
         </h4>
         <section className="grid grid-cols-[45%55%] py-10 gap-5">
-          <section></section>
+          <section className="text-sm text-gray-darker">
+            <p>Тука можете да си смените паролата</p>
+          </section>
 
           <section className="">
             <form action="">
