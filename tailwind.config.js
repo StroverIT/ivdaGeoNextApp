@@ -3,7 +3,7 @@ const customColors = {
   primary: "hsl(215, 80%, 33%)",
   "primary-lighter": "hsl(215, 80%, 60%)",
   "primary-trans": "hsl(215, 80%, 60%, 100%)",
-  "primary-0": "hsl(215, 80%, 60%, 20%)",
+  "primary-0": "hsl(215, 80%, 60%, 15%)",
   secondary: "hsl(358, 83%, 56%)",
   dark: "hsl(0, 0%, 8%)",
   white: "hsl(0, 0%, 100%)",
