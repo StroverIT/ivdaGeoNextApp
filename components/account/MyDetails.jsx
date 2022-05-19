@@ -11,7 +11,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Лична информация
         </h4>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 py-10">
           <section>
             <p></p>
           </section>
@@ -44,7 +44,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           И-мейл адрес
         </h4>
-        <section className="py-4 grid grid-cols-2">
+        <section className="py-10 grid grid-cols-2">
           <section></section>
 
           <section className="">
@@ -77,7 +77,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Парола
         </h4>
-        <section className="py-4 grid grid-cols-2">
+        <section className="py-10 grid grid-cols-2">
           <section></section>
 
           <section className="">
