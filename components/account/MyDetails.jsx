@@ -13,11 +13,12 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Лична информация
         </h4>
-        <div className="grid grid-cols-[45%55%] py-10 gap-5">
+        <div className="grid grid-cols-[45%55%] py-10 gap-6">
           <section className="text-sm text-gray-darker">
             <p>
-              Тука може да си смените името или телефоният номер. Като
-              първоначално са показаните първоначално попълнените ви данни
+              Тука може да си смените името или телефоният номер.
+              <br />
+              Като първоначално са показаните първоначално попълнените ви данни
             </p>
           </section>
           <section className="">
