@@ -13,7 +13,7 @@ export default function MyDetails() {
         </h4>
         <div className="grid grid-cols-2">
           <section></section>
-          <section>
+          <section className="pt-8">
             <form action="">
               <Input
                 placeholder="Пълно име"
@@ -45,22 +45,24 @@ export default function MyDetails() {
         <section className="py-4 grid grid-cols-2">
           <section></section>
 
-          <form action="">
-            <Input
-              placeholder="И-мейл адрес"
-              iconType="email"
-              id="email"
-              type="email"
-              isReq={true}
-            />
-            <Input
-              placeholder="Парола"
-              iconType="password"
-              id="password"
-              type="password"
-              isReq={true}
-            />
-          </form>
+          <section className="py-8">
+            <form action="">
+              <Input
+                placeholder="И-мейл адрес"
+                iconType="email"
+                id="email"
+                type="email"
+                isReq={true}
+              />
+              <Input
+                placeholder="Парола"
+                iconType="password"
+                id="password"
+                type="password"
+                isReq={true}
+              />
+            </form>
+          </section>
         </section>
       </section>
       <section className="">
@@ -70,29 +72,31 @@ export default function MyDetails() {
         <section className="py-4 grid grid-cols-2">
           <section></section>
 
-          <form action="">
-            <Input
-              placeholder="Сегашна парола"
-              id="currentPassword"
-              type="text"
-              isReq={true}
-              iconType="password"
-            />
-            <Input
-              placeholder="Нова парола"
-              id="newPassword"
-              type="password"
-              isReq={true}
-              iconType="password"
-            />
-            <Input
-              placeholder="Потвърди новата парола"
-              id="newPasswordConf"
-              type="password"
-              isReq={true}
-              iconType="password"
-            />
-          </form>
+          <section className="py-8">
+            <form action="">
+              <Input
+                placeholder="Сегашна парола"
+                id="currentPassword"
+                type="text"
+                isReq={true}
+                iconType="password"
+              />
+              <Input
+                placeholder="Нова парола"
+                id="newPassword"
+                type="password"
+                isReq={true}
+                iconType="password"
+              />
+              <Input
+                placeholder="Потвърди новата парола"
+                id="newPasswordConf"
+                type="password"
+                isReq={true}
+                iconType="password"
+              />
+            </form>
+          </section>
         </section>
       </section>
     </section>
