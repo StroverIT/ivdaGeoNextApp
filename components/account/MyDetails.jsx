@@ -5,7 +5,9 @@ import Input from "../../components/form/AccInput";
 export default function MyDetails() {
   return (
     <section className="">
-      <h2 className="mb-5 text-3xl font-semibold">Детайли на акаунта</h2>
+      <h2 className="mb-5 text-3xl font-semibold text-center">
+        Детайли на акаунта
+      </h2>
 
       <section className="">
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
