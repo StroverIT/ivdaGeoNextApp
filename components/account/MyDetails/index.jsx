@@ -1,6 +1,6 @@
 import React from "react";
 
-import Input from "../../components/form/AccInput";
+import Input from "../../form/AccInput";
 
 export default function MyDetails() {
   return (
@@ -88,7 +88,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Парола
         </h4>
-        <section className="md:grid grid-cols-[45%55%] py-10 gap-5">
+        <section className="flex flex-col justify-center md:justify-between items-center md:items-start md:grid grid-cols-[45%55%] py-10 gap-5 w-full">
           <section className="text-sm text-gray-darker">
             <p>Тука можете да си смените паролата</p>
           </section>
