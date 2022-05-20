@@ -1,6 +1,8 @@
 import React from "react";
 
+// Outside Components
 import Input from "../../form/AccInput";
+// My accouts components
 
 export default function MyDetails() {
   return (
