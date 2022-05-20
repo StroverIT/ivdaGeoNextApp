@@ -15,9 +15,10 @@ export default function MyOrders() {
       <table class="table-auto w-full">
         <thead>
           <tr>
-            <th>Song</th>
-            <th>Artist</th>
-            <th>Year</th>
+            <th>Поръчка</th>
+            <th>Дата</th>
+            <th>Общо</th>
+            <th>Статус</th>
           </tr>
         </thead>
         <tbody>
