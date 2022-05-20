@@ -67,7 +67,7 @@ const NavLinkMenu = ({ title, articles, mainRoute, isHome, isOpen }) => {
           mobSubmenu ? "translate-x-0" : "translate-x-full"
         } transition-transform lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full left-0 top-0 lg:left-[256px] ${
           isHome ? "xl:left-[300px]" : ""
-        } bg-color z-10 lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
+        } bg-color  lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
         ref={subMenu}
       >
         <div className={`flex items-center `}>
