@@ -14,7 +14,7 @@ export default function MyOrders() {
       <div className="text-center pb-10 text-secondary">
         Нямате направени поръчки
       </div>
-      <table className="table-auto w-full">
+      <table className="table-auto w-full my-table-spacing">
         <thead>
           <tr className="bg-primary text-white ">
             <th className="py-2">Поръчка</th>
@@ -31,18 +31,22 @@ export default function MyOrders() {
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-primary font-semibold">В прогрес</td>
-            <td className="text-primary-lighter  flex justify-center items-center rounded-full p-2 text-2xl font-semibold cursor-pointer">
-              <AiOutlineSearch />
+            <td>
+              <button className="text-primary-lighter  flex justify-center items-center rounded-full p-2 text-2xl font-semibold cursor-pointer">
+                <AiOutlineSearch />
+              </button>
             </td>
           </tr>
           <tr>
             {/* Mongodb */}
-            <td>ID на поръчката</td>
+            <td class="py-4">ID на поръчката</td>
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-green font-semibold">Изпратена</td>
-            <td className="bg-primary-lighter text-white text-center rounded-full p-2 text-sm font-semibold tracking-widest cursor-pointer">
-              ВИЖ
+            <td>
+              <button className="bg-primary-lighter text-white text-center rounded-md p-2 text-sm font-semibold tracking-wide cursor-pointer">
+                ВИЖ
+              </button>
             </td>
           </tr>
           <tr>
@@ -54,7 +58,7 @@ export default function MyOrders() {
           </tr>
           <tr>
             {/* Mongodb */}
-            <td>1141512312</td>
+            <td>752112</td>
             <td>12.05.1995</td>
             <td>
               <Pricing price={249} priceDec={22} />
