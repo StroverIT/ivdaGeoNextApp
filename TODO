@@ -74,6 +74,7 @@ Pages to create:
       [ ] Redirect if is not admin || not logged in
 
 Functionalities:
+[ ] Pager or pagination not sure (on where page, section you are)
 
 - [ ] Connect with restful apis
       [ ] Login
