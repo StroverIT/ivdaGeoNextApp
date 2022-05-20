@@ -12,7 +12,7 @@ export default function MyOrders() {
       <div className="text-center pb-10 text-secondary">
         Нямате направени поръчки
       </div>
-      <table class="table-auto w-full">
+      <table className="table-auto w-full">
         <thead>
           <tr>
             <th>Поръчка</th>
