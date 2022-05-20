@@ -27,7 +27,7 @@ export default function MyOrders() {
         <tbody className="divide-y-2 divide-gray">
           <tr>
             {/* Mongodb */}
-            <td>ID на поръчката</td>
+            <td className="py-4">ID на поръчката</td>
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-primary font-semibold">В прогрес</td>
@@ -51,14 +51,14 @@ export default function MyOrders() {
           </tr>
           <tr>
             {/* Mongodb */}
-            <td>ID на поръчката</td>
+            <td className="py-4">ID на поръчката</td>
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-secondary font-semibold">Върната</td>
           </tr>
           <tr>
             {/* Mongodb */}
-            <td>752112</td>
+            <td className="py-4">752112</td>
             <td>12.05.1995</td>
             <td>
               <Pricing price={249} priceDec={22} />
