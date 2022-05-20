@@ -1,5 +1,6 @@
 import React from "react";
-
+// Icons
+import { AiOutlineSearch } from "react-icons/ai";
 // Components
 import Pricing from "../priceStyling/Pricing";
 
@@ -20,6 +21,7 @@ export default function MyOrders() {
             <th>Дата</th>
             <th>Общо</th>
             <th>Статус</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +31,9 @@ export default function MyOrders() {
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-primary font-semibold">В прогрес</td>
+            <td className="text-primary-lighter  flex justify-center items-center rounded-full p-2 text-2xl font-semibold">
+              <AiOutlineSearch />
+            </td>
           </tr>
           <tr>
             {/* Mongodb */}
@@ -36,6 +41,9 @@ export default function MyOrders() {
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-green font-semibold">Изпратена</td>
+            <td className="bg-primary-lighter text-white text-center rounded-full p-2 text-sm font-semibold tracking-widest">
+              ВИЖ
+            </td>
           </tr>
           <tr>
             {/* Mongodb */}
