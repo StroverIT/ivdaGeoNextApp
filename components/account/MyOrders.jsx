@@ -1,5 +1,8 @@
 import React from "react";
 
+// Components
+import Pricing from "../priceStyling/Pricing";
+
 export default function MyOrders() {
   return (
     <section className="">
@@ -45,7 +48,9 @@ export default function MyOrders() {
             {/* Mongodb */}
             <td>1141512312</td>
             <td>12.05.1995</td>
-            <td>295 лв.</td>
+            <td>
+              <Pricing price={249} priceDec={22} />
+            </td>
             <td className="text-secondary font-semibold">Върната</td>
           </tr>
         </tbody>
