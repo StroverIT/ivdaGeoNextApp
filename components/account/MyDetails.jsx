@@ -13,7 +13,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Лична информация
         </h4>
-        <div className="grid grid-cols-[45%55%] py-10 gap-6">
+        <div className="md:grid grid-cols-[45%55%] py-10 gap-6">
           <section className="text-sm text-gray-darker">
             <p>
               Тука може да си смените името или телефоният номер.
@@ -50,7 +50,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           И-мейл адрес
         </h4>
-        <section className="grid grid-cols-[45%55%] py-10 gap-5">
+        <section className="md:grid grid-cols-[45%55%] py-10 gap-5">
           <section className="text-sm text-gray-darker">
             <p>
               Тука може да си смените и-мейл адреса и да потвърдите като трябва
@@ -88,7 +88,7 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Парола
         </h4>
-        <section className="grid grid-cols-[45%55%] py-10 gap-5">
+        <section className="md:grid grid-cols-[45%55%] py-10 gap-5">
           <section className="text-sm text-gray-darker">
             <p>Тука можете да си смените паролата</p>
           </section>
