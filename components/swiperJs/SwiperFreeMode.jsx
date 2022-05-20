@@ -15,7 +15,7 @@ import navStyle from "../../styles/swiperJs/SwiperNav.module.css";
 // import required modules
 import { FreeMode, Pagination, Navigation } from "swiper";
 // Components
-import Pricing from "../priceStyling/Pricing";
+import PricingPromo from "../priceStyling/PricingPromo";
 import SwiperNav from "./SwiperNav";
 export default function SwiperFreeMode({ images }) {
   return (
@@ -74,7 +74,7 @@ export default function SwiperFreeMode({ images }) {
                   {image.title}
                 </div>
 
-                <Pricing
+                <PricingPromo
                   isPromo={image.isPromo}
                   price={price}
                   priceDec={priceDec}
