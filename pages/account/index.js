@@ -84,7 +84,9 @@ export default function index() {
                 </ul>
               </aside>
               <section className="bg-white border border-gray min-h-full">
-                <div className="container pt-10 pl-10 ">{categoryData}</div>
+                <div className="container lg:pt-10 lg:pl-10 ">
+                  {categoryData}
+                </div>
               </section>
             </div>
           </div>
