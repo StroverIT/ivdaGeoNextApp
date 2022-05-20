@@ -16,22 +16,22 @@ export default function MyOrders() {
       </div>
       <table className="table-auto w-full">
         <thead>
-          <tr>
-            <th>Поръчка</th>
+          <tr className="bg-primary text-white ">
+            <th className="py-2">Поръчка</th>
             <th>Дата</th>
             <th>Общо</th>
             <th>Статус</th>
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y-2 divide-gray">
           <tr>
             {/* Mongodb */}
             <td>ID на поръчката</td>
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-primary font-semibold">В прогрес</td>
-            <td className="text-primary-lighter  flex justify-center items-center rounded-full p-2 text-2xl font-semibold">
+            <td className="text-primary-lighter  flex justify-center items-center rounded-full p-2 text-2xl font-semibold cursor-pointer">
               <AiOutlineSearch />
             </td>
           </tr>
@@ -41,7 +41,7 @@ export default function MyOrders() {
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-green font-semibold">Изпратена</td>
-            <td className="bg-primary-lighter text-white text-center rounded-full p-2 text-sm font-semibold tracking-widest">
+            <td className="bg-primary-lighter text-white text-center rounded-full p-2 text-sm font-semibold tracking-widest cursor-pointer">
               ВИЖ
             </td>
           </tr>
