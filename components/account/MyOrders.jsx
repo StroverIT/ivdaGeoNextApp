@@ -23,19 +23,25 @@ export default function MyOrders() {
         </thead>
         <tbody>
           <tr>
-            <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-            <td>Malcolm Lockyer</td>
-            <td>1961</td>
+            {/* Mongodb */}
+            <td>ID на поръчката</td>
+            <td>Дата на направената поръчка</td>
+            <td>Обща сума (в лв.)</td>
+            <td className="text-primary font-semibold">В прогрес</td>
           </tr>
           <tr>
-            <td>Witchy Woman</td>
-            <td>The Eagles</td>
-            <td>1972</td>
+            {/* Mongodb */}
+            <td>ID на поръчката</td>
+            <td>Дата на направената поръчка</td>
+            <td>Обща сума (в лв.)</td>
+            <td className="text-green font-semibold">Изпратена</td>
           </tr>
           <tr>
-            <td>Shining Star</td>
-            <td>Earth, Wind, and Fire</td>
-            <td>1975</td>
+            {/* Mongodb */}
+            <td>ID на поръчката</td>
+            <td>Дата на направената поръчка</td>
+            <td>Обща сума (в лв.)</td>
+            <td className="text-secondary font-semibold">Върната</td>
           </tr>
         </tbody>
       </table>
