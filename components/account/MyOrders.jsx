@@ -1,7 +1,5 @@
 import React from "react";
 
-import Input from "../../components/form/AccInput";
-
 export default function MyOrders() {
   return (
     <section className="">
@@ -41,6 +39,13 @@ export default function MyOrders() {
             <td>ID на поръчката</td>
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
+            <td className="text-secondary font-semibold">Върната</td>
+          </tr>
+          <tr>
+            {/* Mongodb */}
+            <td>1141512312</td>
+            <td>12.05.1995</td>
+            <td>295 лв.</td>
             <td className="text-secondary font-semibold">Върната</td>
           </tr>
         </tbody>
