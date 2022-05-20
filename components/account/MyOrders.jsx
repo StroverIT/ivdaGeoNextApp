@@ -39,7 +39,7 @@ export default function MyOrders() {
           </tr>
           <tr>
             {/* Mongodb */}
-            <td class="py-4">ID на поръчката</td>
+            <td className="py-4">ID на поръчката</td>
             <td>Дата на направената поръчка</td>
             <td>Обща сума (в лв.)</td>
             <td className="text-green font-semibold">Изпратена</td>
