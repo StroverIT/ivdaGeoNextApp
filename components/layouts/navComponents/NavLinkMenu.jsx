@@ -53,6 +53,7 @@ const NavLinkMenu = ({ title, articles, mainRoute, isHome, isOpen }) => {
 
   return (
     <li className={`item w-full font-thin group ${!isHome ? "lg:w-64" : ""}`}>
+      {/* Menu */}
       <div
         className={`bg-primary cursor-pointer lg:hover:text-dark lg:hover:bg-color px-3 py-1 flex w-full peer group-hover:lg:bg-color group-hover:lg:text-dark `}
         onClick={showMenu}
@@ -60,6 +61,7 @@ const NavLinkMenu = ({ title, articles, mainRoute, isHome, isOpen }) => {
       >
         <div className={`${!isHome ? "max-lg:container" : ""}`}>{title}</div>
       </div>
+      {/* Submenu */}
       <div
         className={`fixed  lg:absolute py-2 overflow-auto  ${
           mobSubmenu ? "translate-x-0" : "translate-x-full"
