@@ -7,7 +7,7 @@ import Pricing from "../../priceStyling/Pricing";
 export default function MyOrders() {
   return (
     <section className="">
-      <h2 className="mb-5 text-3xl font-semibold text-center">
+      <h2 className="mb-5 text-3xl font-semibold text-center mt-5">
         Направените от вас поръчки
       </h2>
       {/* If no orders */}
