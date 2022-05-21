@@ -51,6 +51,9 @@ Pages to create:
 
 - [ x ] Account
   [ ] Change password
+  [ ] Personal info
+  [ ] Email
+  [ ] Made orders
   [] Redirect to login page if no account
 
 [ ] Rules and privacy
