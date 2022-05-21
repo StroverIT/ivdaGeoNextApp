@@ -63,7 +63,7 @@ const inputDataPass = [
 export default function MyDetails() {
   return (
     <section className="">
-      <h2 className="mb-5 text-3xl font-semibold text-center">
+      <h2 className="mb-5 text-3xl font-semibold text-center mt-5">
         Детайли на акаунта
       </h2>
 
