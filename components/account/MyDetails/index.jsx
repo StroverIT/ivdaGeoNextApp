@@ -3,6 +3,79 @@ import React from "react";
 // Outside Components
 import Input from "../../form/AccInput";
 // My accouts components
+import SectionContainer from "./SectionContainer";
+import InnerSection from "./InnerSection";
+
+{
+  /* <Input
+                placeholder="Пълно име"
+                iconType="fullName"
+                isReq={true}
+                type="text"
+                id="fullname"
+              />
+              <Input
+                placeholder="Телефонен номер"
+                id="phoneNumber"
+                isReq={true}
+                iconType="phoneNumber"
+              /> */
+}
+const inputDataPersonal = [
+  {
+    placeholder: "Пълно име",
+    id: "fullname",
+    type: "text",
+    isReq: true,
+    iconType: "fullName",
+  },
+  {
+    placeholder: "Телефонен номер",
+    id: "phoneNumber",
+    type: "text",
+    isReq: true,
+    iconType: "phoneNumber",
+  },
+];
+const inputDataEmail = [
+  {
+    placeholder: "И-мейл адрес",
+    id: "email",
+    type: "email",
+    isReq: true,
+    iconType: "email",
+  },
+  {
+    placeholder: "Парола",
+    id: "password",
+    type: "password",
+    isReq: true,
+    iconType: "password",
+  },
+];
+const inputDataPass = [
+  {
+    placeholder: "Сегашна парола",
+    id: "currentPassword",
+    type: "text",
+    isReq: true,
+    iconType: "password",
+  },
+  {
+    placeholder: "Нова парола",
+    id: "newPassword",
+    type: "password",
+    isReq: true,
+    iconType: "password",
+  },
+  {
+    placeholder: "Потвърди новата парола",
+    id: "newPasswordConf",
+    type: "password",
+    isReq: true,
+    iconType: "password",
+  },
+];
 
 export default function MyDetails() {
   return (
@@ -15,118 +88,43 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Лична информация
         </h4>
-        <div className="md:grid grid-cols-[45%55%] py-10 gap-6">
-          <section className="text-sm text-gray-darker">
-            <p>
-              Тука може да си смените името или телефоният номер.
-              <br />
-              Като първоначално са показаните първоначално попълнените ви данни
-            </p>
-          </section>
-          <section className="">
-            <form action="">
-              <Input
-                placeholder="Пълно име"
-                iconType="fullName"
-                isReq={true}
-                type="text"
-                id="fullname"
-              />
-              <Input
-                placeholder="Телефонен номер"
-                id="phoneNumber"
-                isReq={true}
-                iconType="phoneNumber"
-              />
-              <button
-                type="submmit"
-                className="px-5 py-2 text-white bg-primary-lighter hover:bg-primary-trans"
-              >
-                Запази
-              </button>
-            </form>
-          </section>
-        </div>
+        <SectionContainer
+          content={
+            <InnerSection
+              description={`Тука може да си смените името или телефоният номер.
+              Като първоначално са показани попълнените ви данни`}
+              form={inputDataPersonal}
+            />
+          }
+        />
       </section>
       <section className="">
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           И-мейл адрес
         </h4>
-        <section className="md:grid grid-cols-[45%55%] py-10 gap-5">
-          <section className="text-sm text-gray-darker">
-            <p>
-              Тука може да си смените и-мейл адреса и да потвърдите като трябва
-              да потвърдите с текущата си парола
-            </p>
-          </section>
-
-          <section className="">
-            <form action="">
-              <Input
-                placeholder="И-мейл адрес"
-                iconType="email"
-                id="email"
-                type="email"
-                isReq={true}
-              />
-              <Input
-                placeholder="Парола"
-                iconType="password"
-                id="password"
-                type="password"
-                isReq={true}
-              />
-              <button
-                type="submmit"
-                className="px-5 py-2 text-white bg-primary-lighter hover:bg-primary-trans"
-              >
-                Запази
-              </button>
-            </form>
-          </section>
-        </section>
+        <SectionContainer
+          content={
+            <InnerSection
+              description={`Тука може да си смените и-мейл адреса и да потвърдите като трябва
+              да потвърдите с текущата си парола`}
+              form={inputDataEmail}
+            />
+          }
+        />
       </section>
       <section className="">
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Парола
         </h4>
-        <section className="flex flex-col justify-center md:justify-between items-center md:items-start md:grid grid-cols-[45%55%] py-10 gap-5 w-full">
-          <section className="text-sm text-gray-darker">
-            <p>Тука можете да си смените паролата</p>
-          </section>
 
-          <section className="">
-            <form action="">
-              <Input
-                placeholder="Сегашна парола"
-                id="currentPassword"
-                type="text"
-                isReq={true}
-                iconType="password"
-              />
-              <Input
-                placeholder="Нова парола"
-                id="newPassword"
-                type="password"
-                isReq={true}
-                iconType="password"
-              />
-              <Input
-                placeholder="Потвърди новата парола"
-                id="newPasswordConf"
-                type="password"
-                isReq={true}
-                iconType="password"
-              />
-              <button
-                type="submmit"
-                className="px-5 py-2 text-white bg-primary-lighter hover:bg-primary-trans"
-              >
-                Запази
-              </button>
-            </form>
-          </section>
-        </section>
+        <SectionContainer
+          content={
+            <InnerSection
+              description={"Тука можете да си смените паролата"}
+              form={inputDataPass}
+            />
+          }
+        />
       </section>
     </section>
   );
