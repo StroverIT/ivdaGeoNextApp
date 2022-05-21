@@ -7,14 +7,14 @@ import Pricing from "../../priceStyling/Pricing";
 export default function MyOrders() {
   return (
     <section className="">
-      <h2 className="mb-5 text-3xl font-semibold text-center mt-5">
+      <h2 className="mb-2 text-3xl font-semibold text-center mt-5">
         Направените от вас поръчки
       </h2>
       {/* If no orders */}
-      <div className="text-center pb-10 text-secondary">
+      <div className="text-center text-secondary pb-10">
         Нямате направени поръчки
       </div>
-      <table className="table-auto w-full my-table-spacing">
+      <table className="table-auto w-full my-table-spacing mt-10">
         <thead>
           <tr className="bg-primary text-white ">
             <th className="py-2">Поръчка</th>
