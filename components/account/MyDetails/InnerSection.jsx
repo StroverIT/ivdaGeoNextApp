@@ -10,7 +10,7 @@ export default function InnerSection({ description, form }) {
     <>
       <Description text={description} />
 
-      <section className="">
+      <section className="w-full">
         <SectionForm inputs={form} />
       </section>
     </>
