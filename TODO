@@ -55,6 +55,7 @@ Pages to create:
   [ x ] Email
   [ x ] Made orders
   [] Redirect to login page if no account
+  [ ] If users is logged in go to /account page
 
 [ ] Rules and privacy
 [ ] Terms and contidions
