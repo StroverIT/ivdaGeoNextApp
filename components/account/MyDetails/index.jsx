@@ -4,21 +4,6 @@ import React from "react";
 import SectionContainer from "./SectionContainer";
 import InnerSection from "./InnerSection";
 
-{
-  /* <Input
-                placeholder="Пълно име"
-                iconType="fullName"
-                isReq={true}
-                type="text"
-                id="fullname"
-              />
-              <Input
-                placeholder="Телефонен номер"
-                id="phoneNumber"
-                isReq={true}
-                iconType="phoneNumber"
-              /> */
-}
 const inputDataPersonal = [
   {
     placeholder: "Пълно име",
