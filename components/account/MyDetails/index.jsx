@@ -1,7 +1,5 @@
 import React from "react";
 
-// Outside Components
-import Input from "../../form/AccInput";
 // My accouts components
 import SectionContainer from "./SectionContainer";
 import InnerSection from "./InnerSection";
