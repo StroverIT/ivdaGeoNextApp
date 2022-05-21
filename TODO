@@ -63,6 +63,7 @@ Pages to create:
 [ ] Cart
 --[ ] Delivery page
 ---[ ] Don't allow to go to this page, if is not logged in || redirect
+
 [ ] Products
 [ ] Show product
 
