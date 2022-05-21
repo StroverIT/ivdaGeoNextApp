@@ -47,7 +47,7 @@ export default function index() {
       <main className="mb-auto">
         <div className="">
           <div className="container items-start justify-center">
-            <h3 className="text-3xl">Моят акаунт</h3>
+            <h3 className="text-3xl pt-7">Моят акаунт</h3>
             <div className="lg:grid grid-cols-[20%80%] gap-10 my-10">
               <aside className="mb-4 md:sticky md:mb-0">
                 <ul className="flex justify-center space-x-4 text-sm text-left lg:flex-col lg:space-x-0 lg:space-y-2">
