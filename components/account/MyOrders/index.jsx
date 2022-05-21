@@ -2,7 +2,7 @@ import React from "react";
 // Icons
 import { AiOutlineSearch } from "react-icons/ai";
 // Components
-import Pricing from "../priceStyling/Pricing";
+import Pricing from "../../priceStyling/Pricing";
 
 export default function MyOrders() {
   return (
