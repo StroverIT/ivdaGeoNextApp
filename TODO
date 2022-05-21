@@ -50,10 +50,10 @@ Pages to create:
 [ x ] Resend verify code
 
 - [ x ] Account
-  [ ] Change password
-  [ ] Personal info
-  [ ] Email
-  [ ] Made orders
+  [ x ] Change password
+  [ x ] Personal info
+  [ x ] Email
+  [ x ] Made orders
   [] Redirect to login page if no account
 
 [ ] Rules and privacy
