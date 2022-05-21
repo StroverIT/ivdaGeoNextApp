@@ -7,10 +7,11 @@ export default function SectionForm({ inputs }) {
         return (
           <Input
             placeholder={input.placeholder}
-            id={input.data}
+            id={input.id}
             type={input.type}
             isReq={input.isReq}
             iconType={input.iconType}
+            key={input.id}
           />
         );
       })}
