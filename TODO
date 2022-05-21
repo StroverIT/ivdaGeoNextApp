@@ -57,15 +57,15 @@ Pages to create:
   [] Redirect to login page if no account
   [ ] If users is logged in go to /account page
 
-[ ] Rules and privacy
-[ ] Terms and contidions
-
 [ ] Cart
 --[ ] Delivery page
 ---[ ] Don't allow to go to this page, if is not logged in || redirect
 
 [ ] Products
 [ ] Show product
+
+[ ] Rules and privacy
+[ ] Terms and contidions
 
 [ ] About us
 [ ] How to buy
