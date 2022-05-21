@@ -5,8 +5,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 // Account components
-import MyDetails from "../../components/account/MyDetails";
-import MyOrders from "../../components/account/MyOrders";
+import MyDetails from "../../components/account/MyDetails/index";
+import MyOrders from "../../components/account/MyOrders/index";
 import AccountSettings from "../../components/account/AccountSettings";
 
 export default function index() {
