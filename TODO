@@ -49,9 +49,9 @@ Pages to create:
 
 [ x ] Resend verify code
 
-- [ ] Account
-      [ ] Change password
-      [] Redirect to login page if no account
+- [ x ] Account
+  [ ] Change password
+  [] Redirect to login page if no account
 
 [ ] Rules and privacy
 [ ] Terms and contidions
