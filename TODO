@@ -61,6 +61,11 @@ Pages to create:
 --[ ] Delivery page
 ---[ ] Don't allow to go to this page, if is not logged in || redirect
 
+- [ ] Admin panel
+      [ ] Deliveries for home
+      [ ] Delivery for the shop
+      [ ] Redirect if is not admin || not logged in
+
 [ ] Products
 [ ] Show product
 
@@ -72,11 +77,6 @@ Pages to create:
 [ ] Help
 [ ] Contact page
 [ ] Work for us to send CV and inputs
-
-- [ ] Admin panel
-      [ ] Deliveries for home
-      [ ] Delivery for the shop
-      [ ] Redirect if is not admin || not logged in
 
 Functionalities:
 [ ] Pager or pagination not sure (on where page, section you are)
