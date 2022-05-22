@@ -15,7 +15,7 @@ export default function section() {
               Филтри
             </button>
             <button type="button" className="w-full h-full text-left">
-              Сортирай по:{" "}
+              Сортирай по:
             </button>
           </div>
         </section>
