@@ -85,7 +85,7 @@ const NavLinkMenu = ({ title, articles, mainRoute, isHome, isOpen }) => {
         >
           {articles.map((article) => {
             return (
-              <Link href={`/${mainRoute}/Add${article[1]}`} key={article[0]}>
+              <Link href={`/products/${article[1]}`} key={article[0]}>
                 <li className="m-2 text-sm font-[400]">
                   <a href="#">{article[0]}</a>
                 </li>
