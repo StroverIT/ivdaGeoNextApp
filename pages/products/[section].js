@@ -1,5 +1,6 @@
 import React from "react";
 
+// NextJs
 import { useRouter } from "next/router";
 
 export default function section() {
