@@ -10,11 +10,17 @@ export default function section() {
       <div className="container md:grid grid-cols-[20%80%]">
         <aside className="hidden md:block"></aside>
         <section>
-          <div className="md:hidden grid grid-cols-2">
-            <button type="button" className="w-full h-full text-left">
+          <div className="md:hidden grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              className="w-full h-full text-left text-white bg-primary pl-4 py-2"
+            >
               Филтри
             </button>
-            <button type="button" className="w-full h-full text-left">
+            <button
+              type="button"
+              className="w-full h-full text-left border border-gray pl-4 py-2"
+            >
               Сортирай по:
             </button>
           </div>
