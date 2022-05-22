@@ -2,6 +2,7 @@ import React from "react";
 
 // NextJs
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function section() {
   const router = useRouter();
