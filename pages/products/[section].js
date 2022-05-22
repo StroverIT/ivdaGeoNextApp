@@ -3,6 +3,8 @@ import React from "react";
 // NextJs
 import { useRouter } from "next/router";
 import Image from "next/image";
+// Components
+import Pricing from "../../components/priceStyling/Pricing";
 
 export default function section() {
   const router = useRouter();
@@ -28,7 +30,7 @@ export default function section() {
             </button>
           </div>
           <section>
-            <div className="grid grid-cols-[80%20%]">
+            <div className="md:grid grid-cols-[80%20%]">
               <div>
                 <div className="flex relative h-full w-full">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
@@ -42,7 +44,11 @@ export default function section() {
                   <li>НАПРЕЖЕНИЕ : 12.00 V</li>
                 </ul>
               </div>
-              <div></div>
+              <div className="bg-gray">
+                <div>
+                  <Pricing price={169} priceDec={99} />
+                </div>
+              </div>
             </div>
           </section>
         </section>
