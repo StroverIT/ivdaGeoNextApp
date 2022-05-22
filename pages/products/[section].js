@@ -25,6 +25,12 @@ export default function section() {
               Сортирай по:
             </button>
           </div>
+          <section>
+            <div className="grid grid-cols-[80%20%]">
+              <div></div>
+              <div></div>
+            </div>
+          </section>
         </section>
       </div>
     </main>
