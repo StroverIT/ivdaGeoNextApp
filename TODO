@@ -127,3 +127,7 @@ Navigation:
 When is on lg and FIRST hover, menu is glitching (it's bcs of left:0 and transition to left: (something)).
 HomePage Nav:
 When is grid-cols-[40%_60%] submenu cannot obtain the full width of the carousel
+
+PRODUCT PAGE ----
+
+aside which have all filters. MD is menu, but below MD make is BUTTON which on click to show fixed menu(Overflow hidden on body ) CREATE ANiMATION ON THE MENU below MD
