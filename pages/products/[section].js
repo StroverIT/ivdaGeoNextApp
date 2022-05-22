@@ -10,12 +10,16 @@ export default function section() {
       <div className="container md:grid grid-cols-[20%80%]">
         <aside className="hidden md:block"></aside>
         <section>
-          <div className="md:hidden grid">
+          <div className="md:hidden grid grid-cols-2">
             <div>
-              <button type="button">Филтри</button>
+              <button type="button" className="w-full h-full text-left">
+                Филтри
+              </button>
             </div>
             <div>
-              <button type="button">Сортирай по: </button>
+              <button type="button" className="w-full h-full text-left">
+                Сортирай по:{" "}
+              </button>
             </div>
           </div>
         </section>
