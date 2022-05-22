@@ -10,7 +10,7 @@ const dictionary = [
     title: "Интрументи и железария",
     mainRoute: "toolsAndHardware",
     articles: [
-      ["Акумулаторни комплекти", "/"],
+      ["Акумулаторни комплекти", "/batteryKits"],
       ["Само тествам", "/"],
     ],
     icon: "",
