@@ -9,6 +9,7 @@ import Pricing from "../../components/priceStyling/Pricing";
 export default function section() {
   const router = useRouter();
   const { section } = router.query;
+
   return (
     <main className="mb-auto">
       <div className="container md:grid grid-cols-[20%80%]">
