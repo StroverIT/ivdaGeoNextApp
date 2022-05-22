@@ -11,6 +11,7 @@ export default function section() {
         <aside className="hidden md:block"></aside>
         <section>
           <div className="md:hidden grid grid-cols-2 gap-2">
+            {/* TODO: add icons */}
             <button
               type="button"
               className="w-full h-full text-left text-white bg-primary pl-4 py-2"
