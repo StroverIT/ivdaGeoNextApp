@@ -45,8 +45,18 @@ export default function section() {
                 </ul>
               </div>
               <div className="bg-gray">
-                <div>
-                  <Pricing price={169} priceDec={99} />
+                <div className="container">
+                  <div className="flex justify-center">
+                    <Pricing price={169} priceDec={99} />
+                  </div>
+                  <div className="border-t border-white">
+                    <button
+                      type="button"
+                      className="text-white bg-green w-full my-10 py-1 rounded-full"
+                    >
+                      Купи
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
