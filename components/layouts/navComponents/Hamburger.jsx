@@ -17,7 +17,7 @@ const Hamburger = ({ headRef }) => {
 
   useEffect(() => {
     menuState(false);
-  }, [router.pathname]);
+  }, [router]);
 
   useEffect(() => {
     if (isOpen) {
