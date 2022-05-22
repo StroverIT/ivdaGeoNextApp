@@ -9,7 +9,16 @@ export default function section() {
     <main className="mb-auto">
       <div className="container md:grid grid-cols-[20%80%]">
         <aside className="hidden md:block"></aside>
-        <section></section>
+        <section>
+          <div className="md:hidden grid">
+            <div>
+              <button type="button">Филтри</button>
+            </div>
+            <div>
+              <button type="button">Сортирай по: </button>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );
