@@ -82,7 +82,7 @@ export default function section() {
               <div className="bg-gray">
                 <div className="container flex justify-center itesm-center h-full flex-col">
                   <div className="flex justify-center">
-                    <Pricing price={169} priceDec={99} />
+                    <Pricing price={169} priceDec={99} size="text-xl" />
                   </div>
                   <div className="border-t border-white">
                     <button
