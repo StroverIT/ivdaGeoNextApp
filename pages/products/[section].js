@@ -28,6 +28,13 @@ export default function section() {
                 <span>Изчисти</span>
               </div>
             </div>
+            <div>
+              <h3>Марка</h3>
+              <div>
+                <input type="checkbox" />
+                BLACK&Decker {/*quantity */}
+              </div>
+            </div>
           </div>
         </aside>
         <section>
