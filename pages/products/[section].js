@@ -84,6 +84,7 @@ export default function section() {
                   <div className="flex justify-center">
                     <Pricing price={169} priceDec={99} size="text-2xl" />
                   </div>
+                  {/* Create grayer color */}
                   <div className="border-t border-white">
                     <button
                       type="button"
