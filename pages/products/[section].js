@@ -32,7 +32,7 @@ export default function section() {
           </div>
           <section>
             <div className="md:grid grid-cols-[80%20%]">
-              <div className="flex">
+              <div className="md:flex">
                 <div className="flex relative h-full w-full">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
                 </div>
