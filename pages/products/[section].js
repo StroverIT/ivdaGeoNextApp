@@ -35,6 +35,13 @@ export default function section() {
                 BLACK&Decker {/*quantity */}
               </div>
             </div>
+            <div>
+              <h3>Напрежение</h3>
+              <div>
+                <input type="checkbox" />
+                10.80 V {/*quantity */}
+              </div>
+            </div>
           </div>
         </aside>
         <section>
