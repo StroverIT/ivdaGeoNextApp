@@ -33,7 +33,7 @@ export default function section() {
           <section>
             <div className="md:grid grid-cols-[80%20%]">
               <div className="md:flex">
-                <div className="flex relative h-full w-full md:w-32">
+                <div className="flex relative h-full w-full">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
                 </div>
                 <div>
@@ -48,7 +48,7 @@ export default function section() {
                 </div>
               </div>
               <div className="bg-gray">
-                <div className="container">
+                <div className="container flex justify-center itesm-center h-full flex-col">
                   <div className="flex justify-center">
                     <Pricing price={169} priceDec={99} />
                   </div>
