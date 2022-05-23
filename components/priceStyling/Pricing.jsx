@@ -1,5 +1,11 @@
 import React from "react";
 
+// based on this dictionary fix:
+/*
+1. Margin on pricedec
+2. text-{somethin} on price
+3. text-{something} on priceDec
+*/
 const sizeDictionary = {
   xl: ["text-xl", "text-sm"],
 };
