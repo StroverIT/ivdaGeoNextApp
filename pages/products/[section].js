@@ -32,7 +32,7 @@ export default function section() {
               <h3>Марка</h3>
               <div>
                 <input type="checkbox" />
-                <span>BLACK&Decker</span>
+                <span className="pl-2">BLACK&Decker</span>
                 <span>{/*quantity */}</span>
               </div>
             </div>
@@ -40,7 +40,7 @@ export default function section() {
               <h3>Напрежение</h3>
               <div>
                 <input type="checkbox" />
-                <span>10.80 V</span>
+                <span className="pl-2">10.80 V</span>
                 <span>{/*quantity */}</span>
               </div>
             </div>
