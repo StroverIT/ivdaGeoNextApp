@@ -33,17 +33,19 @@ export default function section() {
           <section>
             <div className="md:grid grid-cols-[80%20%]">
               <div className="md:flex">
-                <div className="flex relative h-full w-full">
+                <div className="flex relative h-full w-full md:w-32">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
                 </div>
-                <h2>АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li</h2>
-                <ul>
-                  <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
-                  <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
-                  <li>ИНСТРУМЕНТ 3 : АКУМУЛАТОРЕН ФЕНЕР</li>
-                  <li>ТИП БАТЕРИЯ : Li-Ion</li>
-                  <li>НАПРЕЖЕНИЕ : 12.00 V</li>
-                </ul>
+                <div>
+                  <h2>АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li</h2>
+                  <ul className="text-sm text-gray-darker">
+                    <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
+                    <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
+                    <li>ИНСТРУМЕНТ 3 : АКУМУЛАТОРЕН ФЕНЕР</li>
+                    <li>ТИП БАТЕРИЯ : Li-Ion</li>
+                    <li>НАПРЕЖЕНИЕ : 12.00 V</li>
+                  </ul>
+                </div>
               </div>
               <div className="bg-gray">
                 <div className="container">
