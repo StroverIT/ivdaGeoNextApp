@@ -12,8 +12,24 @@ export default function section() {
 
   return (
     <main className="mb-auto">
-      <div className="container md:grid grid-cols-[20%80%]">
-        <aside className="hidden md:block"></aside>
+      <div className="container md:grid grid-cols-[20%80%] gap-4">
+        <aside className="hidden md:block bg-gray">
+          <div className="container">
+            <h3>Филтри</h3>
+            <div>
+              <h3>Цена</h3>
+              <div>
+                <span>169.99 лв.</span>
+                <span>1 499.99 лв.</span>
+              </div>
+              {/* Pricing line to choose */}
+              <div>
+                <span>{/* Icon */}</span>
+                <span>Изчисти</span>
+              </div>
+            </div>
+          </div>
+        </aside>
         <section>
           <div className="md:hidden grid grid-cols-2 gap-2">
             {/* TODO: add icons */}
