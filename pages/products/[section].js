@@ -32,14 +32,18 @@ export default function section() {
               <h3>Марка</h3>
               <div>
                 <input type="checkbox" />
-                BLACK&Decker {/*quantity */}
+                <span>
+                  BLACK&Decker <span>{/*quantity */}</span>
+                </span>
               </div>
             </div>
             <div>
               <h3>Напрежение</h3>
               <div>
                 <input type="checkbox" />
-                10.80 V {/*quantity */}
+                <span>
+                  10.80 V <span>{/*quantity */}</span>
+                </span>
               </div>
             </div>
           </div>
