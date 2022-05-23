@@ -87,7 +87,7 @@ export default function section() {
                   <div className="border-t border-white">
                     <button
                       type="button"
-                      className="text-white bg-green w-full my-10 py-1 rounded-full"
+                      className="text-white bg-green w-full my-10 lg:my-5 py-1 rounded-full"
                     >
                       Купи
                     </button>
