@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Checkbox({ text, quanity, id }) {
+export default function Checkbox({ text, quantity, id }) {
   return (
     <>
       <input
@@ -11,7 +11,7 @@ export default function Checkbox({ text, quanity, id }) {
       />
       <label className="inline-block select-none form-check-label" htmlFor={id}>
         {text}
-        {quanity ? <span>{quanity}</span> : ""}
+        {quantity && <span>{quantity}</span>}
       </label>
     </>
   );
