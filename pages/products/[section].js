@@ -32,19 +32,11 @@ export default function section() {
             <div>
               <h3>Марка</h3>
               <div>
-                <input
-                  className="w-4 h-4 mt-1 mr-2 align-top border-gray accent-primary-lighter"
-                  type="checkbox"
+                <Checkbox
+                  text="BLACK&DECKER"
                   id="blackAndDecker"
-                  value="option1"
+                  quantity={2}
                 />
-                <label
-                  className="inline-block select-none form-check-label"
-                  htmlFor="blackAndDecker"
-                >
-                  BLACK&DECKER
-                  <span>{/*quantity */}</span>
-                </label>
               </div>
             </div>
             <div>
