@@ -41,9 +41,8 @@ export default function section() {
             </div>
             <div>
               <h3>Напрежение</h3>
-              <div>
-                <Checkbox text="10.80 V" id="10.80V" quantity={100} />
-              </div>
+
+              <Checkbox text="10.80 V" id="10.80V" quantity={100} />
             </div>
           </div>
         </aside>
