@@ -5,7 +5,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 // Components
 import Pricing from "../../components/priceStyling/Pricing";
-import Checkbox from "../../components/products";
+import Checkbox from "../../components/base/Checkbox";
+
 export default function section() {
   const router = useRouter();
   const { section } = router.query;
