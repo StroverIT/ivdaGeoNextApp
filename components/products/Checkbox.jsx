@@ -11,7 +11,7 @@ export default function Checkbox({ text, quanity, id }) {
       />
       <label className="inline-block select-none form-check-label" htmlFor={id}>
         {text}
-        <span>{quanity}</span>
+        {quanity ? <span>{quanity}</span> : ""}
       </label>
     </>
   );
