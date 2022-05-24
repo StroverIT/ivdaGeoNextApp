@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 // Components
 import Input from "../../components/form/Input";
-import Checkbox from "../../components/products/Checkbox";
+import Checkbox from "../../components/base/Checkbox";
 
 const Login = () => {
   return (
