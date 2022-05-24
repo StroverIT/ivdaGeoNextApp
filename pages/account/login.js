@@ -51,18 +51,7 @@ const Login = () => {
               />
               <div className="flex justify-between my-8 select-none">
                 <div>
-                  <input
-                    className="w-4 h-4 mt-1 mr-2 align-top border-gray accent-primary-lighter"
-                    type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
-                  />
-                  <label
-                    className="inline-block form-check-label"
-                    htmlFor="inlineCheckbox1"
-                  >
-                    Запомни ме
-                  </label>
+                  <Checkbox />
                 </div>
               </div>
               <div className="flex items-center justify-center ">
