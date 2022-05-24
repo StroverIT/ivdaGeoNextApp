@@ -31,13 +31,8 @@ export default function section() {
             </div>
             <div>
               <h3>Марка</h3>
-              <div>
-                <Checkbox
-                  text="BLACK&DECKER"
-                  id="blackAndDecker"
-                  quantity={2}
-                />
-              </div>
+
+              <Checkbox text="BLACK&DECKER" id="blackAndDecker" quantity={2} />
             </div>
             <div>
               <h3>Напрежение</h3>
