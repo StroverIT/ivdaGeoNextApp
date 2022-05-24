@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 // Components
 import Input from "../../components/form/Input";
+import Checkbox from "../../components/products/Checkbox";
 
 const Login = () => {
   return (
@@ -52,7 +53,7 @@ const Login = () => {
               />
               <div className="flex justify-between my-8 select-none">
                 <div>
-                  <Checkbox />
+                  <Checkbox text="Запомни ме" id="rememberMe" />
                 </div>
               </div>
               <div className="flex items-center justify-center ">
