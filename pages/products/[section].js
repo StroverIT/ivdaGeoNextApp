@@ -42,9 +42,7 @@ export default function section() {
             <div>
               <h3>Напрежение</h3>
               <div>
-                <input type="checkbox" />
-                <span className="pl-2">10.80 V</span>
-                <span>{/*quantity */}</span>
+                <Checkbox text="10.80 V" id="10.80V" quantity={100} />
               </div>
             </div>
           </div>
