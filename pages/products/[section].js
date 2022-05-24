@@ -31,9 +31,19 @@ export default function section() {
             <div>
               <h3>Марка</h3>
               <div>
-                <input type="checkbox" />
-                <span className="pl-2">BLACK&Decker</span>
-                <span>{/*quantity */}</span>
+                <input
+                  className="w-4 h-4 mt-1 mr-2 align-top border-gray accent-primary-lighter"
+                  type="checkbox"
+                  id="blackAndDecker"
+                  value="option1"
+                />
+                <label
+                  className="inline-block select-none form-check-label"
+                  htmlFor="blackAndDecker"
+                >
+                  BLACK&DECKER
+                  <span>{/*quantity */}</span>
+                </label>
               </div>
             </div>
             <div>
@@ -47,17 +57,17 @@ export default function section() {
           </div>
         </aside>
         <section>
-          <div className="lg:hidden grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-2 lg:hidden">
             {/* TODO: add icons */}
             <button
               type="button"
-              className="w-full h-full text-left text-white bg-primary pl-4 py-2"
+              className="w-full h-full py-2 pl-4 text-left text-white bg-primary"
             >
               Филтри
             </button>
             <button
               type="button"
-              className="w-full h-full text-left border border-gray pl-4 py-2"
+              className="w-full h-full py-2 pl-4 text-left border border-gray"
             >
               Сортирай по:
             </button>
@@ -65,7 +75,7 @@ export default function section() {
           <section>
             <div className="md:grid grid-cols-[80%20%]">
               <div className="md:flex">
-                <div className="flex relative h-full w-full">
+                <div className="relative flex w-full h-full">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
                 </div>
                 <div>
@@ -80,7 +90,7 @@ export default function section() {
                 </div>
               </div>
               <div className="bg-gray">
-                <div className="container flex justify-center itesm-center h-full flex-col">
+                <div className="container flex flex-col justify-center h-full itesm-center">
                   <div className="flex justify-center">
                     <Pricing price={169} priceDec={99} size="text-2xl" />
                   </div>
@@ -88,7 +98,7 @@ export default function section() {
                   <div className="border-t border-white">
                     <button
                       type="button"
-                      className="text-white bg-green w-full my-10 lg:my-5 py-1 rounded-full"
+                      className="w-full py-1 my-10 text-white rounded-full bg-green lg:my-5"
                     >
                       Купи
                     </button>
