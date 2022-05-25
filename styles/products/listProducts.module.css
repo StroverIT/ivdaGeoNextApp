@@ -7,7 +7,12 @@
   top: 0;
   bottom: 0;
   right: 100%;
-  margin-right: -250px;
+  margin-right: -225px;
   background: #f5f5f5;
   z-index: -10;
+}
+@media screen("xl") {
+  .asideContainer::after {
+    margin-right: -250px;
+  }
 }
