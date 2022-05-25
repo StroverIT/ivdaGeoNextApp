@@ -58,7 +58,7 @@ export default function section() {
           <section className="flex items-center w-full h-full">
             <div className="md:grid grid-cols-[80%20%] w-full h-full">
               <div className="items-center justify-center md:flex">
-                <div className="relative flex w-full h-full lg:w-52 lg:h-32">
+                <div className="relative flex w-full h-48 sm:w-52 sm:h-32">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
                 </div>
                 <div className="pl-4">
