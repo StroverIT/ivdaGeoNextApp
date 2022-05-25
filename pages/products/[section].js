@@ -66,7 +66,7 @@ export default function section() {
             <div className="md:grid grid-cols-[80%20%] w-full h-full">
               <div className="items-center justify-center sm:flex">
                 <Link href={`/products${section}/someProduct`}>
-                  <div className="relative flex w-full h-48 sm:w-52 sm:h-32">
+                  <div className="relative flex w-full h-48 cursor-pointer sm:w-52 sm:h-32">
                     <Image src="/images/testCarousel.jpg" layout="fill" />
                   </div>
                 </Link>
