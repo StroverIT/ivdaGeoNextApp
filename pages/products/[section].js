@@ -63,7 +63,7 @@ export default function section() {
                 </div>
                 <div className="pl-4">
                   <h2>АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li</h2>
-                  <ul className="text-sm text-gray-darker">
+                  <ul className="pt-2 text-sm text-gray-darker">
                     <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
                     <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
                     <li>ИНСТРУМЕНТ 3 : АКУМУЛАТОРЕН ФЕНЕР</li>
