@@ -73,7 +73,7 @@ export default function section() {
 
                 <div className="pl-4">
                   <Link href={`/products${section}/someProduct`}>
-                    <h2 className="cursor-pointer">
+                    <h2 className="text-lg cursor-pointer">
                       АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
                     </h2>
                   </Link>
