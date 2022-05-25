@@ -14,7 +14,7 @@ export default function section() {
   return (
     <main className="mb-auto">
       <div className="lg:grid grid-cols-[20%80%] gap-4 container">
-        <aside className="hidden w-full h-full lg:block bg-gray">
+        <aside className="hidden w-full h-full lg:block bg-[#f5f5f5]">
           <div className="">
             <h3>Филтри</h3>
             <div>
