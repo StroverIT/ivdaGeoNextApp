@@ -13,9 +13,9 @@ export default function section() {
 
   return (
     <main className="mb-auto">
-      <div className="container lg:grid grid-cols-[20%80%] gap-4">
-        <aside className="hidden lg:block bg-gray">
-          <div className="container">
+      <div className="lg:grid grid-cols-[20%80%] gap-4 container">
+        <aside className="hidden w-full h-full lg:block bg-gray">
+          <div className="">
             <h3>Филтри</h3>
             <div>
               <h3>Цена</h3>
@@ -31,12 +31,10 @@ export default function section() {
             </div>
             <div>
               <h3>Марка</h3>
-
               <Checkbox text="BLACK&DECKER" id="blackAndDecker" quantity={2} />
             </div>
             <div>
               <h3>Напрежение</h3>
-
               <Checkbox text="10.80 V" id="10.80V" quantity={100} />
             </div>
           </div>
