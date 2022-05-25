@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styles
-
+import styles from "../../styles/products/listProducts.module.css";
 // NextJs
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -16,7 +16,9 @@ export default function section() {
   return (
     <main className="mb-auto">
       <div className="lg:grid grid-cols-[20%80%] gap-4 container">
-        <aside className={`hidden w-full h-full lg:block bg-[#f5f5f5] `}>
+        <aside
+          className={`hidden w-full h-full lg:block bg-[#f5f5f5] ${styles.asideContainer}`}
+        >
           <div className="">
             <h3>Филтри</h3>
             <div>
