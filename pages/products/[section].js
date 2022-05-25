@@ -72,7 +72,9 @@ export default function section() {
                 </Link>
 
                 <div className="pl-4">
-                  <h2>АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li</h2>
+                  <Link href={`/products${section}/someProduct`}>
+                    <h2>АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li</h2>
+                  </Link>
                   <ul className="pt-2 text-sm text-gray-darker">
                     <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
                     <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
