@@ -5,6 +5,7 @@ import styles from "../../styles/products/listProducts.module.css";
 // NextJs
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 // Components
 import Pricing from "../../components/priceStyling/Pricing";
 import Checkbox from "../../components/base/Checkbox";
