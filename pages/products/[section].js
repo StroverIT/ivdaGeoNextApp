@@ -61,7 +61,7 @@ export default function section() {
                 <div className="relative flex w-full h-full lg:w-52 lg:h-32">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
                 </div>
-                <div>
+                <div className="pl-4">
                   <h2>АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li</h2>
                   <ul className="text-sm text-gray-darker">
                     <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
