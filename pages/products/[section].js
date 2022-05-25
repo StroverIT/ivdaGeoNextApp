@@ -55,9 +55,9 @@ export default function section() {
               Сортирай по:
             </button>
           </div>
-          <section>
-            <div className="md:grid grid-cols-[80%20%]">
-              <div className="md:flex">
+          <section className="flex items-center w-full h-full">
+            <div className="md:grid grid-cols-[80%20%] w-full h-full">
+              <div className="items-center justify-center md:flex">
                 <div className="relative flex w-full h-full lg:w-52 lg:h-32">
                   <Image src="/images/testCarousel.jpg" layout="fill" />
                 </div>
