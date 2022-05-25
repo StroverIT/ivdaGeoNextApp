@@ -72,13 +72,13 @@ export default function section() {
                   </ul>
                 </div>
               </div>
-              <div className="bg-gray">
+              <div className="bg-grayBg">
                 <div className="container flex flex-col justify-center h-full itesm-center">
                   <div className="flex justify-center">
                     <Pricing price={169} priceDec={99} size="text-2xl" />
                   </div>
                   {/* Create grayer color for future*/}
-                  <div className="border-t border-white">
+                  <div className="border-t border-gray">
                     <button
                       type="button"
                       className="w-full py-1 my-10 text-white rounded-full bg-green lg:my-5"
