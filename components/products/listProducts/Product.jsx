@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function Product() {
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Product({ section }) {
   return (
     <section className="flex items-center w-full h-full border my-14 border-gray">
       <div className="md:grid grid-cols-[80%20%] w-full h-full">

@@ -5,8 +5,6 @@ import styles from "../../styles/products/listProducts.module.css";
 
 // NextJs
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Link from "next/link";
 
 // Components
 import Pricing from "../../components/priceStyling/Pricing";
@@ -66,7 +64,7 @@ export default function section() {
               Сортирай по:
             </button>
           </div>
-          <Product />
+          <Product section={section} />
         </section>
       </div>
     </main>
