@@ -17,7 +17,7 @@ export default function section() {
 
   return (
     <main className="mb-auto">
-      <div className="lg:grid grid-cols-[20%80%] gap-4 container">
+      <div className="lg:grid grid-cols-[20%80%] space-x-10 container">
         <aside
           className={`hidden w-full h-full lg:block bg-[#f5f5f5] ${styles.asideContainer} relative pt-4`}
         >
@@ -63,6 +63,8 @@ export default function section() {
               Сортирай по:
             </button>
           </div>
+          <Product section={section} />
+          <Product section={section} />
           <Product section={section} />
         </section>
       </div>
