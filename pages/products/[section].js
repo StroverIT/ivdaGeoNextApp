@@ -11,6 +11,7 @@ import Link from "next/link";
 // Components
 import Pricing from "../../components/priceStyling/Pricing";
 import Checkbox from "../../components/base/Checkbox";
+import asideHeader from "../../components/products/asideHeader";
 
 export default function section() {
   const router = useRouter();
@@ -25,9 +26,6 @@ export default function section() {
           <div className="">
             <h3 className="mb-3 text-2xl text-semibold">Филтри</h3>
             <div>
-              <div className="relative filter-container">
-                <h3 className="filter-header">Цена</h3>
-              </div>
               <div>
                 <span>169.99 лв.</span>
                 <span>1 499.99 лв.</span>
