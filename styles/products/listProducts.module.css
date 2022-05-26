@@ -1,7 +1,6 @@
 .asideContainer::after {
   content: "";
   display: block;
-  height: 100vh;
   width: 10000px;
   position: absolute;
   top: 0;
