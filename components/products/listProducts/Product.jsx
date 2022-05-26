@@ -1,7 +1,10 @@
 import React from "react";
 
+// NextJs
 import Image from "next/image";
 import Link from "next/link";
+//Components
+import Pricing from "../../priceStyling/Pricing";
 
 export default function Product({ section }) {
   return (

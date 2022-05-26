@@ -7,7 +7,6 @@ import styles from "../../styles/products/listProducts.module.css";
 import { useRouter } from "next/router";
 
 // Components
-import Pricing from "../../components/priceStyling/Pricing";
 import Checkbox from "../../components/base/Checkbox";
 import AsideHeader from "../../components/products/aside/AsideHeader";
 import Product from "../../components/products/listProducts/Product";
