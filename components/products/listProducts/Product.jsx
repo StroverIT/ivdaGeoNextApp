@@ -10,7 +10,7 @@ export default function Product({ section }) {
   return (
     <section className="flex items-center border my-14 border-gray">
       <div className="md:grid grid-cols-[80%20%] w-full h-full">
-        <div className="items-center justify-center h-full sm:flex ">
+        <div className="items-center h-full sm:flex ">
           <Link href={`/products${section}/someProduct`}>
             <div className="relative flex w-full h-48 cursor-pointer sm:w-52 sm:h-32">
               <Image src="/images/testCarousel.jpg" layout="fill" />
