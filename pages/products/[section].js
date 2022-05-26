@@ -25,6 +25,7 @@ export default function section() {
         >
           <div className="">
             <h3 className="mb-3 text-2xl text-semibold">Филтри</h3>
+            <AsideHeader text="Цена" />
             <div>
               <div>
                 <span>169.99 лв.</span>
@@ -37,11 +38,13 @@ export default function section() {
               </div>
             </div>
             <div>
-              <h3>Марка</h3>
+              <AsideHeader text="Марка" />
+
               <Checkbox text="BLACK&DECKER" id="blackAndDecker" quantity={2} />
             </div>
             <div>
-              <h3>Напрежение</h3>
+              <AsideHeader text="Напрежение" />
+
               <Checkbox text="10.80 V" id="10.80V" quantity={100} />
             </div>
           </div>
