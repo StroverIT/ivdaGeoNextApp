@@ -41,7 +41,7 @@ export default function Product({ section }) {
             <div className="border-t border-gray">
               <button
                 type="button"
-                className="w-full py-1 my-10 text-white rounded-full bg-green lg:my-5"
+                className="w-full py-1 my-10 font-semibold text-white rounded-full bg-green lg:my-5"
               >
                 Купи
               </button>
