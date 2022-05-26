@@ -12,6 +12,7 @@ import Link from "next/link";
 import Pricing from "../../components/priceStyling/Pricing";
 import Checkbox from "../../components/base/Checkbox";
 import AsideHeader from "../../components/products/aside/AsideHeader";
+import Product from "../../components/products/listProducts/Product";
 
 export default function section() {
   const router = useRouter();
@@ -65,48 +66,7 @@ export default function section() {
               Сортирай по:
             </button>
           </div>
-          <section className="flex items-center w-full h-full border my-14 border-gray">
-            <div className="md:grid grid-cols-[80%20%] w-full h-full">
-              <div className="items-center justify-center h-full sm:flex ">
-                <Link href={`/products${section}/someProduct`}>
-                  <div className="relative flex w-full h-48 cursor-pointer sm:w-52 sm:h-32">
-                    <Image src="/images/testCarousel.jpg" layout="fill" />
-                  </div>
-                </Link>
-
-                <div className="pl-4">
-                  <Link href={`/products${section}/someProduct`}>
-                    <h2 className="text-lg cursor-pointer">
-                      АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
-                    </h2>
-                  </Link>
-                  <ul className="pt-2 text-sm text-gray-darker">
-                    <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
-                    <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
-                    <li>ИНСТРУМЕНТ 3 : АКУМУЛАТОРЕН ФЕНЕР</li>
-                    <li>ТИП БАТЕРИЯ : Li-Ion</li>
-                    <li>НАПРЕЖЕНИЕ : 12.00 V</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="bg-grayBg">
-                <div className="container flex flex-col justify-center h-full itesm-center">
-                  <div className="flex justify-center">
-                    <Pricing price={169} priceDec={99} size="text-2xl" />
-                  </div>
-                  {/* Create grayer color for future*/}
-                  <div className="border-t border-gray">
-                    <button
-                      type="button"
-                      className="w-full py-1 my-10 text-white rounded-full bg-green lg:my-5"
-                    >
-                      Купи
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <Product />
         </section>
       </div>
     </main>
