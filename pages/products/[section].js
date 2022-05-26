@@ -23,9 +23,11 @@ export default function section() {
           className={`hidden w-full h-full lg:block bg-[#f5f5f5] ${styles.asideContainer} relative pt-4`}
         >
           <div className="">
-            <h3>Филтри</h3>
+            <h3 className="text-2xl text-semibold">Филтри</h3>
             <div>
-              <h3>Цена</h3>
+              <div className="relative filter-container">
+                <h3 className="filter-header">Цена</h3>
+              </div>
               <div>
                 <span>169.99 лв.</span>
                 <span>1 499.99 лв.</span>
