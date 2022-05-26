@@ -11,7 +11,7 @@ import Link from "next/link";
 // Components
 import Pricing from "../../components/priceStyling/Pricing";
 import Checkbox from "../../components/base/Checkbox";
-import AsideHeader from "../../components/products/AsideHeader";
+import AsideHeader from "../../components/products/aside/AsideHeader";
 
 export default function section() {
   const router = useRouter();
