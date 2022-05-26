@@ -64,7 +64,7 @@ export default function section() {
               Сортирай по:
             </button>
           </div>
-          <section className="flex items-center w-full h-full">
+          <section className="flex items-center w-full h-full border border-gray">
             <div className="md:grid grid-cols-[80%20%] w-full h-full">
               <div className="items-center justify-center sm:flex">
                 <Link href={`/products${section}/someProduct`}>
