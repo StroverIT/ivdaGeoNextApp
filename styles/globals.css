@@ -6,6 +6,9 @@
   .acc-active {
     @apply bg-primary-0 text-primary;
   }
+  .filter-header {
+    @apply text-lg font-semibold text-primary;
+  }
 }
 :root {
   --pag-max-width: 140px;
