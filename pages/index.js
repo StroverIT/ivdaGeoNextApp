@@ -118,7 +118,7 @@ export default function Home() {
                 </div>
               </section>
 
-              <div className="flex items-center justify-center w-full">
+              <div className="flex items-center justify-center w-full mt-5 lg:mt-0">
                 <div className="flex justify-end w-full">
                   <input
                     type="text"
