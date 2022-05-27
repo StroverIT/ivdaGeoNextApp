@@ -13,6 +13,7 @@ import Checkbox from "../../components/base/Checkbox";
 import AsideHeader from "../../components/products/aside/AsideHeader";
 import Product from "../../components/products/listProducts/Product";
 import Sorting from "../../components/products/filters/Sorting";
+import RangeSlider from "../../components/products/aside/RangeSlider";
 // Dictionaries
 const sortByDictionary = [
   {
@@ -64,10 +65,14 @@ export default function section() {
             <h3 className="mb-3 text-2xl text-semibold">Филтри</h3>
             <AsideHeader text="Цена" />
             <div>
-              <div>
-                <span>169.99 лв.</span>
-                <span>1 499.99 лв.</span>
-              </div>
+              <RangeSlider
+                initialMin={10}
+                initialMax={500}
+                min={0}
+                max={500}
+                step={100}
+                priceGap={10}
+              />
               {/* Pricing line to choose */}
               <div className="flex items-center mt-2 cursor-pointer">
                 <span className="text-primary">
