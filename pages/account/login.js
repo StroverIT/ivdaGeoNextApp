@@ -25,7 +25,7 @@ const Login = () => {
           </div>
           <div className="w-full bg-white rounded shadow-xl">
             <div className="my-5 ml-8">
-              <h3 className="text-3xl">Влезте във вашият акаунт</h3>
+              <h3 className="text-2xl">Влезте във вашият акаунт</h3>
               <p className="mt-1">
                 Все още нямате профил?
                 <Link href="/account/register">
