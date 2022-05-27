@@ -1,6 +1,8 @@
 import React from "react";
 
-import Option from "./Option";
+function Option({ value, text }) {
+  return <option value={value}>{text}</option>;
+}
 
 function Quantity({ qty }) {
   return <span className="pl-1 text-sm text-primary-lighter">{qty}</span>;
