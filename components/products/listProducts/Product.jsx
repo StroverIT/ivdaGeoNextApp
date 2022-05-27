@@ -11,14 +11,14 @@ export default function Product({ section }) {
     <section className="flex items-center border my-14 border-gray">
       <div className="md:grid grid-cols-[80%20%] w-full h-full">
         <div className="items-center h-full py-3 sm:flex">
-          <Link href={`/products${section}/someProduct`}>
+          <Link href={`/products/${section}/someProduct`}>
             <div className="relative flex w-full h-48 cursor-pointer sm:w-52 sm:h-32">
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </Link>
 
           <div className="pl-4">
-            <Link href={`/products${section}/someProduct`}>
+            <Link href={`/products/${section}/someProduct`}>
               <h2 className="text-lg cursor-pointer">
                 АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
               </h2>
