@@ -39,24 +39,13 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceGap }) => {
   return (
     <div className="flex flex-col rounded-lg ">
       <div className="flex justify-between items-center mb-7 ">
-        <div className="rounded-md">
-          <span className="p-2 font-semibold"> Min</span>
-          <input
-            onChange={(e) => setMinValue(e.target.value)}
-            type="number"
-            value={minValue}
-            className="w-24 rounded-md border border-gray"
-          />
+        <div className="flex text-gray-darker">
+          <div>{parseFloat(minValue).toFixed(2)}</div>
+          <div className="pl-1">лв</div>
         </div>
-        <div className="ml-2 font-semibold text-lg"> - </div>
-        <div className=" ">
-          <span className="p-2 font-semibold"> Max</span>
-          <input
-            onChange={(e) => setMaxValue(e.target.value)}
-            type="number"
-            value={maxValue}
-            className="w-24 rounded-md border border-gray"
-          />
+        <div className="flex text-gray-darker">
+          <div>{parseFloat(maxValue).toFixed(2)}</div>
+          <div className="pl-1">лв</div>
         </div>
       </div>
 
