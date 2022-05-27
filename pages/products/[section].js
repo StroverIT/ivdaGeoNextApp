@@ -12,7 +12,44 @@ import { useRouter } from "next/router";
 import Checkbox from "../../components/base/Checkbox";
 import AsideHeader from "../../components/products/aside/AsideHeader";
 import Product from "../../components/products/listProducts/Product";
-
+import Sorting from "../../components/products/filters/Sorting";
+// Dictionaries
+const sortByDictionary = [
+  {
+    val: "nameAsc",
+    text: "Име (възходящ ред)",
+  },
+  {
+    val: "nameDesc",
+    text: "Име (низходящ ред)",
+  },
+  {
+    val: "priceAsc",
+    text: "Цена (възходящ ред)",
+  },
+  {
+    val: "priceDesc",
+    text: "Цена (низходящ ред)",
+  },
+];
+const pageDictionary = [
+  {
+    val: "6",
+    text: "по 6 на страница",
+  },
+  {
+    val: "12",
+    text: "по 12 на страница",
+  },
+  {
+    val: "24",
+    text: "по 24 на страница",
+  },
+  {
+    val: "48",
+    text: "по 48 на страница",
+  },
+];
 export default function section() {
   const router = useRouter();
   const { section } = router.query;
@@ -51,7 +88,8 @@ export default function section() {
             </div>
           </div>
         </aside>
-        <section>
+        <section className="mt-10">
+          {/* Filters for mobile */}
           <div className="grid grid-cols-2 gap-2 lg:hidden">
             {/* TODO: add icons */}
             <button
@@ -66,6 +104,20 @@ export default function section() {
             >
               Сортирай по:
             </button>
+          </div>
+          {/* Large screens buttons */}
+          <div className="mb-4 hidden lg:flex">
+            <div>
+              <Sorting title="Сортирай" name="sortBy" data={sortByDictionary} />
+            </div>
+            <div className="ml-4">
+              <Sorting
+                title="Намерени"
+                qty={42}
+                name="pages"
+                data={pageDictionary}
+              />
+            </div>
           </div>
           <Product section={section} />
           <Product section={section} />
