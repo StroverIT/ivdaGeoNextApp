@@ -71,21 +71,19 @@ const dictionary = [
     icon: "",
   },
 ];
-const NavLinks = ({ isHome, isOpen }) => {
+const NavLinks = ({ isHome }) => {
   return (
     <ul
-      className={` text-bg-color text-lg flex flex-col w-full ${
+      className={` text-bg-color text-lg inline-flex flex-col w-full  ${
         isHome ? "hidden lg:block" : ""
       }`}
     >
       {dictionary.map((article) => {
         return (
           <NavLinkMenu
-            isOpen={isOpen}
             title={article.title}
             articles={article.articles}
             key={article.title}
-            mainRoute={article.mainRoute}
             isHome={isHome}
           />
         );
