@@ -29,6 +29,21 @@ body {
   background-color: theme("colors.white");
   overflow-x: hidden;
 }
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  /* border-radius: 10px; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: theme("colors.gray");
+  border-radius: 100px;
+}
 a {
   color: inherit;
   text-decoration: none;
