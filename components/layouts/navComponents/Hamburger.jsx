@@ -46,12 +46,12 @@ const Hamburger = ({ headRef }) => {
         <div className="block w-3 h-0.5 bg-primary-lighter"></div>
       </div>
       <div
-        className={`w-full fixed lg:absolute  -z-20  ${styles.navLinks} ${
-          router.route == "/" ? "lg:hidden" : ""
-        } `}
+        className={`w-full inline-flex  fixed lg:absolute -z-20  ${
+          styles.navLinks
+        } ${router.route == "/" ? "lg:hidden" : ""} `}
         ref={navLinks}
       >
-        <NavLinks isOpen={isOpen} />
+        <NavLinks />
       </div>
       <div
         className={`blury-bg -z-30 ${!isOpen ? "hidden" : ""}`}
