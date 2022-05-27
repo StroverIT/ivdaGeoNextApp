@@ -1,5 +1,7 @@
 import React from "react";
 
+// Icons
+import { HiX } from "react-icons/hi";
 // Styles
 import styles from "../../styles/products/listProducts.module.css";
 
@@ -30,9 +32,11 @@ export default function section() {
                 <span>1 499.99 лв.</span>
               </div>
               {/* Pricing line to choose */}
-              <div>
-                <span>{/* Icon */}</span>
-                <span>Изчисти</span>
+              <div className="flex items-center mt-2 cursor-pointer">
+                <span className="text-primary">
+                  <HiX />
+                </span>
+                <span className="pl-1 text-sm text-gray-darker">Изчисти</span>
               </div>
             </div>
             <div>
