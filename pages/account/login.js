@@ -19,7 +19,7 @@ const Login = () => {
       </Head>
 
       <main>
-        <div className="container justify-center grid-cols-2 xl:grid ">
+        <div className="container justify-center grid-cols-2 xl:grid my-24">
           <div className="relative hidden w-full h-full ml-2 xl:block">
             <Image src="/images/testCarousel.jpg" layout="fill" />
           </div>
