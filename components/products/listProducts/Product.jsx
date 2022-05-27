@@ -8,7 +8,7 @@ import Pricing from "../../priceStyling/Pricing";
 
 export default function Product({ section }) {
   return (
-    <section className="flex items-center border my-14 border-gray">
+    <section className="flex items-center border mb-5 border-gray">
       <div className="md:grid grid-cols-[80%20%] w-full h-full">
         <div className="items-center h-full py-3 sm:flex">
           <Link href={`/products/${section}/someProduct`}>
