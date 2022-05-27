@@ -8,7 +8,6 @@ function Quantity({ qty }) {
   return <span className="pl-1 text-sm text-primary-lighter">{qty}</span>;
 }
 export default function Sorting({ title, name, data, qty }) {
-  console.log(data);
   return (
     <div className="flex text-[#888] items-center justify-center">
       <label htmlFor={name} className="text-sm">
