@@ -71,7 +71,7 @@ const Register = () => {
       </Head>
 
       <main>
-        <div className="container flex justify-center my-10">
+        <div className="container flex justify-center my-24">
           <div className="w-full bg-white rounded shadow-xl lg:w-1/2">
             <div className="mt-5 ml-8">
               <h3 className="text-3xl">Регистрирайте се, безплатно!</h3>
