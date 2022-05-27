@@ -70,7 +70,7 @@ export default function SwiperFreeMode({ images }) {
                   </div>
                 </Link>
 
-                <div className="container py-2 font-medium text-center border-t border-gray">
+                <div className="container py-2 mb-5 font-medium text-center border-t border-gray">
                   {image.title}
                 </div>
 
