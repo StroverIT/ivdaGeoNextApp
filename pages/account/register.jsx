@@ -74,7 +74,7 @@ const Register = () => {
         <div className="container flex justify-center my-24">
           <div className="w-full bg-white rounded shadow-xl lg:w-1/2">
             <div className="mt-5 ml-8">
-              <h3 className="text-3xl">Регистрирайте се, безплатно!</h3>
+              <h3 className="text-2xl">Регистрирайте се, безплатно!</h3>
               <p className="mt-1">
                 Вече имате профил?
                 <Link href="/account/login">
