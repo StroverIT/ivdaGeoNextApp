@@ -15,7 +15,7 @@ import tailwindConfig from "../../../tailwind.config.js";
 const fullConfig = resolveConfig(tailwindConfig);
 const lg = fullConfig.theme.screens.lg.min.split("px")[0];
 
-const NavLinkMenu = ({ title, articles, mainRoute, isHome, isOpen }) => {
+const NavLinkMenu = ({ title, articles, isHome }) => {
   const router = useRouter();
 
   const menu = useRef(null);
