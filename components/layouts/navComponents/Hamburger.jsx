@@ -35,7 +35,7 @@ const Hamburger = ({ headRef }) => {
   return (
     <>
       <div
-        className={`space-y-1 px-2 cursor-pointer ${styles.hamburger} ${
+        className={`px-2 cursor-pointer ${styles.hamburger} ${
           router.route == "/" ? "lg:hidden" : ""
         }`}
         onClick={() => menuState(!isOpen)}
@@ -46,9 +46,9 @@ const Hamburger = ({ headRef }) => {
         <div className="block w-3 h-0.5 bg-primary-lighter"></div>
       </div>
       <div
-        className={`w-full inline-flex  fixed lg:absolute -z-20  ${
-          styles.navLinks
-        } ${router.route == "/" ? "lg:hidden" : ""} `}
+        className={`w-full  fixed lg:absolute -z-20  ${styles.navLinks} ${
+          router.route == "/" ? "lg:hidden" : ""
+        } `}
         ref={navLinks}
       >
         <NavLinks />
