@@ -70,6 +70,9 @@ export default function section() {
           <Product section={section} />
           <Product section={section} />
           <Product section={section} />
+          <Product section={section} />
+
+          <Product section={section} />
         </section>
       </div>
     </main>
