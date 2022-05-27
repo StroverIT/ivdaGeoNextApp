@@ -12,32 +12,32 @@ const swiperPag = [
   {
     src: "/images/testCarousel.jpg",
     key: "test carousel for my monday 1",
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     key: "test carousel for my monday version 2",
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     key: "test carousel for my monday version 3",
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     key: "test carousel for my monday version 4",
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     key: "test carousel for my monday version 5",
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     key: "test carousel for my monday version 6",
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
 ];
 const swiperFreeImages = [
@@ -46,42 +46,42 @@ const swiperFreeImages = [
     title: "Боя за коса",
     price: 123,
     isPromo: false,
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     title: "ШКАФ ЗА БАНЯ С ОГЛЕДАЛО SYNCHRO Т2108-80К",
     price: 123,
     isPromo: false,
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     title: "СМЕСИТЕЛ ЗА КУХНЯ FORMA VITA КРИСТАЛ",
     price: 23.94,
     isPromo: true,
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     title: "СМЕСИТЕЛ ЗА КУХНЯ FORMA VITA Диамант",
     price: 1000.94,
     isPromo: false,
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     title: "Шкаф за обувки",
     price: 10,
     isPromo: false,
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
   {
     src: "/images/testCarousel.jpg",
     title: "Шкаф за дрехи",
     price: 15,
     isPromo: false,
-    pageUrl: "/products/main/product",
+    pageUrl: "/products/product",
   },
 ];
 
