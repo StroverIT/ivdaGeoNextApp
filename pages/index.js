@@ -150,18 +150,20 @@ export default function Home() {
         </section>
         <section className="py-5 bg-color">
           <div className="container">
-            <h2 className="py-2 text-2xl font-semibold text-center">
-              За нас и нашият магазин
-            </h2>
             <section className="items-center justify-center grid-cols-2 my-5 md:grid">
-              <div className="my-5 text-center md:text-left lg:ml-40 md:my-0">
-                Строителен супермаркет Ивда Гео с повече от 20 години опит в
-                търговията със строителни материали, инструменти, крепежни
-                елементи и други. В нашата железария ще намерите винаги богат
-                асортимент от продукти на отлични цени и качествено обслужване.
-                През годините се доказахме като надежден и лоялен партньор в
-                бранша. Ние следим всички нови тенденции и можем да ви предложим
-                решение за всеки индивидуален проект.
+              <div className="mt-5 mb-1 text-center md:text-left md:my-0 ">
+                <h2 className="py-2 text-2xl font-semibold ">
+                  За нас и нашият магазин
+                </h2>
+                <span className="text-gray-darker text-center font-semibold">
+                  Строителен супермаркет Ивда Гео с повече от 20 години опит в
+                  търговията със строителни материали, инструменти, крепежни
+                  елементи и други. В нашата железария ще намерите винаги богат
+                  асортимент от продукти на отлични цени и качествено
+                  обслужване. През годините се доказахме като надежден и лоялен
+                  партньор в бранша. Ние следим всички нови тенденции и можем да
+                  ви предложим решение за всеки индивидуален проект.
+                </span>
               </div>
 
               <div className="relative flex items-center justify-center w-full h-60">
