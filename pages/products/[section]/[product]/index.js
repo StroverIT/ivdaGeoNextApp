@@ -6,6 +6,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 // Components
 import ThumbsGallery from "../../../../components/swiperJs/ThumbsGallery";
 import Pricing from "../../../../components/priceStyling/Pricing";
+import BuyBtn from "../../../../components/base/BuyBtn";
 
 export default function index() {
   return (
@@ -19,32 +20,31 @@ export default function index() {
               <Pricing price={220} priceDec={22} />
             </div>
           </section>
-          <section>
+          <section className="flex justify-between">
             <div className="flex items-center">
               <div>
                 <button
                   type="button"
-                  className="p-1 text-lg text-white rounded-full bg-primary"
+                  className="p-1 text-white rounded-full bg-primary"
                 >
                   <AiOutlinePlus />
                 </button>
               </div>
-              <div className="flex items-center justify-center">
-                <input
-                  type="number"
-                  className="w-2/3 text-center border rounded-full border-primary placeholder:text-lg placeholder:font-bold"
-                  placeholder="1"
-                />
-              </div>
+              <input
+                type="number"
+                className="w-1/3 mx-2 text-center border rounded-full border-primary"
+                defaultValue="1"
+              />
               <div>
                 <button
                   type="button"
-                  className="p-1 text-lg text-white rounded-full bg-primary"
+                  className="p-1 text-white rounded-full bg-primary"
                 >
                   <AiOutlineMinus />
                 </button>
               </div>
             </div>
+            <BuyBtn lg={true} />
           </section>
         </section>
       </div>
