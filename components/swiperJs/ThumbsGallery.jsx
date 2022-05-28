@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+// NextJs
+import Image from "next/image";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -29,8 +31,8 @@ export default function App() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <SwiperSlide className="responsive">
+          <Image src="/images/testCarousel.jpg" layout="fill" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
