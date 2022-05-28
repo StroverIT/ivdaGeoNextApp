@@ -38,7 +38,7 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceGap }) => {
 
   return (
     <div className="flex flex-col rounded-lg ">
-      <div className="flex justify-between items-center mb-7 ">
+      <div className="flex items-center justify-between mb-7 ">
         <div className="flex text-gray-darker">
           <div>{parseFloat(minValue).toFixed(2)}</div>
           <div className="pl-1">лв</div>
@@ -50,14 +50,14 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceGap }) => {
       </div>
 
       <div className="mb-4">
-        <div className="slider relative h-1 rounded-md bg-gray">
+        <div className="relative h-1 rounded-md slider bg-gray">
           <div
-            className="progress absolute h-1 bg-green rounded "
+            className="absolute h-1 rounded progress bg-green "
             ref={progressRef}
           ></div>
         </div>
 
-        <div className="range-input relative  ">
+        <div className="relative range-input ">
           <input
             onChange={handleMin}
             type="range"
@@ -65,7 +65,7 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceGap }) => {
             step={step}
             max={max}
             value={minValue}
-            className="range-min absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none"
+            className="absolute w-full h-1 bg-transparent appearance-none cursor-pointer pointer-events-none range-min -top-1"
           />
 
           <input
@@ -75,7 +75,7 @@ const RangeSlider = ({ initialMin, initialMax, min, max, step, priceGap }) => {
             step={step}
             max={max}
             value={maxValue}
-            className="range-max absolute w-full -top-1 h-1 bg-transparent appearance-none pointer-events-none"
+            className="absolute w-full h-1 bg-transparent appearance-none cursor-pointer pointer-events-none range-max -top-1"
           />
         </div>
       </div>
