@@ -9,6 +9,10 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+// Styles
+import navStyle from "../../styles/swiperJs/SwiperNav.module.css";
+// Components
+import SwiperNav from "./SwiperNav";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
@@ -25,13 +29,17 @@ export default function App() {
             "--swiper-pagination-color": "#fff",
           }}
           spaceBetween={10}
-          navigation={true}
+          navigation={{
+            nextEl: `.${navStyle.swiperNext}`,
+            prevEl: `.${navStyle.swiperPrev}`,
+            disabledClass: `${navStyle.swiperDisabled}`,
+          }}
           thumbs={{
             swiper:
               thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
           }}
           modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper2"
+          className="relative mySwiper2"
         >
           <SwiperSlide>
             <div className="relative w-full h-52 lg:h-40">
@@ -58,7 +66,9 @@ export default function App() {
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </SwiperSlide>
+          <SwiperNav />
         </Swiper>
+
         <Swiper
           onSwiper={setThumbsSwiper}
           spaceBetween={10}
