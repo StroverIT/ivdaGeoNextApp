@@ -8,7 +8,7 @@ import Pricing from "../../priceStyling/Pricing";
 
 export default function Product({ section }) {
   return (
-    <section className="flex items-center border mb-5 border-gray">
+    <section className="flex items-center mb-5 border border-gray">
       <div className="md:grid grid-cols-[80%20%] w-full h-full">
         <div className="items-center h-full py-3 sm:flex">
           <Link href={`/products/${section}/someProduct`}>
@@ -41,7 +41,7 @@ export default function Product({ section }) {
             <div className="border-t border-gray">
               <button
                 type="button"
-                className="w-full py-1 my-10 font-semibold text-white rounded-full bg-green lg:my-5"
+                className="w-full py-1 my-10 font-semibold text-white rounded-full bg-primary lg:my-5"
               >
                 Купи
               </button>
