@@ -106,7 +106,7 @@ export default function index() {
                 <td>1.30 Ah</td>
               </tr>
               <tr>
-                <td>Време за зареждане</td>
+                <td>ВРЕМЕ ЗА ЗАРЕЖДАНЕ</td>
                 <td>3 H</td>
               </tr>
             </tbody>
