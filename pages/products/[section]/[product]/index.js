@@ -19,14 +19,14 @@ export default function index() {
       <div className="container">
         <div className="grid-cols-2 lg:grid xl:grid-cols-3">
           <ThumbsGallery />
-          <section className="">
+          <section className="xl:order-2">
             <section className="flex items-center justify-between border-b border-gray">
               <div>Цена:</div>
               <div>
                 <Pricing price={220} priceDec={22} />
               </div>
             </section>
-            <section className="flex justify-between">
+            <section className="flex justify-between ">
               <div className="flex items-center">
                 <div>
                   <button
@@ -58,7 +58,7 @@ export default function index() {
               <BuyBtn lg={true} />
             </section>
           </section>
-          <section className="border-b border-gray">
+          <section className="border-b border-gray xl:order-1">
             <h3 className="text-xl font-semibold">Кратко описание</h3>
             <ul className="text-[#3b3b3b] text-sm mt-1">
               <li>ИНСТРУМЕНТ 1: АКУМУЛАТОРНА БОРМАШИНА</li>
