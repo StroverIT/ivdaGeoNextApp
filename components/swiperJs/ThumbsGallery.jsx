@@ -71,9 +71,7 @@ export default function App() {
             670: {
               slidesPerView: 3,
             },
-            950: {
-              slidesPerView: 4,
-            },
+
             // when window width is >= 768px
           }}
           className="mySwiper"
