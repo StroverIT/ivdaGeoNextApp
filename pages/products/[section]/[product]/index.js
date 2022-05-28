@@ -36,6 +36,7 @@ export default function index() {
                 type="number"
                 className="w-1/3 mx-2 text-center border rounded-full border-primary"
                 defaultValue="1"
+                placeholder="1"
               />
               <div>
                 <button
