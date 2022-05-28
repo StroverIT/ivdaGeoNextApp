@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 //Components
 import Pricing from "../../priceStyling/Pricing";
+import BuyBtn from "../../base/BuyBtn";
 
 export default function Product({ section }) {
   return (
@@ -38,14 +39,7 @@ export default function Product({ section }) {
               <Pricing price={169} priceDec={99} size="text-2xl" />
             </div>
             {/* Create grayer color for future*/}
-            <div className="border-t border-gray">
-              <button
-                type="button"
-                className="w-full py-1 my-10 font-semibold text-white rounded-full bg-primary lg:my-5"
-              >
-                Купи
-              </button>
-            </div>
+            <BuyBtn border={true} />
           </div>
         </div>
       </div>
