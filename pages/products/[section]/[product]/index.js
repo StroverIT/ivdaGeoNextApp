@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 // Icons
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
@@ -11,6 +11,9 @@ import Pricing from "../../../../components/priceStyling/Pricing";
 import BuyBtn from "../../../../components/base/BuyBtn";
 
 export default function index() {
+  const qty = useRef(null);
+  const [currQty, setQty] = useState(1);
+
   return (
     <main className="mb-auto">
       <div className="container">
@@ -28,6 +31,7 @@ export default function index() {
                 <button
                   type="button"
                   className="p-1 text-sm text-white rounded-full bg-primary"
+                  onClick={() => setQty(currQty + 1)}
                 >
                   <AiOutlinePlus />
                 </button>
@@ -35,13 +39,16 @@ export default function index() {
               <input
                 type="number"
                 className="w-1/3 mx-2 text-center border rounded-full border-primary"
-                defaultValue="1"
-                placeholder="1"
+                value={currQty}
+                onChange={(e) => setQty(e.target.value)}
+                placeholder="Бройка"
+                ref={qty}
               />
               <div>
                 <button
                   type="button"
                   className="p-1 text-sm text-white rounded-full bg-primary"
+                  onClick={() => setQty(currQty - 1)}
                 >
                   <AiOutlineMinus />
                 </button>
