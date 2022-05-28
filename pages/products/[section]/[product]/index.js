@@ -17,44 +17,46 @@ export default function index() {
   return (
     <main className="mb-auto">
       <div className="container">
-        <ThumbsGallery />
-        <section className="">
-          <section className="flex items-center justify-between border-b border-gray">
-            <div>Цена:</div>
-            <div>
-              <Pricing price={220} priceDec={22} />
-            </div>
-          </section>
-          <section className="flex justify-between">
-            <div className="flex items-center">
+        <div className="grid-cols-2 lg:grid xl:grid-cols-3">
+          <ThumbsGallery />
+          <section className="">
+            <section className="flex items-center justify-between border-b border-gray">
+              <div>Цена:</div>
               <div>
-                <button
-                  type="button"
-                  className="p-1 text-sm text-white rounded-full bg-primary"
-                  onClick={() => setQty(currQty + 1)}
-                >
-                  <AiOutlinePlus />
-                </button>
+                <Pricing price={220} priceDec={22} />
               </div>
-              <input
-                type="number"
-                className="w-1/3 mx-2 text-center border rounded-full border-primary"
-                value={currQty}
-                onChange={(e) => setQty(e.target.value)}
-                placeholder="Бройка"
-                ref={qty}
-              />
-              <div>
-                <button
-                  type="button"
-                  className="p-1 text-sm text-white rounded-full bg-primary"
-                  onClick={() => setQty(currQty - 1)}
-                >
-                  <AiOutlineMinus />
-                </button>
+            </section>
+            <section className="flex justify-between">
+              <div className="flex items-center">
+                <div>
+                  <button
+                    type="button"
+                    className="p-1 text-sm text-white rounded-full bg-primary"
+                    onClick={() => setQty(currQty + 1)}
+                  >
+                    <AiOutlinePlus />
+                  </button>
+                </div>
+                <input
+                  type="number"
+                  className="w-1/3 mx-2 text-center border rounded-full border-primary"
+                  value={currQty}
+                  onChange={(e) => setQty(e.target.value)}
+                  placeholder="Бройка"
+                  ref={qty}
+                />
+                <div>
+                  <button
+                    type="button"
+                    className="p-1 text-sm text-white rounded-full bg-primary"
+                    onClick={() => setQty(currQty - 1)}
+                  >
+                    <AiOutlineMinus />
+                  </button>
+                </div>
               </div>
-            </div>
-            <BuyBtn lg={true} />
+              <BuyBtn lg={true} />
+            </section>
           </section>
           <section className="border-b border-gray">
             <h3 className="text-xl font-semibold">Кратко описание</h3>
@@ -66,7 +68,7 @@ export default function index() {
               <li>НАПРЕЖЕНИЕ: 12.00 V</li>
             </ul>
           </section>
-        </section>
+        </div>
         <section>
           <h3 className="text-xl font-semibold text-center ">
             ВСИЧКИ ХАРАКТЕРИСТИКИ
