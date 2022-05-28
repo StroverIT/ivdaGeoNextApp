@@ -4,4 +4,10 @@
 .table tr {
   display: flex;
   justify-content: space-between;
+  /* padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px; */
+  padding: 10px;
+  font-size: 0.87rem;
 }
