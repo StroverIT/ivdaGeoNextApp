@@ -13,14 +13,15 @@ const customColors = {
   green: "hsl(92, 50%, 54%)",
   gray: {
     DEFAULT: "hsl(0, 0%, 85%)",
+    200: "#a1a1aa",
     300: "#f7f7f7",
-    400: "#e4e4e7",
+    400: "#dcdcdc",
+    bord: "#a9a9a9",
   },
   grayBg: "#f0f0f0",
   "gray-darker": "hsl(0, 0%, 50%)",
   transparent: "transparent",
 };
-const tailwindColors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
@@ -41,10 +42,9 @@ module.exports = {
       "2xl": { min: "1536px" },
     },
     colors: customColors,
-    tailwindColors,
     backgroundColor: (theme) => ({
       ...theme("colors"),
-      ...tailwindColors,
+
       color: customColors["bg-color"],
       primary: customColors.primary,
       "primary-lighter": customColors["primary-lighter"],
