@@ -60,7 +60,7 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         ".container": {
-          width: "min(100% - 2rem, 1200px);",
+          width: "min(100% - 2rem, 1300px);",
         },
       });
     },
