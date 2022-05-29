@@ -18,12 +18,12 @@ export default function index() {
     <main className="mb-auto">
       <div className="container">
         <div className="grid-cols-2 lg:grid xl:grid-cols-3">
-          <ThumbsGallery />
+          <ThumbsGallery navSize="2xl" />
           <section className="xl:order-2">
             <section className="flex items-center justify-between border-b border-gray">
               <div>Цена:</div>
               <div>
-                <Pricing price={220} priceDec={22} size="xl" />
+                <Pricing price={220} priceDec={22} size="3xl" />
               </div>
             </section>
             <section className="flex justify-between ">
