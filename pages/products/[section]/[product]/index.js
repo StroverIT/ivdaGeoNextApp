@@ -20,7 +20,7 @@ export default function index() {
         <div className="grid-cols-2 lg:grid xl:grid-cols-[45%25%30%] auto-cols-max">
           <ThumbsGallery navSize="2xl" />
           <section className="xl:order-2 p-4 bg-gray-400">
-            <section className="flex items-center justify-between border-b border-[#f2f2f2] ">
+            <section className="flex items-center justify-between border-b border-gray-bord ">
               <div>Цена:</div>
               <div>
                 <Pricing price={220} priceDec={22} size="3xl" />
@@ -60,7 +60,7 @@ export default function index() {
           </section>
           <section className="xl:order-1 p-4 bg-gray-300 md:col-span-2 xl:col-span-1">
             <h3 className="text-xl font-semibold">Кратко описание</h3>
-            <ul className="text-[#3b3b3b] text-sm mt-1 border-[#e5e5e5] border-b pb-4">
+            <ul className="text-[#3b3b3b] text-sm mt-1 border-gray-bord border-b pb-4">
               <li>ИНСТРУМЕНТ 1: АКУМУЛАТОРНА БОРМАШИНА</li>
               <li>ИНСТРУМЕНТ 2: МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
               <li>ИНСТРУМЕНТ 3: АКУМУЛАТОРЕН ФЕНЕР</li>
