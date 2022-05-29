@@ -84,7 +84,7 @@ export default function ThumsGallery({ navSize }) {
 
             // when window width is >= 768px
           }}
-          className="mySwiper"
+          className="mySwiper mt-3"
         >
           <SwiperSlide>
             <div className="relative w-full h-24">
