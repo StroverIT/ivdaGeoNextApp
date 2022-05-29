@@ -22,7 +22,7 @@ export default function Pricing({ price, priceDec, size }) {
           className={`relative flex flex-col items-center h-full ${sizeDictionary[size][1]}`}
         >
           <div className="h-0 mt-1 font-semibold">{priceDec}</div>
-          <div className="h-0 mt-[8.8px]">лв.</div>
+          <div className="h-0 mt-[9px]">лв.</div>
         </div>
       </div>
     </div>
