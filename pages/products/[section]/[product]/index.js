@@ -58,7 +58,7 @@ export default function index() {
               <BuyBtn lg={true} />
             </section>
           </section>
-          <section className="xl:order-1 p-4 bg-gray-300 col-span-2 xl:col-span-1">
+          <section className="xl:order-1 p-4 bg-gray-300 md:col-span-2 xl:col-span-1">
             <h3 className="text-xl font-semibold">Кратко описание</h3>
             <ul className="text-[#3b3b3b] text-sm mt-1 border-[#e5e5e5] border-b pb-4">
               <li>ИНСТРУМЕНТ 1: АКУМУЛАТОРНА БОРМАШИНА</li>
