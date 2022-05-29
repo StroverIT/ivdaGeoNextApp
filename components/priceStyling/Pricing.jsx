@@ -7,8 +7,9 @@ import React from "react";
 3. text-{something} on priceDec
 */
 const sizeDictionary = {
-  xl: ["text-xl", "text-sm"],
+  xl: ["text-xl", "text-xs"],
   "2xl": ["text-2xl", "text-sm"],
+  "3xl": ["text-3xl", "text-sm"],
 };
 export default function Pricing({ price, priceDec, size }) {
   return (
