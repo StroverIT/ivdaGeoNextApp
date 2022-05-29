@@ -9,13 +9,14 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import "swiper/css/zoom";
 // Styles
 import navStyle from "../../styles/swiperJs/SwiperNav.module.css";
 // Components
 import SwiperNav from "./SwiperNav";
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import { FreeMode, Navigation, Thumbs, Zoom } from "swiper";
 
 const dictionary = {
   lg: "h-72",
@@ -25,12 +26,9 @@ export default function ThumsGallery({ navSize }) {
 
   return (
     <>
-      <div className="swiperContainer">
+      <div>
         <Swiper
-          style={{
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          }}
+          zoom={true}
           spaceBetween={10}
           navigation={{
             nextEl: `.${navStyle.swiperNext}`,
@@ -41,7 +39,7 @@ export default function ThumsGallery({ navSize }) {
             swiper:
               thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
           }}
-          modules={[FreeMode, Navigation, Thumbs]}
+          modules={[FreeMode, Navigation, Thumbs, Zoom]}
           className="relative mySwiper2"
         >
           <SwiperSlide>
