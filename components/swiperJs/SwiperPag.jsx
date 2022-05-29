@@ -18,7 +18,7 @@ import { Pagination, Navigation, Autoplay } from "swiper";
 // Components
 import SwiperNav from "./SwiperNav";
 
-export default function SwiperPag({ images }) {
+export default function SwiperPag({ images, navSize }) {
   return (
     <>
       <Swiper
@@ -65,7 +65,7 @@ export default function SwiperPag({ images }) {
             </SwiperSlide>
           );
         })}
-        <SwiperNav />
+        <SwiperNav size={navSize} />
       </Swiper>
     </>
   );

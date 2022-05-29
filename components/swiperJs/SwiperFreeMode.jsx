@@ -17,7 +17,7 @@ import { FreeMode, Pagination, Navigation } from "swiper";
 // Components
 import PricingPromo from "../priceStyling/PricingPromo";
 import SwiperNav from "./SwiperNav";
-export default function SwiperFreeMode({ images }) {
+export default function SwiperFreeMode({ images, navSize }) {
   return (
     <>
       <div className="flex flex-row items-stretch py-5 swipebody">
@@ -84,7 +84,7 @@ export default function SwiperFreeMode({ images }) {
             );
           })}
           {/* Nav */}
-          <SwiperNav />
+          <SwiperNav size={navSize} />
         </Swiper>
       </div>
       <div
