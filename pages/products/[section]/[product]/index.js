@@ -23,7 +23,7 @@ export default function index() {
             <section className="flex items-center justify-between border-b border-gray">
               <div>Цена:</div>
               <div>
-                <Pricing price={220} priceDec={22} />
+                <Pricing price={220} priceDec={22} size="xl" />
               </div>
             </section>
             <section className="flex justify-between ">
