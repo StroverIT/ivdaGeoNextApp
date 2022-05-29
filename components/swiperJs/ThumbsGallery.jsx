@@ -17,7 +17,7 @@ import SwiperNav from "./SwiperNav";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
-export default function App() {
+export default function ThumsGallery({ size }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
@@ -66,7 +66,7 @@ export default function App() {
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </SwiperSlide>
-          <SwiperNav />
+          <SwiperNav size={size} />
         </Swiper>
 
         <Swiper
