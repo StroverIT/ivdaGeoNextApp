@@ -101,7 +101,7 @@ export default function Home() {
                 <NavLinks isHome={true} />
               </section>
               <section className="relative flex items-center justify-center">
-                <SwiperPag images={swiperPag} />
+                <SwiperPag images={swiperPag} navSize="4xl" />
               </section>
             </section>
           </div>
@@ -145,7 +145,7 @@ export default function Home() {
         <section className="py-5 bg-color">
           <div className="container">
             <h1 className="text-3xl">Месечни топ предложения</h1>
-            <SwiperFreeMode images={swiperFreeImages} />
+            <SwiperFreeMode images={swiperFreeImages} navSize="4xl" />
           </div>
         </section>
         <section className="py-5 bg-color">
