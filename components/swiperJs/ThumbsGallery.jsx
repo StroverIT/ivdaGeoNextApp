@@ -17,6 +17,9 @@ import SwiperNav from "./SwiperNav";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
+const dictionary = {
+  lg: "h-72",
+};
 export default function ThumsGallery({ navSize }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -42,27 +45,27 @@ export default function ThumsGallery({ navSize }) {
           className="relative mySwiper2"
         >
           <SwiperSlide>
-            <div className="relative w-full h-52 lg:h-40">
+            <div className={`relative w-full h-52 ${dictionary.lg}`}>
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative w-full h-52 lg:h-40">
+            <div className={`relative w-full h-52 ${dictionary.lg}`}>
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative w-full h-52 lg:h-40">
+            <div className={`relative w-full h-52 ${dictionary.lg}`}>
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative w-full h-52 lg:h-40">
+            <div className={`relative w-full h-52 ${dictionary.lg}`}>
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative w-full h-52 lg:h-40">
+            <div className={`relative w-full h-52 ${dictionary.lg}`}>
               <Image src="/images/testCarousel.jpg" layout="fill" />
             </div>
           </SwiperSlide>
