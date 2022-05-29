@@ -36,7 +36,7 @@ export default function Product({ section }) {
         <div className="bg-grayBg">
           <div className="container flex flex-col justify-center h-full itesm-center">
             <div className="flex justify-center">
-              <Pricing price={169} priceDec={99} size="text-2xl" />
+              <Pricing price={169} priceDec={99} size="2xl" />
             </div>
             {/* Create grayer color for future*/}
             <BuyBtn border={true} />
