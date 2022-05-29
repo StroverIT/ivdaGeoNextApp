@@ -61,7 +61,7 @@ export default function MyOrders() {
             <td className="py-4">752112</td>
             <td>12.05.1995</td>
             <td>
-              <Pricing price={249} priceDec={22} />
+              <Pricing price={249} priceDec={22} size="xl" />
             </td>
             <td className="text-secondary font-semibold">Върната</td>
           </tr>
