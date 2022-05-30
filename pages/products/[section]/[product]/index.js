@@ -8,7 +8,6 @@ import style from "../../../../styles/products/showProduct.module.css";
 // Components
 import ThumbsGallery from "../../../../components/swiperJs/ThumbsGallery";
 import Pricing from "../../../../components/priceStyling/Pricing";
-import BuyBtn from "../../../../components/base/BuyBtn";
 
 export default function index() {
   const qty = useRef(null);
