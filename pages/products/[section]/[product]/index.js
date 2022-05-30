@@ -32,7 +32,7 @@ export default function index() {
                     Бройки:
                   </label>
                 </div>
-                <div className="grid grid-cols-[30%70%] sm:grid-cols-[20%65%15%]  ">
+                <div className="grid grid-cols-[30%70%]">
                   <div className="relative">
                     <input
                       type="number"
@@ -63,18 +63,21 @@ export default function index() {
                   >
                     Купи
                   </button>
-                  <div className="sm:flex justify-center items-center mt-2 sm:mt-0">
-                    <div className="cursor-pointer bg-gray p-2 rounded-full text-xl hover:bg-gray-200 hover:text-white md:ml-5 inline-flex">
+                  <div className="flex justify-center items-center mt-6 col-span-2 cursor-pointer  group ">
+                    <div className=" bg-gray p-2 rounded-full text-xl group-hover:bg-gray-200 group-hover:text-white md:ml-5 inline-flex">
                       <AiOutlineHeart />
                     </div>
+                    <span className="ml-1 text-sm group-hover:font-medium">
+                      Добави в любими
+                    </span>
                   </div>
                 </div>
               </div>
             </section>
           </section>
-          <section className="xl:order-1 p-4 bg-gray-300 md:col-span-2 xl:col-span-1">
+          <section className="xl:order-1 p-4 bg-gray-300 md:col-span-2 xl:col-span-1 mt-4 md:mt-0">
             <h3 className="text-xl font-semibold">Кратко описание</h3>
-            <ul className="text-[#3b3b3b] text-sm mt-1 border-gray-bord border-b pb-4">
+            <ul className="text-[#3b3b3b] text-sm mt-1  pb-4">
               <li>ИНСТРУМЕНТ 1: АКУМУЛАТОРНА БОРМАШИНА</li>
               <li>ИНСТРУМЕНТ 2: МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
               <li>ИНСТРУМЕНТ 3: АКУМУЛАТОРЕН ФЕНЕР</li>
@@ -83,8 +86,8 @@ export default function index() {
             </ul>
           </section>
         </div>
-        <section>
-          <h3 className="text-xl font-semibold text-center ">
+        <section className="my-16">
+          <h3 className="text-xl font-semibold text-center py-5">
             ВСИЧКИ ХАРАКТЕРИСТИКИ
           </h3>
           <table className={`table-fixed  ${style.table} w-full`}>
