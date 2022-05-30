@@ -17,7 +17,7 @@ export default function index() {
   return (
     <main className="mb-auto">
       <div className="container">
-        <div className="grid-cols-2 lg:grid xl:grid-cols-[40%35%25%] auto-cols-max">
+        <div className="grid-cols-2 lg:grid xl:grid-cols-[40%30%30%] auto-cols-max">
           <ThumbsGallery navSize="2xl" />
           <section className="xl:order-2 p-4 bg-gray-400">
             <section className="flex items-center justify-between border-b border-gray-bord ">
@@ -26,39 +26,32 @@ export default function index() {
                 <Pricing price={220} priceDec={22} size="3xl" />
               </div>
             </section>
-            <section className="flex items-center justify-center  space-x-2 my-10">
-              {/* <div className="flex flex-col space-y-3 mr-5">
-                <button
-                  type="button"
-                  className="p-1 text-sm text-white rounded-full bg-primary"
-                  onClick={() => setQty(currQty + 1)}
-                >
-                  <AiOutlinePlus />
-                </button>
-                <button
-                  type="button"
-                  className="p-1 text-sm text-white rounded-full bg-primary"
-                  onClick={() => setQty(currQty - 1)}
-                >
-                  <AiOutlineMinus />
-                </button>
-              </div> */}
-              <input
-                type="number"
-                className="w-1/3 border border-l pl-4  border-primary py-[0.3rem] placeholder:text-sm placeholder:font-default placeholder:text-[#808080] placeholder:absolute placeholder:left-2 placeholder:top-1/2 placeholder:-translate-y-1/2"
-                value={currQty}
-                onChange={(e) => setQty(e.target.value)}
-                placeholder="Бройки"
-                ref={qty}
-              />
-              <button
-                type="button"
-                className={`w-60 py-2  font-semibold text-white  bg-primary text-sm`}
-              >
-                Добави в кошница
-              </button>
-              <div className="cursor-pointer bg-gray p-2 rounded-full text-xl hover:bg-gray-200 hover:text-white">
-                <AiOutlineHeart />
+            <section className=" my-10 ">
+              <div className="">
+                <label htmlFor="qty mr-auto">Бройки:</label>
+                <div className="grid grid-cols-[20%80%] sm:grid-cols-[20%65%15%] space-x-3">
+                  <div>
+                    <input
+                      type="number"
+                      className="w-full border border-l pl-4  border-primary py-[0.3rem] placeholder:text-sm placeholder:font-default placeholder:text-[#808080] placeholder:absolute placeholder:left-2 placeholder:top-1/2 placeholder:-translate-y-1/2"
+                      value={currQty}
+                      id="qty"
+                      onChange={(e) => setQty(e.target.value)}
+                      ref={qty}
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    className={`w-full px-2 flex py-2  justify-center items-end font-semibold text-white  bg-primary text-sm`}
+                  >
+                    Купи
+                  </button>
+                  <div>
+                    <div className="cursor-pointer bg-gray p-2 rounded-full text-xl hover:bg-gray-200 hover:text-white ml-3 inline-flex">
+                      <AiOutlineHeart />
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </section>
