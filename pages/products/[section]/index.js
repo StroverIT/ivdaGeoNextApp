@@ -99,7 +99,7 @@ export default function section() {
         </aside>
         <section className="mt-10">
           {/* Filters for mobile */}
-          <div className="grid grid-cols-2 gap-2  mb-5 relative lg:mb-14">
+          <div className="grid grid-cols-2 gap-2  mb-5 relative lg:mb-14 lg:grid-cols-1 z-10">
             {/* TODO: add icons */}
             <button
               type="button"
@@ -122,7 +122,7 @@ export default function section() {
             </button>
 
             <div
-              className={` w-full absolute lg:flex top-full bg-white z-10 lg:relative ${
+              className={` w-full absolute lg:flex top-full bg-white z-10 lg:relative h-48 lg:h-auto shadow-2xl lg:shadow-none ${
                 isHidden ? "hidden" : ""
               } `}
               ref={sortingMenu}
@@ -134,7 +134,7 @@ export default function section() {
                   data={sortByDictionary}
                 />
               </div>
-              <div className="ml-4">
+              <div className="lg:ml-4">
                 <Sorting
                   title="Намерени"
                   qty={42}
