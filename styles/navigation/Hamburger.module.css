@@ -4,7 +4,7 @@
 }
 .open div:first-child {
   width: 25px;
-  transform: rotate(405deg) translate(5px, 4px);
+  transform: rotate(405deg) translate(6px, 4px);
 }
 .open div:nth-child(2) {
   transform: translateX(-50px);
@@ -13,7 +13,7 @@
 }
 .open div:last-child {
   width: 25px;
-  transform: rotate(-405deg) translate(5px, -4px);
+  transform: rotate(-405deg) translate(6px, -4px);
 }
 .menuOpen {
   transform: translateY(0) !important;
