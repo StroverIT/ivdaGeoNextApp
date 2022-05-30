@@ -26,9 +26,13 @@ export default function index() {
                 <Pricing price={220} priceDec={22} size="3xl" />
               </div>
             </section>
-            <section className=" my-10 ">
+            <section className=" my-5 ">
               <div className="">
-                <label htmlFor="qty mr-auto mb-2">Бройки:</label>
+                <div className="mb-1">
+                  <label htmlFor="qty" className=" font-semibold text-sm">
+                    Бройки:
+                  </label>
+                </div>
                 <div className="grid grid-cols-[20%80%] sm:grid-cols-[20%65%15%]  ">
                   <div>
                     <input
