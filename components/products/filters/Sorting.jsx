@@ -9,13 +9,19 @@ function Quantity({ qty }) {
 }
 export default function Sorting({ title, name, data, qty }) {
   return (
-    <div className="flex text-[#888] items-center justify-center">
-      <label htmlFor={name} className="text-sm">
-        {title}
-        {qty && <Quantity qty={qty} />}:
-      </label>
-      <div>
-        <select name={name} id={name} className="border border-gray p-1 ml-2">
+    <div className="flex text-[#888] items-center justify-center flex-col lg:flex-row max-lg:container">
+      <div className="flex justify-end  w-full mt-5 lg:justify-center lg:mt-2 items-center">
+        <label htmlFor={name} className="text-sm">
+          {title}
+          {qty && <Quantity qty={qty} />}:
+        </label>
+      </div>
+      <div className="w-full mt-1">
+        <select
+          name={name}
+          id={name}
+          className="border border-gray p-1 lg:ml-2 w-full lg:w-auto text-dark"
+        >
           {data.map((e) => {
             return <Option value={e.val} text={e.text} key={e.val} />;
           })}
