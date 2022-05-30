@@ -28,8 +28,8 @@ export default function index() {
             </section>
             <section className=" my-10 ">
               <div className="">
-                <label htmlFor="qty mr-auto">Бройки:</label>
-                <div className="grid grid-cols-[20%80%] sm:grid-cols-[20%65%15%] space-x-3">
+                <label htmlFor="qty mr-auto mb-2">Бройки:</label>
+                <div className="grid grid-cols-[20%80%] sm:grid-cols-[20%65%15%]  ">
                   <div>
                     <input
                       type="number"
@@ -42,12 +42,12 @@ export default function index() {
                   </div>
                   <button
                     type="button"
-                    className={`w-full px-2 flex py-2  justify-center items-end font-semibold text-white  bg-primary text-sm`}
+                    className={`w-full px-2 flex py-2  justify-center items-end font-semibold text-white  bg-primary text-sm ml-3`}
                   >
                     Купи
                   </button>
-                  <div>
-                    <div className="cursor-pointer bg-gray p-2 rounded-full text-xl hover:bg-gray-200 hover:text-white ml-3 inline-flex">
+                  <div className="sm:flex justify-center items-center mt-2 sm:mt-0">
+                    <div className="cursor-pointer bg-gray p-2 rounded-full text-xl hover:bg-gray-200 hover:text-white md:ml-5 inline-flex">
                       <AiOutlineHeart />
                     </div>
                   </div>
