@@ -83,8 +83,8 @@ export default function index() {
             </ul>
           </section>
         </div>
-        <section>
-          <h3 className="text-xl font-semibold text-center ">
+        <section className="my-16">
+          <h3 className="text-xl font-semibold text-center py-5">
             ВСИЧКИ ХАРАКТЕРИСТИКИ
           </h3>
           <table className={`table-fixed  ${style.table} w-full`}>
