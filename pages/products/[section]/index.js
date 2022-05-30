@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 // Icons
 import { HiX } from "react-icons/hi";
@@ -57,6 +57,8 @@ const pageDictionary = [
 export default function section() {
   const router = useRouter();
   const { section } = router.query;
+  const sortingMenu = useRef(null);
+  const [isHidden, setHidden] = useState(true);
   return (
     <main className="mb-auto">
       <div className="lg:grid grid-cols-[20%80%] lg:space-x-10 container">
@@ -97,11 +99,11 @@ export default function section() {
         </aside>
         <section className="mt-10">
           {/* Filters for mobile */}
-          <div className="grid grid-cols-2 gap-2 lg:hidden mb-5">
+          <div className="grid grid-cols-2 gap-2  mb-5 relative lg:mb-14">
             {/* TODO: add icons */}
             <button
               type="button"
-              className="w-full h-full py-2 pl-4 text-left text-white bg-primary flex items-center "
+              className="w-full h-full py-2 pl-4 text-left text-white bg-primary flex items-center lg:hidden "
             >
               <span>
                 <IoIosFunnel />
@@ -110,28 +112,40 @@ export default function section() {
             </button>
             <button
               type="button"
-              className="w-full h-full py-2 pl-4 text-left border border-gray flex justify-between items-center"
+              className="w-full h-full py-2 pl-4 text-left border border-gray flex justify-between items-center lg:hidden"
+              onClick={() => setHidden(!isHidden)}
             >
               <div>Сортирай по:</div>
               <div className="mr-2 text-sm lg:text-3xl">
                 <MdKeyboardArrowDown />
               </div>
             </button>
+
+            <div
+              className={` w-full absolute lg:flex top-full bg-white z-10 lg:relative ${
+                isHidden ? "hidden" : ""
+              } `}
+              ref={sortingMenu}
+            >
+              <div>
+                <Sorting
+                  title="Сортирай"
+                  name="sortBy"
+                  data={sortByDictionary}
+                />
+              </div>
+              <div className="ml-4">
+                <Sorting
+                  title="Намерени"
+                  qty={42}
+                  name="pages"
+                  data={pageDictionary}
+                />
+              </div>
+            </div>
           </div>
           {/* Large screens buttons */}
-          <div className="mb-4 hidden lg:flex">
-            <div>
-              <Sorting title="Сортирай" name="sortBy" data={sortByDictionary} />
-            </div>
-            <div className="ml-4">
-              <Sorting
-                title="Намерени"
-                qty={42}
-                name="pages"
-                data={pageDictionary}
-              />
-            </div>
-          </div>
+
           <Product section={section} />
           <Product section={section} />
           <Product section={section} />
