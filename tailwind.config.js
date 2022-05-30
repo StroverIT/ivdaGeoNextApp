@@ -14,9 +14,9 @@ const customColors = {
   gray: {
     DEFAULT: "hsl(0, 0%, 85%)",
     200: "#a1a1aa",
-    300: "#f7f7f7",
-    400: "#dcdcdc",
-    bord: "#a9a9a9",
+    300: "#f6f6f6",
+    400: "#eee",
+    bord: "#dfdfdf",
   },
   grayBg: "#f0f0f0",
   "gray-darker": "hsl(0, 0%, 50%)",
