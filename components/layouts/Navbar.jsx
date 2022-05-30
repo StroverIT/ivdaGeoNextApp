@@ -85,7 +85,7 @@ const Navbar = () => {
 
           <ul className={`${style.list} flex items-center justify-center `}>
             {/* Search icon */}
-            <li className="lg:flex  items-center justify-center px-4 h-14 lg:h-20 hidden hover:text-white hover:bg-gray ">
+            <li className="lg:flex  items-center justify-center px-4 h-14 lg:h-20 hidden  hover:bg-gray ">
               <div className="text-3xl">
                 <AiOutlineSearch className="icon" />
               </div>
