@@ -2,6 +2,9 @@ import React from "react";
 
 // Icons
 import { HiX } from "react-icons/hi";
+import { IoIosFunnel } from "react-icons/io";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
 // Styles
 import styles from "../../../styles/products/listProducts.module.css";
 
@@ -94,19 +97,25 @@ export default function section() {
         </aside>
         <section className="mt-10">
           {/* Filters for mobile */}
-          <div className="grid grid-cols-2 gap-2 lg:hidden">
+          <div className="grid grid-cols-2 gap-2 lg:hidden mb-5">
             {/* TODO: add icons */}
             <button
               type="button"
-              className="w-full h-full py-2 pl-4 text-left text-white bg-primary"
+              className="w-full h-full py-2 pl-4 text-left text-white bg-primary flex items-center "
             >
-              Филтри
+              <span>
+                <IoIosFunnel />
+              </span>
+              <span className="pl-1">Филтри</span>
             </button>
             <button
               type="button"
-              className="w-full h-full py-2 pl-4 text-left border border-gray"
+              className="w-full h-full py-2 pl-4 text-left border border-gray flex justify-between items-center"
             >
-              Сортирай по:
+              <div>Сортирай по:</div>
+              <div className="mr-2 text-sm lg:text-3xl">
+                <MdKeyboardArrowDown />
+              </div>
             </button>
           </div>
           {/* Large screens buttons */}
