@@ -53,7 +53,7 @@ export default function index() {
               />
               <button
                 type="button"
-                className={`w-60 py-2  font-semibold text-white  bg-primary `}
+                className={`w-60 py-2  font-semibold text-white  bg-primary text-sm`}
               >
                 Добави в кошница
               </button>
