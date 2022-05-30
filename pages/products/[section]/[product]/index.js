@@ -32,7 +32,7 @@ export default function index() {
                     Бройки:
                   </label>
                 </div>
-                <div className="grid grid-cols-[30%70%] sm:grid-cols-[20%65%15%]  ">
+                <div className="grid grid-cols-[30%70%]">
                   <div className="relative">
                     <input
                       type="number"
@@ -63,10 +63,13 @@ export default function index() {
                   >
                     Купи
                   </button>
-                  <div className="sm:flex justify-center items-center mt-2 sm:mt-0">
-                    <div className="cursor-pointer bg-gray p-2 rounded-full text-xl hover:bg-gray-200 hover:text-white md:ml-5 inline-flex">
+                  <div className="flex justify-center items-center mt-6 col-span-2 cursor-pointer  group ">
+                    <div className=" bg-gray p-2 rounded-full text-xl group-hover:bg-gray-200 group-hover:text-white md:ml-5 inline-flex">
                       <AiOutlineHeart />
                     </div>
+                    <span className="ml-1 text-sm group-hover:font-medium">
+                      Добави в любими
+                    </span>
                   </div>
                 </div>
               </div>
