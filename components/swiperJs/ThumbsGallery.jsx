@@ -19,7 +19,7 @@ import SwiperNav from "./SwiperNav";
 import { FreeMode, Navigation, Thumbs, Zoom } from "swiper";
 
 const dictionary = {
-  lg: "h-80",
+  lg: "lg:h-[21rem]",
 };
 export default function ThumsGallery({ navSize }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
