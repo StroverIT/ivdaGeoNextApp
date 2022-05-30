@@ -45,7 +45,7 @@ export default function index() {
               </div> */}
               <input
                 type="number"
-                className="w-1/3 border border-l pl-4 text-lg border-primary py-1 placeholder:text-sm placeholder:font-default placeholder:text-[#808080] placeholder:absolute placeholder:left-2 placeholder:top-1/2 placeholder:-translate-y-1/2"
+                className="w-1/3 border border-l pl-4  border-primary py-[0.3rem] placeholder:text-sm placeholder:font-default placeholder:text-[#808080] placeholder:absolute placeholder:left-2 placeholder:top-1/2 placeholder:-translate-y-1/2"
                 value={currQty}
                 onChange={(e) => setQty(e.target.value)}
                 placeholder="Бройки"
