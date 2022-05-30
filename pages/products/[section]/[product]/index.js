@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
 // Icons
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 
 // Styling
 import style from "../../../../styles/products/showProduct.module.css";
@@ -17,7 +17,7 @@ export default function index() {
   return (
     <main className="mb-auto">
       <div className="container">
-        <div className="grid-cols-2 lg:grid xl:grid-cols-[45%25%30%] auto-cols-max">
+        <div className="grid-cols-2 lg:grid xl:grid-cols-[40%35%25%] auto-cols-max">
           <ThumbsGallery navSize="2xl" />
           <section className="xl:order-2 p-4 bg-gray-400">
             <section className="flex items-center justify-between border-b border-gray-bord ">
@@ -26,36 +26,40 @@ export default function index() {
                 <Pricing price={220} priceDec={22} size="3xl" />
               </div>
             </section>
-            <section className="flex justify-between ">
-              <div className="flex items-center">
-                <div>
-                  <button
-                    type="button"
-                    className="p-1 text-sm text-white rounded-full bg-primary"
-                    onClick={() => setQty(currQty + 1)}
-                  >
-                    <AiOutlinePlus />
-                  </button>
-                </div>
-                <input
-                  type="number"
-                  className="w-1/3 mx-2 text-center border rounded-full border-primary"
-                  value={currQty}
-                  onChange={(e) => setQty(e.target.value)}
-                  placeholder="Бройка"
-                  ref={qty}
-                />
-                <div>
-                  <button
-                    type="button"
-                    className="p-1 text-sm text-white rounded-full bg-primary"
-                    onClick={() => setQty(currQty - 1)}
-                  >
-                    <AiOutlineMinus />
-                  </button>
-                </div>
+            <section className="flex items-center justify-center  space-x-2 my-10">
+              {/* <div className="flex flex-col space-y-3 mr-5">
+                <button
+                  type="button"
+                  className="p-1 text-sm text-white rounded-full bg-primary"
+                  onClick={() => setQty(currQty + 1)}
+                >
+                  <AiOutlinePlus />
+                </button>
+                <button
+                  type="button"
+                  className="p-1 text-sm text-white rounded-full bg-primary"
+                  onClick={() => setQty(currQty - 1)}
+                >
+                  <AiOutlineMinus />
+                </button>
+              </div> */}
+              <input
+                type="number"
+                className="w-1/3 border border-l pl-4 text-lg border-primary py-1 placeholder:text-sm placeholder:font-default placeholder:text-[#808080] placeholder:absolute placeholder:left-2 placeholder:top-1/2 placeholder:-translate-y-1/2"
+                value={currQty}
+                onChange={(e) => setQty(e.target.value)}
+                placeholder="Бройки"
+                ref={qty}
+              />
+              <button
+                type="button"
+                className={`w-60 py-2  font-semibold text-white  bg-primary `}
+              >
+                Добави в кошница
+              </button>
+              <div className="cursor-pointer bg-gray p-2 rounded-full text-xl hover:bg-gray-200 hover:text-white">
+                <AiOutlineHeart />
               </div>
-              <BuyBtn lg={true} />
             </section>
           </section>
           <section className="xl:order-1 p-4 bg-gray-300 md:col-span-2 xl:col-span-1">
