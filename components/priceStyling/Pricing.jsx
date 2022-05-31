@@ -13,7 +13,7 @@ const sizeDictionary = {
 };
 export default function Pricing({ price, priceDec, size }) {
   return (
-    <div className="flex">
+    <div className="flex justify-center">
       <div className={`flex items-center px-2 py-2 } `}>
         <div className={` font-semibold ${sizeDictionary[size][0]}`}>
           {price}
