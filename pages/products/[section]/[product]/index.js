@@ -2,17 +2,14 @@ import React, { useRef, useState } from "react";
 
 // Icons
 import { AiOutlineHeart } from "react-icons/ai";
-import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 // Styling
 import style from "../../../../styles/products/showProduct.module.css";
 // Components
 import ThumbsGallery from "../../../../components/swiperJs/ThumbsGallery";
 import Pricing from "../../../../components/priceStyling/Pricing";
+import QuanityInput from "../../../../components/base/QuanityInput";
 
 export default function index() {
-  const qty = useRef(null);
-  const [currQty, setQty] = useState(1);
-  if (currQty < 0) setQty(0);
   return (
     <main className="mb-auto">
       <div className="container">
@@ -33,30 +30,7 @@ export default function index() {
                   </label>
                 </div>
                 <div className="grid grid-cols-[30%70%]">
-                  <div className="relative">
-                    <input
-                      type="number"
-                      className="w-full border border-l pl-4  border-primary py-[0.3rem] placeholder:text-sm placeholder:font-default placeholder:text-[#808080] placeholder:absolute placeholder:left-2 placeholder:top-1/2 placeholder:-translate-y-1/2"
-                      value={currQty}
-                      id="qty"
-                      onChange={(e) => setQty(e.target.value)}
-                      ref={qty}
-                    />
-                    <div className="absolute top-1/2 right-2 -translate-y-1/2 select-none">
-                      <div
-                        className="cursor-pointer"
-                        onClick={() => setQty(currQty + 1)}
-                      >
-                        <IoIosArrowUp />
-                      </div>
-                      <div
-                        className="cursor-pointer"
-                        onClick={() => setQty(currQty - 1)}
-                      >
-                        <IoIosArrowDown />
-                      </div>
-                    </div>
-                  </div>
+                  <QuanityInput />
                   <button
                     type="button"
                     className={`w-full px-2 flex py-2  justify-center items-end font-semibold text-white  bg-primary text-sm ml-3`}
