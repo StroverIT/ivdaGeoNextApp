@@ -1,7 +1,7 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 // import styles from '../styles/Home.module.css'
-export default function About() {
+export default function Cart() {
   return (
     <>
       <Head>
@@ -9,13 +9,9 @@ export default function About() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
 
-     <main className="bg-primary">
-       <div className="container">
-         This is about page
-
-       </div>
-     </main>
-
+      <main className="bg-primary">
+        <div className="container"></div>
+      </main>
     </>
-  )
+  );
 }
