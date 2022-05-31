@@ -47,7 +47,7 @@ export default function Cart() {
                     <h3 className="text-lg">
                       АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
                     </h3>
-                    <ul className="mt-2 text-sm text-gray-darker">
+                    <ul className="mt-2 text-sm text-gray-250">
                       <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
                       <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
                       <li>
