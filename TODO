@@ -54,6 +54,7 @@ Pages to create:
   [ x ] Personal info
   [ x ] Email
   [ x ] Made orders
+  [ ] Favourites
   [] Redirect to login page if no account
   [ ] If users is logged in go to /account page
 
