@@ -7,11 +7,9 @@ import { HiX } from "react-icons/hi";
 import Price from "../components/priceStyling/Pricing";
 import QunityInput from "../components/base/QuanityInput";
 
-function TableData({ children }) {
+function TableData({ children, classes }) {
   return (
-    <td className="w-auto" colSpan="1">
-      {children}
-    </td>
+    <td className={`w-full lg:w-auto ${classes ? classes : ""}`}>{children}</td>
   );
 }
 // import styles from '../styles/Home.module.css'
@@ -29,7 +27,7 @@ export default function Cart() {
           <div className="xl:grid grid-cols-[70%30%] xl:space-x-4">
             <table className="w-full table-auto">
               <thead className="bg-gray-100 text-gray-250">
-                <tr>
+                <tr className="hidden xl:table-row">
                   <th colSpan="2">Продукт</th>
                   <th colSpan="1">Цена</th>
                   <th colSpan="1">Количество</th>
@@ -37,7 +35,7 @@ export default function Cart() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-[#e4e7e6]">
+                <tr className="border-b border-gray-[#e4e7e6] flex flex-wrap xl:table-row justify-between items-center ">
                   <TableData>
                     <div className="relative w-40 h-32 ">
                       <Image layout="fill" src="/images/testCarousel.jpg" />
@@ -77,7 +75,7 @@ export default function Cart() {
                       </button>
                     </div>
                   </TableData>
-                  <TableData>
+                  <TableData classes="hidden xl:table-cell">
                     <Price priceDec={48} price={200} size="2xl" />
                   </TableData>
                 </tr>
