@@ -79,19 +79,19 @@ export default function Cart() {
                 </tr>
               </tbody>
             </table>
-            <aside>
-              <section>
-                <div>Междинна сума:</div>
+            <aside className="border-[10px] border-gray-100 p-5">
+              <section className="flex items-center justify-between border-b b-[#e4e7e6]">
+                <div className="font-semibold uppercase ">Междинна сума:</div>
                 <div>
                   <Price size="2xl" price={200} priceDec={20} />
                 </div>
               </section>
-              <section>
-                <div>Доставка:</div>
+              <section className="flex items-center justify-between border-b b-[#e4e7e6]">
+                <div className="font-semibold uppercase ">Доставка:</div>
                 <div>Добави информация</div>
               </section>
-              <section>
-                <div>Обща цена:</div>
+              <section className="flex items-center justify-between border-b b-[#e4e7e6]">
+                <div className="font-semibold uppercase ">Обща цена:</div>
                 <div>
                   <Price size="3xl" price={200} priceDec={20} />
                 </div>
