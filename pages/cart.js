@@ -79,7 +79,27 @@ export default function Cart() {
                 </tr>
               </tbody>
             </table>
-            <aside></aside>
+            <aside>
+              <section>
+                <div>Междинна сума:</div>
+                <div>
+                  <Price size="2xl" price={200} priceDec={20} />
+                </div>
+              </section>
+              <section>
+                <div>Доставка:</div>
+                <div>Добави информация</div>
+              </section>
+              <section>
+                <div>Обща цена:</div>
+                <div>
+                  <Price size="3xl" price={200} priceDec={20} />
+                </div>
+              </section>
+              <button type="button" className="">
+                Завърши
+              </button>
+            </aside>
           </div>
         </div>
       </main>
