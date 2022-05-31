@@ -26,7 +26,7 @@ export default function Cart() {
       <main className="mb-auto ">
         <div className="container">
           <h3 className="text-3xl font-semibold uppercase">Твоята количка</h3>
-          <div className="xl:grid grid-cols-[70%30%]">
+          <div className="xl:grid grid-cols-[70%30%] xl:space-x-4">
             <table className="w-full table-auto">
               <thead className="bg-gray-100 text-gray-250">
                 <tr>
@@ -37,7 +37,7 @@ export default function Cart() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr className="border-b border-gray-[#e4e7e6]">
                   <TableData>
                     <div className="relative w-40 h-32 ">
                       <Image layout="fill" src="/images/testCarousel.jpg" />
