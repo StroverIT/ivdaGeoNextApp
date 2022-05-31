@@ -60,7 +60,7 @@ export default function Cart() {
                     <Price priceDec={20} price={100} size="2xl" />
                   </TableData>
                   <TableData>
-                    <QunityInput />
+                    <QunityInput contClass="w-1/2 mx-auto mt-10" />
                     <div className="flex items-center justify-center mt-2">
                       <button
                         type="button"
