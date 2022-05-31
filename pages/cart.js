@@ -39,7 +39,7 @@ export default function Cart() {
               <tbody>
                 <tr>
                   <TableData>
-                    <div className="relative w-10 h-10 ">
+                    <div className="relative w-40 h-32 ">
                       <Image layout="fill" src="/images/testCarousel.jpg" />
                     </div>
                   </TableData>
