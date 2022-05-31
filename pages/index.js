@@ -155,7 +155,7 @@ export default function Home() {
                 <h2 className="py-2 text-2xl font-semibold ">
                   За нас и нашият магазин
                 </h2>
-                <span className="text-gray-darker text-center font-semibold">
+                <span className="font-semibold text-center text-gray-darker">
                   Строителен супермаркет Ивда Гео с повече от 20 години опит в
                   търговията със строителни материали, инструменти, крепежни
                   елементи и други. В нашата железария ще намерите винаги богат
