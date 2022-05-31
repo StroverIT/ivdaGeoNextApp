@@ -23,11 +23,11 @@ export default function Cart() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
 
-      <main className=" mb-auto">
+      <main className="mb-auto ">
         <div className="container">
-          <h3 className="text-3xl uppercase font-semibold">Твоята количка</h3>
+          <h3 className="text-3xl font-semibold uppercase">Твоята количка</h3>
           <div>
-            <table className="table-fixed w-full">
+            <table className="w-full table-fixed">
               <thead>
                 <tr>
                   <th colSpan="2">Продукт</th>
@@ -39,7 +39,7 @@ export default function Cart() {
               <tbody>
                 <tr>
                   <TableData>
-                    <div className="relative h-10 w-10 ">
+                    <div className="relative w-10 h-10 ">
                       <Image layout="fill" src="/images/testCarousel.jpg" />
                     </div>
                   </TableData>
@@ -47,7 +47,7 @@ export default function Cart() {
                     <h3 className="text-lg">
                       АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
                     </h3>
-                    <ul className="text-sm text-gray-darker">
+                    <ul className="mt-2 text-sm text-gray-darker">
                       <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
                       <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
                       <li>
@@ -61,10 +61,10 @@ export default function Cart() {
                   </TableData>
                   <TableData>
                     <QunityInput />
-                    <div className="flex justify-center items-center">
+                    <div className="flex items-center justify-center">
                       <button
                         type="button"
-                        className="flex justify-center items-center text-gray-darker cursor-pointer"
+                        className="flex items-center justify-center cursor-pointer text-gray-darker"
                       >
                         <div className="mt-[0.25px]">
                           <HiX />
