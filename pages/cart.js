@@ -27,7 +27,7 @@ export default function Cart() {
         <div className="container">
           <h3 className="text-3xl font-semibold uppercase">Твоята количка</h3>
           <div>
-            <table className="w-full table-fixed">
+            <table className="w-full table-auto">
               <thead>
                 <tr>
                   <th colSpan="2">Продукт</th>
