@@ -110,7 +110,7 @@ const Navbar = () => {
               </li>
             </Link>
             {/* Cart */}
-            <Link href="/about">
+            <Link href="/cart">
               <li className="flex flex-col items-center justify-center px-4  h-14 lg:h-20 hover:text-white hover:bg-gray">
                 <div className="text-3xl">
                   <BsCart3 className="icon" />
