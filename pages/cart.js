@@ -61,7 +61,7 @@ export default function Cart() {
                   </TableData>
                   <TableData>
                     <QunityInput />
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-center mt-2">
                       <button
                         type="button"
                         className="flex items-center justify-center cursor-pointer text-gray-darker"
