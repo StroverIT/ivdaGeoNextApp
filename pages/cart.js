@@ -1,6 +1,8 @@
 // NextJs
 import Head from "next/head";
 import Image from "next/image";
+// Icons
+import { HiX } from "react-icons/hi";
 // Components
 import Price from "../components/priceStyling/Pricing";
 import QunityInput from "../components/base/QuanityInput";
@@ -41,10 +43,10 @@ export default function Cart() {
                   </div>
                 </TableData>
                 <TableData>
-                  <h3 className="text-xl">
+                  <h3 className="text-lg">
                     АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
                   </h3>
-                  <ul>
+                  <ul className="text-sm text-gray-darker">
                     <li>ИНСТРУМЕНТ 1 : АКУМУЛАТОРНА БОРМАШИНА</li>
                     <li>ИНСТРУМЕНТ 2 : МУЛТИФУНКЦИОНАЛНО УСТРОЙСТВО</li>
                     <li>
@@ -58,6 +60,17 @@ export default function Cart() {
                 </TableData>
                 <TableData>
                   <QunityInput />
+                  <div className="flex justify-center items-center">
+                    <button
+                      type="button"
+                      className="flex justify-center items-center text-gray-darker cursor-pointer"
+                    >
+                      <div className="mt-[0.25px]">
+                        <HiX />
+                      </div>
+                      <div>Премахни</div>
+                    </button>
+                  </div>
                 </TableData>
                 <TableData>
                   <Price priceDec={48} price={200} size="2xl" />
