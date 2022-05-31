@@ -96,12 +96,14 @@ export default function Cart() {
                   <Price size="3xl" price={200} priceDec={20} />
                 </div>
               </section>
-              <button
-                type="button"
-                className="py-2 font-medium text-white uppercase transition-colors duration-300 border px-14 bg-primary hover:bg-transparent hover:text-primary border-primary"
-              >
-                Завърши
-              </button>
+              <div className="flex justify-center">
+                <button
+                  type="button"
+                  className="py-2 font-medium text-white uppercase transition-colors duration-300 border px-14 bg-primary hover:bg-transparent hover:text-primary border-primary"
+                >
+                  Завърши
+                </button>
+              </div>
             </aside>
           </div>
         </div>
