@@ -13,7 +13,9 @@ const customColors = {
   green: "hsl(92, 50%, 54%)",
   gray: {
     DEFAULT: "hsl(0, 0%, 85%)",
+    100: "#fafafa",
     200: "#a1a1aa",
+    250: "#5a5a5a",
     300: "#f6f6f6",
     400: "#eee",
     bord: "#dfdfdf",

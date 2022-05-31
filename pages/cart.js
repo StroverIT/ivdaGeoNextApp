@@ -9,7 +9,7 @@ import QunityInput from "../components/base/QuanityInput";
 
 function TableData({ children }) {
   return (
-    <td className="" colSpan="1">
+    <td className="w-auto" colSpan="1">
       {children}
     </td>
   );
@@ -28,7 +28,7 @@ export default function Cart() {
           <h3 className="text-3xl font-semibold uppercase">Твоята количка</h3>
           <div>
             <table className="w-full table-auto">
-              <thead>
+              <thead className="bg-gray-100 text-gray-250">
                 <tr>
                   <th colSpan="2">Продукт</th>
                   <th colSpan="1">Цена</th>
