@@ -4,9 +4,12 @@ import Image from "next/image";
 
 // Components
 import NavLinks from "../components/layouts/navComponents/NavLinks";
+import BtnOutlined from "../components/buttons/Outlined";
+
 // Import Swiper React components
 import SwiperPag from "../components/swiperJs/SwiperPag";
 import SwiperFreeMode from "../components/swiperJs/SwiperFreeMode";
+
 // Images
 const swiperPag = [
   {
@@ -127,7 +130,9 @@ export default function Home() {
                     id="email"
                     placeholder="И-мейл за абонамента"
                   />
-                  <button type="submit">Изпрати</button>
+                  <div className="">
+                    <BtnOutlined text="изпрати" type="submit" />
+                  </div>
                 </form>
               </div>
             </section>
