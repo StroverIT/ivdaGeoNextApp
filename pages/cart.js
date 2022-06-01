@@ -37,8 +37,10 @@ export default function Cart() {
               <tbody>
                 <tr className="border-b border-gray-[#e4e7e6] flex flex-wrap xl:table-row justify-between items-center ">
                   <TableData>
-                    <div className="relative w-40 h-32 ">
-                      <Image layout="fill" src="/images/testCarousel.jpg" />
+                    <div className="flex items-center justify-center lg:justify-start">
+                      <div className="relative w-full h-40 sm:w-2/3 sm:h-60 lg:h-32 lg:w-40 ">
+                        <Image layout="fill" src="/images/testCarousel.jpg" />
+                      </div>
                     </div>
                   </TableData>
                   <TableData>
@@ -62,7 +64,7 @@ export default function Cart() {
                     <Price priceDec={20} price={100} size="2xl" />
                   </TableData>
                   <TableData>
-                    <QunityInput contClass="w-1/2 mx-auto mt-10" />
+                    <QunityInput contClass="w-1/2 mx-auto mt-2 lg:mt-10" />
                     <div className="flex items-center justify-center mt-2">
                       <button
                         type="button"
