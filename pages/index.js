@@ -110,11 +110,34 @@ export default function Home() {
           </div>
         </section>
         <section className="pt-10 pb-2 bg-color">
-          <div className="container h-full"></div>
+          <div className="container h-full">
+            <section>
+              <div>
+                <h2>ИвдаГео бюлетин</h2>
+                <p>
+                  Абонирайте се за нашият онлайн бюлетин, за да получавате
+                  оферти от нашият онлайн магазин всеки месец!
+                </p>
+              </div>
+              <div>
+                <form action="">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="И-мейл за абонамента"
+                  />
+                  <button type="submit">Изпрати</button>
+                </form>
+              </div>
+            </section>
+          </div>
         </section>
         <section className="py-5 ">
           <div className="container">
-            <h1 className="mb-3 text-3xl">Месечни топ предложения</h1>
+            <h1 className="mb-3 text-xl font-semibold">
+              Месечни топ предложения
+            </h1>
             <SwiperFreeMode images={swiperFreeImages} navSize="3xl" />
           </div>
         </section>
