@@ -28,10 +28,18 @@ export default function Cart() {
             <table className="w-full table-auto">
               <thead className="bg-gray-100 text-gray-250">
                 <tr className="hidden xl:table-row">
-                  <th colSpan="2">Продукт</th>
-                  <th colSpan="1">Цена</th>
-                  <th colSpan="1">Количество</th>
-                  <th colSpan="1">Общо</th>
+                  <th colSpan="2" className="py-3 pl-5 text-left">
+                    Продукт
+                  </th>
+                  <th colSpan="1" className="py-3">
+                    Цена
+                  </th>
+                  <th colSpan="1" className="py-3">
+                    Количество
+                  </th>
+                  <th colSpan="1" className="py-3 text-left">
+                    Общо
+                  </th>
                 </tr>
               </thead>
               <tbody>
