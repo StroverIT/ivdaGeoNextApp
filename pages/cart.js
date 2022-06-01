@@ -103,7 +103,7 @@ export default function Cart() {
               <div className="flex justify-center">
                 <button
                   type="button"
-                  className="py-2 font-medium text-white uppercase transition-colors duration-300 border px-14 bg-primary hover:bg-transparent hover:text-primary border-primary"
+                  className="w-full py-2 font-medium text-white uppercase transition-colors duration-300 border px-14 bg-primary hover:bg-transparent hover:text-primary border-primary"
                 >
                   Завърши
                 </button>
