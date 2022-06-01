@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 // NextJs
 import Head from "next/head";
 import Image from "next/image";
@@ -21,13 +22,23 @@ function Input({ id, text, type, holder }) {
         id={id}
         name={id}
         className="px-3 py-1 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline placeholder:text-gray-200"
-        placeHolder={holder}
+        placeholder={holder}
       />
     </div>
   );
 }
 // import styles from '../styles/Home.module.css'
 export default function Cart() {
+  const addInfo = useRef(null);
+  const [isHidd, setHidd] = useState(true);
+  const [hidText, setHidText] = useState("Добави адрес");
+  useEffect(() => {
+    if (!isHidd) {
+      setHidText("Отмяна");
+    } else {
+      setHidText("Добави адрес");
+    }
+  }, [isHidd]);
   return (
     <>
       <Head>
@@ -118,11 +129,12 @@ export default function Cart() {
                   <button
                     type="button"
                     className="text-sm underline cursor-pointer text-gray-250"
+                    onClick={() => setHidd(!isHidd)}
                   >
-                    Добави адрес
+                    {hidText}
                   </button>
                 </section>
-                <section className="hidden">
+                <section className={isHidd ? "hidden" : ""} ref={addInfo}>
                   <form action="">
                     <section className="container w-full mt-3">
                       <Input
