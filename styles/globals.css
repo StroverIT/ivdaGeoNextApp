@@ -35,7 +35,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  /* box-shadow: inset 0 0 5px theme("colors.gray-darker"); */
+  /* box-shadow: inset 0 0 5px gray; */
   /* border-radius: 10px; */
 }
 
@@ -90,6 +90,9 @@ a {
 
 .swiper-pagination-bullets {
   margin-bottom: 0 !important;
+}
+.freeModeSwiper {
+  padding-bottom: 15px !important;
 }
 @media screen("lg") {
   .custom-border {

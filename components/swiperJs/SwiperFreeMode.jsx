@@ -44,18 +44,18 @@ export default function SwiperFreeMode({ images, navSize }) {
             },
             // when window width is >= 768px
             768: {
-              slidesPerView: 3.5,
+              slidesPerView: 4,
             },
           }}
           modules={[FreeMode, Pagination, Navigation]}
-          className={`mySwiper relative`}
+          className={`mySwiper relative freeModeSwiper`}
         >
           {images.map((image) => {
             let [price, priceDec] = image.price.toFixed(2).split(".");
             return (
               <SwiperSlide
                 key={image.title}
-                className="flex flex-col h-full bg-white"
+                className="flex flex-col h-full bg-white shadow-lg hover:shadow-xl"
               >
                 <Link href={image.pageUrl}>
                   <div>
@@ -88,7 +88,7 @@ export default function SwiperFreeMode({ images, navSize }) {
         </Swiper>
       </div>
       <div
-        className={`${style.pagination} z-10 flex justify-center gap-2 my-2`}
+        className={`${style.pagination} z-10 flex justify-center gap-2`}
       ></div>
     </>
   );
