@@ -145,7 +145,7 @@ export default function Home() {
         </section>
         <section className="py-5 ">
           <div className="container">
-            <h1 className="text-3xl">Месечни топ предложения</h1>
+            <h1 className="mb-3 text-3xl">Месечни топ предложения</h1>
             <SwiperFreeMode images={swiperFreeImages} navSize="3xl" />
           </div>
         </section>
