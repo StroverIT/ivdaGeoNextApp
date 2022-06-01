@@ -8,12 +8,12 @@ const SwiperNav = ({ size }) => {
   return (
     <div className={`${style.swiperNav} z-10 text-${size} hidden sm:inline`}>
       <div
-        className={`${style.swiperPrev} flex items-center justify-center cursor-pointer absolute z-10 select-none p-2`}
+        className={`${style.swiperPrev} flex items-center justify-center cursor-pointer absolute z-10 select-none p-3`}
       >
         <IoMdArrowDropleft />
       </div>
       <div
-        className={`${style.swiperNext} flex items-center justify-center cursor-pointer absolute z-10 select-none p-2`}
+        className={`${style.swiperNext} flex items-center justify-center cursor-pointer absolute z-10 select-none p-3 `}
       >
         <IoMdArrowDropright />
       </div>
