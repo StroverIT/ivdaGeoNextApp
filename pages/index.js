@@ -94,8 +94,8 @@ export default function Home() {
       </Head>
 
       <main className="mb-auto">
-        <section className="bg-white">
-          <div className="container">
+        <section className="bg-color">
+          <div className="container pb-2 bg-white">
             <section className="lg:grid lg:gap-2 lg:grid-cols-[25%75%] w-full relative ">
               <section className="z-10">
                 <NavLinks isHome={true} />
