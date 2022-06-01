@@ -55,8 +55,8 @@ export default function SwiperPag({ images, navSize }) {
                   <Image
                     src={image.src}
                     //  layout="fill"
-                    height={600}
-                    width={1100}
+                    height={450}
+                    width={940}
                     alt={image.key}
                     className={`${style.swiperSlideImg} cursor-pointer`}
                   />
