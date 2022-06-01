@@ -73,22 +73,29 @@ const dictionary = [
 ];
 const NavLinks = ({ isHome }) => {
   return (
-    <ul
-      className={` text-bg-color text-lg inline-flex flex-col w-full  ${
-        isHome ? "hidden lg:block" : ""
-      }`}
-    >
-      {dictionary.map((article) => {
-        return (
-          <NavLinkMenu
-            title={article.title}
-            articles={article.articles}
-            key={article.title}
-            isHome={isHome}
-          />
-        );
-      })}
-    </ul>
+    <>
+      {isHome ? (
+        <h1 className="pl-3 text-lg font-medium">Категории продукти</h1>
+      ) : (
+        ""
+      )}
+      <ul
+        className={` text-bg-color text-lg inline-flex flex-col w-full  ${
+          isHome ? "hidden lg:block pt-4" : ""
+        }`}
+      >
+        {dictionary.map((article) => {
+          return (
+            <NavLinkMenu
+              title={article.title}
+              articles={article.articles}
+              key={article.title}
+              isHome={isHome}
+            />
+          );
+        })}
+      </ul>
+    </>
   );
 };
 
