@@ -76,7 +76,7 @@ const NavLinks = ({ isHome }) => {
     <>
       <ul
         className={` text-bg-color text-lg inline-flex flex-col w-full  ${
-          isHome ? "hidden lg:block pt-4" : ""
+          isHome ? "hidden lg:block pt-2" : ""
         }`}
       >
         {dictionary.map((article) => {
