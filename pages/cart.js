@@ -15,13 +15,17 @@ function TableData({ children, classes }) {
 }
 function Input({ id, text, type, holder }) {
   return (
-    <div className="flex justify-between mb-1">
-      <label htmlFor={id}>{text}:</label>
+    <div className="flex flex-col justify-between mb-2 lg:mb-0 lg:flex-row">
+      <div className="flex items-center ">
+        <label htmlFor={id} className="font-medium text-dark-400">
+          {text}
+        </label>
+      </div>
       <input
         type={type}
         id={id}
         name={id}
-        className="px-3 py-1 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline placeholder:text-gray-200"
+        className="px-3 py-2 my-1 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline placeholder:text-gray-200"
         placeholder={holder}
       />
     </div>
@@ -156,8 +160,15 @@ export default function Cart() {
                         text="Пощенски код"
                         holder="1584"
                       />
-                      <div className="flex justify-between">
-                        <label htmlFor="address">Адрес</label>
+                      <div className="flex flex-col justify-between ">
+                        <div className="flex items-center mb-1">
+                          <label
+                            htmlFor="address"
+                            className="font-medium text-dark-400"
+                          >
+                            Адрес
+                          </label>
+                        </div>
                         <textarea
                           id="address"
                           type="text"
@@ -172,7 +183,12 @@ export default function Cart() {
 
                     <div className="mt-2 ">
                       <div className="mb-2">
-                        <label htmlFor="moreInfo ">Коментар:</label>
+                        <label
+                          htmlFor="moreInfo"
+                          className="font-medium text-dark-400"
+                        >
+                          Коментар
+                        </label>
                       </div>
                       <textarea
                         name="moreInfo"
@@ -187,7 +203,7 @@ export default function Cart() {
                         type="button"
                         className="w-full py-2 text-sm font-medium text-white uppercase transition-colors duration-300 border px-14 bg-dark hover:bg-transparent hover:text-dark border-dark"
                       >
-                        Проверка на доставката
+                        ВИД НА ДОСТАВКАТА
                       </button>
                     </div>
                   </form>
