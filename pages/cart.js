@@ -43,7 +43,7 @@ export default function Cart() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-[#e4e7e6] flex flex-wrap xl:table-row justify-between items-center ">
+                <tr className="border-b border-gray-[#e4e7e6] flex flex-wrap xl:table-row justify-between items-center pb-3 mb-3">
                   <TableData>
                     <div className="flex items-center justify-center lg:justify-start">
                       <div className="relative w-full h-40 sm:w-2/3 sm:h-60 lg:h-32 lg:w-40 ">
