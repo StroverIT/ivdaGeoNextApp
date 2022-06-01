@@ -37,7 +37,7 @@ export default function SwiperFreeMode({ images, navSize }) {
           breakpoints={{
             // when window width is >= 640px
             0: {
-              slidesPerView: 1.25,
+              slidesPerView: 1,
             },
             640: {
               slidesPerView: 2.25,
