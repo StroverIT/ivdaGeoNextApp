@@ -20,7 +20,7 @@ import SwiperNav from "./SwiperNav";
 export default function SwiperFreeMode({ images, navSize }) {
   return (
     <>
-      <div className="flex flex-row items-stretch py-5 swipebody">
+      <div className="flex flex-row items-stretch swipebody">
         <Swiper
           slidesPerView={3}
           spaceBetween={10}
@@ -85,11 +85,11 @@ export default function SwiperFreeMode({ images, navSize }) {
           })}
           {/* Nav */}
           <SwiperNav size={navSize} />
+          <div
+            className={`${style.pagination} z-10 flex justify-center gap-2 mt-5`}
+          ></div>
         </Swiper>
       </div>
-      <div
-        className={`${style.pagination} z-10 flex justify-center gap-2`}
-      ></div>
     </>
   );
 }
