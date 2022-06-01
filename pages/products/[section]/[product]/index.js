@@ -13,11 +13,11 @@ export default function index() {
   return (
     <main className="mb-auto">
       <div className="container">
-        <div className="flex flex-col justify-between py-5 my-5 border-b lg:flex-row border-gray-bord">
+        <div className="flex flex-col justify-between py-5 my-5 border-b md:flex-row border-gray-bord">
           <h3 className="text-2xl font-semibold">
             АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
           </h3>
-          <div className="mt-1 ">
+          <div className="mt-5 md:mt-1">
             <ul className="text-sm text-right text-gray-250">
               <li>Код: 23141412</li>
               <li>EAN: 40015125122</li>
