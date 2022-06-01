@@ -95,8 +95,21 @@ a {
   padding-bottom: 50px !important;
 }
 @media screen("lg") {
-  .custom-border {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 87% 100%, 0 100%, 0% 50%);
+  .custom-border-input {
+    clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .custom-border-container::before {
+    background: #f4f4f4 none repeat scroll 0 0;
+    border-right: 2px solid #d5d5d5;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    transform: translateX(-50%) skewX(-40deg);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
   }
 }
 .blury {
