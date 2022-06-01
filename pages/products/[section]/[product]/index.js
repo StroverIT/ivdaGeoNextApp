@@ -13,19 +13,30 @@ export default function index() {
   return (
     <main className="mb-auto">
       <div className="container">
+        <div className="flex flex-col justify-between py-5 my-5 border-b lg:flex-row border-gray-bord">
+          <h3 className="text-2xl font-semibold">
+            АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
+          </h3>
+          <div className="mt-1 ">
+            <ul className="text-sm text-right text-gray-250">
+              <li>Код: 23141412</li>
+              <li>EAN: 40015125122</li>
+            </ul>
+          </div>
+        </div>
         <div className="grid-cols-2 lg:grid xl:grid-cols-[40%30%30%] auto-cols-max">
           <ThumbsGallery navSize="2xl" />
-          <section className="xl:order-2 p-4 bg-gray-400">
+          <section className="p-4 bg-gray-400 xl:order-2">
             <section className="flex items-center justify-between border-b border-gray-bord ">
               <div>Цена:</div>
               <div>
                 <Pricing price={220} priceDec={22} size="3xl" />
               </div>
             </section>
-            <section className=" my-5 ">
+            <section className="my-5 ">
               <div className="">
                 <div className="mb-1">
-                  <label htmlFor="qty" className=" font-semibold text-sm">
+                  <label htmlFor="qty" className="text-sm font-semibold ">
                     Бройки:
                   </label>
                 </div>
@@ -37,8 +48,8 @@ export default function index() {
                   >
                     Купи
                   </button>
-                  <div className="flex justify-center items-center mt-6 col-span-2 cursor-pointer  group ">
-                    <div className=" bg-gray p-2 rounded-full text-xl group-hover:bg-gray-200 group-hover:text-white md:ml-5 inline-flex">
+                  <div className="flex items-center justify-center col-span-2 mt-6 cursor-pointer group ">
+                    <div className="inline-flex p-2 text-xl rounded-full bg-gray group-hover:bg-gray-200 group-hover:text-white md:ml-5">
                       <AiOutlineHeart />
                     </div>
                     <span className="ml-1 text-sm group-hover:font-medium">
@@ -49,7 +60,7 @@ export default function index() {
               </div>
             </section>
           </section>
-          <section className="xl:order-1 p-4 bg-gray-300 md:col-span-2 xl:col-span-1 mt-4 md:mt-0">
+          <section className="p-4 mt-4 bg-gray-300 xl:order-1 md:col-span-2 xl:col-span-1 md:mt-0">
             <h3 className="text-xl font-semibold">Кратко описание</h3>
             <ul className="text-[#3b3b3b] text-sm mt-1  pb-4">
               <li>ИНСТРУМЕНТ 1: АКУМУЛАТОРНА БОРМАШИНА</li>
@@ -61,7 +72,7 @@ export default function index() {
           </section>
         </div>
         <section className="my-16">
-          <h3 className="text-xl font-semibold text-center py-5">
+          <h3 className="py-5 text-xl font-semibold text-center">
             ВСИЧКИ ХАРАКТЕРИСТИКИ
           </h3>
           <table className={`table-fixed  ${style.table} w-full`}>
