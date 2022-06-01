@@ -7,6 +7,7 @@ import { HiX } from "react-icons/hi";
 // Components
 import Price from "../components/priceStyling/Pricing";
 import QunityInput from "../components/base/QuanityInput";
+import BtnOutlined from "../components/buttons/Outlined";
 
 function TableData({ children, classes }) {
   return (
@@ -216,12 +217,7 @@ export default function Cart() {
                 </div>
               </section>
               <div className="flex justify-center">
-                <button
-                  type="button"
-                  className="w-full py-2 font-medium text-white uppercase transition-colors duration-300 border px-14 bg-primary hover:bg-transparent hover:text-primary border-primary"
-                >
-                  Завърши
-                </button>
+                <BtnOutlined type="button" text="завърши" />
               </div>
             </aside>
           </div>
