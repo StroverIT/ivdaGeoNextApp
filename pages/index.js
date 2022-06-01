@@ -93,11 +93,12 @@ export default function Home() {
         <meta name="description" content="Онлайн магазин IvdaGeo" />
       </Head>
 
-      <main className="mb-auto">
-        <section className="bg-color">
-          <div className="container pb-2 bg-white">
+      <main className="mb-auto bg-color">
+        <section className="">
+          <div className="container pb-2 mt-10 bg-white">
             <section className="lg:grid lg:gap-2 lg:grid-cols-[25%75%] w-full relative ">
               <section className="z-10">
+                <h1 className="pl-3 text-lg font-medium">Категории продукти</h1>
                 <NavLinks isHome={true} />
               </section>
               <section className="relative flex items-center justify-center">
