@@ -5,7 +5,10 @@ const customColors = {
   "primary-trans": "hsl(215, 80%, 60%, 100%)",
   "primary-0": "hsl(215, 80%, 60%, 15%)",
   secondary: "hsl(358, 83%, 56%)",
-  dark: "hsl(0, 0%, 8%)",
+  dark: {
+    DEFAULT: "hsl(0, 0%, 8%)",
+    400: "#686868",
+  },
   white: "hsl(0, 0%, 100%)",
   "white-lighter-trans": "hsl(0, 0%, 100%, 30%)",
   blue: "hsl(203, 76%, 48%)",
