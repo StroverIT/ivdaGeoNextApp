@@ -55,7 +55,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
     <li className={`item w-full font-thin group ${!isHome ? "lg:w-64" : ""}`}>
       {/* Menu */}
       <div
-        className={`bg-primary cursor-pointer lg:hover:text-dark lg:hover:bg-color px-3 py-[0.40rem] lg:py-[0.68rem] flex w-full peer group-hover:lg:bg-color group-hover:lg:text-dark font-normal font-sans`}
+        className={`bg-white cursor-pointer text-dark lg:hover:text-dark lg:hover:bg-color px-3 py-[0.40rem] lg:py-[0.4rem] flex w-full peer group-hover:lg:bg-color group-hover:lg:text-primary font-normal font-sans text-[0.95rem] leading-5`}
         onClick={showMenu}
         ref={menu}
       >
