@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="flex items-center logo">
             <Hamburger headRef={headerRef} />
             <Link href="/">
-              <div className="lg:flex items-center justify-between hidden">
+              <div className="items-center justify-between hidden lg:flex">
                 <Image
                   src="/images/logo.png"
                   width={250}
@@ -72,7 +72,7 @@ const Navbar = () => {
           </div>
           <div className="lg:hidden">
             <Link href="/">
-              <div className="flex items-center justify-between  lg:block">
+              <div className="flex items-center justify-between lg:block">
                 <Image
                   src="/images/logo.png"
                   width={210}
@@ -85,17 +85,17 @@ const Navbar = () => {
 
           <ul className={`${style.list} flex items-center justify-center `}>
             {/* Search icon */}
-            <li className="lg:flex  items-center justify-center px-4 h-14 lg:h-20 hidden  hover:bg-gray ">
+            <li className="items-center justify-center hidden px-4 lg:flex h-14 lg:h-20 hover:bg-gray ">
               <div className="text-3xl">
                 <AiOutlineSearch className="icon" />
               </div>
-              <div className="pl-1 text-sm font-extralight font-sans">
+              <div className="pl-1 font-sans text-sm font-extralight">
                 Търси
               </div>
             </li>
             {/* Favourite items */}
             <Link href="/account#favourite">
-              <li className="lg:flex flex-col items-center justify-center px-4 h-14 lg:h-20 hidden hover:text-white hover:bg-gray">
+              <li className="flex-col items-center justify-center hidden px-4 lg:flex h-14 lg:h-20 hover:text-white hover:bg-gray">
                 <div className="text-3xl">
                   <AiOutlineHeart className="icon" />
                 </div>
@@ -111,7 +111,7 @@ const Navbar = () => {
             </Link>
             {/* Cart */}
             <Link href="/cart">
-              <li className="flex flex-col items-center justify-center px-4  h-14 lg:h-20 hover:text-white hover:bg-gray">
+              <li className="flex flex-col items-center justify-center px-4 h-14 lg:h-20 hover:text-white hover:bg-gray">
                 <div className="text-3xl">
                   <BsCart3 className="icon" />
                 </div>
