@@ -74,11 +74,6 @@ const dictionary = [
 const NavLinks = ({ isHome }) => {
   return (
     <>
-      {isHome ? (
-        <h1 className="pl-3 text-lg font-medium">Категории продукти</h1>
-      ) : (
-        ""
-      )}
       <ul
         className={` text-bg-color text-lg inline-flex flex-col w-full  ${
           isHome ? "hidden lg:block pt-4" : ""
