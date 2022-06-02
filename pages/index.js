@@ -175,7 +175,7 @@ export default function Home() {
         <section className="py-5 bg-color">
           <div className="container">
             <section className="items-center justify-center grid-cols-2 my-5 lg:grid">
-              <div className="mt-5 mb-5 text-center lg:text-left lg:my-0 lg:w-5/6">
+              <div className="mt-5 sm:mb-5 text-center lg:text-left lg:my-0 lg:w-5/6">
                 <h2 className="py-2 text-2xl font-semibold ">
                   За нас и нашият магазин
                 </h2>
