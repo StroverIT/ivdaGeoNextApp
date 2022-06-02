@@ -7,10 +7,10 @@ import React from "react";
 3. text-{something} on priceDec
 */
 const sizeDictionary = {
-  sm: ["text-xl", "text-[11px]", "mt-[7px]"],
-  xl: ["text-xl", "text-xs", "mt-[9px]"],
-  "2xl": ["text-2xl", "text-sm", "mt-[9px]"],
-  "3xl": ["text-3xl", "text-sm", "mt-[11px]"],
+  sm: ["text-xl", "text-[11px]", "mt-[2px]", "mt-[0.2px]", "mt-[7px]"],
+  xl: ["text-xl", "text-xs", "mt-[9px]", "mt-[1px]"],
+  "2xl": ["text-2xl", "text-sm", "mt-[9px]", "mt-[1px]"],
+  "3xl": ["text-3xl", "text-sm", "mt-[11px]", "mt-[1px]"],
 };
 export default function Pricing({ price, priceDec, size }) {
   return (
@@ -20,10 +20,12 @@ export default function Pricing({ price, priceDec, size }) {
           {price}
         </div>
         <div
-          className={`relative flex flex-col items-center h-full ${sizeDictionary[size][1]} `}
+          className={`relative flex flex-col items-center h-full ${sizeDictionary[size][1]} ${sizeDictionary[size][2]} `}
         >
-          <div className="h-0 mt-1 font-semibold">{priceDec}</div>
-          <div className={`h-0 ${sizeDictionary[size][2]}`}>лв.</div>
+          <div className={`h-0 ${sizeDictionary[size][3]} font-semibold`}>
+            .{priceDec}
+          </div>
+          <div className={`h-0 ${sizeDictionary[size][4]}`}>лв.</div>
         </div>
       </div>
     </div>
