@@ -5,9 +5,7 @@ import classNames from "classnames";
 // Icons
 import { AiOutlineArrowLeft } from "react-icons/ai";
 // Components
-// lg:left-[256px] ${
-//   isHome ? "xl:left-[300px]" : ""
-// }
+
 // Styles
 import style from "../../../styles/navigation/NavLinks.module.css";
 // Tailwind conf
@@ -67,7 +65,9 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
       <div
         className={`fixed  lg:absolute py-2 overflow-auto  ${
           mobSubmenu ? "translate-x-0" : "translate-x-full"
-        } transition-transform lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full  top-0  bg-color right-[5%] lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
+        } transition-transform lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full  top-0  bg-color  ${
+          isHome ? "right-[5%] " : "lg:right-[20px] xl:right-[120px]"
+        } lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
         ref={subMenu}
       >
         <div className={`flex items-center `}>
