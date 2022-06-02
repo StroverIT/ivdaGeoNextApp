@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 // Account components
 import MyDetails from "../../components/account/MyDetails/index";
 import MyOrders from "../../components/account/MyOrders/index";
-// import AccountSettings from "../../components/account/AccountSettings";
+import MyFavourites from "../../components/account/MyFavourites";
 
 export default function index() {
   const router = useRouter();
@@ -15,12 +15,12 @@ export default function index() {
 
   const myDetails = useRef(null);
   const myOrders = useRef(null);
-  const mySettings = useRef(null);
+  const myFavourites = useRef(null);
 
   const categoryComp = {
     "#account-details": [<MyDetails />, myDetails],
     "#my-orders": [<MyOrders />, myOrders],
-    // "#account-settings": [<AccountSettings />, mySettings],
+    "#my-favourites": [<MyFavourites />, myFavourites],
   };
 
   const changeCategory = (category) => {
@@ -71,7 +71,7 @@ export default function index() {
                       Направени поръчки
                     </button>
                   </li>
-                  {/*<li className="cursor-pointer" ref={mySettings}>
+                  <li className="cursor-pointer" ref={myFavourites}>
                     <button
                       onClick={() => changeCategory("account-settings")}
                       type="button"
@@ -79,7 +79,7 @@ export default function index() {
                     >
                       Настройки на акаунта
                     </button>
-                  </li>*/}
+                  </li>
                 </ul>
               </aside>
               <section className="bg-white border border-gray min-h-full">
