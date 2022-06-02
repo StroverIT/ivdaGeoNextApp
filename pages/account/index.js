@@ -73,7 +73,7 @@ export default function index() {
                   </li>
                   <li className="cursor-pointer" ref={myFavourites}>
                     <button
-                      onClick={() => changeCategory("account-settings")}
+                      onClick={() => changeCategory("my-favourites")}
                       type="button"
                       className="flex w-full h-full px-2 py-2 font-semibold"
                     >
