@@ -175,7 +175,7 @@ export default function Home() {
         <section className="py-5 bg-color">
           <div className="container">
             <section className="items-center justify-center grid-cols-2 my-5 md:grid">
-              <div className="mt-5 mb-1 text-center md:text-left md:my-0 ">
+              <div className="mt-5 mb-1 text-center md:text-left md:my-0 md:w-5/6">
                 <h2 className="py-2 text-2xl font-semibold ">
                   За нас и нашият магазин
                 </h2>
@@ -190,7 +190,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <div className="relative flex items-center justify-center w-full h-60">
+              <div className="relative flex items-center justify-center w-full h-96">
                 {/* Image  of the shop*/}
 
                 <Image
