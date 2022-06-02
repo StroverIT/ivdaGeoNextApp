@@ -19,7 +19,7 @@ const swiperPag = [
     pageUrl: "/products/product",
   },
   {
-    src: "/images/testCarousel.jpg",
+    src: "/images/testImage2.png",
     key: "test carousel for my monday version 2",
     pageUrl: "/products/product",
   },
@@ -29,7 +29,7 @@ const swiperPag = [
     pageUrl: "/products/product",
   },
   {
-    src: "/images/testCarousel.jpg",
+    src: "/images/testImage2.png",
     key: "test carousel for my monday version 4",
     pageUrl: "/products/product",
   },
@@ -39,7 +39,7 @@ const swiperPag = [
     pageUrl: "/products/product",
   },
   {
-    src: "/images/testCarousel.jpg",
+    src: "/images/testImage2.png",
     key: "test carousel for my monday version 6",
     pageUrl: "/products/product",
   },

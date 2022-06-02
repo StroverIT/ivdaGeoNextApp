@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
@@ -14,7 +15,7 @@ import style from "../../styles/swiperJs/SwiperPag.module.css";
 import navStyle from "../../styles/swiperJs/SwiperNav.module.css";
 
 // import required modules
-import { Pagination, Navigation, Autoplay } from "swiper";
+import { Pagination, Navigation, Autoplay, EffectFade } from "swiper";
 // Components
 import SwiperNav from "./SwiperNav";
 
@@ -35,12 +36,13 @@ export default function SwiperPag({ images, navSize }) {
           delay: 5000,
           disableOnInteraction: false,
         }}
+        effect={"fade"}
         navigation={{
           nextEl: `.${navStyle.swiperNext}`,
           prevEl: `.${navStyle.swiperPrev}`,
           disabledClass: `${navStyle.swiperDisabled}`,
         }}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Pagination, Navigation, Autoplay, EffectFade]}
         className={`mySwiper ${style.swiper}`}
       >
         <div className={`${style.paginationCont}`}>
