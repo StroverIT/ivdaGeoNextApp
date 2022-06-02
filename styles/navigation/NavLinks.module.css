@@ -13,11 +13,12 @@
     transform: translateX(0);
 
 } */
-.icon{
-    border-right: 1px solid black;
-    
+.icon {
+  border-right: 1px solid black;
 }
-
+.itemsContainer {
+  grid-template-columns: repeat(auto-fill, 240px);
+}
 /* @media screen('lg'){
     .submenu{
         width: 100%;

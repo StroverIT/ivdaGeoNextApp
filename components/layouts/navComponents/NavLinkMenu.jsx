@@ -70,7 +70,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
         } lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
         ref={subMenu}
       >
-        <div className={`flex items-center `}>
+        <div className={` `}>
           <span
             type="button"
             className={`${style.icon} flex py-2 px-2 lg:hidden`}
@@ -81,7 +81,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
           <span className="pl-4 font-semibold">{title}</span>
         </div>
         <ul
-          className={`px-5  flex-wrap flex flex-col flex-initial list-disc mt-2`}
+          className={`px-5  grid list-disc mt-2 gap-2 ${style.itemsContainer}`}
         >
           {articles.map((article) => {
             return (
