@@ -15,17 +15,19 @@ const sizeDictionary = {
 export default function Pricing({ price, priceDec, size }) {
   return (
     <div className="flex">
-      <div className={`flex items-center} `}>
+      <div className={`flex items-center}`}>
         <div className={`font-semibold ${sizeDictionary[size][0]}`}>
           {price}
         </div>
         <div
           className={`relative flex flex-col items-center h-full ${sizeDictionary[size][1]} ${sizeDictionary[size][2]} `}
         >
-          <div className={`h-0 ${sizeDictionary[size][3]} font-semibold`}>
-            .{priceDec}
+          <div className={`h-0 ${sizeDictionary[size][3]} `}>{priceDec}</div>
+          <div
+            className={`h-0 ${sizeDictionary[size][4]} text-primary font-semibold`}
+          >
+            лв.
           </div>
-          <div className={`h-0 ${sizeDictionary[size][4]}`}>лв.</div>
         </div>
       </div>
     </div>
