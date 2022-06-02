@@ -94,7 +94,7 @@ const Navbar = () => {
               </div>
             </li>
             {/* Favourite items */}
-            <Link href="/account#favourite">
+            <Link href="/account#my-favourites">
               <li className="flex-col items-center justify-center hidden px-4 lg:flex h-14 lg:h-20 hover:text-white hover:bg-gray">
                 <div className="text-3xl">
                   <AiOutlineHeart className="icon" />
