@@ -45,7 +45,7 @@ const Navbar = () => {
     >
       <nav className={`flex bg-color ${style.cShadow}`}>
         <div className="container relative flex items-center justify-between ">
-          <div className="flex items-center logo">
+          <div className="flex items-center logo justify-center">
             <Hamburger headRef={headerRef} />
             <Link href="/">
               <div className="items-center justify-between hidden lg:flex">
