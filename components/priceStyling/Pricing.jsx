@@ -7,6 +7,7 @@ import React from "react";
 3. text-{something} on priceDec
 */
 const sizeDictionary = {
+  sm: ["text-xl", "text-[11px]", "mt-[7px]"],
   xl: ["text-xl", "text-xs", "mt-[9px]"],
   "2xl": ["text-2xl", "text-sm", "mt-[9px]"],
   "3xl": ["text-3xl", "text-sm", "mt-[11px]"],
@@ -15,7 +16,7 @@ export default function Pricing({ price, priceDec, size }) {
   return (
     <div className="flex justify-center">
       <div className={`flex items-center px-2 py-2 } `}>
-        <div className={` font-semibold ${sizeDictionary[size][0]}`}>
+        <div className={`font-semibold ${sizeDictionary[size][0]}`}>
           {price}
         </div>
         <div
