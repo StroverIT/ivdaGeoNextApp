@@ -100,7 +100,7 @@ export default function Home() {
       <main className="mb-auto bg-color">
         <section className="">
           <div className="container pb-2 mt-10 mb-10 bg-white shadow-lg">
-            <section className="lg:grid lg:gap-2 lg:grid-cols-[25%75%] w-full relative lg:py-2">
+            <section className="lg:grid lg:space-x-2 lg:grid-cols-[25%75%] w-full relative lg:py-2">
               <section className="z-10">
                 <h1 className="hidden pl-3 text-lg font-medium lg:block">
                   Категории продукти
