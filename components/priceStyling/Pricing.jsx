@@ -12,7 +12,7 @@ const sizeDictionary = {
   "2xl": ["text-2xl", "text-sm", "mt-[1px]", "mt-[1px]", "mt-[9px]"],
   "3xl": ["text-3xl", "text-sm", "mt-[2px]", "mt-[1px]", "mt-[11px]"],
 };
-export default function Pricing({ price, priceDec, size }) {
+export default function Pricing({ price, priceDec, size, textColor }) {
   return (
     <div className="flex">
       <div className={`flex items-center}`}>
@@ -23,7 +23,11 @@ export default function Pricing({ price, priceDec, size }) {
           className={`relative flex flex-col items-center h-full ${sizeDictionary[size][1]} ${sizeDictionary[size][2]} `}
         >
           <div className={`h-0 ${sizeDictionary[size][3]} `}>{priceDec}</div>
-          <div className={`h-0 ${sizeDictionary[size][4]} text-primary `}>
+          <div
+            className={`h-0 ${sizeDictionary[size][4]} ${
+              textColor ? textColor : "text-primary"
+            } `}
+          >
             лв.
           </div>
         </div>
