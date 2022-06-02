@@ -136,7 +136,7 @@ export default function Home() {
                           id="email"
                           type="email"
                           placeholder="И-мейл за абонамент"
-                          required="true"
+                          required={true}
                           name="email"
                         />
                         <label
