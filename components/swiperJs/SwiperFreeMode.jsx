@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
 // NextJs
-import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -12,12 +14,17 @@ import "swiper/css/pagination";
 // Custom styles
 import style from "../../styles/swiperJs/SwiperFreeMode.module.css";
 import navStyle from "../../styles/swiperJs/SwiperNav.module.css";
+
 // import required modules
 import { FreeMode, Pagination, Navigation } from "swiper";
+
 // Components
 import PricingPromo from "../priceStyling/PricingPromo";
 import SwiperNav from "./SwiperNav";
+
 export default function SwiperFreeMode({ images, navSize }) {
+  const router = useRouter();
+
   return (
     <>
       <div className="flex flex-row items-stretch swipebody">
@@ -52,34 +59,36 @@ export default function SwiperFreeMode({ images, navSize }) {
         >
           {images.map((image) => {
             let [price, priceDec] = image.price.toFixed(2).split(".");
+            console.log(image.pageUrl);
             return (
               <SwiperSlide
+                className="flex flex-col  bg-white shadow-lg hover:shadow-xl cursor-pointer"
                 key={image.title}
-                className="flex flex-col h-full bg-white shadow-lg hover:shadow-xl"
               >
-                <Link href={image.pageUrl}>
+                <div
+                  onClick={() => router.push(image.pageUrl)}
+                  className="flex flex-col justify-between h-full"
+                >
                   <div>
-                    <Image
-                      src={image.src}
-                      //  layout="fill"
-                      height={700}
-                      width={1000}
-                      alt={image.title}
-                      className="cursor-pointer"
-                    />
+                    <div>
+                      <Image
+                        src={image.src}
+                        //  layout="fill"
+                        height={700}
+                        width={1000}
+                        alt={image.title}
+                      />
+                    </div>
+                    <div className="container  font-medium text-center border-t border-gray">
+                      {image.title}
+                    </div>
                   </div>
-                </Link>
-
-                <div className="container py-2 mb-5 font-medium text-center border-t border-gray">
-                  {image.title}
+                  <PricingPromo
+                    isPromo={image.isPromo}
+                    price={price}
+                    priceDec={priceDec}
+                  />
                 </div>
-
-                <PricingPromo
-                  isPromo={image.isPromo}
-                  price={price}
-                  priceDec={priceDec}
-                  pageUrl={image.pageUrl}
-                />
               </SwiperSlide>
             );
           })}

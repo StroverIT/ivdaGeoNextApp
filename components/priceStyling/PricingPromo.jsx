@@ -1,22 +1,22 @@
 // React
 import React from "react";
 
-const Pricing = ({ isPromo, price, priceDec }) => {
+import Pricing from "./Pricing";
+
+const PricePromo = ({ isPromo, price, priceDec }) => {
   return (
-    <div className="flex mt-auto border-t border-gray">
-      <div
-        className={` flex items-center px-2 py-2 ml-auto text-white ${
-          !isPromo ? "bg-primary" : " bg-secondary"
-        }`}
-      >
-        <div className="text-2xl font-semibold">{price}</div>
-        <div className="relative flex flex-col items-center h-full text-sm">
-          <div className="h-0 mt-1 font-semibold">{priceDec}</div>
-          <div className="h-0 mt-[8.8px]">лв.</div>
+    <div className=" border-t border-gray w-full ">
+      <div className="flex justify-end">
+        <div
+          className={` inline-flex items-center justify-center   text-white  ${
+            !isPromo ? "bg-primary" : " bg-secondary"
+          }`}
+        >
+          <Pricing price={price} priceDec={priceDec} size="xl" />
         </div>
       </div>
     </div>
   );
 };
 
-export default Pricing;
+export default PricePromo;
