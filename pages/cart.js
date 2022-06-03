@@ -37,6 +37,9 @@ export default function Cart() {
   const addInfo = useRef(null);
   const [isHidd, setHidd] = useState(true);
   const [hidText, setHidText] = useState("Добави адрес");
+
+  const [mobVerCon, setMobVerCon] = useState(true);
+
   useEffect(() => {
     if (!isHidd) {
       setHidText("Отмяна");
@@ -57,25 +60,25 @@ export default function Cart() {
             Твоята количка
           </h3>
           <div className="xl:grid grid-cols-[70%30%] xl:space-x-4">
-            <table className="w-full table-auto">
+            <table className="w-full table-auto ">
               <thead className="bg-gray-100 text-gray-250">
-                <tr className="justify-between hidden mb-1 xl:flex">
-                  <th colSpan="2" className="py-3 px-5 text-left">
+                <tr className="hidden lg:table-row mb-1 ">
+                  <th colSpan={2} className="py-3 text-left ">
                     Продукт
                   </th>
-                  <th colSpan="1" className="py-3 px-5">
+                  <th colSpan={1} className="py-3 px-5">
                     Цена
                   </th>
-                  <th colSpan="1" className="py-3 px-5">
+                  <th colSpan={1} className="py-3 px-5">
                     Количество
                   </th>
-                  <th colSpan="1" className="py-3 px-5 text-left">
+                  <th colSpan={1} className="py-3 px-5 text-left">
                     Общо
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-[#e4e7e6] flex flex-wrap xl:flex justify-between items-center pb-3 mb-3">
+                <tr className="border-b border-gray-[#e4e7e6] flex flex-wrap lg:table-row justify-between items-center pb-3 mb-3">
                   <TableData>
                     <div className="flex items-center justify-center lg:justify-start">
                       <div className="relative w-full h-40 sm:w-2/3 sm:h-60 lg:h-32 lg:w-40 ">
@@ -83,7 +86,7 @@ export default function Cart() {
                       </div>
                     </div>
                   </TableData>
-                  <TableData>
+                  <TableData classes="mt-3 sm:text-center lg:text-left xl:pl-2">
                     <h3 className="">
                       АКУМУЛАТОРЕН КОМПЛЕКТ EINHELL TE-TK 12 Li
                     </h3>
@@ -100,10 +103,45 @@ export default function Cart() {
                       <li className="pb-1">НАПРЕЖЕНИЕ : 12.00 V</li>
                     </ul>
                   </TableData>
-                  <TableData>
+
+                  {/* MObile version */}
+                  <div className="flex justify-center flex-col w-full mt-5 lg:hidden">
+                    <div className="flex justify-center items-center my-1  ">
+                      <TableData classes="lg:px-3 flex flex-col sm:items-start sm:-mb-[3rem] sm:mx-auto sm:ml-2">
+                        <div className="text-gray-250 text-sm text-center ">
+                          Ед. цена
+                        </div>
+                        <Price priceDec={20} price={100} size="2xl" />
+                      </TableData>
+
+                      <TableData classes="lg:px-3 flex flex-col sm:items-end sm:-mb-[3rem] sm:mx-auto sm:mr-2">
+                        <div className="text-gray-250 text-sm text-center ">
+                          Общо
+                        </div>
+                        <Price priceDec={48} price={200} size="2xl" />
+                      </TableData>
+                    </div>
+                    <TableData>
+                      <QunityInput contClass="w-1/2 mx-auto mt-2 lg:mt-10" />
+                      <div className="flex items-center justify-center mt-2 ">
+                        <button
+                          type="button"
+                          className="flex items-center justify-center cursor-pointer text-gray-darker"
+                        >
+                          <div className="mt-[0.25px]">
+                            <HiX />
+                          </div>
+                          <div>Премахни</div>
+                        </button>
+                      </div>
+                    </TableData>
+                  </div>
+
+                  {/* Large screen version */}
+                  <TableData classes="lg:px-3 hidden lg:table-cell">
                     <Price priceDec={20} price={100} size="2xl" />
                   </TableData>
-                  <TableData>
+                  <TableData classes="hidden lg:table-cell">
                     <QunityInput contClass="w-1/2 mx-auto mt-2 lg:mt-10" />
                     <div className="flex items-center justify-center mt-2">
                       <button
@@ -117,7 +155,7 @@ export default function Cart() {
                       </button>
                     </div>
                   </TableData>
-                  <TableData classes="hidden xl:table-cell">
+                  <TableData classes=" lg:px-3 hidden lg:table-cell">
                     <Price priceDec={48} price={200} size="2xl" />
                   </TableData>
                 </tr>
