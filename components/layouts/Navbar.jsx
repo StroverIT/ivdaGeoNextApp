@@ -1,15 +1,20 @@
 import React, { useRef, useState, useEffect } from "react";
+// NextJs
 import Link from "next/link";
 import Image from "next/image";
-// Test
+import { useRouter } from "next/router";
+
 // Nav Components
 import Hamburger from "./navComponents/Hamburger";
 import style from "../../styles/navigation/Nav.module.css";
+
 // Icons and images
 import { AiOutlineUser, AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
 
 const Navbar = () => {
+  const router = useRouter();
+
   const headerRef = useRef(null);
   const searchMenu = useRef(null);
 
@@ -35,6 +40,8 @@ const Navbar = () => {
     }
     setLastScrollY(window.scrollY);
   };
+  useEffect(() => setShowSearch(false), [router]);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
