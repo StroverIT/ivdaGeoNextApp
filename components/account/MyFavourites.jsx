@@ -30,7 +30,7 @@ function Card() {
       <div>
         <button
           type="button"
-          class="bg-primary text-white py-2 w-full text-xs font-semibold"
+          className="bg-primary text-white py-2 w-full text-xs font-semibold"
         >
           ДОБАВИ В КОЛИЧКА
         </button>
