@@ -21,6 +21,7 @@ const Navbar = () => {
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
       setShow(true);
+      setShowSearch(false);
     } else {
       setShow(false);
     }
