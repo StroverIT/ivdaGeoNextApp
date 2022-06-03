@@ -58,16 +58,16 @@ export default function Cart() {
             <table className="w-full table-auto">
               <thead className="bg-gray-100 text-gray-250">
                 <tr className="justify-between hidden mb-1 xl:flex">
-                  <th colSpan="2" className="py-3 pl-5 text-left">
+                  <th colSpan="2" className="py-3 px-5 text-left">
                     Продукт
                   </th>
-                  <th colSpan="1" className="py-3">
+                  <th colSpan="1" className="py-3 px-5">
                     Цена
                   </th>
-                  <th colSpan="1" className="py-3">
+                  <th colSpan="1" className="py-3 px-5">
                     Количество
                   </th>
-                  <th colSpan="1" className="py-3 text-left">
+                  <th colSpan="1" className="py-3 px-5 text-left">
                     Общо
                   </th>
                 </tr>
