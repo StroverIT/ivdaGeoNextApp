@@ -59,14 +59,29 @@ export default function section() {
   const { section } = router.query;
   const sortingMenu = useRef(null);
   const [isHidden, setHidden] = useState(true);
+
+  const [filterMenu, setFilterMenu] = useState(false);
+
   return (
     <main className="mb-auto">
       <div className="lg:grid grid-cols-[20%80%] lg:space-x-10 container">
         <aside
-          className={`hidden w-full h-full lg:block bg-[#f5f5f5] ${styles.asideContainer} relative pt-4 px-5`}
+          className={` w-full h-full lg:block bg-[#f5f5f5] ${
+            styles.asideContainer
+          } lg:relative pt-4 px-5 ${
+            filterMenu ? "fixed top-0 z-20 left-0 bg-[#f5f5f5] pt-20" : "hidden"
+          }`}
         >
           <div className="">
-            <h3 className="mb-3 text-2xl text-semibold">Филтри</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="mb-3 text-2xl text-semibold">Филтри</h3>
+              <div
+                className={`text-lg cursor-pointer text-primary lg:hidden`}
+                onClick={() => setFilterMenu(false)}
+              >
+                <HiX />
+              </div>
+            </div>
             <AsideHeader text="Цена" />
             <div>
               <RangeSlider
@@ -99,11 +114,12 @@ export default function section() {
         </aside>
         <section className="mt-10">
           {/* Filters for mobile */}
-          <div className="grid grid-cols-2 gap-2  mb-5 relative lg:mb-14 lg:grid-cols-1 z-10">
+          <div className="relative z-10 grid grid-cols-2 gap-2 mb-5 lg:mb-14 lg:grid-cols-1">
             {/* TODO: add icons */}
             <button
               type="button"
-              className="w-full h-full py-2 pl-4 text-left text-white bg-primary flex items-center lg:hidden "
+              className="flex items-center w-full h-full py-2 pl-4 text-left text-white bg-primary lg:hidden "
+              onClick={() => setFilterMenu(!filterMenu)}
             >
               <span>
                 <IoIosFunnel />
@@ -112,7 +128,7 @@ export default function section() {
             </button>
             <button
               type="button"
-              className="w-full h-full py-2 pl-4 text-left border border-gray flex justify-between items-center lg:hidden"
+              className="flex items-center justify-between w-full h-full py-2 pl-4 text-left border border-gray lg:hidden"
               onClick={() => setHidden(!isHidden)}
             >
               <div>Сортирай по:</div>
