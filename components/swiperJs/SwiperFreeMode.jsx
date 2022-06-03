@@ -62,7 +62,7 @@ export default function SwiperFreeMode({ images, navSize }) {
             console.log(image.pageUrl);
             return (
               <SwiperSlide
-                className="flex flex-col  bg-white shadow-lg hover:shadow-xl cursor-pointer"
+                className="flex flex-col bg-white shadow-lg cursor-pointer hover:shadow-xl"
                 key={image.title}
               >
                 <div
@@ -79,7 +79,7 @@ export default function SwiperFreeMode({ images, navSize }) {
                         alt={image.title}
                       />
                     </div>
-                    <div className="container  font-medium text-center border-t border-gray">
+                    <div className="container font-medium text-center border-t border-gray">
                       {image.title}
                     </div>
                   </div>
