@@ -52,8 +52,10 @@ export default function Cart() {
       </Head>
 
       <main className="mb-auto ">
-        <div className="container">
-          <h3 className="text-3xl font-semibold uppercase">Твоята количка</h3>
+        <div className="container mt-5">
+          <h3 className="text-3xl font-semibold uppercase my-5">
+            Твоята количка
+          </h3>
           <div className="xl:grid grid-cols-[70%30%] xl:space-x-4">
             <table className="w-full table-auto">
               <thead className="bg-gray-100 text-gray-250">
