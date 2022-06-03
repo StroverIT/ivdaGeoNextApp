@@ -115,9 +115,9 @@ export default function Home() {
         </section>
         <section className="pt-3 pb-2 bg-color">
           <div className="container relative z-20 h-full bg-white shadow-lg">
-            <section className="custom-border-container py-5 border-gray-bord border border-l-primary">
+            <section className="py-5 border custom-border-container border-gray-bord border-l-primary">
               <section className="container grid-cols-2 lg:grid">
-                <div className=" ">
+                <div className="">
                   <h2 className="mb-1 text-lg font-semibold">
                     ИвдаГео бюлетин
                   </h2>
@@ -175,7 +175,7 @@ export default function Home() {
         <section className="py-5 bg-color">
           <div className="container">
             <section className="items-center justify-center grid-cols-2 my-5 lg:grid">
-              <div className="mt-5 sm:mb-5 text-center lg:text-left lg:my-0 lg:w-5/6">
+              <div className="mt-5 text-center sm:mb-5 lg:text-left lg:my-0 lg:w-5/6">
                 <h2 className="py-2 text-2xl font-semibold ">
                   За нас и нашият магазин
                 </h2>
