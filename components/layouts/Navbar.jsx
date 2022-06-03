@@ -138,11 +138,11 @@ const Navbar = () => {
         }`}
         ref={searchMenu}
       >
-        <div className="container relative ">
+        <div className="container relative py-2">
           <input
             type="text"
             placeholder="Търсене ..."
-            className="w-full py-2 pl-3 border-2 rounded-full border-primary focus:outline-none"
+            className="w-full py-2 pl-3 border-2 rounded-full border-primary focus:outline-none placeholder:text-gray-250"
           />
           <div className="absolute text-2xl font-semibold -translate-y-1/2 cursor-pointer text-primary right-3 top-1/2 ">
             <AiOutlineSearch />
