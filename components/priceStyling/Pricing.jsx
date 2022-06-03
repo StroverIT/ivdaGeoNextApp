@@ -5,7 +5,15 @@ import React from "react";
 1. Margin on pricedec
 2. text-{somethin} on price
 3. text-{something} on priceDec
+
+INDEXES:
+0 - price SIZING
+1 - price dec sizing
+2 - decimal container spacing
+3- first Dec spacing
+4- leva spacing
 */
+
 const sizeDictionary = {
   sm: ["text-xl", "text-[11px]", "mt-[2px]", "mt-[0.2px]", "mt-[7px]"],
   xl: ["text-xl", "text-xs", "mt-[1px]", "mt-[1px]", "mt-[9px]"],
