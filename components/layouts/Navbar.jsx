@@ -22,7 +22,7 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const [showSearch, setShowSearch] = useState(false);
-
+  // Navbar control handler
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
       setShow(true);
@@ -40,8 +40,10 @@ const Navbar = () => {
     }
     setLastScrollY(window.scrollY);
   };
+  // Hide menu on router change
   useEffect(() => setShowSearch(false), [router]);
 
+  // Scroll event listener
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
