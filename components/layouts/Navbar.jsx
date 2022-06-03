@@ -63,7 +63,7 @@ const Navbar = () => {
               </div>
             </Link>
             <li
-              className="flex items-center justify-center px-2 lg:hidden hover:text-white hover:bg-gray h-14 "
+              className="flex items-center justify-center px-2 cursor-pointer lg:hidden hover:text-white hover:bg-gray h-14"
               onClick={() => setShowSearch(!showSearch)}
             >
               <button type="button" className="w-full h-full">
