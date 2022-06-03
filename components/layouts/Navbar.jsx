@@ -13,7 +13,6 @@ const Navbar = () => {
   const headerRef = useRef(null);
   const searchMenu = useRef(null);
 
-  const [fixed, setFixed] = useState(false);
   const [show, setShow] = useState(null);
   const [lastScrollY, setLastScrollY] = useState(0);
 
