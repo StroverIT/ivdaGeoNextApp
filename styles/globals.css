@@ -87,7 +87,15 @@ a {
 .animateUp {
   transform: skewy(2deg) skewx(20deg) translateY(-140%);
 }
-
+.animateSearch {
+  transform: perspective(600px) rotateX(-90deg);
+  height: 0;
+  padding: 0;
+  transition: all 0.4s ease-in-out;
+}
+.showSearch {
+  transform: perspective(600px) rotateX(0);
+}
 .swiper-pagination-bullets {
   margin-bottom: 0 !important;
 }
