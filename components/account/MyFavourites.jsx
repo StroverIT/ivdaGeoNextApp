@@ -40,12 +40,12 @@ function Card() {
 }
 export default function MyFavourites() {
   return (
-    <section>
+    <section className="pb-2">
       <h2 className="mb-2 text-3xl font-semibold text-center mt-5">
         Любими продукти
       </h2>
       <div className="text-center text-secondary pb-10">
-        Не сте сложили любими продукти
+        Нямате сложени любими продукти
       </div>
       <section
         className={` flex-wrap gap-5 justify-center grid ${style.itemsContainer}`}
