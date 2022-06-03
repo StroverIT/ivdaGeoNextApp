@@ -20,6 +20,14 @@ const Navbar = () => {
     } else {
       setShow(false);
     }
+
+    const bottom =
+      document.body.clientHeight - window.innerHeight <=
+      Math.ceil(lastScrollY + 20);
+    if (bottom) {
+      console.log("BOTTOM!");
+      setShow(false);
+    }
     setLastScrollY(window.scrollY);
   };
   useEffect(() => {
