@@ -11,7 +11,6 @@ import { BsCart3 } from "react-icons/bs";
 
 const Navbar = () => {
   const headerRef = useRef(null);
-<<<<<<< HEAD
   const searchMenu = useRef(null);
 
   const [fixed, setFixed] = useState(false);
@@ -20,11 +19,6 @@ const Navbar = () => {
 
   const [showSearch, setShowSearch] = useState(false);
 
-=======
-  const [show, setShow] = useState(null);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
->>>>>>> stickyNav
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
       setShow(true);
