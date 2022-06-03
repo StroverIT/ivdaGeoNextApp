@@ -11,14 +11,14 @@ import { BsCart3 } from "react-icons/bs";
 
 const Navbar = () => {
   const headerRef = useRef(null);
-  const [fixed, setFixed] = useState(false);
   const [show, setShow] = useState(null);
   const [lastScrollY, setLastScrollY] = useState(0);
+
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
-      setShow(false);
-    } else {
       setShow(true);
+    } else {
+      setShow(false);
     }
     setLastScrollY(window.scrollY);
   };
@@ -26,11 +26,7 @@ const Navbar = () => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
     }
-    if (lastScrollY > 0) {
-      setFixed(true);
-    } else {
-      setFixed(false);
-    }
+
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
@@ -38,14 +34,12 @@ const Navbar = () => {
 
   return (
     <header
-      className={`z-50 animate ${fixed ? "fixed w-full" : ""} ${
-        !show && fixed ? "animateUp" : ""
-      }`}
+      className={`z-50 animate sticky top-0  ${show ? "animateUp" : ""}`}
       ref={headerRef}
     >
       <nav className={`flex bg-color ${style.cShadow}`}>
         <div className="container relative flex items-center justify-between ">
-          <div className="flex items-center logo justify-center">
+          <div className="flex items-center justify-center logo">
             <Hamburger headRef={headerRef} />
             <Link href="/">
               <div className="items-center justify-between hidden lg:flex">
