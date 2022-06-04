@@ -105,23 +105,23 @@ export default function Cart() {
                   </TableData>
 
                   {/* MObile version */}
-                  <div className="flex justify-center flex-col w-full mt-5 lg:hidden">
+                  <td className="flex justify-center flex-col w-full mt-5 lg:hidden">
                     <div className="flex justify-center items-center my-1  ">
-                      <TableData classes="lg:px-3 flex flex-col sm:items-start sm:-mb-[3rem] sm:mx-auto sm:ml-2">
+                      <div className="lg:px-3 flex flex-col sm:items-start sm:-mb-[3rem] sm:mx-auto sm:ml-2 w-full">
                         <div className="text-gray-250 text-sm text-center ">
                           Ед. цена
                         </div>
                         <Price priceDec={20} price={100} size="2xl" />
-                      </TableData>
+                      </div>
 
-                      <TableData classes="lg:px-3 flex flex-col sm:items-end sm:-mb-[3rem] sm:mx-auto sm:mr-2">
+                      <div className="lg:px-3 flex flex-col sm:items-end sm:-mb-[3rem] sm:mx-auto sm:mr-2 w-full">
                         <div className="text-gray-250 text-sm text-center ">
                           Общо
                         </div>
                         <Price priceDec={48} price={200} size="2xl" />
-                      </TableData>
+                      </div>
                     </div>
-                    <TableData>
+                    <div>
                       <QunityInput contClass="w-1/2 mx-auto mt-2 lg:mt-10" />
                       <div className="flex items-center justify-center mt-2 ">
                         <button
@@ -134,8 +134,8 @@ export default function Cart() {
                           <div>Премахни</div>
                         </button>
                       </div>
-                    </TableData>
-                  </div>
+                    </div>
+                  </td>
 
                   {/* Large screen version */}
                   <TableData classes="lg:px-3 hidden lg:table-cell">
