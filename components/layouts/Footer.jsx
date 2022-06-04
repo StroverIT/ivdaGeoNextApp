@@ -9,7 +9,7 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold uppercase">ИвдаГео</h2>
             <ul className="text-gray-300">
               <li className="mb-4">
-                <a href="#" className=" hover:underline">
+                <a href="/aboutUs" className=" hover:underline">
                   За нас
                 </a>
               </li>
