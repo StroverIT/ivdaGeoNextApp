@@ -52,7 +52,7 @@ export default function SwiperPag({ images, navSize }) {
         {images.map((image) => {
           return (
             <SwiperSlide key={image.key}>
-              <Link href={image.pageUrl}>
+              <Link href={image.pageUrl ? image.pageUrl : ""}>
                 <div>
                   <div className="relative h-96 w-full">
                     <Image
