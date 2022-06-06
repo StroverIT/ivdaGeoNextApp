@@ -35,11 +35,7 @@ const Footer = () => {
                   Контакти
                 </a>
               </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Магазини
-                </a>
-              </li>
+
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Празнично работно време
