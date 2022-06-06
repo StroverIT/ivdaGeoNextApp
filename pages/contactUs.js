@@ -43,7 +43,7 @@ export default function contactUs() {
               </li>
             </ul>
           </div>
-          <div className="my-10 lg:my-0">
+          <div className="my-10 lg:my-0 lg:w-10/12">
             <form action="">
               <Input
                 type="text"
@@ -77,7 +77,9 @@ export default function contactUs() {
                   <AiFillEdit />
                 </div>
               </div>
-              <OutlinedBtn type="submit" text="Изпрати" />
+              <div className="mt-1">
+                <OutlinedBtn type="submit" text="Изпрати" />
+              </div>
             </form>
           </div>
         </div>
