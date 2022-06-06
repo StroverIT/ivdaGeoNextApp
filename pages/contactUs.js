@@ -11,11 +11,11 @@ export default function contactUs() {
     <>
       <Head></Head>
 
-      <main className="mb-auto">
-        <div className="container">
+      <main>
+        <div className="container lg:grid grid-cols-2 ">
           <div>
-            <h3 className="font-medium text-xl uppercase">Контакти</h3>
-            <ul className="text-gray-[#444]">
+            <h3 className="font-medium text-2xl uppercase">Контакти</h3>
+            <ul className="text-gray-250 mt-2">
               <li className="py-1">
                 <span className="font-semibold text-dark pr-2">
                   Заповядайте в нашия магазин:
