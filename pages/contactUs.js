@@ -15,7 +15,7 @@ export default function contactUs() {
     <>
       <Head></Head>
 
-      <main>
+      <main className="my-10">
         <div className="container lg:grid grid-cols-2 ">
           <div>
             <h3 className="font-medium text-2xl uppercase">Контакти</h3>
@@ -43,7 +43,7 @@ export default function contactUs() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="my-10 lg:my-0">
             <form action="">
               <Input
                 type="text"
