@@ -7,7 +7,7 @@ export default function abousUs() {
     <>
       <Head></Head>
       <main className=" mb-auto">
-        <div className="container mt-10">
+        <div className="container mt-10 lg:mb-14 mb-10">
           <h3 className="text-3xl mb-5 text-semibold uppercase">За нас</h3>
           <div className="text-[#444]">
             <p className="mb-1">
