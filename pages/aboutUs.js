@@ -1,21 +1,58 @@
 import React from "react";
 
-// Components
-import SwiperPagFade from "../components/swiperJs/SwiperPag";
-
-const imageData = [];
-for (let i = 0; i < 12; i++) {
-  imageData.push({
-    key: 1 + i,
-    src: `/images/AboutUs/slide-${i}.jpg`,
-  });
-}
 export default function abousUs() {
   return (
-    <main className="bg-color mb-auto">
-      <div className="container">
-        <SwiperPagFade images={imageData} navSize="2xl" />
-        abousUs
+    <main className=" mb-auto">
+      <div className="container mt-10">
+        <h3 className="text-3xl mb-5 text-semibold uppercase">За нас</h3>
+        <div className="text-[#444]">
+          <p className="mb-1">
+            Фирма<span className="font-medium"> Ивда Гео</span> е създадена през
+            1992г. От малък квартален магазин, собствениците на фирмата го
+            разрастват до магазин Клас А. С годините, номенклатурата от
+            предлагани стоки непрекъснато се увеличава, следвайки стремежа да се
+            отговори на нуждите на пазара. При нас можете да намерите всичко за
+            поддръжка на вашия дом, офис или производствена база. В момента
+            фирмата предлага над 17 00 артикула от всички области на
+            строителството – строителни материали, елекромателиали, ВиК,
+            крепежи, битова химия, осветителни тела, инструменти и много други.
+            „Ивда Гео” е надежден и коректен партньор на редица български и
+            чуждестранни компании, които се занимават с производство и
+            дистрибуция на строителни материали.
+          </p>
+          <p className="">
+            През годините сме спечелили доверието на нашите клиенти с
+            професионално обслужване и коректност, както и съобразени с пазара
+            конкурентни цени. Доказателство за професионализма на състава, са
+            здравите връзки с много фирми и производители. Младият и амбициозен
+            колектив ще откликне с готовност на всички ваши въпроси свързани с
+            консултации относно най – подходящия продукт за вас, както и със
+            съвети за използването, монтажа, съхраняването на предлаганите стоки
+          </p>
+        </div>
+        <div className="mt-5">
+          <ul className="text-gray-[#444]">
+            <li className="py-1">
+              <span className="font-semibold text-dark pr-2">
+                Заповядайте в нашия магазин:
+              </span>
+              <br />
+              гр.София ПК-1582 Дружба 2 РУМ Дружба 2 срещу блок 204
+            </li>
+            <li className="py-1">
+              <span className="font-semibold text-dark pr-2">Тел. / факс:</span>
+              02/973 15 85
+            </li>
+            <li className="py-1">
+              <span className="font-semibold text-dark pr-1">GSM:</span> 0888
+              900746, 0879 406620
+            </li>
+            <li>
+              <span className="font-semibold text-dark pr-1">Е-mail:</span>
+              ivda_geo@abv.bg
+            </li>
+          </ul>
+        </div>
       </div>
     </main>
   );
