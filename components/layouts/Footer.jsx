@@ -31,7 +31,7 @@ const Footer = () => {
             </h2>
             <ul className="text-gray-300">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="contactUs" className="hover:underline">
                   Контакти
                 </a>
               </li>
