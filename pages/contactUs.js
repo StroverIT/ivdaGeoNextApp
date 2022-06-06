@@ -1,10 +1,14 @@
 import React from "react";
 
+// Icons
+import { AiFillEdit } from "react-icons/ai";
+
 // NextJs
 import Head from "next/head";
 
 // Components
 import Input from "../components/form/Input";
+import OutlinedBtn from "../components/buttons/Outlined";
 
 export default function contactUs() {
   return (
@@ -46,7 +50,7 @@ export default function contactUs() {
                 placeholder="Име"
                 id="name"
                 isReq={true}
-                iconType="name"
+                iconType="fullName"
               />
               <Input
                 type="email"
@@ -62,11 +66,18 @@ export default function contactUs() {
                 isReq={true}
                 iconType="title"
               />
-              <textarea
-                name="description"
-                id="description"
-                placeholder="Съобщение"
-              ></textarea>
+              <div className="relative">
+                <textarea
+                  name="description"
+                  id="description"
+                  placeholder="Съобщение"
+                  className="w-full placeholder:text-gray-darker pl-6 border pt-2 pb-10"
+                ></textarea>
+                <div className="absolute top-[13px] left-1">
+                  <AiFillEdit />
+                </div>
+              </div>
+              <OutlinedBtn type="submit" text="Изпрати" />
             </form>
           </div>
         </div>
