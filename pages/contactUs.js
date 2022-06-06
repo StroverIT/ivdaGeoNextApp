@@ -48,6 +48,25 @@ export default function contactUs() {
                 isReq={true}
                 iconType="name"
               />
+              <Input
+                type="email"
+                placeholder="И-мейл"
+                id="email"
+                isReq={true}
+                iconType="email"
+              />
+              <Input
+                type="text"
+                placeholder="Заглавие"
+                id="title"
+                isReq={true}
+                iconType="title"
+              />
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Съобщение"
+              ></textarea>
             </form>
           </div>
         </div>
