@@ -66,19 +66,19 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
         className={`fixed  lg:absolute py-2 overflow-auto  ${
           mobSubmenu ? "translate-x-0" : "translate-x-full"
         } transition-transform lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full  top-0  bg-color  ${
-          isHome ? "right-[5%] " : "lg:right-[20px] xl:right-[120px]"
-        } lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[750px]  xl:max-w-[925px]  ${isXAnim} `}
+          isHome ? "right-0" : "lg:right-[0px] xl:right-[0]"
+        } lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[780px]  xl:max-w-[1030px]  ${isXAnim} `}
         ref={subMenu}
       >
-        <div className={` `}>
-          <span
+        <div className={`flex items-center ml-2`}>
+          <div
             type="button"
             className={`${style.icon} flex py-2 px-2 lg:hidden`}
             onClick={() => setMobSubMenu(false)}
           >
             <AiOutlineArrowLeft className="text-xl icon" />
-          </span>
-          <span className="pl-4 font-semibold">{title}</span>
+          </div>
+          <div className="pl-4 font-semibold">{title}</div>
         </div>
         <ul
           className={`px-5  grid list-disc mt-2 gap-2 ${style.itemsContainer}`}
