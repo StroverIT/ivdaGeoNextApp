@@ -31,7 +31,7 @@ export default NextAuth({
           throw new Error("Несъществуващ и-мейл");
         }
         //Not verifed
-        if (!result.verifed) {
+        if (!result.verified) {
           client.close();
           throw new Error("Не ви е потвърден акаунта");
         }
@@ -47,8 +47,13 @@ export default NextAuth({
         }
         //Else send success response
         client.close();
-
-        return { email: result.email, name: result.name };
+        console.log(result);
+        return {
+          email: result.email,
+          name: result.name,
+          _id: result._id,
+          password: result.password,
+        };
       },
     }),
   ],
