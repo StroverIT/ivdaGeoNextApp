@@ -5,6 +5,7 @@ import { ImExit } from "react-icons/im";
 // NextJs
 import Head from "next/head";
 import { useRouter } from "next/router";
+// MongoDb
 
 // Account components
 import MyDetails from "../../components/account/MyDetails/index";
@@ -14,7 +15,7 @@ import MyFavourites from "../../components/account/MyFavourites";
 // Auth
 import { getSession, signOut } from "next-auth/react";
 
-export default function Index({ session }) {
+export default function Index({}) {
   const router = useRouter();
   const [categoryData, setCategoryData] = useState(null);
 
@@ -81,7 +82,7 @@ export default function Index({ session }) {
                       type="button"
                       className="flex w-full h-full px-2 py-2 font-semibold"
                     >
-                      Настройки на акаунта
+                      Любими продукти
                     </button>
                   </li>
                   <li className="my-1">
@@ -112,7 +113,6 @@ export default function Index({ session }) {
 }
 export async function getServerSideProps(context) {
   const session = await getSession({ req: context.req });
-  console.log(session);
   if (!session) {
     return {
       redirect: {
