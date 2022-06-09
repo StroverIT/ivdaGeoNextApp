@@ -4,7 +4,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-export default function resetPassword() {
+export default function ResetPassword() {
   return (
     <>
       <Head>
@@ -13,14 +13,16 @@ export default function resetPassword() {
       </Head>
       <main>
         <div className="container flex justify-center my-10">
-          <div className="w-full bg-white rounded shadow-xl lg:w-2/3 flex flex-col justify-center items-center py-10 ">
-            <h3 className="text-2xl  ">Успешна регистрация!</h3>
-            <div className="font-thin mt-5">
+          <div className="container flex flex-col items-center justify-center w-full px-5 py-10 text-center bg-white rounded shadow-xl lg:w-2/3">
+            <h3 className="text-2xl text-green">Успешна регистрация!</h3>
+            <div className="mt-5 font-light">
               <p>
-                За да имате възможност да си влезете в акаунта, първо трябва да
-                си потвърдите акаунта.
+                Преди да имате възможността да си влезнете в акаунта, трябва да
+                го потвърдите
               </p>
-              <p>Пратили сме ви инструкции на регистрираният имейл адрес.</p>
+              <p className="mt-1 font-medium md:mt-0">
+                Пратили сме ви инструкции на вашият имейл адрес.
+              </p>
             </div>
           </div>
         </div>
