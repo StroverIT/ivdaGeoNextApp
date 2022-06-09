@@ -15,7 +15,7 @@ INDEXES:
 */
 
 const sizeDictionary = {
-  sm: ["text-xl", "text-[11px]", "mt-[2px]", "mt-[0.2px]", "mt-[7px]"],
+  sm: ["text-xl", "text-[11px]", "mt-[4px]", "mt-[0.2px]", "mt-[8px] ml-[2px]"],
   xl: ["text-2xl", "text-xs", "mt-[4px]", "mt-[1px]", "mt-[8px]"],
   "2xl": ["text-3xl", "text-sm", "mt-[5px]", "mt-[1px]", "mt-[9px]"],
   "3xl": ["text-4xl", "", "mt-[2px]", "mt-[3px]", "mt-[11px]"],
