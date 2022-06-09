@@ -102,7 +102,7 @@ export default function Home() {
           <div className="container pb-2 mt-10 mb-10 bg-white shadow-lg">
             <section className="lg:grid lg:space-x-2 lg:grid-cols-[25%75%] w-full relative lg:py-2">
               <section className="z-10">
-                <h1 className="hidden pl-3 text-lg font-medium lg:block">
+                <h1 className="hidden pl-3 text-lg font-medium xl:block">
                   Категории продукти
                 </h1>
                 <NavLinks isHome={true} />
@@ -172,7 +172,7 @@ export default function Home() {
             <SwiperFreeMode images={swiperFreeImages} navSize="3xl" />
           </div>
         </section>
-        <section className="py-5 bg-color">
+        <section className=" bg-color">
           <div className="container">
             <section className="items-center justify-center grid-cols-2 my-5 lg:grid">
               <div className="mt-5 text-center sm:mb-5 lg:text-left lg:my-0 lg:w-5/6">
