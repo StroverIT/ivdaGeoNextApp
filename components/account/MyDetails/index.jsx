@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // My accouts components
 import SectionContainer from "./SectionContainer";
@@ -60,65 +60,74 @@ const inputDataPass = [
     iconType: "password",
   },
 ];
+import { useSession } from "next-auth/react";
 
 export default function MyDetails() {
+  const { data: session, status } = useSession();
+  console.log(session);
+  if (session) {
+    inputDataPersonal[0].defValue = session.user.name;
+    inputDataEmail[0].defValue = session.user.email;
+  }
   return (
-    <section>
-      <h2 className="mt-5 mb-5 text-3xl font-semibold text-center">
-        Детайли на акаунта
-      </h2>
+    <>
+      <section>
+        <h2 className="mt-5 mb-5 text-3xl font-semibold text-center">
+          Детайли на акаунта
+        </h2>
 
-      <section className="">
-        <h4 className="py-1 text-xl font-semibold border-b border-gray">
-          Лична информация
-        </h4>
-        {/* description={`Тука може да си смените името или телефоният номер.
+        <section className="">
+          <h4 className="py-1 text-xl font-semibold border-b border-gray">
+            Лична информация
+          </h4>
+          {/* description={`Тука може да си смените името или телефоният номер.
               Като първоначално са показани попълнените ви данни`}
               form={inputDataPersonal} */}
-        <SectionContainer>
-          <InnerSection>
-            <p className="text-gray-200 ">
-              Тука може да си смените името или телефоният номер. Като
-              първоначално са показани попълнените ви данни
-            </p>
-          </InnerSection>
-          <InnerSection>
-            <SectionForm inputs={inputDataPersonal} />
-          </InnerSection>
-        </SectionContainer>
-      </section>
-      <section className="">
-        <h4 className="py-1 text-xl font-semibold border-b border-gray">
-          И-мейл адрес
-        </h4>
-        <SectionContainer>
-          <InnerSection>
-            <p className="text-gray-200 ">
-              Тука може да си смените и-мейл адреса, като трябва да потвърдите с
-              текущата си парола
-            </p>
-          </InnerSection>
-          <InnerSection>
-            <SectionForm inputs={inputDataEmail} />
-          </InnerSection>
-        </SectionContainer>
-      </section>
-      <section className="">
-        <h4 className="py-1 text-xl font-semibold border-b border-gray">
-          Парола
-        </h4>
+          <SectionContainer>
+            <InnerSection>
+              <p className="text-gray-200 ">
+                Тука може да си смените името или телефоният номер. Като
+                първоначално са показани попълнените ви данни
+              </p>
+            </InnerSection>
+            <InnerSection>
+              <SectionForm inputs={inputDataPersonal} />
+            </InnerSection>
+          </SectionContainer>
+        </section>
+        <section className="">
+          <h4 className="py-1 text-xl font-semibold border-b border-gray">
+            И-мейл адрес
+          </h4>
+          <SectionContainer>
+            <InnerSection>
+              <p className="text-gray-200 ">
+                Тука може да си смените и-мейл адреса, като трябва да потвърдите
+                с текущата си парола
+              </p>
+            </InnerSection>
+            <InnerSection>
+              <SectionForm inputs={inputDataEmail} />
+            </InnerSection>
+          </SectionContainer>
+        </section>
+        <section className="">
+          <h4 className="py-1 text-xl font-semibold border-b border-gray">
+            Парола
+          </h4>
 
-        <SectionContainer>
-          <InnerSection>
-            <p className="text-gray-200 ">
-              Тука можете да си смените паролата на акаунта
-            </p>
-          </InnerSection>
-          <InnerSection>
-            <SectionForm inputs={inputDataPass} />
-          </InnerSection>
-        </SectionContainer>
+          <SectionContainer>
+            <InnerSection>
+              <p className="text-gray-200 ">
+                Тука можете да си смените паролата на акаунта
+              </p>
+            </InnerSection>
+            <InnerSection>
+              <SectionForm inputs={inputDataPass} />
+            </InnerSection>
+          </SectionContainer>
+        </section>
       </section>
-    </section>
+    </>
   );
 }
