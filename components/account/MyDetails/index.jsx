@@ -3,6 +3,7 @@ import React from "react";
 // My accouts components
 import SectionContainer from "./SectionContainer";
 import InnerSection from "./InnerSection";
+import SectionForm from "./FormSection";
 
 const inputDataPersonal = [
   {
@@ -63,7 +64,7 @@ const inputDataPass = [
 export default function MyDetails() {
   return (
     <section>
-      <h2 className="mb-5 text-3xl font-semibold text-center mt-5">
+      <h2 className="mt-5 mb-5 text-3xl font-semibold text-center">
         Детайли на акаунта
       </h2>
 
@@ -71,43 +72,52 @@ export default function MyDetails() {
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Лична информация
         </h4>
-        <SectionContainer
-          content={
-            <InnerSection
-              description={`Тука може да си смените името или телефоният номер.
+        {/* description={`Тука може да си смените името или телефоният номер.
               Като първоначално са показани попълнените ви данни`}
-              form={inputDataPersonal}
-            />
-          }
-        />
+              form={inputDataPersonal} */}
+        <SectionContainer>
+          <InnerSection>
+            <p className="text-gray-200 ">
+              Тука може да си смените името или телефоният номер. Като
+              първоначално са показани попълнените ви данни
+            </p>
+          </InnerSection>
+          <InnerSection>
+            <SectionForm inputs={inputDataPersonal} />
+          </InnerSection>
+        </SectionContainer>
       </section>
       <section className="">
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           И-мейл адрес
         </h4>
-        <SectionContainer
-          content={
-            <InnerSection
-              description={`Тука може да си смените и-мейл адреса и да потвърдите като трябва
-              да потвърдите с текущата си парола`}
-              form={inputDataEmail}
-            />
-          }
-        />
+        <SectionContainer>
+          <InnerSection>
+            <p className="text-gray-200 ">
+              Тука може да си смените и-мейл адреса, като трябва да потвърдите с
+              текущата си парола
+            </p>
+          </InnerSection>
+          <InnerSection>
+            <SectionForm inputs={inputDataEmail} />
+          </InnerSection>
+        </SectionContainer>
       </section>
       <section className="">
         <h4 className="py-1 text-xl font-semibold border-b border-gray">
           Парола
         </h4>
 
-        <SectionContainer
-          content={
-            <InnerSection
-              description={"Тука можете да си смените паролата"}
-              form={inputDataPass}
-            />
-          }
-        />
+        <SectionContainer>
+          <InnerSection>
+            <p className="text-gray-200 ">
+              Тука можете да си смените паролата на акаунта
+            </p>
+          </InnerSection>
+          <InnerSection>
+            <SectionForm inputs={inputDataPass} />
+          </InnerSection>
+        </SectionContainer>
       </section>
     </section>
   );
