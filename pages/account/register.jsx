@@ -3,8 +3,13 @@ import React, { useState, useEffect } from "react";
 // NextJs
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 // Components
 import Input from "../../components/form/Input";
+
+// Auth
+import { getSession } from "next-auth/react";
 
 const samePass = "Паролите трябва да съвпадат!";
 
@@ -13,11 +18,54 @@ const errDict = {
   threeNums: ["Паролата трябва да съдържа поне една цифра", false],
   fiveChar: ["Паролата трябва да е поне пет символа", false],
 };
+
 const Register = () => {
+  const router = useRouter();
+
+  const [serverErrMes, setserverErrMes] = useState(null);
   const [errorMessage, setErrorMessage] = useState([]);
+
   const [password, setPassword] = useState(null);
   const [isSame, setSame] = useState(false);
   const [disabled, setDisabled] = useState(true);
+
+  const onFormSubmit = async (e) => {
+    e.preventDefault();
+    //Getting value from useRef()
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const password = formData.get("repeatPassword");
+    const fullName = formData.get("fullName");
+    //Validation
+    if (!email || !email.includes("@") || !password || !fullName) {
+      setserverErrMes("Неправилно валидинари данни");
+      return;
+    }
+    //POST form values
+    const res = await fetch("/api/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        name: fullName,
+      }),
+    });
+
+    //Await for data for any desirable next steps
+    if (res.status != 201) {
+      const data = await res.json();
+      console.log(data);
+      setserverErrMes(data.message);
+      return;
+    }
+    // MUST SEND A EMAIL FOR VERIFICATION
+
+    // Redirect
+    router.push("/account/verifyRegistration");
+  };
   function formHandler(e) {
     if (e.target.id == "password") {
       setPassword(e.target.value);
@@ -62,7 +110,7 @@ const Register = () => {
     } else {
       setDisabled(true);
     }
-  }, [isSame]);
+  }, [isSame, errorMessage]);
   return (
     <>
       <Head>
@@ -83,7 +131,8 @@ const Register = () => {
                   </span>
                 </Link>
               </p>
-              <div className="my-2 text-secondary">
+              <div className="my-2 font-medium text-center text-secondary">
+                {serverErrMes}
                 <ul>
                   {errorMessage.map((e) => {
                     return <li key={e}>{e}</li>;
@@ -95,6 +144,7 @@ const Register = () => {
             <form
               className="px-8 pt-1 pb-8 mt-6 mb-4"
               onChange={(e) => formHandler(e)}
+              onSubmit={(e) => onFormSubmit(e)}
             >
               <Input
                 placeholder="Пълно име"
@@ -186,3 +236,19 @@ const Register = () => {
 };
 
 export default Register;
+
+export async function getServerSideProps(context) {
+  const session = await getSession({ req: context.req });
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/account",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+}
