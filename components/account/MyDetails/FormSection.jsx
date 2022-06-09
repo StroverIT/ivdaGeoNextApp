@@ -12,6 +12,7 @@ export default function SectionForm({ inputs }) {
             isReq={input.isReq}
             iconType={input.iconType}
             key={input.id}
+            defValue={input.defValue}
           />
         );
       })}
