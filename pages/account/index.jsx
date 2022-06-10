@@ -5,7 +5,6 @@ import { ImExit } from "react-icons/im";
 // NextJs
 import Head from "next/head";
 import { useRouter } from "next/router";
-// MongoDb
 
 // Account components
 import MyDetails from "../../components/account/MyDetails/index";
@@ -15,7 +14,7 @@ import MyFavourites from "../../components/account/MyFavourites";
 // Auth
 import { getSession, signOut } from "next-auth/react";
 
-export default function Index({}) {
+export default function Index({ userData }) {
   const router = useRouter();
   const [categoryData, setCategoryData] = useState(null);
 
@@ -24,7 +23,7 @@ export default function Index({}) {
   const myFavourites = useRef(null);
 
   const categoryComp = {
-    "#account-details": [<MyDetails />, myDetails],
+    "#account-details": [<MyDetails userData={userData} />, myDetails],
     "#my-orders": [<MyOrders />, myOrders],
     "#my-favourites": [<MyFavourites />, myFavourites],
   };
@@ -112,6 +111,7 @@ export default function Index({}) {
   );
 }
 export async function getServerSideProps(context) {
+  // Session
   const session = await getSession({ req: context.req });
   if (!session) {
     return {
@@ -121,7 +121,17 @@ export async function getServerSideProps(context) {
       },
     };
   }
+  // Mongodb
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/getUser`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email: session.user.email,
+      name: session.user.name,
+    }),
+  });
+  const data = await res.json();
   return {
-    props: { session },
+    props: { userData: JSON.parse(JSON.stringify(data)) },
   };
 }

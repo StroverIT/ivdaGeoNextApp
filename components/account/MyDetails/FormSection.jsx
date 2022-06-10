@@ -1,8 +1,9 @@
 import React from "react";
 import Input from "../../form/AccInput";
+
 export default function SectionForm({ inputs }) {
   return (
-    <form action="">
+    <>
       {inputs.map((input) => {
         return (
           <Input
@@ -22,6 +23,6 @@ export default function SectionForm({ inputs }) {
       >
         Запази
       </button>
-    </form>
+    </>
   );
 }

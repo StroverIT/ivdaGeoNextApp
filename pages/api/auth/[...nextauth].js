@@ -47,12 +47,9 @@ export default NextAuth({
         }
         //Else send success response
         client.close();
-        console.log(result);
         return {
           email: result.email,
           name: result.name,
-          _id: result._id,
-          password: result.password,
         };
       },
     }),

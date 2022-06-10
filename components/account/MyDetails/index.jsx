@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useSession } from "next-auth/react";
 
 // My accouts components
 import SectionContainer from "./SectionContainer";
 import InnerSection from "./InnerSection";
-import SectionForm from "./FormSection";
+import SectionInputs from "./FormSection";
 
+const urlFetch = {
+  personal: "changeNameOrTel",
+  email: "changeEmail",
+  pass: "changePassword",
+};
 const inputDataPersonal = [
-  {
-    placeholder: "Пълно име",
-    id: "fullname",
-    type: "text",
-    isReq: true,
-    iconType: "fullName",
-  },
   {
     placeholder: "Телефонен номер",
     id: "phoneNumber",
@@ -60,14 +59,63 @@ const inputDataPass = [
     iconType: "password",
   },
 ];
-import { useSession } from "next-auth/react";
+function Message({ text, err }) {
+  return (
+    <p
+      className={`my-2 text-sm text-center ${
+        err ? "text-secondary" : "text-green"
+      }`}
+    >
+      {text}
+    </p>
+  );
+}
 
-export default function MyDetails() {
+export default function MyDetails({ userData }) {
   const { data: session, status } = useSession();
-  console.log(session);
   if (session) {
-    inputDataPersonal[0].defValue = session.user.name;
     inputDataEmail[0].defValue = session.user.email;
+    if (userData) {
+      if (userData.phoneNumber) {
+        inputDataPersonal[0].defValue = userData.phoneNumber;
+      }
+    }
+  }
+
+  const [nameOrTel, setNameOrTel] = useState([null, false]);
+  const [email, setEmail] = useState([null, false]);
+  const [passwordMes, setPasswordMes] = useState([null, false]);
+
+  async function submitHandler(e, url) {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    const data = {};
+    // Body data
+    for (const pair of formData.entries()) {
+      data[pair[0]] = pair[1];
+    }
+    console.log(url);
+    if (url == urlFetch.personal) data.email = session.user.email;
+    data._id = userData._id;
+
+    const res = await fetch(`/api/account/${url}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    const resData = await res.json();
+
+    switch (url) {
+      case urlFetch.personal:
+        setNameOrTel([resData.message, resData.isErr]);
+        break;
+      case urlFetch.email:
+        setEmail([resData.message, resData.isErr]);
+      case urlFetch.pass:
+        setPasswordMes([resData.message, resData.isErr]);
+    }
   }
   return (
     <>
@@ -80,9 +128,7 @@ export default function MyDetails() {
           <h4 className="py-1 text-xl font-semibold border-b border-gray">
             Лична информация
           </h4>
-          {/* description={`Тука може да си смените името или телефоният номер.
-              Като първоначално са показани попълнените ви данни`}
-              form={inputDataPersonal} */}
+
           <SectionContainer>
             <InnerSection>
               <p className="text-gray-200 ">
@@ -91,7 +137,14 @@ export default function MyDetails() {
               </p>
             </InnerSection>
             <InnerSection>
-              <SectionForm inputs={inputDataPersonal} />
+              {/* Message */}
+              {nameOrTel[0] && (
+                <Message text={nameOrTel[0]} err={nameOrTel[1]} />
+              )}
+
+              <form onSubmit={(e) => submitHandler(e, urlFetch.personal)}>
+                <SectionInputs inputs={inputDataPersonal} />
+              </form>
             </InnerSection>
           </SectionContainer>
         </section>
@@ -105,9 +158,18 @@ export default function MyDetails() {
                 Тука може да си смените и-мейл адреса, като трябва да потвърдите
                 с текущата си парола
               </p>
+              <p className="pt-5 text-sm text-secondary">
+                След като си промените и-мейла, трябва да излезнете и пак да се
+                логнете, за да използвате акаунта си!
+              </p>
             </InnerSection>
             <InnerSection>
-              <SectionForm inputs={inputDataEmail} />
+              {/* Message */}
+              {email[0] && <Message text={email[0]} err={email[1]} />}
+
+              <form onSubmit={(e) => submitHandler(e, urlFetch.email)}>
+                <SectionInputs inputs={inputDataEmail} />
+              </form>
             </InnerSection>
           </SectionContainer>
         </section>
@@ -123,7 +185,14 @@ export default function MyDetails() {
               </p>
             </InnerSection>
             <InnerSection>
-              <SectionForm inputs={inputDataPass} />
+              {/* Message */}
+              {passwordMes[0] && (
+                <Message text={passwordMes[0]} err={passwordMes[1]} />
+              )}
+
+              <form onSubmit={(e) => submitHandler(e, urlFetch.pass)}>
+                <SectionInputs inputs={inputDataPass} />
+              </form>
             </InnerSection>
           </SectionContainer>
         </section>
