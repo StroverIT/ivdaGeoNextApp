@@ -56,23 +56,23 @@ export default function Cart() {
 
       <main className="mb-auto ">
         <div className="container mt-5">
-          <h3 className="text-3xl font-semibold uppercase my-5">
+          <h3 className="my-5 text-3xl font-semibold uppercase">
             Твоята количка
           </h3>
-          <div className="xl:grid grid-cols-[70%30%] xl:space-x-4">
+          <div className={`xl:grid grid-cols-[70%30%] xl:space-x-4`}>
             <table className="w-full table-auto ">
               <thead className="bg-gray-100 text-gray-250">
-                <tr className="hidden lg:table-row mb-1 ">
+                <tr className="hidden mb-1 lg:table-row ">
                   <th colSpan={2} className="py-3 text-left ">
                     Продукт
                   </th>
-                  <th colSpan={1} className="py-3 px-5">
+                  <th colSpan={1} className="px-5 py-3">
                     Цена
                   </th>
-                  <th colSpan={1} className="py-3 px-5">
+                  <th colSpan={1} className="px-5 py-3">
                     Количество
                   </th>
-                  <th colSpan={1} className="py-3 px-5 text-left">
+                  <th colSpan={1} className="px-5 py-3 text-left">
                     Общо
                   </th>
                 </tr>
@@ -105,17 +105,17 @@ export default function Cart() {
                   </TableData>
 
                   {/* MObile version */}
-                  <td className="flex justify-center flex-col w-full mt-5 lg:hidden">
-                    <div className="flex justify-center items-center my-1  ">
+                  <td className="flex flex-col justify-center w-full mt-5 lg:hidden">
+                    <div className="flex items-center justify-center my-1 ">
                       <div className="lg:px-3 flex flex-col sm:items-start sm:-mb-[3rem] sm:mx-auto sm:ml-2 w-full">
-                        <div className="text-gray-250 text-sm text-center ">
+                        <div className="text-sm text-center text-gray-250 ">
                           Ед. цена
                         </div>
                         <Price priceDec={20} price={100} size="2xl" />
                       </div>
 
                       <div className="lg:px-3 flex flex-col sm:items-end sm:-mb-[3rem] sm:mx-auto sm:mr-2 w-full">
-                        <div className="text-gray-250 text-sm text-center ">
+                        <div className="text-sm text-center text-gray-250 ">
                           Общо
                         </div>
                         <Price priceDec={48} price={200} size="2xl" />
@@ -244,7 +244,7 @@ export default function Cart() {
                         type="button"
                         className="w-full py-2 text-sm font-medium text-white uppercase transition-colors duration-300 border px-14 bg-dark hover:bg-transparent hover:text-dark border-dark"
                       >
-                        ВИД НА ДОСТАВКАТА
+                        ОЦЕНКА НА ДОСТАВКАТА
                       </button>
                     </div>
                   </form>
