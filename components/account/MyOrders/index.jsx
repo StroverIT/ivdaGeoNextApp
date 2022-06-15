@@ -1,46 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 // Icons
 import { AiOutlineSearch } from "react-icons/ai";
 // Components
 import Pricing from "../../priceStyling/Pricing";
 
-function StatusProgress() {
-  return <td className="font-semibold text-primary">В прогрес</td>;
-}
-function StatusSent() {
-  return <td className="font-semibold text-green">Изпратена</td>;
-}
-function StatusRet() {
-  return <td className="font-semibold text-secondary">Върната</td>;
-}
-function TableRow({ id, date, total, status, isOld }) {
-  const statusDic = {
-    progress: <StatusProgress />,
-    sent: <StatusSent />,
-    returned: <StatusRet />,
+function Status({ type, isDiv }) {
+  let color = {
+    type: "",
+    text: "",
   };
+  switch (type) {
+    case "progress":
+      color.type = "text-primary";
+      color.text = "В прогрес";
+      break;
+    case "sent":
+      color.type = "text-green";
+      color.text = "Изпратена";
+      break;
+    case "returned":
+      color.type = "text-secondary";
+      color.text = "Върната";
+  }
   return (
-    <tr>
-      {/* Mongodb */}
-      <td className="py-4">{id}</td>
-      <td className="hidden sm:table-cell">{date}</td>
-      <td className="hidden sm:table-cell">{total} (в лв.)</td>
-      {statusDic[status]}
-      {isOld && (
-        <td className="flex justify-center h-full items-cemter">
-          <button className="flex items-center justify-center h-full p-4 text-2xl font-semibold rounded-full cursor-pointer text-primary-lighter">
-            <AiOutlineSearch />
-          </button>
-        </td>
+    <>
+      {!isDiv && (
+        <td className={`font-semibold ${color.type}`}>{color.text}</td>
       )}
-      {!isOld && (
-        <td>
-          <button className="p-2 text-sm font-semibold tracking-wide text-center text-white rounded-md cursor-pointer bg-primary-lighter">
-            ВИЖ
-          </button>
-        </td>
+      {isDiv && (
+        <div className={`font-semibold ${color.type}`}>{color.text}</div>
       )}
-    </tr>
+    </>
+  );
+}
+
+function TableRow({ id, date, total, status, isOld }) {
+  const [menu, setMenu] = useState(false);
+
+  return (
+    <>
+      <tr>
+        {/* Mongodb */}
+        <td className="py-4">{id}</td>
+        <td className="hidden sm:table-cell">{date}</td>
+        <td className="hidden sm:table-cell">{total} лв.</td>
+        <Status type={status} />
+        {isOld && (
+          <td className="flex justify-center h-full items-cemter">
+            <button className="flex items-center justify-center h-full p-4 text-2xl font-semibold rounded-full cursor-pointer text-primary-lighter">
+              <AiOutlineSearch />
+            </button>
+          </td>
+        )}
+        {!isOld && (
+          <td>
+            <button
+              className="p-2 text-sm font-semibold tracking-wide text-center text-white rounded-md cursor-pointer bg-primary-lighter"
+              onClick={() => setMenu(true)}
+            >
+              ВИЖ
+            </button>
+          </td>
+        )}
+      </tr>
+      <div
+        className={`${
+          !menu && "hidden"
+        } fixed  z-20 left-0 top-0 h-screen w-screen`}
+      >
+        <div
+          className="blury-noProps relative h-screen w-full cursor-pointer z-10"
+          onClick={() => setMenu(false)}
+        >
+          {/* Mongodb */}
+        </div>
+        <section className="bg-primary w-full   absolute top-1/2 z-20 ">
+          <div className="container py-5 ">
+            <div className="flex space-x-5 flex-wrap">
+              <div className="">{id}</div>
+              <div className="">{date}</div>
+              <div className="">{total} лв.</div>
+            </div>
+            <Status type={status} isDiv={true} />
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
 export default function MyOrders() {
