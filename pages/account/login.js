@@ -1,16 +1,39 @@
 // React
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Icons and images
 
 // Next
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 // Components
 import Input from "../../components/form/Input";
 import Checkbox from "../../components/base/Checkbox";
 
-const Login = () => {
+import { signIn, getSession } from "next-auth/react";
+
+const Login = ({ session }) => {
+  const router = useRouter();
+  const [errMess, setErrMess] = useState(null);
+  async function submitHandler(e) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    const status = await signIn("credentials", {
+      redirect: false,
+      email: email,
+      password: password,
+    });
+    if (status.error) {
+      setErrMess(status.error);
+    }
+    if (status.url) {
+      router.push("/account");
+    }
+  }
+
   return (
     <>
       <Head>
@@ -19,7 +42,7 @@ const Login = () => {
       </Head>
 
       <main>
-        <div className="container justify-center grid-cols-2 xl:grid my-24">
+        <div className="container justify-center grid-cols-2 my-24 xl:grid">
           <div className="relative hidden w-full h-full ml-2 xl:block">
             <Image src="/images/testCarousel.jpg" layout="fill" />
           </div>
@@ -36,7 +59,16 @@ const Login = () => {
               </p>
             </div>
 
-            <form className="px-8 pt-6 mb-4 ">
+            <form
+              className="px-8 pt-6 mb-4 "
+              onSubmit={(e) => submitHandler(e)}
+            >
+              {errMess && (
+                <div className="mb-5 font-medium text-center text-secondary">
+                  {errMess}
+                </div>
+              )}
+
               <Input
                 placeholder="И-мейл"
                 type="email"
@@ -97,3 +129,19 @@ const Login = () => {
 };
 
 export default Login;
+
+export async function getServerSideProps(context) {
+  const session = await getSession({ req: context.req });
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/account",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+}

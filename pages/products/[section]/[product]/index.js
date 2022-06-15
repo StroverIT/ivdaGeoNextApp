@@ -9,7 +9,7 @@ import ThumbsGallery from "../../../../components/swiperJs/ThumbsGallery";
 import Pricing from "../../../../components/priceStyling/Pricing";
 import QuanityInput from "../../../../components/base/QuanityInput";
 
-export default function index() {
+export default function Index() {
   return (
     <main className="mb-auto">
       <div className="container">
@@ -52,7 +52,7 @@ export default function index() {
                     <div className="inline-flex p-2 text-xl rounded-full bg-gray group-hover:bg-gray-200 group-hover:text-white md:ml-5">
                       <AiOutlineHeart />
                     </div>
-                    <span className="ml-1 text-sm group-hover:font-medium">
+                    <span className="ml-1 text-sm select-none group-hover:font-medium">
                       Добави в любими
                     </span>
                   </div>

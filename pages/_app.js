@@ -3,7 +3,9 @@ import Layout from "../components/layouts/Layout";
 
 import Head from "next/head";
 
-function MyApp({ Component, pageProps }) {
+import { SessionProvider } from "next-auth/react";
+
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
       <Head>
@@ -12,9 +14,11 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <SessionProvider session={pageProps.session}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SessionProvider>
     </>
   );
 }

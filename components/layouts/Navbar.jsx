@@ -35,7 +35,6 @@ const Navbar = () => {
       document.body.clientHeight - window.innerHeight <=
       Math.ceil(lastScrollY + 20);
     if (bottom) {
-      console.log("BOTTOM!");
       setShow(false);
     }
     setLastScrollY(window.scrollY);
@@ -124,7 +123,7 @@ const Navbar = () => {
               </li>
             </Link>
             {/* Account */}
-            <Link href="/account/login">
+            <Link href="/account">
               <li className="flex flex-col items-center justify-center px-4 h-14 lg:h-20 hover:text-white hover:bg-gray">
                 <div className="text-3xl">
                   <AiOutlineUser className="icon" />
@@ -149,7 +148,7 @@ const Navbar = () => {
         }`}
         ref={searchMenu}
       >
-        <div className="container py-5 md:pb-9 md:pt-5 flex justify-center bg-white shadow-lg md:rounded-bl-full md:rounded-br-full">
+        <div className="container flex justify-center py-5 bg-white shadow-lg md:pb-9 md:pt-5 md:rounded-bl-full md:rounded-br-full">
           <div className="relative w-11/12 ">
             <input
               type="text"

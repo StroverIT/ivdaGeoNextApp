@@ -59,7 +59,6 @@ export default function SwiperFreeMode({ images, navSize }) {
         >
           {images.map((image) => {
             let [price, priceDec] = image.price.toFixed(2).split(".");
-            console.log(image.pageUrl);
             return (
               <SwiperSlide
                 className="flex flex-col bg-white shadow-lg cursor-pointer hover:shadow-xl"
