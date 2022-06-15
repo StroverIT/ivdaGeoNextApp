@@ -4,7 +4,7 @@
 
 @layer components {
   .acc-active {
-    @apply bg-primary-0 text-primary;
+    @apply text-white bg-primary;
   }
   .filter-header {
     @apply text-lg font-semibold text-primary bg-[#f5f5f5] z-10 inline-block relative pr-2;
