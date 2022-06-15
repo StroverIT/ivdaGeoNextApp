@@ -138,6 +138,11 @@ a {
   width: 100%;
   cursor: pointer;
 }
+.blury-noProps {
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .filter-container::after {
   content: "";
   width: 100%;
