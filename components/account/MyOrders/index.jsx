@@ -62,29 +62,31 @@ function TableRow({ id, date, total, status, isOld }) {
             </button>
           </td>
         )}
-      </tr>
-      <div
-        className={`${
-          !menu && "hidden"
-        } fixed  z-20 left-0 top-0 h-screen w-screen`}
-      >
-        <div
-          className="blury-noProps relative h-screen w-full cursor-pointer z-10"
-          onClick={() => setMenu(false)}
-        >
-          {/* Mongodb */}
-        </div>
-        <section className="bg-primary w-full   absolute top-1/2 z-20 ">
-          <div className="container py-5 ">
-            <div className="flex space-x-5 flex-wrap">
-              <div className="">{id}</div>
-              <div className="">{date}</div>
-              <div className="">{total} лв.</div>
+        <td>
+          <div
+            className={`${
+              !menu && "hidden"
+            } fixed  z-20 left-0 top-0 h-screen w-screen`}
+          >
+            <div
+              className="blury-noProps relative h-screen w-full cursor-pointer z-10"
+              onClick={() => setMenu(false)}
+            >
+              {/* Mongodb */}
             </div>
-            <Status type={status} isDiv={true} />
+            <section className="bg-primary w-full   absolute top-1/2 z-20 ">
+              <div className="container py-5 ">
+                <div className="flex space-x-5 flex-wrap">
+                  <div className="">{id}</div>
+                  <div className="">{date}</div>
+                  <div className="">{total} лв.</div>
+                </div>
+                <Status type={status} isDiv={true} />
+              </div>
+            </section>
           </div>
-        </section>
-      </div>
+        </td>
+      </tr>
     </>
   );
 }
