@@ -49,7 +49,6 @@ export default function Index({ userData }) {
       "hover:text-primary"
     );
   }, [router]);
-
   return (
     <>
       <Head>
@@ -92,6 +91,16 @@ export default function Index({ userData }) {
                       Любими продукти
                     </button>
                   </li>
+                  {userData.role == "admin" && (
+                    <li className="pt-2 pb-5 my-1 sm:pt-0 sm:pb-1 lg:pt-10">
+                      <button
+                        onClick={() => router.push("/adminPanel")}
+                        className="bg-primary-lighter text-sm text-white px-2 py-2 font-semibold rounded-lg hover:bg-transparent border border-primary-lighter hover:text-primary-lighter"
+                      >
+                        Админ панел
+                      </button>
+                    </li>
+                  )}
                   <li className="pt-10 pb-5 my-1 sm:pt-0 sm:pb-0 lg:pt-10 ">
                     <button
                       type="button"
