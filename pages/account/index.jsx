@@ -72,7 +72,7 @@ export default function Index({ userData }) {
                       Моите детайли
                     </button>
                   </li>
-                  <li className="my-1 cursor-pointer " ref={myOrders}>
+                  <li className="my-1 cursor-pointer" ref={myOrders}>
                     {/*"Icon"*/}
                     <button
                       onClick={() => changeCategory("my-orders")}
@@ -92,7 +92,7 @@ export default function Index({ userData }) {
                     </button>
                   </li>
                   {userData.role == "admin" && (
-                    <li className="pt-2 pb-5 my-1 sm:pt-0 sm:pb-1 lg:pt-10">
+                    <li className="pt-2 pb-5 my-1 sm:pt-0 sm:pb-1 lg:pt-10 ">
                       <button
                         onClick={() => router.push("/adminPanel")}
                         className="bg-primary-lighter text-sm text-white px-2 py-2 font-semibold rounded-lg hover:bg-transparent border border-primary-lighter hover:text-primary-lighter"
@@ -101,7 +101,11 @@ export default function Index({ userData }) {
                       </button>
                     </li>
                   )}
-                  <li className="pt-10 pb-5 my-1 sm:pt-0 sm:pb-0 lg:pt-10 ">
+                  <li
+                    className={`pt-10 pb-5 my-1 sm:pt-0 sm:pb-0 ${
+                      userData.role != "admin" ? "lg:pt-10" : "lg:pt-2"
+                    } `}
+                  >
                     <button
                       type="button"
                       className="flex items-center justify-center h-full px-5 py-2 text-sm font-semibold text-white cursor-pointer bg-secondary hover:bg-transparent hover:text-secondary border border-secondary"
