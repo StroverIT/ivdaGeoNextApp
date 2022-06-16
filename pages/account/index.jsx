@@ -62,7 +62,7 @@ export default function Index({ userData }) {
             <h3 className="text-3xl pt-7">Моят акаунт</h3>
             <div className="lg:grid grid-cols-[20%80%] gap-10 my-10  relative">
               <aside className="mb-4  md:mb-0 bg-[#f5f5f5]  my-2">
-                <ul className="justify-center text-sm text-left top-28 sm:space-x-4 sm:flex lg:flex-col lg:space-x-0 lg:space-y-2 md:sticky py-5">
+                <ul className="justify-center py-5 text-sm text-left top-28 sm:space-x-4 sm:flex lg:flex-col lg:space-x-0 lg:space-y-2 md:sticky">
                   <li className="my-1 cursor-pointer " ref={myDetails}>
                     {/*"Icon"*/}
                     <button
@@ -92,7 +92,7 @@ export default function Index({ userData }) {
                       Любими продукти
                     </button>
                   </li>
-                  <li className="my-1 pt-10 pb-5 sm:pt-0 sm:pb-0 lg:pt-10 ">
+                  <li className="pt-10 pb-5 my-1 sm:pt-0 sm:pb-0 lg:pt-10 ">
                     <button
                       type="button"
                       className="flex items-center justify-center h-full px-5 py-2 text-sm font-semibold text-white cursor-pointer bg-secondary"
@@ -106,7 +106,7 @@ export default function Index({ userData }) {
                   </li>
                 </ul>
               </aside>
-              <div className="absolute bg-[#f5f5f5] w-full h-full -left-10 -z-20 "></div>
+              <div className="absolute bg-[#f5f5f5] w-full h-full lg:-left-10 -z-20 "></div>
 
               <section className="min-h-full bg-white border border-gray">
                 <div className="container">{categoryData}</div>
@@ -134,8 +134,8 @@ export async function getServerSideProps(context) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      email: session.user.email,
-      name: session.user.name,
+      email: session.session.user.email,
+      name: session.session.user.name,
     }),
   });
   const data = await res.json();
