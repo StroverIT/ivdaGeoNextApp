@@ -104,7 +104,7 @@ export default function Index({ userData }) {
                   <li className="pt-10 pb-5 my-1 sm:pt-0 sm:pb-0 lg:pt-10 ">
                     <button
                       type="button"
-                      className="flex items-center justify-center h-full px-5 py-2 text-sm font-semibold text-white cursor-pointer bg-secondary"
+                      className="flex items-center justify-center h-full px-5 py-2 text-sm font-semibold text-white cursor-pointer bg-secondary hover:bg-transparent hover:text-secondary border border-secondary"
                       onClick={() => signOut()}
                     >
                       <div className="mr-1">
