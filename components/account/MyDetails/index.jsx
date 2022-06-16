@@ -74,7 +74,7 @@ function Message({ text, err }) {
 export default function MyDetails({ userData }) {
   const { data: session, status } = useSession();
   if (session) {
-    inputDataEmail[0].defValue = session.user.email;
+    inputDataEmail[0].defValue = session.session.user.email;
     if (userData) {
       if (userData.phoneNumber) {
         inputDataPersonal[0].defValue = userData.phoneNumber;
