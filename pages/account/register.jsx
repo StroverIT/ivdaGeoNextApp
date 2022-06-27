@@ -62,12 +62,27 @@ const Register = () => {
     const repeatPassword_name = targetName == "repeatPassword";
     if (fullName_name) {
       const fullNameCheck = fullNameVal(targetValue);
+      if (
+        !fullNameCheck.result &&
+        !errorMessages.includes(fullNameCheck.message)
+      )
+        setErrorMessages([...errorMessages, fullNameCheck.message]);
+      if (fullNameCheck.result && errorMessages.includes(fullNameCheck.message))
+        setErrorMessages(
+          errorMessages.filter((text) => text != fullNameCheck.message)
+        );
     }
     if (email_name) {
       const emailCheck = emailVal(targetValue);
+      if (!emailCheck.result && !errorMessages.includes(emailCheck.message))
+        setErrorMessages([...errorMessages, emailCheck.message]);
+      if (emailCheck.result && errorMessages.includes(emailCheck.message))
+        setErrorMessages(
+          errorMessages.filter((text) => text != emailCheck.message)
+        );
     }
-
     if (errorMessages.length == 0) setDisabled(false);
+    else setDisabled(true);
   };
   return (
     <>
