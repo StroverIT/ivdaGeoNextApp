@@ -1,42 +1,54 @@
-import { MongoClient } from "mongodb";
+import { connectMongo } from "../../../db/connectDb";
+import mongoose from "mongoose";
+import User from "../../../db/models/User";
+
+import valHandler from "../../../utils/validationHandler";
 import { hash } from "bcryptjs";
+
 async function handler(req, res) {
   //Only POST mothod is accepted
   if (req.method === "POST") {
     //Getting email and password from body
-    const { email, password, name } = req.body;
+    const { email, password, repeatPassword, name } = req.body;
+    const errors = [];
     //Validate
-    if (!email || !email.includes("@") || !password) {
-      res.status(422).json({ message: "Неправилно валидинари данни" });
+    if (!email || !password) {
+      errors.push("Всички полета трябва да бъдат попълнени");
       return;
+    }
+    const fullName = valHandler.fullName(name);
+    const emailFormat = valHandler.email(email);
+    if (!emailFormat.result) {
+      errors.push(emailFormat.message);
+    }
+    if (!fullName.result) {
+      errors.push(fullName.message);
     }
     //Connect with database
-    const client = await MongoClient.connect(process.env.DB_HOST, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    const db = client.db();
+    await connectMongo();
     //Check existing
-    const checkExisting = await db
-      .collection("users")
-      .findOne({ email: email });
+    const checkExisting = await User.findOne({ email: email });
     //Send error response if duplicate user is found
     if (checkExisting) {
-      res.status(422).json({ message: "Вече съществува такъв акаунт" });
-      client.close();
-      return;
+      errors.push("Вече съществува такъв и-мейл");
     }
-    //Hash password
-    const status = await db.collection("users").insertOne({
-      email,
-      password: await hash(password, 12),
-      name,
-      verified: false,
-    });
+    if (repeatPassword != password) {
+      errors.push("Паролите трябва да съвпадат");
+    }
+
+    if (errors.length > 1) {
+      res.status(406).json(errors);
+    }
+
+    // const status = await User.create({
+    //   email,
+    //   password: await hash(password, 12),
+    //   name,
+    // });
     //Send success response
-    res.status(201).json({ message: "success", ...status });
+    // res.status(201).json({ message: "success", ...status });
     //Close DB connection
-    client.close();
+    mongoose.connection.close();
   } else {
     //Response for other than POST method
     res.status(500).json({ message: "Нещо се обърка..." });

@@ -1,6 +1,9 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { MongoClient } from "mongodb";
+
+import { connectMongo } from "../../../db/connectDb";
+import User from "../../../db/models/User";
+
 import { compare } from "bcryptjs";
 
 export default NextAuth({
@@ -14,25 +17,21 @@ export default NextAuth({
     CredentialsProvider({
       async authorize(credentials) {
         //Connect to DB
-        const client = await MongoClient.connect(process.env.DB_HOST, {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-        });
+        await connectMongo();
         //Get all the users
-        const users = await client.db().collection("users");
         //Find user with the email
-        const result = await users.findOne({
+        const result = await User.findOne({
           email: credentials.email,
         });
         //Not found - send error res
         if (!result) {
-          client.close();
+          mongoose.connection.close();
 
           throw new Error("Несъществуващ и-мейл");
         }
         //Not verifed
         if (!result.verified) {
-          client.close();
+          mongoose.connection.close();
           throw new Error("Не ви е потвърден акаунта");
         }
         //Check hased password with DB password
@@ -42,11 +41,13 @@ export default NextAuth({
         );
         //Incorrect password - send response
         if (!checkPassword) {
-          client.close();
+          mongoose.connection.close();
+
           throw new Error("Грешна парола");
         }
         //Else send success response
-        client.close();
+        mongoose.connection.close();
+
         return {
           email: result.email,
           name: result.name,

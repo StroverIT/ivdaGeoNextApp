@@ -44,7 +44,7 @@ const Login = ({ session }) => {
       <main>
         <div className="container justify-center grid-cols-2 my-24 xl:grid">
           <div className="relative hidden w-full h-full ml-2 xl:block">
-            <Image src="/images/testCarousel.jpg" layout="fill" />
+            <Image src="/images/testCarousel.jpg" layout="fill" alt="test" />
           </div>
           <div className="w-full bg-white rounded shadow-xl">
             <div className="my-5 ml-8">

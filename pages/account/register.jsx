@@ -10,23 +10,12 @@ import Input from "../../components/form/Input";
 
 // Auth
 import { getSession } from "next-auth/react";
-
-const samePass = "Паролите трябва да съвпадат!";
-
-const errDict = {
-  upperLett: ["Паролата трябва да съдържа главна буква!", false],
-  threeNums: ["Паролата трябва да съдържа поне една цифра", false],
-  fiveChar: ["Паролата трябва да е поне пет символа", false],
-};
+import { fullNameVal, emailVal } from "../../utils/validationHandler";
 
 const Register = () => {
   const router = useRouter();
 
-  const [serverErrMes, setserverErrMes] = useState(null);
-  const [errorMessage, setErrorMessage] = useState([]);
-
-  const [password, setPassword] = useState(null);
-  const [isSame, setSame] = useState(false);
+  const [errorMessages, setErrorMessages] = useState([]);
   const [disabled, setDisabled] = useState(true);
 
   const onFormSubmit = async (e) => {
@@ -36,11 +25,8 @@ const Register = () => {
     const email = formData.get("email");
     const password = formData.get("repeatPassword");
     const fullName = formData.get("fullName");
-    //Validation
-    if (!email || !email.includes("@") || !password || !fullName) {
-      setserverErrMes("Неправилно валидинари данни");
-      return;
-    }
+    const repeatPassword = formData.get("repeatPassword");
+
     //POST form values
     const res = await fetch("/api/auth/signup", {
       method: "POST",
@@ -51,6 +37,7 @@ const Register = () => {
         email: email,
         password: password,
         name: fullName,
+        repeatPassword,
       }),
     });
 
@@ -58,7 +45,7 @@ const Register = () => {
     if (res.status != 201) {
       const data = await res.json();
       console.log(data);
-      setserverErrMes(data.message);
+      setErrorMessages([...errorMessages, data.map((e) => e)]);
       return;
     }
     // MUST SEND A EMAIL FOR VERIFICATION
@@ -66,51 +53,22 @@ const Register = () => {
     // Redirect
     router.push("/account/verifyRegistration");
   };
-  function formHandler(e) {
-    if (e.target.id == "password") {
-      setPassword(e.target.value);
-      if (e.target.value.length >= 5) {
-        errDict.fiveChar[1] = true;
-      } else errDict.fiveChar[1] = false;
-
-      if (/\d/.test(e.target.value)) {
-        errDict.threeNums[1] = true;
-      } else errDict.threeNums[1] = false;
-
-      if (/[A-Z]/.test(e.target.value)) {
-        errDict.upperLett[1] = true;
-      } else errDict.upperLett[1] = false;
-
-      const errors = [];
-
-      for (let err in errDict) {
-        if (!errDict[err][1]) {
-          console.log(errDict[err]);
-          errors.push(errDict[err][0]);
-        }
-      }
-      setErrorMessage(() => [...errors]);
+  const formHandler = (e) => {
+    const targetName = e.target.name;
+    const targetValue = e.target.value;
+    const fullName_name = targetName == "fullName";
+    const email_name = targetName == "email";
+    const password_name = targetName == "password";
+    const repeatPassword_name = targetName == "repeatPassword";
+    if (fullName_name) {
+      const fullNameCheck = fullNameVal(targetValue);
     }
-    if (e.target.id == "repeatPassword") {
-      if (e.target.value != password) {
-        if (errorMessage.includes(samePass)) return;
-        setErrorMessage((oldArray) => [...oldArray, samePass]);
-        setSame(false);
-      } else {
-        setErrorMessage(errorMessage.filter((item) => item != samePass));
-        console.log("ednakvi!");
-        setSame(true);
-      }
+    if (email_name) {
+      const emailCheck = emailVal(targetValue);
     }
-  }
-  useEffect(() => {
-    if (isSame && errorMessage.length == 0) {
-      console.log("mina");
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
-  }, [isSame, errorMessage]);
+
+    if (errorMessages.length == 0) setDisabled(false);
+  };
   return (
     <>
       <Head>
@@ -131,14 +89,16 @@ const Register = () => {
                   </span>
                 </Link>
               </p>
-              <div className="my-2 font-medium text-center text-secondary">
-                {serverErrMes}
-                <ul>
-                  {errorMessage.map((e) => {
-                    return <li key={e}>{e}</li>;
-                  })}
-                </ul>
-              </div>
+              {errorMessages && (
+                <div className="my-2 font-medium text-center text-secondary">
+                  <ul>
+                    {errorMessages &&
+                      errorMessages.map((e) => {
+                        return <li key={e}>{e}</li>;
+                      })}
+                  </ul>
+                </div>
+              )}
             </div>
 
             <form

@@ -1,12 +1,14 @@
-import { MongoClient } from "mongodb";
+import { connectMongo } from "../../db/connectDb";
+import mongoose from "mongoose";
+
+import User from "../../db/models/User";
 
 export default async function handler(req, res) {
-  const client = await MongoClient.connect(process.env.DB_HOST);
-  const db = client.db();
-  const collection = db.collection("users");
-  const data = await collection.findOne({
+  await connectMongo();
+  const data = await User.findOne({
     email: req.body.email,
     name: req.body.name,
   });
   res.json(data);
+  mongoose.connection.close();
 }

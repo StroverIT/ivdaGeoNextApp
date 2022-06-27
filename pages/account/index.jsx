@@ -91,11 +91,11 @@ export default function Index({ userData }) {
                       Любими продукти
                     </button>
                   </li>
-                  {userData.role == "admin" && (
+                  {userData?.role == "admin" && (
                     <li className="pt-2 pb-5 my-1 sm:pt-0 sm:pb-1 lg:pt-10 ">
                       <button
                         onClick={() => router.push("/adminPanel")}
-                        className="bg-primary-lighter text-sm text-white px-2 py-2 font-semibold rounded-lg hover:bg-transparent border border-primary-lighter hover:text-primary-lighter"
+                        className="px-2 py-2 text-sm font-semibold text-white border rounded-lg bg-primary-lighter hover:bg-transparent border-primary-lighter hover:text-primary-lighter"
                       >
                         Админ панел
                       </button>
@@ -103,12 +103,12 @@ export default function Index({ userData }) {
                   )}
                   <li
                     className={`pt-10 pb-5 my-1 sm:pt-0 sm:pb-0 ${
-                      userData.role != "admin" ? "lg:pt-10" : "lg:pt-2"
+                      userData?.role != "admin" ? "lg:pt-10" : "lg:pt-2"
                     } `}
                   >
                     <button
                       type="button"
-                      className="flex items-center justify-center h-full px-5 py-2 text-sm font-semibold text-white cursor-pointer bg-secondary hover:bg-transparent hover:text-secondary border border-secondary"
+                      className="flex items-center justify-center h-full px-5 py-2 text-sm font-semibold text-white border cursor-pointer bg-secondary hover:bg-transparent hover:text-secondary border-secondary"
                       onClick={() => signOut()}
                     >
                       <div className="mr-1">
