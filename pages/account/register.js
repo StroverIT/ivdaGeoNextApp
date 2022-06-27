@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // NextJs
 import Head from "next/head";
@@ -11,34 +11,34 @@ import Input from "../../components/form/Input";
 // Auth
 import { getSession } from "next-auth/react";
 import { fullNameVal, emailVal } from "../../utils/validationHandler";
-
 const Register = () => {
   const router = useRouter();
 
+  const initialValues = {
+    fullName: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
+  };
+  const [inputs, setInputs] = useState(initialValues);
   const [errorMessages, setErrorMessages] = useState([]);
   const [disabled, setDisabled] = useState(true);
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
     //Getting value from useRef()
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get("email");
-    const password = formData.get("repeatPassword");
-    const fullName = formData.get("fullName");
-    const repeatPassword = formData.get("repeatPassword");
-
+    if (!inputs.fullName)
+      setErrorMessages((oldValues) => [...oldValue, "Ivan"]);
+    if (errorMessages) {
+      return;
+    }
     //POST form values
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        name: fullName,
-        repeatPassword,
-      }),
+      body: JSON.stringify(inputs),
     });
 
     //Await for data for any desirable next steps
@@ -53,37 +53,20 @@ const Register = () => {
     // Redirect
     router.push("/account/verifyRegistration");
   };
-  const formHandler = (e) => {
-    const targetName = e.target.name;
-    const targetValue = e.target.value;
-    const fullName_name = targetName == "fullName";
-    const email_name = targetName == "email";
-    const password_name = targetName == "password";
-    const repeatPassword_name = targetName == "repeatPassword";
-    if (fullName_name) {
-      const fullNameCheck = fullNameVal(targetValue);
-      if (
-        !fullNameCheck.result &&
-        !errorMessages.includes(fullNameCheck.message)
-      )
-        setErrorMessages([...errorMessages, fullNameCheck.message]);
-      if (fullNameCheck.result && errorMessages.includes(fullNameCheck.message))
-        setErrorMessages(
-          errorMessages.filter((text) => text != fullNameCheck.message)
-        );
-    }
-    if (email_name) {
-      const emailCheck = emailVal(targetValue);
-      if (!emailCheck.result && !errorMessages.includes(emailCheck.message))
-        setErrorMessages([...errorMessages, emailCheck.message]);
-      if (emailCheck.result && errorMessages.includes(emailCheck.message))
-        setErrorMessages(
-          errorMessages.filter((text) => text != emailCheck.message)
-        );
-    }
-    if (errorMessages.length == 0) setDisabled(false);
-    else setDisabled(true);
+  const formHandlerInputs = (e) => {
+    const { name, value } = e.target;
+    setInputs({ ...inputs, [name]: value });
   };
+  useEffect(() => {
+    const inputEntries = Object.entries(inputs);
+    let isTrue = [];
+    for (let [key, value] of inputEntries) {
+      console.log(key, value);
+      if (!value) isTrue.push(false);
+    }
+    if (isTrue.length == 0) setDisabled(false);
+    else setDisabled(true);
+  }, [inputs]);
   return (
     <>
       <Head>
@@ -118,7 +101,7 @@ const Register = () => {
 
             <form
               className="px-8 pt-1 pb-8 mt-6 mb-4"
-              onChange={(e) => formHandler(e)}
+              onChange={(e) => formHandlerInputs(e)}
               onSubmit={(e) => onFormSubmit(e)}
             >
               <Input
@@ -127,6 +110,7 @@ const Register = () => {
                 id="fullName"
                 isReq={true}
                 iconType="fullName"
+                val={inputs.fullName}
               />
               <Input
                 placeholder="И-мейл"
@@ -134,6 +118,7 @@ const Register = () => {
                 id="email"
                 isReq={true}
                 iconType="email"
+                val={inputs.email}
               />
               <Input
                 placeholder="Парола"
@@ -141,6 +126,7 @@ const Register = () => {
                 id="password"
                 isReq={true}
                 iconType="password"
+                val={inputs.password}
               />
               <Input
                 placeholder="Потвърдете паролата"
@@ -148,6 +134,7 @@ const Register = () => {
                 id="repeatPassword"
                 isReq={true}
                 iconType="password"
+                val={inputs.repeatPassword}
               />
               {/* <div className="flex justify-between mb-2 select-none">
                 <div>

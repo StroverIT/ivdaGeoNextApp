@@ -2,7 +2,7 @@ import React from "react";
 
 import Icons from "../Icons/Icons";
 
-const Input = ({ type, placeholder, id, isReq, iconType }) => {
+const Input = ({ type, placeholder, id, isReq, iconType, val }) => {
   return (
     <div className="relative mb-5">
       <div className="absolute left-0 z-10 top-2.5 text-lg">
@@ -15,6 +15,7 @@ const Input = ({ type, placeholder, id, isReq, iconType }) => {
         placeholder={placeholder}
         required={isReq}
         name={id}
+        val={val}
       />
       <label
         className="absolute   -top-3.5 left-0 block mb-2 text-sm  text-gray-darker peer-placeholder-shown:text-base peer-placeholder-shown:px-6  peer-placeholder-shown:top-1.5 transition-all duration-300"
