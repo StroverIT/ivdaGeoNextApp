@@ -26,10 +26,16 @@ const Register = () => {
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
-    //Getting value from useRef()
-    if (!inputs.fullName)
-      setErrorMessages((oldValues) => [...oldValue, "Ivan"]);
-    if (errorMessages) {
+    const errors = [];
+    const fullNameCheck = fullNameVal(inputs.fullName);
+    const emailCheck = emailVal(inputs.email);
+    if (!fullNameCheck.result) errors.push(fullNameCheck.message);
+    if (!emailCheck.result) errors.push(emailCheck.message);
+    if (inputs.password != inputs.repeatPassword)
+      errors.push("Паролите трябва да съвпадат");
+    if (errors.length > 1) {
+      console.log(errors);
+      setErrorMessages([...errors]);
       return;
     }
     //POST form values
@@ -61,7 +67,6 @@ const Register = () => {
     const inputEntries = Object.entries(inputs);
     let isTrue = [];
     for (let [key, value] of inputEntries) {
-      console.log(key, value);
       if (!value) isTrue.push(false);
     }
     if (isTrue.length == 0) setDisabled(false);
