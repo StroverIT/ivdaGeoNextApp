@@ -1,4 +1,8 @@
 import "../styles/globals.css";
+
+import { wrapper, store } from "../redux/store";
+import { Provider } from "react-redux";
+
 import Layout from "../components/layouts/Layout";
 
 import Head from "next/head";
@@ -15,12 +19,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         />
       </Head>
       <SessionProvider session={pageProps.session}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Provider store={store}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
       </SessionProvider>
     </>
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
