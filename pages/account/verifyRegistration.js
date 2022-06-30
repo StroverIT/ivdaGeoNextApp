@@ -21,7 +21,7 @@ export default function ResetPassword() {
                 го потвърдите
               </p>
               <p className="mt-1 font-medium md:mt-0">
-                Пратили сме ви инструкции на вашият имейл адрес.
+                Пратени са инструкции на вашият имейл адрес.
               </p>
             </div>
           </div>
