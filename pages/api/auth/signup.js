@@ -23,23 +23,22 @@ async function handler(req, res) {
     if (!emailCheck.result) errors.push(emailCheck.message);
     if (password != repeatPassword) errors.push("Паролите трябва да съвпадат");
 
-    if (errors.length > 1) {
+    if (errors.length > 0) {
       console.log(errors);
-      setErrorMessages([...errors]);
       res.status(400).json(errors);
     }
 
     //Connect with database
     await connectMongo();
     //Check existing
-    const checkExisting = await User.findOne({ email: email });
+    const checkExisting = await User.findOne({ email });
     //Send error response if duplicate user is found
     if (checkExisting) {
       errors.push("Вече съществува такъв и-мейл");
     }
 
-    if (errors.length > 1) {
-      res.status(406).json(errors);
+    if (errors.length > 0) {
+      return res.status(406).json(errors);
     }
 
     const status = await User.create({
@@ -53,6 +52,8 @@ async function handler(req, res) {
     mongoose.connection.close();
   } else {
     //Response for other than POST method
+    mongoose.connection.close();
+
     res.status(500).json({ message: "Нещо се обърка..." });
   }
 }
