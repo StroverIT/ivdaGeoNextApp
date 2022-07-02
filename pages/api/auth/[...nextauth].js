@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 import { connectMongo } from "../../../db/connectDb";
+import mongoose from "mongoose";
 import User from "../../../db/models/User";
 
 import { compare } from "bcryptjs";
@@ -29,11 +30,7 @@ export default NextAuth({
 
           throw new Error("Несъществуващ и-мейл");
         }
-        //Not verifed
-        if (!result.verified) {
-          mongoose.connection.close();
-          throw new Error("Не ви е потвърден акаунта");
-        }
+
         //Check hased password with DB password
         const checkPassword = await compare(
           credentials.password,
@@ -44,6 +41,11 @@ export default NextAuth({
           mongoose.connection.close();
 
           throw new Error("Грешна парола");
+        }
+        //Not verifed
+        if (!result.isVerified) {
+          mongoose.connection.close();
+          throw new Error("Не ви е потвърден акаунта");
         }
         //Else send success response
         mongoose.connection.close();
