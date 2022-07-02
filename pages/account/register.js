@@ -33,7 +33,7 @@ const Register = () => {
     if (!emailCheck.result) errors.push(emailCheck.message);
     if (inputs.password != inputs.repeatPassword)
       errors.push("Паролите трябва да съвпадат");
-    if (errors.length > 1) {
+    if (errors.length > 0) {
       console.log(errors);
       setErrorMessages([...errors]);
       return;
@@ -51,7 +51,7 @@ const Register = () => {
     if (res.status != 201) {
       const data = await res.json();
       console.log(data);
-      setErrorMessages([...errorMessages, data.map((e) => e)]);
+      setErrorMessages([...data.map((e) => e)]);
       return;
     }
     // MUST SEND A EMAIL FOR VERIFICATION
