@@ -57,20 +57,25 @@ const Register = () => {
 
     const isTrue = [];
     const errors = [];
+
     for (let [key, value] of inputEntries) {
       if (!value) isTrue.push(false);
     }
+
     const fullNameCheck = fullNameVal(inputs.fullName);
     const emailCheck = emailVal(inputs.email);
+
     if (!fullNameCheck.result) errors.push(fullNameCheck.message);
     if (!emailCheck.result) errors.push(emailCheck.message);
     if (inputs.password != inputs.repeatPassword)
       errors.push("Паролите трябва да съвпадат");
+
     if (errors.length > 0) {
       console.log(errors);
       setErrorMessages([...errors]);
       return;
     } else setErrorMessages([]);
+
     if (isTrue.length == 0) setDisabled(false);
     else setDisabled(true);
   }, [inputs]);

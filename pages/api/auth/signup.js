@@ -23,11 +23,6 @@ async function handler(req, res) {
     if (!emailCheck.result) errors.push(emailCheck.message);
     if (password != repeatPassword) errors.push("Паролите трябва да съвпадат");
 
-    if (errors.length > 0) {
-      console.log(errors);
-      res.status(400).json(errors);
-    }
-
     //Connect with database
     await connectMongo();
     //Check existing
@@ -38,6 +33,8 @@ async function handler(req, res) {
     }
 
     if (errors.length > 0) {
+      mongoose.connection.close();
+      // console.log(errors);
       return res.status(406).json(errors);
     }
 
