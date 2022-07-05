@@ -8,7 +8,6 @@ async function handler(req, res) {
   const token = await getToken({ req, secret });
   const email = req.body.email;
   const pass = req.body.password;
-  const id = req.body._id;
 
   // Connect with database
   if (req.method == "POST") {
@@ -19,26 +18,16 @@ async function handler(req, res) {
     const db = client.db();
     const collection = db.collection("users");
 
-    const user = await collection.findOne({
-      _id: ObjectId(id),
-    });
+    const user = await collection.findOne({ email: token.email });
     const isFoundEmail = await collection.findOne({
-      email: email,
+      email,
     });
-    console.log(isFoundEmail);
     if (isFoundEmail) {
       return res
         .status(409)
         .json({ message: "Вече съществува такъв и-мейл", isErr: true });
     }
     // No user found
-    if (!user) {
-      client.close();
-
-      return res
-        .status(404)
-        .json({ message: "Грешно пратени данни", isErr: true });
-    }
 
     const checkPassword = await compare(pass, user.password);
 
@@ -48,7 +37,7 @@ async function handler(req, res) {
       return res.status(401).json({ message: "Грешна парола", isErr: true });
     }
 
-    collection.updateOne({ _id: ObjectId(id) }, { $set: { email } });
+    collection.updateOne({ email: token.email }, { $set: { email } });
     return res.json({ message: "И-мейла ви беше сменен успешно" });
   }
 }
