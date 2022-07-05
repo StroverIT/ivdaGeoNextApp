@@ -113,7 +113,6 @@ export default function MyDetails({ userData }) {
         setPasswordMes([resData.message, resData.isErr]);
         break;
     }
-    console.log(email, passwordMes, url);
   }
   return (
     <>
