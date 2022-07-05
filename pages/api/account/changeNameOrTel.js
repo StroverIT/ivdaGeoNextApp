@@ -1,6 +1,11 @@
 import { MongoClient } from "mongodb";
 
+import { getToken } from "next-auth/jwt";
+const secret = process.env.NEXTAUTH_SECRET;
+
 async function handler(req, res) {
+  const token = await getToken({ req, secret });
+
   const phoneNumber = parseInt(req.body.phoneNumber);
 
   //Connect with database
@@ -12,7 +17,7 @@ async function handler(req, res) {
     const db = client.db();
     const collection = db.collection("users");
     const user = await collection.findOne({
-      email: req.body.email,
+      email: token.email,
     });
 
     // No user found
@@ -25,7 +30,7 @@ async function handler(req, res) {
     }
     // SAME PHONE AS ANOTHER USER
     const isSamePhone = await collection.findOne({
-      phoneNumber: phoneNumber,
+      phoneNumber,
     });
 
     if (isSamePhone) {
@@ -37,7 +42,10 @@ async function handler(req, res) {
 
     // User phone is passing
 
-    await collection.updateOne({ _id: user._id }, { $set: { phoneNumber } });
+    await collection.updateOne(
+      { email: token.email },
+      { $set: { phoneNumber } }
+    );
     client.close();
 
     return res.status(201).json({
