@@ -82,22 +82,22 @@ Pages to create:
 Functionalities:
 [ ] Pager or pagination not sure (on where page, section you are)
 
-- [ ] Connect with restful apis
-      [ ] Login
-      [ ] register
-      [ ] Account
-      [ ] Delivery page(When user make a delivery)
-      [ ] Admin deliveries page
-      [ ] Product page
-      [ ] Show product page
+- [ x ] Connect with restful apis
+  [ x] Login
+  [x ] register
+  [ x] Account
+  [ ] Delivery page(When user make a delivery)
+  [ ] Admin deliveries page
+  [ ] Product page
+  [ ] Show product page
 
 - [ ] Toast notification
       [ ] While is pending
       [ ] If succesful (Sometimes need to redirect to other page)
       [ ] If not succesful (Maybe show what is wrong, maybe not. We'll see :D)
 
-- [ ] Auth
-      [ ] Check if is admin || not
+- [ x] Auth
+  [ x] Check if is admin || not
 - [ ] Cart
       [ ] When sometinh is added to the card. Add pending and succesful toast notification
 
