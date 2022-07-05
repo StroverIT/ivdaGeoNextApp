@@ -83,11 +83,11 @@ const Login = ({ session }) => {
                 isReq={true}
                 iconType="password"
               />
-              <div className="flex justify-between my-8 select-none">
+              {/* <div className="flex justify-between my-8 select-none">
                 <div>
                   <Checkbox text="Запомни ме" id="rememberMe" />
                 </div>
-              </div>
+              </div> */}
               <div className="flex items-center justify-center ">
                 <button
                   className="w-full px-4 py-2 font-bold text-white rounded shadow-md bg-primary hover:bg-primary focus:outline-none focus:shadow-outline"
