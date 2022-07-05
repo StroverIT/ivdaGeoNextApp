@@ -121,7 +121,7 @@ const Register = () => {
               onSubmit={(e) => onFormSubmit(e)}
             >
               <Input
-                placeholder="Пълно име"
+                placeholder="Име и фамилия"
                 type="text"
                 id="fullName"
                 isReq={true}
