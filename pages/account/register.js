@@ -61,12 +61,16 @@ const Register = () => {
     for (let [key, value] of inputEntries) {
       if (!value) isTrue.push(false);
     }
+    if (inputs.fullName.length > 0) {
+      const fullNameCheck = fullNameVal(inputs.fullName);
+      if (!fullNameCheck.result) errors.push(fullNameCheck.message);
+    }
 
-    const fullNameCheck = fullNameVal(inputs.fullName);
-    const emailCheck = emailVal(inputs.email);
+    if (inputs.email.length > 0) {
+      const emailCheck = emailVal(inputs.email);
 
-    if (!fullNameCheck.result) errors.push(fullNameCheck.message);
-    if (!emailCheck.result) errors.push(emailCheck.message);
+      if (!emailCheck.result) errors.push(emailCheck.message);
+    }
     if (inputs.password != inputs.repeatPassword)
       errors.push("Паролите трябва да съвпадат");
 
