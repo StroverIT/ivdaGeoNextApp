@@ -6,6 +6,7 @@ const secret = process.env.NEXTAUTH_SECRET;
 
 async function handler(req, res) {
   const token = await getToken({ req, secret });
+  console.log(token);
   const email = req.body.email;
   const pass = req.body.password;
 

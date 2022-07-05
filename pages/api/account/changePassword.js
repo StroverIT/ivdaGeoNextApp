@@ -1,13 +1,16 @@
 import { MongoClient, ObjectId } from "mongodb";
 import { compare, hash } from "bcryptjs";
 
+import { getToken } from "next-auth/jwt";
+const secret = process.env.NEXTAUTH_SECRET;
+
 async function handler(req, res) {
-  const id = req.body._id;
+  const token = await getToken({ req, secret });
+
   const currPass = req.body.currentPassword;
   const newPass = req.body.newPassword;
   const newPassConf = req.body.newPasswordConf;
 
-  console.log(req.body);
   if (req.method == "POST") {
     const client = await MongoClient.connect(process.env.DB_HOST, {
       useNewUrlParser: true,
@@ -16,7 +19,7 @@ async function handler(req, res) {
     const db = client.db();
     const collection = db.collection("users");
     const user = await collection.findOne({
-      _id: ObjectId(id),
+      email: token.email,
     });
     if (!user) {
       return res.status(404).json({ message: "Невалидни данни", isErr: true });
@@ -32,7 +35,7 @@ async function handler(req, res) {
         .json({ message: "Паролите трябва да съвпадата", isErr: true });
     }
     collection.updateOne(
-      { _id: ObjectId(id) },
+      { email: token.email },
       { $set: { password: await hash(newPassConf, 12) } }
     );
     res.status(201).json({ message: "Паролата ви беше сменена успешно!" });
