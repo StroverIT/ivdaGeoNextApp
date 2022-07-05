@@ -74,11 +74,9 @@ function Message({ text, err }) {
 export default function MyDetails({ userData }) {
   const { data: session, status } = useSession();
   if (session) {
-    inputDataEmail[0].defValue = session.session.user.email;
-    if (userData) {
-      if (userData.phoneNumber) {
-        inputDataPersonal[0].defValue = userData.phoneNumber;
-      }
+    inputDataEmail[0].defValue = session.user.email;
+    if (userData?.phoneNumber) {
+      inputDataPersonal[0].defValue = userData.phoneNumber;
     }
   }
 
@@ -96,9 +94,6 @@ export default function MyDetails({ userData }) {
     for (const pair of formData.entries()) {
       data[pair[0]] = pair[1];
     }
-    console.log(url);
-    if (url == urlFetch.personal) data.email = session.user.email;
-    data._id = userData._id;
 
     const res = await fetch(`/api/account/${url}`, {
       method: "POST",
@@ -113,9 +108,12 @@ export default function MyDetails({ userData }) {
         break;
       case urlFetch.email:
         setEmail([resData.message, resData.isErr]);
+        break;
       case urlFetch.pass:
         setPasswordMes([resData.message, resData.isErr]);
+        break;
     }
+    console.log(email, passwordMes, url);
   }
   return (
     <>
