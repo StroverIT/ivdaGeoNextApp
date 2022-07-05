@@ -20,8 +20,8 @@ export async function getServerSideProps(context) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      email: session.session.user.email,
-      name: session.session.user.name,
+      email: session.user.email,
+      name: session.user.name,
     }),
   });
   const data = await res.json();
