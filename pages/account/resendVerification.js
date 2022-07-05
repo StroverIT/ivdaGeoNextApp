@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // NextJs
 import Head from "next/head";
@@ -6,7 +6,35 @@ import Head from "next/head";
 // Components
 import Input from "../../components/form/Input";
 
-export default function resetPassword() {
+function MessageStatus({ isErr, text }) {
+  return (
+    <div
+      className={`mt-5 -mb-3 text-center ${
+        isErr ? "text-secondary" : "text-green"
+      } `}
+    >
+      {text}
+    </div>
+  );
+}
+
+export default function ResetPassword() {
+  const [message, setMessage] = useState([null, false]);
+  async function submitHandler(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const res = await fetch("/api/account/forgotten/verifyingAcc", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    setMessage([data.message, data.isErr]);
+  }
+
   return (
     <>
       <Head>
@@ -33,8 +61,10 @@ export default function resetPassword() {
                 </ul>
               </div> */}
             </div>
-
-            <form className="px-8 pt-1 pb-8 mt-6 mb-4">
+            {message[0] && (
+              <MessageStatus text={message[0]} isErr={message[1]} />
+            )}
+            <form className="px-8 pt-1 pb-8 mt-6 mb-4" onSubmit={submitHandler}>
               <Input
                 placeholder="И-мейл"
                 type="email"
