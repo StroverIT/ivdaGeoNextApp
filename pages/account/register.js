@@ -26,18 +26,7 @@ const Register = () => {
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
-    const errors = [];
-    const fullNameCheck = fullNameVal(inputs.fullName);
-    const emailCheck = emailVal(inputs.email);
-    if (!fullNameCheck.result) errors.push(fullNameCheck.message);
-    if (!emailCheck.result) errors.push(emailCheck.message);
-    if (inputs.password != inputs.repeatPassword)
-      errors.push("Паролите трябва да съвпадат");
-    if (errors.length > 0) {
-      console.log(errors);
-      setErrorMessages([...errors]);
-      return;
-    }
+    if (errorMessages.length > 0) return;
     //POST form values
     const res = await fetch("/api/auth/signup", {
       method: "POST",
@@ -50,7 +39,7 @@ const Register = () => {
     //Await for data for any desirable next steps
     if (res.status != 201) {
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setErrorMessages([...data.map((e) => e)]);
       return;
     }
@@ -65,10 +54,23 @@ const Register = () => {
   };
   useEffect(() => {
     const inputEntries = Object.entries(inputs);
-    let isTrue = [];
+
+    const isTrue = [];
+    const errors = [];
     for (let [key, value] of inputEntries) {
       if (!value) isTrue.push(false);
     }
+    const fullNameCheck = fullNameVal(inputs.fullName);
+    const emailCheck = emailVal(inputs.email);
+    if (!fullNameCheck.result) errors.push(fullNameCheck.message);
+    if (!emailCheck.result) errors.push(emailCheck.message);
+    if (inputs.password != inputs.repeatPassword)
+      errors.push("Паролите трябва да съвпадат");
+    if (errors.length > 0) {
+      console.log(errors);
+      setErrorMessages([...errors]);
+      return;
+    } else setErrorMessages([]);
     if (isTrue.length == 0) setDisabled(false);
     else setDisabled(true);
   }, [inputs]);
