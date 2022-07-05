@@ -49,6 +49,9 @@ Pages to create:
 
 [ x ] Resend verify code
 
+- [ x ] deliveri page
+  [ ] When is not valid format or is not delivery checked can't send delivery
+
 - [ x ] Account
   [ x ] Change password
   [ x ] Personal info
