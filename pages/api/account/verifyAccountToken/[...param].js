@@ -19,7 +19,7 @@ async function handler(req, res) {
   await user.save();
   await Token.deleteOne({ _id: foundToken._id });
 
-  return res.status(201);
+  return res.status(201).json({ message: "Успешно потвърдихте акаунта си!" });
 }
 
 export default handler;
