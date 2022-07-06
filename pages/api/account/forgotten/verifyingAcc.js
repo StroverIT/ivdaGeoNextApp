@@ -36,6 +36,7 @@ async function handler(req, res) {
     // --- If everything succeed
 
     // Create token
+
     let token = await Token.findOne({ userId: ObjectId(user._id) });
     if (!token) {
       token = await Token.create({
