@@ -34,7 +34,6 @@ async function handler(req, res) {
 
     if (errors.length > 0) {
       mongoose.connection.close();
-      // console.log(errors);
       return res.status(406).json(errors);
     }
 

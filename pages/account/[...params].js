@@ -54,7 +54,6 @@ export default function Index({ data }) {
       route: "success",
       message: resData.message,
     }));
-    console.log(resData);
   }
   useEffect(() => {
     const errors = [];

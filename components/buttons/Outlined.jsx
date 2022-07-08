@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Outlined({ type, text, custom, isDisabled }) {
-  console.log(isDisabled);
   return (
     <button
       type={type}

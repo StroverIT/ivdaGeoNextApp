@@ -37,7 +37,6 @@ export default function ResetPassword() {
       },
       body: JSON.stringify(inputs),
     });
-    console.log(res.status);
     //Await for data for any desirable next steps
     if (res.status != 201) {
       const data = await res.json();
