@@ -14,7 +14,12 @@ function Card() {
   return (
     <div className="w-full">
       <div className="relative w-full h-48">
-        <Image src="/images/testImage2.png" layout="fill" objectFit="contain" />
+        <Image
+          src="/images/testImage2.png"
+          layout="fill"
+          objectFit="contain"
+          alt="Test image is that"
+        />
         <div className="absolute right-0 top-3 cursor-pointer text-dark bg-white rounded-full p-2 text-xl border border-gray-200 hover:scale-105 hover:text-primary transition-all">
           <BsTrash />
         </div>

@@ -54,7 +54,7 @@ const pageDictionary = [
     text: "по 48 на страница",
   },
 ];
-export default function section() {
+export default function Section() {
   const router = useRouter();
   const { section } = router.query;
   const sortingMenu = useRef(null);

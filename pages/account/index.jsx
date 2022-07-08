@@ -17,25 +17,23 @@ import { getSession, signOut } from "next-auth/react";
 export default function Index({ userData }) {
   const router = useRouter();
   const [categoryData, setCategoryData] = useState(null);
-
   const myDetails = useRef(null);
   const myOrders = useRef(null);
   const myFavourites = useRef(null);
-
-  const categoryComp = {
-    "#account-details": [
-      <MyDetails userData={userData} key="MyDetails" />,
-      myDetails,
-    ],
-    "#my-orders": [<MyOrders key="MyOrders" />, myOrders],
-    "#my-favourites": [<MyFavourites key="MyFavourites" />, myFavourites],
-  };
 
   const changeCategory = (category) => {
     // Trigger fragment change to fetch the new data
     router.push(`/account/#${category}`, undefined, { shallow: true });
   };
   useEffect(() => {
+    const categoryComp = {
+      "#account-details": [
+        <MyDetails userData={userData} key="MyDetails" />,
+        myDetails,
+      ],
+      "#my-orders": [<MyOrders key="MyOrders" />, myOrders],
+      "#my-favourites": [<MyFavourites key="MyFavourites" />, myFavourites],
+    };
     const someData =
       categoryComp[window.location.hash] ?? categoryComp["#account-details"]; // Retrieve data based on URL fragment
     setCategoryData(someData[0]);
@@ -51,7 +49,7 @@ export default function Index({ userData }) {
       "hover:bg-primary-0",
       "hover:text-primary"
     );
-  }, [router]);
+  }, [router, userData]);
   return (
     <>
       <Head>

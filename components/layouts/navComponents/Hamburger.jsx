@@ -31,7 +31,7 @@ const Hamburger = ({ headRef }) => {
       navLinks.current.classList.remove(styles.menuOpen);
       document.body.classList.remove("blury");
     }
-  }, [isOpen]);
+  }, [headRef, isOpen]);
   return (
     <>
       <div

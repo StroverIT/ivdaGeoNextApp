@@ -82,7 +82,11 @@ export default function Cart() {
                   <TableData>
                     <div className="flex items-center justify-center lg:justify-start">
                       <div className="relative w-full h-40 sm:w-2/3 sm:h-60 lg:h-32 lg:w-40 ">
-                        <Image layout="fill" src="/images/testCarousel.jpg" />
+                        <Image
+                          layout="fill"
+                          src="/images/testCarousel.jpg"
+                          alt="just for testing"
+                        />
                       </div>
                     </div>
                   </TableData>

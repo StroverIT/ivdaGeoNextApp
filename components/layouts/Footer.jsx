@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -9,9 +10,9 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold uppercase">ИвдаГео</h2>
             <ul className="text-gray-300">
               <li className="mb-4">
-                <a href="/aboutUs" className=" hover:underline">
-                  За нас
-                </a>
+                <Link href="/aboutUs">
+                  <a className="hover:underline">За нас</a>
+                </Link>
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">

@@ -44,27 +44,47 @@ export default function ThumsGallery({ navSize }) {
         >
           <SwiperSlide>
             <div className={`relative w-full h-52 ${dictionary.lg}`}>
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className={`relative w-full h-52 ${dictionary.lg}`}>
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className={`relative w-full h-52 ${dictionary.lg}`}>
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className={`relative w-full h-52 ${dictionary.lg}`}>
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className={`relative w-full h-52 ${dictionary.lg}`}>
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperNav size={navSize} />
@@ -89,27 +109,47 @@ export default function ThumsGallery({ navSize }) {
         >
           <SwiperSlide>
             <div className="relative w-full h-24">
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative w-full h-24">
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative w-full h-24">
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative w-full h-24">
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative w-full h-24">
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </SwiperSlide>
         </Swiper>

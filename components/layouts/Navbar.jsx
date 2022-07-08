@@ -23,6 +23,7 @@ const Navbar = () => {
 
   const [showSearch, setShowSearch] = useState(false);
   // Navbar control handler
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
       setShow(true);
@@ -51,7 +52,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
-  }, [lastScrollY]);
+  }, [controlNavbar, lastScrollY]);
 
   return (
     <header
@@ -69,6 +70,7 @@ const Navbar = () => {
                   width={250}
                   height={50}
                   className="cursor-pointer"
+                  alt="This is test image"
                 />
               </div>
             </Link>
@@ -96,6 +98,7 @@ const Navbar = () => {
                   width={210}
                   height={45}
                   className="cursor-pointer"
+                  alt="This is test image"
                 />
               </div>
             </Link>

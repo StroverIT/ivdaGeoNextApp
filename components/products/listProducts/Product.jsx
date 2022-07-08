@@ -14,7 +14,11 @@ export default function Product({ section }) {
         <div className="items-center h-full py-3 sm:flex">
           <Link href={`/products/${section}/someProduct`}>
             <div className="relative flex w-full h-48 cursor-pointer sm:w-52 sm:h-32">
-              <Image src="/images/testCarousel.jpg" layout="fill" />
+              <Image
+                src="/images/testCarousel.jpg"
+                layout="fill"
+                alt="This is test image"
+              />
             </div>
           </Link>
 

@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const data = await User.findOne({
     email: req.body.email,
     name: req.body.name,
-  });
+  }).select("-password -addresses -createdAt -isVerified");
   res.json(data);
   mongoose.connection.close();
 }
