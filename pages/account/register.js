@@ -39,12 +39,18 @@ const Register = () => {
     //Await for data for any desirable next steps
     if (res.status != 201) {
       const data = await res.json();
-      // console.log(data);
+
       setErrorMessages([...data.map((e) => e)]);
       return;
     }
     // MUST SEND A EMAIL FOR VERIFICATION
-
+    await fetch("/api/account/forgotten/verifyingAcc", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: inputs.email }),
+    });
     // Redirect
     router.push("/account/verifyRegistration");
   };
@@ -75,7 +81,6 @@ const Register = () => {
       errors.push("Паролите трябва да съвпадат");
 
     if (errors.length > 0) {
-      console.log(errors);
       setErrorMessages([...errors]);
       return;
     } else setErrorMessages([]);
