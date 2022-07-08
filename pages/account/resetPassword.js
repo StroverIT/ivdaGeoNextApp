@@ -25,7 +25,6 @@ export default function ResetPassword() {
     const emailCheck = emailVal(inputs.email);
     if (!emailCheck.result) errors.push(emailCheck.message);
     if (errors.length > 0) {
-      console.log(errors);
       setErrorMessages([...errors]);
       setSuccessMessage(null);
 
@@ -38,10 +37,10 @@ export default function ResetPassword() {
       },
       body: JSON.stringify(inputs),
     });
+    console.log(res.status);
     //Await for data for any desirable next steps
     if (res.status != 201) {
       const data = await res.json();
-      console.log(data);
       setErrorMessages([...data.map((e) => e)]);
       setSuccessMessage(null);
       return;
@@ -63,10 +62,12 @@ export default function ResetPassword() {
             <div className="mt-5 ml-8">
               <h3 className="text-3xl text-center">Забравена парола</h3>
               {successMessage && (
-                <div className="my-2 text-green">{successMessage}</div>
+                <div className="my-2 text-green text-center">
+                  {successMessage}
+                </div>
               )}
               {errorMessages && (
-                <div className="my-2 text-secondary">
+                <div className="my-2 text-secondary text-center">
                   <ul>
                     {errorMessages.map((e) => {
                       return <li key={e}>{e}</li>;
