@@ -103,6 +103,20 @@ Functionalities:
   [ x] Check if is admin || not
 - [ ] Cart
       [ ] When sometinh is added to the card. Add pending and succesful toast notification
+      if(price < 300)
+      [ ] Speedy API call
+      [ ] Ekont API Call
+      if(price > 300)
+      [ ] Deliviery on address
+      [ ] Get on place
+- [ ] Pay
+      [ ] Bank Transaction
+      [ ] Credit/Debit Card
+      [ ] On place
+- [ ] Delivery fee
+      [ ] In Sofia - 20 lv
+      [ ] Outside Sofiq less than 100 km - 80 lv
+      [ ] Outside Sofiq more than 100 km - 180 lv
 
 [ ] Search on write to show products
 [ ] On click search to go to different page and show all matched searches
