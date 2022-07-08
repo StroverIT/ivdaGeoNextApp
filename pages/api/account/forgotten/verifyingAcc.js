@@ -10,13 +10,12 @@ import { ObjectId } from "mongodb";
 // Validators
 // import { emailVal } from "../../../../utils/validationHandler";
 
-import sendEmail from "./sendEmail";
+import sendEmail from "../../sendEmail";
 
 async function handler(req, res) {
   //Connect with database
   if (req.method == "POST") {
     const { email } = req.body;
-
     await connectMongo();
 
     const user = await User.findOne({ email });
@@ -45,9 +44,8 @@ async function handler(req, res) {
       });
     }
     const message = `
-      <h3>За потвърждаване на имейла в ivdaGeo.bg, цъкнете линка:</h2>
-      <br>
-      <a href="https://${process.env.NEXTAUTH_URL}/api/account/verifyAccountToken/${user._id}.${token.token}">Цъкни тук</a>
+      <h3>За потвърждаване на имейла в ivdaGeo.bg.
+      </h2><a href="${process.env.NEXTAUTH_URL}/account/verifyAccountToken/${user._id}/${token.token}">Цъкнете тук</a>
       `;
     // Sending email
     await sendEmail(
