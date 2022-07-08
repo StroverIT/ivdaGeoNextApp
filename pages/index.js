@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 // Components
-import NavLinks from "../components/layouts/navComponents/NavLinks";
+// import NavLinks from "../components/layouts/navComponents/NavLinks";
 import BtnOutlined from "../components/buttons/Outlined";
 import Icons from "../components/Icons/Icons";
 
@@ -105,7 +105,7 @@ export default function Home() {
                 <h1 className="hidden pl-3 text-lg font-medium xl:block">
                   Категории продукти
                 </h1>
-                <NavLinks isHome={true} />
+                {/* <NavLinks isHome={true} /> */}
               </section>
               <section className="relative flex items-center justify-center">
                 <SwiperPag images={swiperPag} navSize="3xl" />
