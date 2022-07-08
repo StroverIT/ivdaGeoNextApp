@@ -45,9 +45,7 @@ export default function ResetPassword() {
         <div className="container flex justify-center my-10">
           <div className="w-full bg-white rounded shadow-xl lg:w-1/2">
             <div className="mt-5 ml-8">
-              <h3 className="text-3xl text-center ">
-                Код за потвърждаване на акаунта
-              </h3>
+              <h3 className="text-3xl text-center ">Верификация на акаунта</h3>
               <p className="mt-5 font-thin">
                 За да имате възможността да си влезете в акаунта, трябва да си
                 потвърдите акаунта. След като си напишете и-мейла, ще ви се
