@@ -23,9 +23,12 @@ export default function Index({ userData }) {
   const myFavourites = useRef(null);
 
   const categoryComp = {
-    "#account-details": [<MyDetails userData={userData} />, myDetails],
-    "#my-orders": [<MyOrders />, myOrders],
-    "#my-favourites": [<MyFavourites />, myFavourites],
+    "#account-details": [
+      <MyDetails userData={userData} key="MyDetails" />,
+      myDetails,
+    ],
+    "#my-orders": [<MyOrders key="MyOrders" />, myOrders],
+    "#my-favourites": [<MyFavourites key="MyFavourites" />, myFavourites],
   };
 
   const changeCategory = (category) => {
