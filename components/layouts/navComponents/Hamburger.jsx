@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 // Styles
 import styles from "../../../styles/navigation/Hamburger.module.css";
 // Components
-import NavLinks from "../NavLinks";
+import NavLinks from "./NavLinks";
 
 const Hamburger = ({ headRef }) => {
   const router = useRouter();
