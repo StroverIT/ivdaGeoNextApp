@@ -5,13 +5,13 @@
   "name": "ivdageo-site-nextjs",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "next lint",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "scriptsOn": "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass"
   },
   "dependencies": {
     "@next-auth/mongodb-adapter": "^1.0.3",
