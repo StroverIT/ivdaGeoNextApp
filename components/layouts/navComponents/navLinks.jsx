@@ -3,7 +3,7 @@ import React from "react";
 
 // Styles
 // Components
-import NavLinkMenu from "./NavLinkMenu";
+// import NavLinkMenu from "./NavLinkMenu";
 
 import dictionary from "./dictionary";
 const NavLinks = ({ isHome }) => {
@@ -15,7 +15,7 @@ const NavLinks = ({ isHome }) => {
         }`}
         data-columns="2"
       >
-        {dictionary.map((article) => {
+        {/* {dictionary.map((article) => {
           return (
             <NavLinkMenu
               title={article.title}
@@ -24,7 +24,7 @@ const NavLinks = ({ isHome }) => {
               isHome={isHome}
             />
           );
-        })}
+        })} */}
       </ul>
     </>
   );
