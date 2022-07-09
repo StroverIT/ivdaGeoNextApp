@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 // Styles
 import styles from "../../../styles/navigation/Hamburger.module.css";
 // Components
-// import NavLinks from "./NavLinks.jsx";
+import NavLinks from "./NavLinks.jsx";
 
 const Hamburger = ({ headRef }) => {
   const router = useRouter();
@@ -51,7 +51,7 @@ const Hamburger = ({ headRef }) => {
         } ${router.route == "/" ? "lg:hidden" : ""} `}
         ref={navLinks}
       >
-        {/* <NavLinks /> */}
+        <NavLinks />
       </div>
       <div
         className={`blury-bg -z-30 ${!isOpen ? "hidden" : ""}`}
