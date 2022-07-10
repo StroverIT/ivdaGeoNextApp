@@ -1,7 +1,6 @@
 // React and nextJs things
 import React from "react";
 
-// Styles
 // Components
 import NavLinkMenu from "./NavLinkMenu";
 
