@@ -5,6 +5,7 @@ import React from "react";
 import NavLinkMenu from "./NavLinkMenu";
 
 import dictionary from "./dictionary";
+
 const NavLinks = ({ isHome }) => {
   return (
     <>

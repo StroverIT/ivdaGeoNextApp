@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 // Components
-import NavLinks from "../components/layouts/navComponents/NavLinks";
+import NavLinks from "../components/layouts/navComponents/navLinks";
 import BtnOutlined from "../components/buttons/Outlined";
 import Icons from "../components/Icons/Icons";
 
