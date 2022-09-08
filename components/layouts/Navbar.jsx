@@ -9,7 +9,13 @@ import Hamburger from "./navComponents/Hamburger";
 import style from "../../styles/navigation/Nav.module.css";
 
 // Icons and images
-import { AiOutlineUser, AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
+import {
+  AiOutlineUser,
+  AiOutlineHeart,
+  AiOutlineSearch,
+  AiTwotonePhone,
+} from "react-icons/ai";
+import { HiLocationMarker } from "react-icons/hi";
 import { BsCart3 } from "react-icons/bs";
 // Utils
 import isObjectEmpty from "../../utils/isObjectEmpty";
@@ -21,6 +27,7 @@ const Navbar = ({ cartTotalQty }) => {
 
   const headerRef = useRef(null);
   const searchMenu = useRef(null);
+  const menuConctactsRef = useRef(null);
 
   const [show, setShow] = useState(null);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -87,10 +94,30 @@ const Navbar = ({ cartTotalQty }) => {
       className={`z-50 animate sticky top-0  ${show ? "animateUp" : ""}`}
       ref={headerRef}
     >
+      <div
+        className={` ${
+          lastScrollY > 0 && "hidden"
+        }  flex flex-wrap justify-center py-4 text-dark bg-gray-300 gap-x-2 gap-y-2`}
+        ref={menuConctactsRef}
+      >
+        <div className="flex">
+          <div className="flex">
+            <AiTwotonePhone />
+          </div>{" "}
+          <div className="pl-1 text-sm text-grey">+359 87 940 6621</div>
+        </div>
+        <div className="flex">
+          <div>
+            <HiLocationMarker />
+          </div>{" "}
+          <div className="pl-1 text-sm text-grey">
+            гр.София ПК-1582 Дружба 2 РУМ Дружба 2 срещу блок 205
+          </div>
+        </div>
+      </div>
       <nav className={`flex bg-color ${style.cShadow}`}>
         <div className="container relative flex items-center justify-between ">
-          <div className="flex items-center justify-center logo">
-            <Hamburger headRef={headerRef} />
+          <div className="flex items-center justify-center logo gap-x-5">
             <Link href="/">
               <div className="items-center justify-between hidden lg:flex">
                 <Image
@@ -102,7 +129,12 @@ const Navbar = ({ cartTotalQty }) => {
                 />
               </div>
             </Link>
-
+            <div className="flex">
+              <Hamburger
+                headRef={headerRef}
+                menuConctactsRef={menuConctactsRef}
+              />
+            </div>
             <li
               className="flex items-center justify-center px-2 cursor-pointer lg:hidden hover:text-white hover:bg-gray h-14"
               onClick={() => setShowSearch(!showSearch)}
@@ -215,7 +247,7 @@ const Navbar = ({ cartTotalQty }) => {
                           key={item.section}
                           href={`/products/${item.route}`}
                         >
-                          <li className="px-2 py-1 transition-transform border-b cursor-pointer hover:-translate-y-1 hover:bg-primary hover:text-white border-primary flex items-center justify-between">
+                          <li className="flex items-center justify-between px-2 py-1 transition-transform border-b cursor-pointer hover:-translate-y-1 hover:bg-primary hover:text-white border-primary">
                             <div className="text-lg">
                               {item.sectionName} {item.articleName}{" "}
                               {item.weight}
@@ -246,7 +278,7 @@ const Navbar = ({ cartTotalQty }) => {
                           key={`${item.section} ${item.articleName}`}
                           href={`/products/${item.route}`}
                         >
-                          <li className="px-2 py-1 transition-transform border-b cursor-pointer hover:-translate-y-1 hover:bg-primary hover:text-white border-primary flex items-center justify-between">
+                          <li className="flex items-center justify-between px-2 py-1 transition-transform border-b cursor-pointer hover:-translate-y-1 hover:bg-primary hover:text-white border-primary">
                             <div className="text-lg">
                               {item.section} {item.articleName}
                             </div>
@@ -276,7 +308,7 @@ const Navbar = ({ cartTotalQty }) => {
                           key={item.sectionName}
                           href={`/products/${item.route}`}
                         >
-                          <li className="px-2 py-1 transition-transform cursor-pointer hover:-translate-y-1 hover:bg-primary hover:text-white flex justify-between items-center">
+                          <li className="flex items-center justify-between px-2 py-1 transition-transform cursor-pointer hover:-translate-y-1 hover:bg-primary hover:text-white">
                             <div className="text-lg">{item.sectionName}</div>
                             <div className="relative w-20 h-20">
                               <Image
