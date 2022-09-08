@@ -34,7 +34,7 @@ const Login = ({ query }) => {
       setLoader(false);
     }
     if (status.url) {
-      if (query) {
+      if (query?.redirect == "delivery") {
         router.push("/delivery");
         return;
       }
