@@ -177,37 +177,57 @@ function Delivery({ cart, userData, cities }) {
               </section>
               {/* Начин на плащане */}
               <section className="mt-4 border shadow border-gray">
-                <div className="flex items-center py-4 pl-3 text-lg font-semibold bg-gray-300 border-b border-gray-150">
-                  <div>
-                    <GoCreditCard />
-                  </div>
-                  <h3 className="pl-1">Начин на плащане</h3>
-                </div>
-                <section>
-                  {paymentState == CARD_PAYMENT && (
-                    <div className="px-2 pt-6 font-semibold text-center text-secondary">
-                      За момента не може да се плаща с карта. От IvdaGeo се
-                      извиняваме за причиненото неудобство
+                {orderState != MAGAZINE && (
+                  <>
+                    <div className="flex items-center py-4 pl-3 text-lg font-semibold bg-gray-300 border-b border-gray-150">
+                      <div>
+                        <GoCreditCard />
+                      </div>
+                      <h3 className="pl-1">Начин на плащане</h3>
                     </div>
-                  )}
-                  <section className="py-4 pl-6">
-                    <RadioButton
-                      radioState={paymentState}
-                      changeHandler={changePaymentHandler}
-                      name="cashOnDelivery"
-                      id="cashOnDelivery"
-                      text="Наложен платеж"
-                    />
-                    <RadioButton
-                      radioState={paymentState}
-                      changeHandler={changePaymentHandler}
-                      name={CARD_PAYMENT}
-                      id={CARD_PAYMENT}
-                      text="Плащане с карта"
-                      customLabelClass="line-through"
-                    />
-                  </section>
-                </section>
+                    <section>
+                      {paymentState == CARD_PAYMENT && (
+                        <div className="px-2 pt-6 font-semibold text-center text-secondary">
+                          За момента не може да се плаща с карта. От IvdaGeo се
+                          извиняваме за причиненото неудобство
+                        </div>
+                      )}
+                      <section className="py-4 pl-6">
+                        <RadioButton
+                          radioState={paymentState}
+                          changeHandler={changePaymentHandler}
+                          name="cashOnDelivery"
+                          id="cashOnDelivery"
+                          text="Наложен платеж"
+                        />
+                        <RadioButton
+                          radioState={paymentState}
+                          changeHandler={changePaymentHandler}
+                          name={CARD_PAYMENT}
+                          id={CARD_PAYMENT}
+                          text="Плащане с карта"
+                          customLabelClass="line-through"
+                        />
+                      </section>
+                    </section>
+                  </>
+                )}
+                {orderState == MAGAZINE && (
+                  <div>
+                    <div className="flex items-center py-4 pl-3 text-lg font-semibold bg-gray-300 border-b border-gray-150">
+                      <div>
+                        <GoCreditCard />
+                      </div>
+                      <h3 className="pl-1">Начин на плащане</h3>
+                    </div>
+                    <section className="p-5">
+                      Плаща се на касата от магазина, като може да платите с
+                      карта или в брой.
+                      <br />
+                      Като трябва в рамките на 3 дена да вземете вашата поръчка.
+                    </section>
+                  </div>
+                )}
               </section>
               {/* Total and comment if is needed */}
               <section className="mt-4 space-x-4 ">
