@@ -90,7 +90,7 @@ export default function Section({ products, types, sectionRoute }) {
   };
   return (
     <main className="mb-auto">
-      {articles && (
+      {articles && products && (
         <div className="lg:grid grid-cols-[20%80%] lg:space-x-10 container">
           {products && (
             <aside
