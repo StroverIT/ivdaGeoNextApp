@@ -30,7 +30,7 @@ export default function Product({
             <Link href={`/products/${sectionRoute}/${item._id}`}>
               <div className="relative flex w-full h-64 cursor-pointer sm:w-40 sm:h-32">
                 <Image
-                  src={`/uploads/${imageUrl}`}
+                  src={`/uploads/${imageUrl && imageUrl}`}
                   layout="fill"
                   alt={`${item.articleName}`}
                 />
