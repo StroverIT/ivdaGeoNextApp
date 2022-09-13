@@ -107,8 +107,8 @@ export default async function handler(req, res) {
       token: new ObjectId(),
     });
     const message = `
-    <h3>За потвърждаване на поръчка в IvdaGeo.bg.
-    </h3><a href="${process.env.HOST_URL}/account/verifyDelivery/${user._id}/${verifyToken.token}">Цъкнете тук</a>
+    <h3>За потвърждаване на поръчка в IvdaGeo.bg.</h3>
+    <a href="${process.env.HOST_URL}/account/verifyDelivery/${user._id}/${verifyToken.token}">Потвърдете тук</a>
     `;
     sendEmail(
       process.env.EMAIL_SEND,
