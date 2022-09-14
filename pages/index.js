@@ -4,7 +4,7 @@ import { useState } from "react";
 import Head from "next/head";
 
 // Components
-import NavLinks from "../components/layouts/navComponents/navLinks";
+import NavLinks from "../components/layouts/navComponents/NavLinks";
 import BtnOutlined from "../components/buttons/Outlined";
 import Icons from "../components/Icons/Icons";
 
