@@ -30,7 +30,10 @@ const productScheme = new Schema({
   totalBoughtProducts: { type: Number, default: 0 },
   articles: [articlesScheme],
 });
-
-const Product = models.Product || model("Product", productScheme);
+const sectionScheme = new Schema({
+  section: String,
+  products: [{ productScheme }],
+});
+const Product = models.Product || model("Product", sectionScheme);
 
 export default Product;

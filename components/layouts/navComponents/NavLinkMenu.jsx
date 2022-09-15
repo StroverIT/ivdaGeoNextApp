@@ -83,20 +83,17 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
         </div>
         {/* submenu list */}
         <ul className={`pl-6 mt-2  `}>
-          {articles.map((article, index) => {
-            const isObject = typeof article === "object";
-            if (isObject) article = JSON.stringify(article);
-            return isObject ? (
-              <NavLinkSubMenu subMenuData={article} key={index} />
-            ) : (
-              <LinkComp
-                route={article}
-                mainRoute={title}
-                isHome={isHome}
-                key={article}
-              />
-            );
-          })}
+          {articles &&
+            articles.map((article) => {
+              return (
+                <LinkComp
+                  route={article}
+                  mainRoute={title}
+                  isHome={isHome}
+                  key={article}
+                />
+              );
+            })}
         </ul>
       </div>
     </li>

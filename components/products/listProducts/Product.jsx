@@ -24,7 +24,7 @@ export default function Product({
   item.imageUrl = imageUrl;
   return (
     <section className="flex items-center mb-5 border border-gray">
-      <div className="md:grid grid-cols-[80%20%] w-full h-full">
+      <div className="w-full h-full ">
         <div className="items-center h-full py-3 sm:flex">
           {imageUrl && (
             <Link href={`/products/${sectionRoute}/${item._id}`}>

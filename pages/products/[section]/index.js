@@ -183,24 +183,26 @@ export default function Section({ products, types, sectionRoute }) {
               </div>
             )}
 
-            {articles &&
-              articles.map((article) => {
-                return article?.items?.map((item) => {
-                  return (
-                    <Product
-                      article={article}
-                      item={item}
-                      key={item._id}
-                      imageUrl={products?.imageUrl}
-                      sectionName={products?.sectionName}
-                      itemUnit={products?.itemUnit}
-                      sectionRoute={sectionRoute}
-                      description={products?.description}
-                      addProduct={addProduct}
-                    />
-                  );
-                });
-              })}
+            <section className="grid sm:grid-cols-2 gap-x-2 gap-y-2">
+              {articles &&
+                articles.map((article) => {
+                  return article?.items?.map((item) => {
+                    return (
+                      <Product
+                        article={article}
+                        item={item}
+                        key={item._id}
+                        imageUrl={products?.imageUrl}
+                        sectionName={products?.sectionName}
+                        itemUnit={products?.itemUnit}
+                        sectionRoute={sectionRoute}
+                        description={products?.description}
+                        addProduct={addProduct}
+                      />
+                    );
+                  });
+                })}
+            </section>
           </section>
         </div>
       )}

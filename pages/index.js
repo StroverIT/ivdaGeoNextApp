@@ -110,7 +110,7 @@ export default function Home({ topMonthOfferts }) {
               <section className="container grid-cols-2 lg:grid">
                 <div className="">
                   <h2 className="mb-1 text-lg font-semibold">
-                    ИвдаГео бюлетин
+                    Ивда Гео бюлетин
                   </h2>
                   <p className="mb-3 text-sm text-dark-400 lg:max-w-lg">
                     Абонирайте се за нашият онлайн бюлетин, за да получавате

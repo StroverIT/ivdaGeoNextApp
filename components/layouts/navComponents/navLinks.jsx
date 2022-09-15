@@ -1,10 +1,13 @@
 // React and nextJs things
 import React from "react";
 
+// Dictionary
+import dictionary from "./navDictioinary/mainDictionary";
+
 // Components
 import NavLinkMenu from "./NavLinkMenu";
 
-import dictionary from "./navDictioinary/mainDictionary";
+import LinkComp from "./LinkComp";
 
 const NavLinks = ({ isHome }) => {
   return (
@@ -16,13 +19,22 @@ const NavLinks = ({ isHome }) => {
         data-columns="2"
       >
         {dictionary.map((section, index) => {
-          return (
+          return section.articles ? (
             <NavLinkMenu
               title={section.title}
               articles={section.articles}
               key={section.title + index}
               isHome={isHome}
             />
+          ) : (
+            <div key={section.title + index} className="container">
+              <LinkComp
+                route={section.title}
+                mainRoute={section.title}
+                isHome={isHome}
+                className=""
+              />
+            </div>
           );
         })}
       </ul>
