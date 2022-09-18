@@ -106,7 +106,7 @@ export default function MagazinePanel({
           changeHandler={changeTypeHandler}
           name="office"
           id="office"
-          text="До офис на еконт"
+          text="До офис на Еконт"
         />
         <RadioButton
           radioState={typeEkont}

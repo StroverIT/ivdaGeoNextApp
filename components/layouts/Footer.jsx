@@ -12,9 +12,9 @@ const Footer = () => {
             </h2>
             <ul className="text-gray-300">
               <li className="mb-1">
-                <a href="contactUs" className="hover:underline">
-                  Контакти
-                </a>
+                <Link href="/contactUs">
+                  <a className="hover:underline">Контакти</a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -25,6 +25,7 @@ const sendEmail = async (fromEmail, email, subject, text) => {
     await transporter.sendMail({
       from: fromEmail,
       to: email,
+      attachDataUrls: true,
       subject: subject,
       html: text,
     });

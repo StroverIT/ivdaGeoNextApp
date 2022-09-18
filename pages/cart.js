@@ -96,7 +96,7 @@ function Cart({ cart, adjustQty, removeFromCart, userData }) {
                 <section className="mt-2">
                   <BtnOutlined
                     isLoading={isLoading}
-                    text="Към завършване"
+                    text="Поръчай"
                     onClick={changeRoute}
                   />
                 </section>

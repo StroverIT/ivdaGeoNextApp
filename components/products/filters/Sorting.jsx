@@ -12,12 +12,12 @@ export default function Sorting({ title, name, data, qty, setFilters }) {
     let val = e.target.value;
     setFilters((prevState) => ({
       ...prevState,
-      filterByNameOrPrice: val,
+      name: val,
     }));
   };
   return (
     <div className="flex text-[#888] items-center justify-center flex-col lg:flex-row max-lg:container">
-      <div className="flex justify-end  w-full mt-5 lg:justify-center lg:mt-2 items-center">
+      <div className="flex items-center justify-end w-full mt-5 lg:justify-center lg:mt-2">
         <label htmlFor={name} className="text-sm">
           {title}
           {qty && <Quantity qty={qty} />}:
@@ -28,7 +28,7 @@ export default function Sorting({ title, name, data, qty, setFilters }) {
           onChange={changeHandler}
           name={name}
           id={name}
-          className="border border-gray p-1 lg:ml-2 w-full lg:w-auto text-dark"
+          className="w-full p-1 border border-gray lg:ml-2 lg:w-auto text-dark"
         >
           {data.map((e) => {
             return <Option value={e.val} text={e.text} key={e.val} />;

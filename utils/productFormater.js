@@ -1,11 +1,11 @@
 const productFormater = (product) => {
   let formated = {};
-  formated.articleName = `${product.sectionName} ${product.articleName} ${product.item.weight}`;
-  formated.imageUrl = product.imageUrl;
+  formated.route = `/products/${product.mainRoute}/${product.section._id}#${product.article._id}#${product.item._id}`;
+  formated.name = `${product.section.name} ${product.article.name} ${product.item.weight} ${product.section.itemUnit}`;
+  formated.imageUrl = product.section.imageUrl;
   formated.price = product.item.price;
-  formated.sectionName = product.sectionName;
-  formated.weight = product.item.weight;
   formated._id = product.item._id;
+
   return formated;
 };
 

@@ -15,6 +15,7 @@ export default function Product({
   addProduct,
   imageUrl,
   sectionRoute,
+  section,
 }) {
   const price = item?.price.toFixed(2).split(".");
   item.articleName = `${sectionName} ${article.articleName} - ${item.weight} ${
@@ -22,37 +23,40 @@ export default function Product({
   }`;
   item.sectionName = sectionName;
   item.imageUrl = imageUrl;
+
   return (
     <section className="flex items-center mb-5 border border-gray">
-      <div className="md:grid grid-cols-[80%20%] w-full h-full">
-        <div className="items-center h-full py-3 sm:flex">
+      <div className="w-full ">
+        <div className="items-center h-full ">
           {imageUrl && (
-            <Link href={`/products/${sectionRoute}/${item._id}`}>
-              <div className="relative flex w-full h-64 cursor-pointer sm:w-40 sm:h-32">
+            <Link
+              href={`/products/${sectionRoute}/${section._id}#${article._id}#${item._id}`}
+            >
+              <div className="relative flex items-center justify-center w-full h-64 cursor-pointer ">
                 <Image
                   src={`/uploads/${imageUrl && imageUrl}`}
                   layout="fill"
                   alt={`${item.articleName}`}
+                  className="object-contain"
                 />
               </div>
             </Link>
           )}
-          <div className="pl-4">
+        </div>
+        <div className="container text-center border-y border-gray">
+          <div className="">
+            <Pricing price={price[0]} priceDec={price[1]} size="2xl" />
+          </div>
+          {/* Create grayer color for future*/}
+        </div>
+        <div className="container py-5 text-center">
+          <div className="">
             <Link href={`/products/${sectionRoute}/${item._id}`}>
               <h2 className="text-lg cursor-pointer">{item.articleName}</h2>
             </Link>
           </div>
-        </div>
-        <div className="bg-grayBg">
-          <div className="container flex flex-col justify-center h-full itesm-center">
-            <div className="">
-              <Pricing price={price[0]} priceDec={price[1]} size="2xl" />
-            </div>
-            {/* Create grayer color for future*/}
-            <BuyBtn
-              border={true}
-              onClick={() => addProduct(item, item.articleName)}
-            />
+          <div className="py-5 text-sm text-green-300">
+            Безплатна доставка при поръчка над 300 лв.
           </div>
         </div>
       </div>

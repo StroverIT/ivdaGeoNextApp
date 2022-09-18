@@ -32,7 +32,7 @@ export default function Index({
           forMagazine={forMagazine}
         />,
       ],
-      "#prodykti": [<Products key="MyOrders" products={products} />],
+      "#prodykti": [<Products key="MyOrders" sections={products} />],
       "#promocii": [<Promotions key="MyFavourites" />],
       "#potrebiteli": [<Users key="Users" />],
     };

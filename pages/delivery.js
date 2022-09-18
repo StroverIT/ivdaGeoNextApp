@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 // NextJs
 import Head from "next/head";
 import { getSession } from "next-auth/react";
+import Link from "next/link";
+
 // Components
 import RadioButton from "../components/cart/RadioButton";
 import DueAmount from "../components/delivery/sections/DueAmount";
-
+import CheckBoxBase from "../components/base/CheckBoxBase";
 // Utils
 import { MAGAZINE, EKONT } from "../components/cart/cartCostants";
 // Fetches Ekont
@@ -37,6 +39,7 @@ import { InputContext } from "../components/delivery/Context";
 
 function Delivery({ cart, userData, cities }) {
   const [selected, setSelected] = useState(cities[21]);
+  const [termAndConds, setTermAndConds] = useState(false);
   const [officeSelected, setOfficeSelected] = useState({
     name: "Избери офис",
   });
@@ -61,8 +64,14 @@ function Delivery({ cart, userData, cities }) {
     typeOfDelivery: "",
     typeOfPayment: "",
   });
-
+  const termsAndCondHandler = (inputRef, e) => {
+    setTermAndConds(!termAndConds);
+  };
   const createDelivery = async () => {
+    if (!termAndConds)
+      return toastError(
+        "Моля, уверете се, че сте запознати с общите условия за ползване на услугите и сте съгласни с тях."
+      );
     toastPromise("Изпраща се...");
 
     if (invoice.isInvoice) {
@@ -89,6 +98,10 @@ function Delivery({ cart, userData, cities }) {
       toastError(message.error);
     }
     if (message.message) {
+      window?.localStorage?.clear();
+      localStorage?.clear();
+      sessionStorage?.clear();
+      window.location.href = "/account#my-orders";
       toastSuccess(message.message);
     }
   };
@@ -103,7 +116,6 @@ function Delivery({ cart, userData, cities }) {
   };
   const changeOrderHandler = (e) => {
     const name = e.target.name;
-    console.log(name);
     setTypeOfOrder(name);
   };
 
@@ -221,10 +233,10 @@ function Delivery({ cart, userData, cities }) {
                       <h3 className="pl-1">Начин на плащане</h3>
                     </div>
                     <section className="p-5">
-                      Плаща се на касата от магазина, като може да платите с
-                      карта или в брой.
+                      Поръчката трябва да се вземе в рамките на 3 дни.
                       <br />
-                      Като трябва в рамките на 3 дена да вземете вашата поръчка.
+                      Имате възможността да платите в брой или с карта, като се
+                      плаща на касата в магазина.
                     </section>
                   </div>
                 )}
@@ -248,9 +260,34 @@ function Delivery({ cart, userData, cities }) {
                     ></textarea>
                   </section>
                 </section>
-                {/* Дължима сума */}
               </section>
+              <div className="my-10">
+                <CheckBoxBase
+                  id="termsAndConditions"
+                  checked={termAndConds}
+                  setChecked={termsAndCondHandler}
+                  text={
+                    <div>
+                      Съгласен съм с
+                      <Link href="/terms-and-conditions">
+                        <span className="px-1 underline text-primary-lighter">
+                          общите условия
+                        </span>
+                      </Link>
+                      и
+                      <Link href="privacy-and-policy">
+                        <span className="px-1 underline text-primary-lighter">
+                          политиката за поверителност
+                        </span>
+                      </Link>
+                      за покупка в Ивда Гео Online
+                    </div>
+                  }
+                />
+              </div>
             </section>
+            {/* Дължима сума */}
+
             <DueAmount
               priceState={priceState}
               createDelivery={createDelivery}

@@ -14,22 +14,9 @@ import {
 } from "../../notificataions/Toast";
 import { edit } from "../../../services/productServiceFetch";
 
-export default function GetAll({ product }) {
+export default function GetAll({ product, productIdx }) {
   const inputInit = {
-    sectionName: product.sectionName,
-    description: product.description,
-    itemUnit: product.itemUnit,
-    articles: product.articles.map((article) => {
-      return {
-        articleName: article.articleName,
-        items: article.items.map((item) => {
-          return {
-            weight: item.weight,
-            price: item.price,
-          };
-        }),
-      };
-    }),
+    ...product,
   };
   const [inputs, setInputs] = useState(inputInit);
 
@@ -52,9 +39,16 @@ export default function GetAll({ product }) {
   const submitHandler = async (e) => {
     toastPromise("Изпраща се...");
 
-    const data = await edit({ data: inputs, productId: product._id });
+    const data = await edit({
+      data: inputs,
+      productId: product._id,
+      sectionId: product.sectionId,
+      productIdx,
+    });
 
     toastHideAll();
+
+    console.log(data);
     if (data?.error) {
       toastError(data?.error);
     }
@@ -62,8 +56,6 @@ export default function GetAll({ product }) {
       toastSuccess(data?.message);
     }
   };
-  useEffect(() => {}, [inputs]);
-  console.log(inputs);
   return (
     <InputContext.Provider value={{ inputs, setInputs }}>
       <section className="p-2 mb-10 border border-primary md:p-5">

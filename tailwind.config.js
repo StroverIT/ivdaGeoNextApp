@@ -14,7 +14,10 @@ const customColors = {
   "white-lighter-trans": "hsl(0, 0%, 100%, 30%)",
   blue: "hsl(203, 76%, 48%)",
   orange: "hsl(33, 89%, 52%)",
-  green: "hsl(92, 50%, 54%)",
+  green: {
+    DEFAULT: "hsl(92, 50%, 54%)",
+    300: "hsl(119, 100%, 34%)",
+  },
   gray: {
     DEFAULT: "hsl(0, 0%, 85%)",
     100: "#fafafa",

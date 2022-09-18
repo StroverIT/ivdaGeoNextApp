@@ -55,7 +55,7 @@ export function TableRow({ id, date, total, status, isOld, fullData }) {
         {/* Mongodb */}
         <td className="py-4">{id}</td>
         <td className="hidden sm:table-cell">{date}</td>
-        <td className="hidden sm:table-cell">{total} лв.</td>
+        <td className="hidden sm:table-cell">{total.toFixed(2)} лв.</td>
         <Status type={status} />
         {isOld && (
           <td className="flex justify-center h-full items-cemter">
@@ -87,7 +87,7 @@ export function TableRow({ id, date, total, status, isOld, fullData }) {
               {/* Mongodb */}
             </div>
             {/* Menu on open */}
-            <section className="absolute z-20 w-full -translate-x-1/2 -translate-y-1/2 h-2/3 md:h-1/2 md:w-3/4 top-1/2 bg-gray left-1/2 overflow-auto">
+            <section className="absolute z-20 w-full overflow-auto -translate-x-1/2 -translate-y-1/2 h-2/3 md:h-1/2 md:w-3/4 top-1/2 bg-gray left-1/2">
               <div className="relative h-full">
                 <div className="flex flex-col flex-wrap mx-1 pt-7 text-primary-lighter">
                   {addressInfo && (
@@ -144,7 +144,7 @@ export function TableRow({ id, date, total, status, isOld, fullData }) {
                   <span className="ml-1">{fullData.createdAt}</span>
                 </div>
                 <div
-                  className="fixed cursor-pointer top-1 right-1 text-xl"
+                  className="fixed text-xl cursor-pointer top-1 right-1"
                   onClick={() => setMenu(false)}
                 >
                   <HiX />

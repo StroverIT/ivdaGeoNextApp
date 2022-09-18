@@ -1,16 +1,20 @@
 import Delivery from "../../../db/models/Delivery";
 import User from "../../../db/models/User";
 import Token from "../../../db/models/Token";
-
 import { connectMongo } from "../../../db/connectDb";
 
 import { ObjectId } from "mongodb";
 
+// Next
+import Image from "next/image";
 import { getToken } from "next-auth/jwt";
+
 import { DELIVERY, EKONT } from "../../../components/cart/cartCostants";
 import sendEmail from "../sendEmail";
 
 const secret = process.env.NEXTAUTH_SECRET;
+// Utils
+import createDeliveryMessage from "../../../utils/deliveryMessCart";
 
 export default async function handler(req, res) {
   const { cart, inputs, deliveryInfo } = req.body;
@@ -67,7 +71,7 @@ export default async function handler(req, res) {
         totalPrice < 300
       ) {
         throw {
-          error: "Пратени са невалидни данни",
+          error: "Изберете квартал и град",
         };
       }
     }
@@ -90,34 +94,46 @@ export default async function handler(req, res) {
     }
     if (inputs.typeOfDelivery == EKONT) {
       if (inputs.address?.office) {
-        if (!inputs.address.office) throw { error: "Пратен е невалиден офис" };
+        if (!inputs.address.office) throw { error: "Невалиден офис" };
         // Write needed data when is for office to EKONT
       }
       if (inputs.address?.address) {
-        if (!inputs.address.address)
-          throw { error: "Пратен е невалиден адрес" };
+        if (!inputs.address.address) throw { error: "Невалиден адрес" };
 
         // Write needed data when is for address to EKONT
       }
       // Send to ekont needed data
     }
 
-    const verifyToken = await Token.create({
-      userId: user._id,
-      token: new ObjectId(),
-    });
-    const message = `
-    <h3>За потвърждаване на поръчка в IvdaGeo.bg.</h3>
-    <a href="${process.env.HOST_URL}/account/verifyDelivery/${user._id}/${verifyToken.token}">Потвърдете тук</a>
-    `;
+    // Loop through all products
+    const delivery = await Delivery.create(data);
+
+    const qrCodeObj = {
+      adminPanel: `${process.env.NEXTAUTH_URL}/adminPanel#dostavki${inputs.typeOfDelivery}#${delivery._id}`,
+    };
+    const text = `Успешна направена поръчка - Ивда Гео`;
+    const message = await createDeliveryMessage(text, cart, qrCodeObj);
+
     sendEmail(
       process.env.EMAIL_SEND,
       user.email,
-      "Потвърждаване на поръчка IvdaGeo",
+      "Направена поръчка в Ивда Гео",
       message
     );
-    await Delivery.create(data);
+    const adminMess = await createDeliveryMessage(
+      `Нова поръчка в Ивда Гео Paint - online`,
+      cart,
+      qrCodeObj,
+      true
+    );
 
+    // Must send to ivdageopaint bg
+    sendEmail(
+      process.env.EMAIL_SEND,
+      process.env.EMAIL_SEND,
+      "Нова поръчка",
+      adminMess
+    );
     res.json({ message: "Успешно направена поръчка" });
   } catch (e) {
     console.log(e);

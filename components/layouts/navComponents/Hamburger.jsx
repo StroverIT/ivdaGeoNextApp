@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 // Styles
 import styles from "../../../styles/navigation/Hamburger.module.css";
 // Components
-import NavLinks from "./navLinks";
+import NavLinks from "./NavLinks";
 
 const Hamburger = ({ headRef, menuConctactsRef }) => {
   const router = useRouter();
@@ -23,11 +23,7 @@ const Hamburger = ({ headRef, menuConctactsRef }) => {
     if (isOpen) {
       hamburger.current.classList.add(styles.open);
       navLinks.current.classList.add(styles.menuOpen);
-      console.log(
-        headRef.current.offsetHeight,
-        menuConctactsRef.current.offsetHeight,
-        widWidth
-      );
+
       let top = `${headRef.current.offsetHeight}px`;
       if (widWidth > 1024) {
         top = `${
@@ -59,7 +55,7 @@ const Hamburger = ({ headRef, menuConctactsRef }) => {
         <div className="hidden text-sm lg:block">Категории</div>
       </div>
       <div
-        className={`w-full lg:w-auto hover:lg:w-full fixed lg:absolute -z-20 bg-white pt-3 pb-10 ${styles.navLinks}  `}
+        className={`w-full lg:w-auto lg:w-full fixed lg:absolute -z-20 bg-white pt-3 pb-10 ${styles.navLinks}  `}
         ref={navLinks}
       >
         <NavLinks />

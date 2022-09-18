@@ -18,13 +18,15 @@ import sortByDictionary from "../../../dictonaries/allProductDicFilters";
 // Services
 import { getAllProducts } from "../../../services/productService";
 // translation
-import { translationToDb } from "../../../utils/translationToRoute";
 import Checkbox from "../../../components/base/Checkbox";
 // Redux
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/actions/productActions";
 // Notifications
 import { toastProduct } from "../../../components/notificataions/Toast";
+//Utils
+import getBrands from "../../../utils/getBrands";
+import getKolichestvo from "../../../utils/getKolichestvo";
 
 export default function Section({ products, types, sectionRoute }) {
   const dispatch = useDispatch();
@@ -40,43 +42,89 @@ export default function Section({ products, types, sectionRoute }) {
   const [filterMenu, setFilterMenu] = useState(false);
 
   //Product state
-  const [articles, setArticles] = useState(products?.articles);
-
+  const [sections, setSections] = useState(products?.products);
   // total filters
-  const [filters, setFilters] = useState([]);
+  const [filters, setFilters] = useState({
+    series: [],
+    price: {},
+    liters: [],
+    name: [],
+  });
 
   useEffect(() => {
-    const newProdArt = products?.articles?.slice();
+    const newProdArt = products?.products?.slice();
 
     const filteredArticles = [];
-    if (newProdArt) {
-      for (let article of newProdArt) {
-        const newArt = Object.assign({}, article);
 
-        let items = [];
-        for (let item of article.items) {
-          const type = item.weight;
-          let isFound = true;
-          if (filters.length == 0) {
-            items.push(item);
-          } else {
-            inner: for (let filter of filters) {
-              if (!type.includes(filter)) {
-                isFound = false;
-                break inner;
-              }
+    if (filters.liters.length > 0) {
+      newProdArt.forEach((section) => {
+        const newObj = Object.assign({}, section);
+        newObj.articles = [];
+        if (
+          filters.series.length > 0 &&
+          !filters.series.includes(newObj.sectionName)
+        )
+          return;
+        section.articles.forEach((article) => {
+          const newArticle = { ...article };
+          newArticle.items = [];
+
+          article.items.forEach((item) => {
+            if (filters.liters.some((filter) => filter == item.weight)) {
+              newArticle.items.push(item);
             }
-            if (isFound) items.push(item);
+          });
+
+          if (newArticle.items.length > 0) {
+            newObj.articles.push(newArticle);
           }
+        });
+        if (newObj.articles.length > 0) {
+          filteredArticles.push(newObj);
         }
-        if (items.length > 0) {
-          newArt.items = items;
-          filteredArticles.push(newArt);
-        }
-      }
-      setArticles(filteredArticles);
+      });
     }
-  }, [filters, products?.articles]);
+    if (filters.series.length > 0) {
+      filters.series.forEach((filter) => {
+        const isFiltered = filteredArticles.some(
+          (item) => item.sectionName == filter
+        );
+        if (isFiltered) return;
+        const foundObj = products.products.find(
+          (item) => item.sectionName == filter
+        );
+        filteredArticles.push(foundObj);
+      });
+    }
+
+    if (filters.name.length > 0) {
+      if (filters.name == "desecending") {
+        filteredArticles.sort((a, b) =>
+          a.sectionName.localeCompare(b.sectionName)
+        );
+      }
+      if (filters.name == "ascending") {
+        filteredArticles.sort((a, b) =>
+          b.sectionName.localeCompare(a.sectionName)
+        );
+      }
+    }
+
+    if (filteredArticles.length > 0) setSections(filteredArticles);
+    else {
+      if (filters.name.length > 0) {
+        if (filters.name == "desecending") {
+          newProdArt.sort((a, b) => a.sectionName.localeCompare(b.sectionName));
+        }
+        if (filters.name == "ascending") {
+          newProdArt.sort((a, b) => b.sectionName.localeCompare(a.sectionName));
+        }
+        setSections(newProdArt);
+      } else {
+        setSections(products?.products);
+      }
+    }
+  }, [filters]);
 
   useEffect(() => {
     if (filterMenu) {
@@ -86,11 +134,15 @@ export default function Section({ products, types, sectionRoute }) {
     }
   }, [filterMenu]);
   const clearAllFiilters = () => {
-    setFilters([]);
+    setFilters({ series: [], price: {}, liters: [], name: "" });
   };
+
+  useEffect(() => {
+    setSections(products?.products);
+  }, [products]);
   return (
     <main className="mb-auto">
-      {articles && products && (
+      {sections && products && (
         <div className="lg:grid grid-cols-[20%80%] lg:space-x-10 container">
           {products && (
             <aside
@@ -102,7 +154,7 @@ export default function Section({ products, types, sectionRoute }) {
                   : "hidden"
               }`}
             >
-              <div className="">
+              <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="mb-3 text-2xl text-bold">Филтри</h3>
 
@@ -123,20 +175,32 @@ export default function Section({ products, types, sectionRoute }) {
                 {/* <AsideHeader text="Цена" /> */}
                 <div></div>
               </div>
+              <AsideHeader text="Серии" />
+              {getBrands(products.products).map((obj, index) => {
+                return (
+                  <Checkbox
+                    key={obj.name}
+                    text={`${obj.name} (${obj.length})`}
+                    id={`series-${obj.name}`}
+                    // quantity={2}
+                    filters={filters}
+                    setFilters={setFilters}
+                  />
+                );
+              })}
               <AsideHeader text="Количество" />
-              {types &&
-                types.map((type, index) => {
-                  return (
-                    <Checkbox
-                      key={type}
-                      text={type}
-                      id={`${type}`}
-                      // quantity={2}
-                      filters={filters}
-                      setFilters={setFilters}
-                    />
-                  );
-                })}
+              {getKolichestvo(products.products).map((obj, index) => {
+                return (
+                  <Checkbox
+                    key={`${obj.name}`}
+                    text={`${obj.name} ${products.products[0].itemUnit} (${obj.length})`}
+                    id={`liters-${obj.name}`}
+                    // quantity={2}
+                    filters={filters}
+                    setFilters={setFilters}
+                  />
+                );
+              })}
             </aside>
           )}
           <section className="mt-10">
@@ -171,40 +235,45 @@ export default function Section({ products, types, sectionRoute }) {
                   } `}
                   ref={sortingMenu}
                 >
-                  {/* <div>
+                  <div>
                     <Sorting
                       title="Сортирай"
                       name="sortBy"
                       setFilters={setFilters}
                       data={sortByDictionary}
                     />
-                  </div> */}
+                  </div>
                 </div>
               </div>
             )}
 
-            {articles &&
-              articles.map((article) => {
-                return article?.items?.map((item) => {
-                  return (
-                    <Product
-                      article={article}
-                      item={item}
-                      key={item._id}
-                      imageUrl={products?.imageUrl}
-                      sectionName={products?.sectionName}
-                      itemUnit={products?.itemUnit}
-                      sectionRoute={sectionRoute}
-                      description={products?.description}
-                      addProduct={addProduct}
-                    />
-                  );
-                });
-              })}
+            <section className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-6">
+              {sections &&
+                sections.map((section) => {
+                  return section?.articles?.map((article) => {
+                    return article.items.map((item, index) => {
+                      return (
+                        <Product
+                          section={section}
+                          article={article}
+                          item={item}
+                          key={article._id + index}
+                          imageUrl={section?.imageUrl}
+                          sectionName={section?.sectionName}
+                          itemUnit={section?.itemUnit}
+                          sectionRoute={sectionRoute}
+                          description={section?.description}
+                          addProduct={addProduct}
+                        />
+                      );
+                    });
+                  });
+                })}
+            </section>
           </section>
         </div>
       )}
-      {!articles && (
+      {!sections && (
         <div className="flex justify-center items-center text-xl text-secondary  h-[40vh]">
           Няма намерени резултати
         </div>
@@ -216,21 +285,12 @@ export default function Section({ products, types, sectionRoute }) {
 // Getting all product.. if filtering Must be filtering somehow
 export async function getServerSideProps(context) {
   let { section } = context.params;
-  const products = await getAllProducts(section.split("-").join(" "));
+  const products = await getAllProducts(section);
 
-  // Must add total qty on every types how much is qty of the every filter
-  let typesObj = new Set();
-  products?.articles?.forEach((article) => {
-    article.items?.forEach((item) => {
-      typesObj.add(item.weight);
-    });
-  });
-  typesObj = Array.from(typesObj);
   return {
     props: {
       products: JSON.parse(JSON.stringify(products)),
       sectionRoute: section,
-      types: typesObj,
     },
   };
 }

@@ -2,7 +2,7 @@ import boiLateksi from "./boiLateksi/index";
 import pqni from "./pqni";
 import grundove from "./grundove";
 import grundoveZaPetna from "./grundoveZaPetna";
-import alkidnaBoqZaMetal from "./boiLateksi/alkidnaBoqZaMetal";
+import alkidnaBoqZaMetal from "./alkidnaBoqZaMetal";
 import dvykomponentniHidroizolacii from "./dvykomponentniHidroizolacii";
 import silikoni from "./silikoni";
 /*
@@ -24,19 +24,18 @@ const dictionary = [
     icon: "",
   },
 
-  { title: "Пяни", articles: pqni },
+  { title: "Пяни" },
 
-  { title: "Грундове", articles: grundove },
-  { title: "Грундове за петна", articles: grundoveZaPetna },
+  { title: "Грундове" },
+  { title: "Грундове за петна" },
 
-  { title: "Алкидна Боя За Метал", articles: alkidnaBoqZaMetal },
+  { title: "Алкидна Боя За Метал" },
 
   {
     title: "Двукомпонентни Хидроизолации",
-    articles: dvykomponentniHidroizolacii,
   },
 
-  { title: "Силикони", articles: silikoni },
+  { title: "Силикони" },
 ];
 
 export default dictionary;
