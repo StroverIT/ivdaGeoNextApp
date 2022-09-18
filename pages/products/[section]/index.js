@@ -124,6 +124,7 @@ export default function Section({ products, types, sectionRoute }) {
         setSections(products?.products);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
   useEffect(() => {

@@ -1,6 +1,23 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model, models, Model } from "mongoose";
 
-const addressSchema = new Schema({
+interface IAddress {
+  name: string;
+  telephone: string;
+  city: string;
+  zipCode: string;
+  address: string;
+}
+interface IUser {
+  fullName: string;
+  email: string;
+  password: string;
+  createdAt: Date;
+  addresses: [IAddress];
+  role: string;
+  isVerified: boolean;
+}
+
+const addressSchema = new Schema<IAddress>({
   name: { type: String },
   telephone: { type: String },
   city: { type: String },
@@ -8,7 +25,7 @@ const addressSchema = new Schema({
   address: { type: String },
 });
 
-const userScheme = new Schema({
+const userScheme = new Schema<IUser>({
   fullName: {
     type: String,
     required: true,
@@ -40,6 +57,6 @@ const userScheme = new Schema({
   },
 });
 
-const User = models.User || model("User", userScheme);
+const User = (models.User as Model<IUser>) || model<IUser>("User", userScheme);
 
 export default User;

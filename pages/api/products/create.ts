@@ -9,6 +9,7 @@ import articlesFormater from "../../../lib/createProduct/articlesFormater";
 // Mongoose
 import { connectMongo } from "../../../db/connectDb";
 import Product from "../../../db/models/Product";
+
 import User from "../../../db/models/User";
 
 // Token
@@ -44,6 +45,7 @@ const handler = async (
       };
     }
     const user = await User.findOne({ email: token.email });
+
     if (!user) {
       throw {
         error: "Невалиден акаунт",
