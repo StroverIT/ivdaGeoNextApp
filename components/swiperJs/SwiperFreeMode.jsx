@@ -61,48 +61,32 @@ export default function SwiperFreeMode({ data, navSize }) {
           className={`mySwiper relative freeModeSwiper`}
         >
           {data &&
-            data?.articles?.slice(0, 2)?.map((article) => {
-              return article.items.slice(0, 10)?.map((item) => {
-                let [price, priceDec] = item.price.toFixed(2).split(".");
-                const sectionName = `${data.sectionName} ${article.articleName} ${item.weight}`;
-                return (
-                  <SwiperSlide
-                    className="flex flex-col bg-white shadow-lg cursor-pointer hover:shadow-xl "
-                    key={item.title}
+            data.slice(0, 10)?.map((item) => {
+              return (
+                <SwiperSlide
+                  className="flex flex-col bg-white shadow-lg cursor-pointer hover:shadow-xl "
+                  key={item.title}
+                >
+                  <div
+                    onClick={() => router.push(item.route)}
+                    className="flex flex-col justify-between h-full"
                   >
-                    <div
-                      onClick={() =>
-                        router.push(
-                          `/products/${translationToRoute(data.sectionName)}/${
-                            item._id
-                          }`
-                        )
-                      }
-                      className="flex flex-col justify-between h-full"
-                    >
-                      <div>
-                        <div>
-                          <Image
-                            src={`/uploads/${data.imageUrl}`}
-                            //  layout="fill"
-                            height={700}
-                            width={800}
-                            alt={sectionName}
-                          />
-                        </div>
-                        <div className="container pt-4 font-medium text-center border-t border-gray">
-                          {sectionName}
-                        </div>
+                    <div>
+                      <div className="relative w-full h-96">
+                        <Image
+                          src={`/uploads/${item.imageUrl}`}
+                          layout="fill"
+                          alt={item.sectionName}
+                          className="object-contain"
+                        />
                       </div>
-                      <PricingPromo
-                        isPromo={item.isPromo}
-                        price={price}
-                        priceDec={priceDec}
-                      />
+                      <div className="container pt-4 font-medium text-center border-t border-gray">
+                        {item.sectionName}
+                      </div>
                     </div>
-                  </SwiperSlide>
-                );
-              });
+                  </div>
+                </SwiperSlide>
+              );
             })}
           {/* Nav */}
           <SwiperNav size={navSize} />

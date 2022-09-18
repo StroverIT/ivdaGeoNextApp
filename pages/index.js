@@ -11,7 +11,7 @@ import Icons from "../components/Icons/Icons";
 // Import Swiper React components
 import SwiperPag from "../components/swiperJs/SwiperPag";
 import SwiperFreeMode from "../components/swiperJs/SwiperFreeMode";
-import { getAllLatestTen } from "../services/productService";
+import { productByItemId } from "../services/productService";
 
 // Fetches
 import { addNewUser } from "../services/newsletterServiceFetch";
@@ -161,9 +161,7 @@ export default function Home({ topMonthOfferts }) {
         </section>
         <section className="py-5 mb-5">
           <div className="container">
-            <h1 className="mb-3 text-xl font-semibold">
-              Месечни топ предложения
-            </h1>
+            <h1 className="mb-3 text-xl font-semibold">Най-гледани</h1>
             <SwiperFreeMode data={topMonthOfferts} navSize="3xl" />
           </div>
         </section>
@@ -205,8 +203,10 @@ export default function Home({ topMonthOfferts }) {
 }
 
 export async function getServerSideProps(context) {
-  const topMonthOfferts = await getAllLatestTen();
+  const topMonthOfferts = await productByItemId("interiorna-boia", "12312");
   return {
-    props: { topMonthOfferts: JSON.parse(JSON.stringify(topMonthOfferts)) },
+    props: {
+      topMonthOfferts: JSON.parse(JSON.stringify(topMonthOfferts.alternatives)),
+    },
   };
 }

@@ -13,7 +13,7 @@ import Pricing from "../../../../components/priceStyling/Pricing";
 import { productByItemId } from "../../../../services/productService";
 import AddProductInput from "../../../../components/products/AddProductInput";
 import Types from "../../../../components/products/listProducts/Types";
-
+import SwiperFreeMode from "../../../../components/swiperJs/SwiperFreeMode";
 // Redux
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../redux/actions/productActions";
@@ -151,8 +151,8 @@ export default function Index({ data, userData, isInFav, mainRoute }) {
     <main className="mb-auto font-sans">
       <div className="border border-gray">
         <div className="container">
-          <div className="flex flex-col justify-between py-5 mt-5 text-gray-500  md:flex-row  ">
-            <div className="text-3xl font-semibold text-gray-250 flex items-center ">
+          <div className="flex flex-col justify-between py-5 mt-5 text-gray-500 md:flex-row ">
+            <div className="flex items-center text-3xl font-semibold text-gray-250 ">
               <div className="ml-1 ">{itemName && itemName}</div>{" "}
             </div>
             {/* <div className="mt-5 md:mt-1">
@@ -161,17 +161,17 @@ export default function Index({ data, userData, isInFav, mainRoute }) {
                 <li>КатНомер: {product.item.katNomer}</li>
               </ul>
             </div> */}
-            <div className="relative h-14 w-40">
+            <div className="relative w-40 h-14">
               <Image alt="Kraft" src="/icons/kraftLogo.png" layout="fill" />
             </div>
           </div>
           <div className="grid-cols-2 lg:grid xl:grid-cols-[20%25%25%25%] items-center justify-evenly gap-x-4">
-            <section className=" ">
+            <section className="">
               <ThumbsGallery navSize="2xl" image={foundItem.imageUrl} />
             </section>
-            <section className="flex  justify-center flex-col">
-              <div className="border-y border-gray py-4 px-6 flex items-center justify-center w-full">
-                <ul className="list-disc text-sm">
+            <section className="flex flex-col justify-center">
+              <div className="flex items-center justify-center w-full px-6 py-4 border-y border-gray">
+                <ul className="text-sm list-disc">
                   {foundItem.description[0]
                     .split("\n")
                     .splice(0, 5)
@@ -253,20 +253,9 @@ export default function Index({ data, userData, isInFav, mainRoute }) {
           </div>
         </section>
       </div>
-      {/* <section className="flex flex-wrap justify-center my-20 gap-x-16 gap-y-10 ">
-          {alternatives &&
-            alternatives.map((alt) => {
-              console.log();
-              return (
-                <Card
-                  data={alt}
-                  key={alt.item._id}
-                  sectionImage={product?.imageUrl}
-                  sectionName={product.sectionName}
-                />
-              );
-            })}
-        </section> */}
+      <section className="my-24">
+        <SwiperFreeMode data={data.alternatives} />
+      </section>
     </main>
   );
 }

@@ -3,7 +3,10 @@ import mongoose from "mongoose";
 
 import Product from "../db/models/Product";
 // Utils
-import { translationToDb } from "../utils/translationToRoute";
+import {
+  translationToDb,
+  translationToRoute,
+} from "../utils/translationToRoute";
 
 export const getAllProducts = async (sectionName, filter) => {
   await connectMongo();
@@ -44,18 +47,16 @@ export const productByItemId = async (section, productSectionId) => {
       break inner;
     }
   }
-  // for (let i = 0; i < 5; i++) {
-  //   const article = data.articles[i];
-  //   if (!article) break;
+  for (let article of data.products) {
+    filteredData.alternatives.push({
+      sectionName: article.sectionName,
+      imageUrl: article.imageUrl,
+      route: `/products/${translationToRoute(data.section)}/${article._id}#${
+        article.articles[0]._id
+      }#${article.articles[0].items[0]._id}`,
+    });
+  }
 
-  //   const item = article.items[0];
-
-  //   filteredData.alternatives.push({
-  //     articleName: article.articleName,
-  //     item: item,
-  //   });
-  // }
-  console.log(filteredData);
   return filteredData;
 };
 
