@@ -1,10 +1,10 @@
 const sortByDictionary = [
   {
-    val: "nameAsc",
+    val: "ascending",
     text: "Име (възходящ ред)",
   },
   {
-    val: "nameDesc",
+    val: "desecending",
     text: "Име (низходящ ред)",
   },
   // {

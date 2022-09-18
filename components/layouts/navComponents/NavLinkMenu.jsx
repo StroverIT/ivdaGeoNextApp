@@ -13,6 +13,8 @@ const lg = "1024";
 
 import NavLinkSubMenu from "./NavLinkSubMenu";
 import LinkComp from "./LinkComp";
+// Icons
+import { BiRightArrow } from "react-icons/bi";
 
 const NavLinkMenu = ({ title, articles, isHome }) => {
   const router = useRouter();
@@ -53,18 +55,27 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
     !isHome ? "px-3 -my-[0.15rem]" : "pl-4 lg:py-[0.2rem]"
   }  flex w-full peer group-hover:lg:bg-color group-hover:lg:text-primary font-normal font-sans text-lg `;
   return (
-    <li className={`item w-full  group ${!isHome ? "lg:w-64 mt-2" : ""}`}>
+    <li className={`item w-full  group  ${!isHome ? "lg:w-64 mt-2" : ""}`}>
       {/* Menu */}
       <div
         className={title.length > 0 ? menuClasses : ""}
         onClick={showMenu}
         ref={menu}
       >
-        <div className={`${!isHome ? "max-lg:container" : ""}`}>{title}</div>
+        <div
+          className={`flex items-center group py-1 ${
+            !isHome ? "max-lg:container" : ""
+          }`}
+        >
+          {title}
+          <span className="pl-2 text-sm text-primary-lighter group-hover:rotate-90 transition-transform">
+            <BiRightArrow />
+          </span>
+        </div>
       </div>
       {/* Submenu */}
       <div
-        className={`fixed  lg:absolute pt-5 overflow-auto  ${
+        className={`fixed  lg:absolute pt-5 overflow-auto  py-10 px-2 ${
           mobSubmenu ? "translate-x-0" : "translate-x-full"
         } transition-transform lg:transition-none lg:translate-x-0 lg:scale-0 h-full w-full  top-0  bg-color  ${
           isHome ? "right-0 w-[1040px]" : "lg:right-[0px] xl:right-[0]"

@@ -6,7 +6,7 @@ function LinkComp({ route, className }) {
   return (
     <Link href={`/products/${translationToRoute(route)}`}>
       <li
-        className={`hover:translate-x-1    cursor-pointer hover:text-primary  transition-transform text-gray-darker max-w-full ${className}`}
+        className={`hover:translate-x-1    cursor-pointer hover:text-primary  transition-transform font-sans max-w-full ${className}`}
       >
         {route}
       </li>

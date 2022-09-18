@@ -64,7 +64,7 @@ export default function Product({ delivery }) {
         </div>
       </div>
       <div className="absolute top-0 right-0 flex text-green">
-        Обща Сума: {delivery.totalPrice} лв.
+        Обща Сума: {delivery.totalPrice.toFixed(2)} лв.
         <div className="ml-2">
           <Status type={status} isDiv={true} />
         </div>

@@ -8,15 +8,12 @@ import MobileScreenTableData from "./MobileScreenTableData";
 import { translationToRoute } from "../../utils/translationToRoute";
 
 export default function CartItem({ cartData, removeProduct, changeQty }) {
-  const route = `/products/${translationToRoute(cartData.item.sectionName)}/${
-    cartData.item._id
-  }`;
   return (
     <tr className="border-b border-gray-[#e4e7e6] flex flex-wrap lg:table-row justify-between items-center py-10 mb-10 gap-10 ">
       {/* Image plus list */}
       <ImageAndListTableData
-        cartName={cartData?.item.articleName}
-        route={route}
+        cartName={cartData?.item.name}
+        route={cartData.item.route}
         imageUrl={cartData.item.imageUrl}
       />
       {/* MObile version */}

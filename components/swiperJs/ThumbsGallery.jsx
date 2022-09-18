@@ -45,10 +45,13 @@ export default function ThumsGallery({ navSize, image }) {
           {image && (
             <SwiperSlide>
               <div className="flex items-center justify-center">
-                <div
-                  className={`relative w-full sm:w-64 md:w-96 h-52 ${dictionary.lg} `}
-                >
-                  <Image src={`/uploads/${image}`} layout="fill" alt={image} />
+                <div className={`relative w-full h-96 ${dictionary.lg} `}>
+                  <Image
+                    src={`/uploads/${image}`}
+                    layout="fill"
+                    alt={image}
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </SwiperSlide>
@@ -72,10 +75,10 @@ export default function ThumsGallery({ navSize, image }) {
 
             // when window width is >= 768px
           }}
-          className="mySwiper mt-3"
+          className="mt-3 mySwiper"
         >
           {/* <SwiperSlide>
-            <div className="relative w-36 h-24">
+            <div className="relative h-24 w-36">
               <Image src={`/uploads/${image}`} layout="fill" alt={image} />
             </div>
           </SwiperSlide> */}

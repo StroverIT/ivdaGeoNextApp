@@ -2,14 +2,16 @@ import { connectMongo } from "../db/connectDb";
 import mongoose from "mongoose";
 
 import Product from "../db/models/Product";
+// Utils
+import { translationToDb } from "../utils/translationToRoute";
 
 export const getAllProducts = async (sectionName, filter) => {
   await connectMongo();
   // for case insensitive
-
+  const section = translationToDb(sectionName);
   return Product.findOne({
-    sectionName: {
-      $regex: new RegExp(sectionName, "i"),
+    section: {
+      $regex: new RegExp(section, "i"),
     },
   });
 };
@@ -22,42 +24,38 @@ export const getAll = async () => {
   const data = await res.json();
   return data;
 };
-export const productByItemId = async (itemId) => {
-  await connectMongo();
 
-  let data = await Product.findOne({ "articles.items._id": itemId }).lean();
+export const productByItemId = async (section, productSectionId) => {
+  await connectMongo();
+  const translated = translationToDb(section);
+
+  let data = await Product.findOne({
+    section: { $regex: new RegExp(translated, "i") },
+  }).lean();
 
   const filteredData = {
     foundItem: {},
     alternatives: [],
   };
 
-  const foundItem = filteredData.foundItem;
-
-  inner: for (let article of data.articles) {
-    for (let item of article.items) {
-      if (item._id == itemId) {
-        foundItem.item = item;
-        foundItem.articleName = article.articleName;
-        foundItem.sectionName = data.sectionName;
-        foundItem.itemUnit = data.itemUnit;
-        foundItem.imageUrl = data.imageUrl;
-        foundItem.description = data.description;
-        break inner;
-      }
+  inner: for (let article of data.products) {
+    if (article._id == productSectionId) {
+      filteredData.foundItem = article;
+      break inner;
     }
   }
-  for (let i = 0; i < 5; i++) {
-    const article = data.articles[i];
-    if (!article) break;
+  // for (let i = 0; i < 5; i++) {
+  //   const article = data.articles[i];
+  //   if (!article) break;
 
-    const item = article.items[0];
+  //   const item = article.items[0];
 
-    filteredData.alternatives.push({
-      articleName: article.articleName,
-      item: item,
-    });
-  }
+  //   filteredData.alternatives.push({
+  //     articleName: article.articleName,
+  //     item: item,
+  //   });
+  // }
+  console.log(filteredData);
   return filteredData;
 };
 

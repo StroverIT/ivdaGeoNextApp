@@ -2,13 +2,15 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import GetAll from "./GetAll";
+import Sections from "./getAll/Sections";
 
-export default function Main({ products }) {
+export default function Main({ sections }) {
   const router = useRouter();
   const changeTypeAction = (type) => {
     // Trigger fragment change to fetch the new data
     router.push(`/adminPanel/#prodykti#${type}`, undefined, { shallow: true });
   };
+
   return (
     <div className="mt-10">
       <div className="flex justify-end">
@@ -20,9 +22,9 @@ export default function Main({ products }) {
         </button>
       </div>
       <section className="my-5">
-        {products.length > 0 &&
-          products.map((product) => {
-            return <GetAll product={product} key={product._id} />;
+        {sections.length > 0 &&
+          sections.map((section) => {
+            return <Sections key={section._id} section={section} />;
           })}
       </section>
     </div>
