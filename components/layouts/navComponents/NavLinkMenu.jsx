@@ -63,7 +63,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
         ref={menu}
       >
         <div
-          className={`flex items-center group py-1 ${
+          className={`flex items-center group pl-3 ${
             !isHome ? "max-lg:container" : ""
           }`}
         >
