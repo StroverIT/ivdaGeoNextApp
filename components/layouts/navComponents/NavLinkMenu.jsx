@@ -52,7 +52,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
     [style.subOpen]: xAnim,
   });
   const menuClasses = `bg-white cursor-pointer text-dark lg:hover:text-dark lg:hover:bg-color ${
-    !isHome ? "px-3 -my-[0.15rem]" : ""
+    !isHome ? "" : ""
   }  flex w-full peer group-hover:lg:bg-color group-hover:lg:text-primary font-normal font-sans text-lg `;
   return (
     <li className={`item w-full  group  ${!isHome ? "lg:w-64 mt-2" : ""}`}>
