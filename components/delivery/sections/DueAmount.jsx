@@ -5,7 +5,7 @@ import BtnOutlined from "../../buttons/Outlined";
 
 export default function DueAmount({ priceState, createDelivery }) {
   return (
-    <section className="sticky flex flex-col font-semibold  y top-20 h-72">
+    <section className="sticky flex flex-col font-semibold y top-20 h-72">
       <section className="flex flex-col justify-between border shadow-lg border-gray">
         <section className="flex items-center py-4 pl-3 bg-gray-300 border-b border-gray-150">
           <div>
@@ -21,13 +21,7 @@ export default function DueAmount({ priceState, createDelivery }) {
               <span className="font-light">лв.</span>
             </div>
           </section>
-          <section className="flex justify-between pb-1 text-sm">
-            <div className="font-light">ДДС</div>
-            <div>
-              {priceState.dds.toFixed(2)}{" "}
-              <span className="font-light">лв.</span>
-            </div>
-          </section>
+
           <section className="flex justify-between text-sm">
             <div className="font-light">Доставка</div>
             <div>

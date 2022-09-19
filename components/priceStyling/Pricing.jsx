@@ -20,14 +20,7 @@ const sizeDictionary = {
   "2xl": ["text-3xl", "", "mt-[2px]", "", "mt-[11px]"],
   "3xl": ["text-4xl", "text-[18px]", "mt-[0px]", "mt-[2px]", "mt-[12px]"],
 };
-export default function Pricing({
-  price,
-  priceDec,
-  size,
-
-  isDDS = false,
-  NoDDSText = false,
-}) {
+export default function Pricing({ price, priceDec, size }) {
   return (
     <div className="flex flex-col items-center justify-center py-3">
       <div className={`flex`}>
@@ -41,11 +34,6 @@ export default function Pricing({
           <div className={`h-0 ml-1 ${sizeDictionary[size][4]}  `}>лв.</div>
         </div>
       </div>
-      {!NoDDSText && (
-        <div className="pb-1 text-xs text-gray-200">
-          {isDDS ? "с включено" : "Без"} ДДС
-        </div>
-      )}
     </div>
   );
 }

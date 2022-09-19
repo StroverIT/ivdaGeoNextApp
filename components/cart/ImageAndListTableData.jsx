@@ -9,11 +9,12 @@ export default function ImageAndListTableData({ imageUrl, cartName, route }) {
       <TableData>
         <div className="flex items-center justify-center lg:justify-start">
           <Link href={route}>
-            <div className="relative w-full h-60 cursor-pointer sm:w-2/3 sm:h-60 lg:h-32 lg:w-40 ">
+            <div className="relative w-full cursor-pointer h-60 sm:w-2/3 sm:h-60 lg:h-32 lg:w-40 ">
               <Image
                 layout="fill"
                 src={`/uploads/${imageUrl}`}
                 alt="just for testing"
+                className="object-contain"
               />
             </div>
           </Link>

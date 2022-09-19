@@ -31,19 +31,21 @@ const Types = ({ data, itemUnit }) => {
       <div className="flex flex-wrap justify-center mb-10 gap-y-2 gap-x-2">
         {data &&
           data.map((article) => {
-            return (
-              <div
-                key={article._id}
-                className={`inline-block px-8 text-center border cursor-pointer w-max  transition-transform text-sm ${
-                  articleId == article._id
-                    ? "bg-primary-lighter text-white border-primary-lighter"
-                    : "hover:-translate-y-1 border-gray bg-white"
-                }`}
-                onClick={() => changeArticle(article)}
-              >
-                {article.articleName}
-              </div>
-            );
+            if (article.articleName) {
+              return (
+                <div
+                  key={article._id}
+                  className={`inline-block px-8 text-center border cursor-pointer w-max  transition-transform text-sm ${
+                    articleId == article._id
+                      ? "bg-primary-lighter text-white border-primary-lighter"
+                      : "hover:-translate-y-1 border-gray bg-white"
+                  }`}
+                  onClick={() => changeArticle(article)}
+                >
+                  {article.articleName}
+                </div>
+              );
+            }
           })}
       </div>
       <div className="flex flex-wrap justify-center gap-y-2 gap-x-2">

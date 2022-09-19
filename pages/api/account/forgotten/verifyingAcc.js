@@ -44,8 +44,8 @@ async function handler(req, res) {
       });
     }
     const message = `
-      <h2>За потвърждаване на имейла в IvdaGeo.bg.</h2>
-      <a href="${process.env.HOST_URL}/account/verifyAccountToken/${user._id}/${token.token}">Отворете тук</a>
+      <h4>За потвърждаване на имейла в ivdageopaint.bg</h4>
+      <a href="${process.env.HOST_URL}/account/verifyAccountToken/${user._id}/${token.token}">Натиснете тук</a>
       `;
     // Sending email
     await sendEmail(

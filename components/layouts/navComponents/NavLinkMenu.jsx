@@ -55,7 +55,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
     !isHome ? "" : ""
   }  flex w-full peer group-hover:lg:bg-color group-hover:lg:text-primary font-normal font-sans text-lg `;
   return (
-    <li className={`item w-full  group  ${!isHome ? "lg:w-64 mt-2" : ""}`}>
+    <li className={`item w-full  group  ${!isHome ? "" : ""} `}>
       {/* Menu */}
       <div
         className={title.length > 0 ? menuClasses : ""}
@@ -63,9 +63,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
         ref={menu}
       >
         <div
-          className={`flex items-center group pl-3 ${
-            !isHome ? "max-lg:container" : ""
-          }`}
+          className={`flex items-center group py-1 max-lg:container pl-2 lg:pl-4`}
         >
           {title}
           <span className="pl-2 text-sm transition-transform text-primary-lighter group-hover:rotate-90">

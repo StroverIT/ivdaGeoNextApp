@@ -26,7 +26,7 @@ export default function Product({
 
   return (
     <section className="flex items-center mb-5 border border-gray">
-      <div className="w-full ">
+      <div className="flex flex-col justify-between w-full h-full">
         <div className="items-center h-full ">
           {imageUrl && (
             <Link
@@ -49,13 +49,13 @@ export default function Product({
           </div>
           {/* Create grayer color for future*/}
         </div>
-        <div className="container py-5 text-center">
+        <div className="container flex flex-col justify-between h-full py-5 mt-auto text-center">
           <div className="">
             <Link href={`/products/${sectionRoute}/${item._id}`}>
               <h2 className="text-lg cursor-pointer">{item.articleName}</h2>
             </Link>
           </div>
-          <div className="py-5 text-sm text-green-300">
+          <div className="py-5 text-sm text-green-300 ">
             Безплатна доставка при поръчка над 300 лв.
           </div>
         </div>

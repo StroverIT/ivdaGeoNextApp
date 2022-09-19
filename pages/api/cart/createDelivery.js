@@ -28,8 +28,7 @@ export default async function handler(req, res) {
         .reduce((a, b) => a + b, 0)
         .toFixed(2)
     );
-    let dds = subTotal * 0.2;
-    let totalPrice = subTotal + dds;
+    let totalPrice = subTotal;
 
     await connectMongo();
 

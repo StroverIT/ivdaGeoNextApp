@@ -11,7 +11,9 @@ import {
 export const getAllProducts = async (sectionName, filter) => {
   await connectMongo();
   // for case insensitive
-  const section = translationToDb(sectionName);
+  let section = translationToDb(sectionName);
+  if (section == "антибактерялна боя") section = "антибактериална боя";
+
   return Product.findOne({
     section: {
       $regex: new RegExp(section, "i"),
@@ -29,35 +31,36 @@ export const getAll = async () => {
 };
 
 export const productByItemId = async (section, productSectionId) => {
-  await connectMongo();
-  const translated = translationToDb(section);
-
-  let data = await Product.findOne({
-    section: { $regex: new RegExp(translated, "i") },
-  }).lean();
-
-  const filteredData = {
-    foundItem: {},
-    alternatives: [],
-  };
-
-  inner: for (let article of data.products) {
-    if (article._id == productSectionId) {
-      filteredData.foundItem = article;
-      break inner;
+  try {
+    await connectMongo();
+    const translated = translationToDb(section);
+    let data = await Product.findOne({
+      section: { $regex: new RegExp(translated, "i") },
+    }).lean();
+    const filteredData = {
+      foundItem: {},
+      alternatives: [],
+    };
+    inner: for (let article of data.products) {
+      if (article._id == productSectionId) {
+        filteredData.foundItem = article;
+        break inner;
+      }
     }
-  }
-  for (let article of data.products) {
-    filteredData.alternatives.push({
-      sectionName: article.sectionName,
-      imageUrl: article.imageUrl,
-      route: `/products/${translationToRoute(data.section)}/${article._id}#${
-        article.articles[0]._id
-      }#${article.articles[0].items[0]._id}`,
-    });
-  }
+    for (let article of data.products) {
+      filteredData.alternatives.push({
+        sectionName: article.sectionName,
+        imageUrl: article.imageUrl,
+        route: `/products/${translationToRoute(data.section)}/${article._id}#${
+          article.articles[0]._id
+        }#${article.articles[0].items[0]._id}`,
+      });
+    }
 
-  return filteredData;
+    return filteredData;
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 export const getAllLatestTen = async () => {

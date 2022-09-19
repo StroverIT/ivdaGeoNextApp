@@ -129,11 +129,9 @@ function Delivery({ cart, userData, cities }) {
         .toFixed(2)
     );
 
-    let dds = subTotal * 0.2;
     let state = {
       delivery: 0,
-      totalPrice: subTotal + dds,
-      dds,
+      totalPrice: subTotal,
       subTotal,
     };
     if (selected.name == "София") {

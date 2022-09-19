@@ -32,6 +32,7 @@ export function cyrylicToLatin(word) {
   obj["ь"] = "ua";
   obj["ю"] = "yu";
   obj["я"] = "ia";
+  obj[","] = "%2C";
 
   for (let i = 0; i < word.length; i++) {
     let c = word.toLowerCase().charAt(i);
@@ -79,7 +80,7 @@ export function latinToCyrylic(word) {
   obj["ua"] = "ь";
   obj["yu"] = "ю";
   obj["ia"] = "я";
-
+  obj["%2C"] = ",";
   for (let i = 0; i < word.length; i++) {
     let c = word.toLowerCase().charAt(i);
     let commonWord = c + word.toLowerCase().charAt(i + 1);
