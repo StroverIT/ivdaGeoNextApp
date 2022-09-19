@@ -98,7 +98,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
             articles.map((article) => {
               return (
                 <LinkComp
-                  className="pl-2"
+                  className="pl-3"
                   route={article}
                   mainRoute={title}
                   isHome={isHome}
