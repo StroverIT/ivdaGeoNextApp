@@ -52,7 +52,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
     [style.subOpen]: xAnim,
   });
   const menuClasses = `bg-white cursor-pointer text-dark lg:hover:text-dark lg:hover:bg-color ${
-    !isHome ? "px-3 -my-[0.15rem]" : "pl-4 lg:py-[0.2rem]"
+    !isHome ? "px-3 -my-[0.15rem]" : ""
   }  flex w-full peer group-hover:lg:bg-color group-hover:lg:text-primary font-normal font-sans text-lg `;
   return (
     <li className={`item w-full  group  ${!isHome ? "lg:w-64 mt-2" : ""}`}>
@@ -68,7 +68,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
           }`}
         >
           {title}
-          <span className="pl-2 text-sm text-primary-lighter group-hover:rotate-90 transition-transform">
+          <span className="pl-2 text-sm transition-transform text-primary-lighter group-hover:rotate-90">
             <BiRightArrow />
           </span>
         </div>
