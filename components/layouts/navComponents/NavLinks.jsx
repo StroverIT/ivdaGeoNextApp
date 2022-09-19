@@ -27,7 +27,7 @@ const NavLinks = ({ isHome }) => {
               isHome={isHome}
             />
           ) : (
-            <div key={section.title + index} className="pl-3">
+            <div key={section.title + index} className="pl-4">
               <LinkComp
                 route={section.title}
                 mainRoute={section.title}
