@@ -43,7 +43,7 @@ async function handler(req, res) {
     // MUST SEND A PASSWORD page to change password with token URL
     const message = `
       <h2>За сменяне на паролата в IvdaGeo.bg.</h2>
-      <a href="${process.env.HOST_URL}/account/changePassword/${user._id}/${token.token}">Цъкнете тук</a>
+      <a href="${process.env.HOST_URL}/account/changePassword/${user._id}/${token.token}">Отворете тук</a>
       `;
     // Sending email
     await sendEmail(
