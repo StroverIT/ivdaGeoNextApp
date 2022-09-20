@@ -75,10 +75,27 @@ export const getAllLatestTen = async () => {
 
   return data;
 };
-export const getBySection = async (sectionName, filter) => {
-  await connectMongo();
-  // for case insensitive
-  return Product.find({
-    sectionName: { $regex: new RegExp(sectionName, "i") },
-  });
+export const getBySection = async (section, filter) => {
+  const filteredData = { sectionRoute: "", filteredData: [] };
+
+  try {
+    await connectMongo();
+    const translated = section.split("-").join(" ");
+    let data = await Product.findOne({
+      "products.sectionName": { $regex: new RegExp(translated, "i") },
+    }).lean();
+
+    for (let section of data.products) {
+      const isFound = section.sectionName.toLowerCase().includes(translated);
+
+      if (isFound) {
+        filteredData.filteredData.push(section);
+      }
+    }
+    filteredData.sectionRoute = translationToRoute(data.section);
+    return filteredData;
+  } catch (e) {
+    console.log(e);
+    return filteredData;
+  }
 };

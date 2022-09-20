@@ -229,4 +229,5 @@ TODO:
 Да се вижда крайната цена, а не да е с ддс и да се махне накрая преизчисляването с ддс [x]
 Размазани са снимките [x]
 Продуктите не се показват, мисля, че ида от route [x]
-Fix the search []
+Fix the search [x]
+Fix the index page with listSeries [x]

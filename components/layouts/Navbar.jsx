@@ -88,7 +88,9 @@ const Navbar = ({ cartTotalQty }) => {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, [controlNavbar, lastScrollY]);
-
+  useEffect(() => {
+    console.log(searchTabInputs);
+  }, [searchTabInputs]);
   return (
     <header
       className={`z-50 animate sticky top-0  ${show ? "animateUp" : ""}`}
@@ -238,24 +240,18 @@ const Navbar = ({ cartTotalQty }) => {
               {searchTabInputs.items?.length > 0 && (
                 <div className="w-full py-1 bg-white ">
                   <h3 className="py-2 mb-2 text-lg text-center text-white bg-primary-lighter">
-                    Продукти
+                    Серии
                   </h3>
                   <ul>
                     {searchTabInputs.items.map((item, index) => {
                       return (
-                        <Link
-                          key={item.section}
-                          href={`/products/${item.route}`}
-                        >
+                        <Link key={item?._id} href={`/products/${item?.route}`}>
                           <li className="flex items-center justify-between px-2 py-1 transition-transform border-b cursor-pointer hover:-translate-y-1 hover:bg-primary hover:text-white border-primary">
-                            <div className="text-lg">
-                              {item.sectionName} {item.articleName}{" "}
-                              {item.weight}
-                            </div>
+                            <div className="text-lg">{item?.sectionName}</div>
                             <div className="relative w-20 h-20">
                               <Image
-                                src={`/uploads/${item.imageUrl}`}
-                                alt={item.sectionName}
+                                src={`/uploads/${item?.imageUrl}`}
+                                alt={item?.sectionName}
                                 layout="fill"
                               />
                             </div>
@@ -327,7 +323,8 @@ const Navbar = ({ cartTotalQty }) => {
             </div>
           </div>
         ) : (
-          !isObjectEmpty(searchTabInputs) && (
+          !isObjectEmpty(searchTabInputs) &&
+          searchTabInputs?.items?.length == 0 && (
             <div className="container py-10 text-center bg-white text-secondary">
               <span>Няма намерен резултати</span>
             </div>

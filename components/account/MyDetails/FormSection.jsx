@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../../form/AccInput";
 import TelephoneInput from "../../form/TelephoneInput";
 
-export default function SectionForm({ inputs }) {
+export default function SectionForm({ inputs, getOuterVal }) {
   return (
     <>
       {inputs.map((input) => {
@@ -25,6 +25,7 @@ export default function SectionForm({ inputs }) {
             iconType={input.iconType}
             key={input.id}
             defValue={input.defValue}
+            getOuterVal={getOuterVal}
           />
         );
       })}

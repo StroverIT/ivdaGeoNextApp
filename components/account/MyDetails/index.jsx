@@ -90,7 +90,11 @@ export default function MyDetails({ userData }) {
     const data = {};
     // Body data
     for (const pair of formData.entries()) {
-      data[pair[0]] = pair[1];
+      let input = pair[1];
+      if (pair[0] == "phoneNumber") {
+        input = pair[1].split(" ").join("");
+      }
+      data[pair[0]] = input;
     }
 
     const res = await fetch(`/api/account/${url}`, {

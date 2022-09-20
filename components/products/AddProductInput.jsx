@@ -21,7 +21,7 @@ export default function AddProductInput({
         contClass ? contClass : ""
       } flex items-center justify-center `}
     >
-      <div className={iconClass} onClick={() => setQty((c) => c + 1)}>
+      <div className={iconClass} onClick={() => setQty((c) => parseInt(c) + 1)}>
         <AiOutlinePlus />
       </div>
       <input
@@ -36,7 +36,7 @@ export default function AddProductInput({
 
       <div
         className={iconClass}
-        onClick={() => setQty((c) => (c < 2 ? 1 : c - 1))}
+        onClick={() => setQty((c) => (parseInt(c) < 2 ? 1 : parseInt(c) - 1))}
       >
         <AiOutlineMinus />
       </div>
