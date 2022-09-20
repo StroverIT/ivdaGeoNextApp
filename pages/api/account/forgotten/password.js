@@ -45,6 +45,7 @@ async function handler(req, res) {
       <h4>За смяна на паролата в ivdageopaint.bg</h4>
       <a href="${process.env.HOST_URL}/account/changePassword/${user._id}/${token.token}">Натиснете тук</a>
       `;
+    console.log(message);
     // Sending email
     await sendEmail(
       process.env.EMAIL_SEND,
