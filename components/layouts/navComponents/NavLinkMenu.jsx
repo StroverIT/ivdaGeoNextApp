@@ -51,7 +51,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
   const isXAnim = classNames({
     [style.subOpen]: xAnim,
   });
-  const menuClasses = `bg-white cursor-pointer text-dark lg:hover:text-dark lg:hover:bg-color ${
+  const menuClasses = `bg-white cursor-pointer text-dark lg:hover:text-dark lg:hover:bg-color pl-4 ${
     !isHome ? "" : ""
   }  flex w-full peer group-hover:lg:bg-color group-hover:lg:text-primary font-normal font-sans text-lg `;
   return (
@@ -62,9 +62,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
         onClick={showMenu}
         ref={menu}
       >
-        <div
-          className={`flex items-center group py-1 max-lg:container pl-2 lg:pl-4`}
-        >
+        <div className={`flex items-center group py-1 max-lg:container `}>
           {title}
           <span className="pl-2 text-sm transition-transform text-primary-lighter group-hover:rotate-90">
             <BiRightArrow />
@@ -80,7 +78,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
         } lg:hover:scale-100 text-dark peer-hover:lg:scale-100 lg:max-w-[780px]  xl:max-w-[1050px]  ${isXAnim} `}
         ref={subMenu}
       >
-        <div className={` flex items-center ml-4 md:ml-2`}>
+        <div className={` flex items-center ml-4 `}>
           <div
             type="button"
             className={`${style.icon} flex py-2 px-2 lg:hidden`}
@@ -91,7 +89,7 @@ const NavLinkMenu = ({ title, articles, isHome }) => {
           <div className="pl-4 font-semibold">{title}</div>
         </div>
         {/* submenu list */}
-        <ul className={`pl-6 mt-2  `}>
+        <ul className={`pl-8 mt-2  `}>
           {articles &&
             articles.map((article) => {
               return (

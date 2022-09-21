@@ -13,7 +13,7 @@ const NavLinks = ({ isHome }) => {
   return (
     <>
       <ul
-        className={` text-bg-color text-lg inline-flex flex-col w-full h-full ${
+        className={` text-bg-color text-lg inline-flex flex-col w-full h-full  ${
           isHome ? "hidden lg:inline pt-2" : ""
         }`}
         data-columns="2"
@@ -27,7 +27,7 @@ const NavLinks = ({ isHome }) => {
               isHome={isHome}
             />
           ) : (
-            <div key={section.title + index} className="pl-3">
+            <div key={section.title + index} className="pl-4">
               <LinkComp
                 route={section.title}
                 mainRoute={section.title}
