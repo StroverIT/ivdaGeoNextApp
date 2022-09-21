@@ -88,6 +88,7 @@ function Delivery({ cart, userData, cities }) {
           office: officeSelected,
           quarter: quarterSelected,
         },
+        invoice,
       }),
     };
     const res = await fetch("/api/cart/createDelivery", options);

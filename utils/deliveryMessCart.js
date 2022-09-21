@@ -11,7 +11,11 @@ export default async function createDeliveryMessage(
   let img = await qr.toDataURL(qrCodeData);
 
   return `
-  <h2 style="margin-bottom:40px">${text}</h2>
+  <div>
+  ${!isAdmin ? "Като отидете в магазина покажете QR кода" : ""} </br>
+  <img src="${img}"/>
+  </div>
+  <h2 style="margin-bottom:40px;margin-top:20px">${text}</h2>
   <h3 style="text-align:center;color:hsl(215, 80%, 60%)">Вашите продукти </h3>
     ${cart
       .map((cartItem) => {
@@ -24,9 +28,6 @@ export default async function createDeliveryMessage(
       })
       .join("")}
 
-     <div style="margin-top:20px">
-     ${!isAdmin ? "Като отидете в магазина покажете QR кода" : ""} </br>
-     <img src="${img}"/>
-     </div>
+   
   `;
 }

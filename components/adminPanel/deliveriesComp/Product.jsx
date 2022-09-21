@@ -16,7 +16,7 @@ export default function Product({ delivery }) {
 
   const address = delivery.addressInfo;
   const cart = delivery.cart;
-
+  const delData = delivery?.invoice?.data;
   return (
     <section
       key={delivery._id}
@@ -32,6 +32,27 @@ export default function Product({ delivery }) {
               <li>Име: {address.name}</li>
               <li>Телефон: {address.telephone}</li>
               {address.comment && <li>Коментар: {address.comment}</li>}
+            </ul>
+          </div>
+        )}
+        {delivery.invoice && (
+          <div>
+            <h3>
+              <span className="text-lg font-semibold">
+                Данните за фактурата{" "}
+              </span>
+              -{" "}
+              {delivery.invoice.data.firm
+                ? "Юридическо лице"
+                : "Физическо лице"}
+            </h3>
+            <ul>
+              {delData.firm && <li>Фирма: {delData.firm}</li>}
+              <ul>{delData.mol && <li>Мол: {delData.mol}</li>}</ul>
+              <ul>{delData.eik && <li>ЕИК: {delData.eik}</li>}</ul>
+              <ul>{delData.name && <li>Име: {delData.name}</li>}</ul>
+              <ul>{delData.egn && <li>ЕГН: {delData.egn}</li>}</ul>
+              <ul>{delData.address && <li>Адрес: {delData.address}</li>}</ul>
             </ul>
           </div>
         )}

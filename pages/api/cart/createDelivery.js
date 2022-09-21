@@ -17,8 +17,8 @@ const secret = process.env.NEXTAUTH_SECRET;
 import createDeliveryMessage from "../../../utils/deliveryMessCart";
 
 export default async function handler(req, res) {
-  const { cart, inputs, deliveryInfo } = req.body;
-
+  const { cart, inputs, deliveryInfo, invoice } = req.body;
+  console.log(cart, inputs, deliveryInfo);
   try {
     let subTotal = parseFloat(
       cart
@@ -81,6 +81,7 @@ export default async function handler(req, res) {
       ownerId: user._id,
       typeOfDelivery: inputs.typeOfDelivery,
       comment: inputs.comment,
+      invoice,
     };
     if (inputs.typeOfDelivery == DELIVERY) {
       const address = inputs.address;
