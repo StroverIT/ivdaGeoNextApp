@@ -33,7 +33,9 @@ export const getAll = async () => {
 export const productByItemId = async (section, productSectionId) => {
   try {
     await connectMongo();
-    const translated = translationToDb(section);
+    let translated = translationToDb(section);
+    if (translated == "антибактерялна боя") translated = "антибактериална боя";
+
     let data = await Product.findOne({
       section: { $regex: new RegExp(translated, "i") },
     }).lean();
