@@ -5,6 +5,8 @@ import SectionContainer from "./SectionContainer";
 import InnerSection from "./InnerSection";
 import SectionInputs from "./FormSection";
 
+import { emailVal } from "../../../utils/validationHandler";
+
 const urlFetch = {
   personal: "changeNameOrTel",
   email: "changeEmail",
@@ -84,7 +86,7 @@ export default function MyDetails({ userData }) {
     inputDataPersonal[1].defValue = userData.fullName;
     inputDataPersonal[0].defValue = userData.phoneNumber;
   }
-
+  // const emailCheck = emailVal(inputs.email);
   const [nameOrTel, setNameOrTel] = useState([null, false]);
   const [email, setEmail] = useState([null, false]);
   const [passwordMes, setPasswordMes] = useState([null, false]);
@@ -126,10 +128,12 @@ export default function MyDetails({ userData }) {
   return (
     <>
       <section>
-        <h2 className="mt-5 mb-5 text-3xl font-semibold text-center">
-          Детайли на акаунта
+        <h2 className="mt-5 mb-2 text-3xl font-semibold text-center">
+          Здравей, {userData.fullName}!
         </h2>
-
+        <p className="mb-5 text-center text-gray-250">
+          Тука имате възможността да промените личните си данни
+        </p>
         <section className="">
           <h4 className="py-1 text-xl font-semibold border-b border-gray">
             Лична информация
