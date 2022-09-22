@@ -19,6 +19,13 @@ const inputDataPersonal = [
     iconType: "phoneNumber",
     type: "phoneNumber",
   },
+  {
+    placeholder: "Двете имена",
+    id: "fullName",
+    type: "text",
+    isReq: "true",
+    type: "text",
+  },
 ];
 const inputDataEmail = [
   {
@@ -74,7 +81,7 @@ function Message({ text, err }) {
 export default function MyDetails({ userData }) {
   if (userData) {
     inputDataEmail[0].defValue = userData.email;
-
+    inputDataPersonal[1].defValue = userData.fullName;
     inputDataPersonal[0].defValue = userData.phoneNumber;
   }
 

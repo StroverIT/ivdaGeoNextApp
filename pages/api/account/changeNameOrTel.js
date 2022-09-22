@@ -7,6 +7,7 @@ async function handler(req, res) {
   const token = await getToken({ req, secret });
 
   const phoneNumber = parseInt(req.body.phoneNumber);
+  const fullName = req.body.fullName;
 
   //Connect with database
   if (req.method == "POST") {
@@ -33,7 +34,7 @@ async function handler(req, res) {
       phoneNumber,
     });
 
-    if (isSamePhone) {
+    if (isSamePhone && isSamePhone.email != user.email) {
       client.close();
       return res
         .status(404)
@@ -44,12 +45,13 @@ async function handler(req, res) {
 
     await collection.updateOne(
       { email: token.email },
-      { $set: { phoneNumber } }
+      { $set: { phoneNumber, fullName } }
     );
+
     client.close();
 
     return res.status(201).json({
-      message: "Успешно си сменихте телефона",
+      message: "Успешно променихте личните си данни",
       isErr: false,
     });
   }
