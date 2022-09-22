@@ -233,5 +233,5 @@ Fix the search [x]
 Fix the index page with listSeries [x]
 
 In account to be possible to change the name (full name) [x]
-To show the name and the email when user is logged in
+To show the name and the email when user is logged in [x]
 When delivery is created to write: "{full name}, успешно направихте поръчка в Ivda Geo Paint - online"
