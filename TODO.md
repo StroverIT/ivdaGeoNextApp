@@ -231,3 +231,7 @@ TODO:
 Продуктите не се показват, мисля, че ида от route [x]
 Fix the search [x]
 Fix the index page with listSeries [x]
+
+In account to be possible to change the name (full name)
+To show the name and the email when user is logged in
+When delivery is created to write: "{full name}, успешно направихте поръчка в Ivda Geo Paint - online"
