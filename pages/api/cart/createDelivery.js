@@ -149,7 +149,7 @@ export default async function handler(req, res) {
       if (inputs.address?.address) {
         if (!inputs.address.address) throw { error: "Невалиден адрес" };
         const ekontAddRes = await fetch(
-          "http://ee.econt.com/services/Shipments/LabelService.createLabel.json",
+          "https://ee.econt.com/services/Shipments/LabelService.createLabel.json",
           options
         );
         const ekontAddJson = await ekontAddRes.json();
