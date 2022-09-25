@@ -12,7 +12,7 @@ async function getQuarters(cityID) {
     );
     const data = await res.json();
     const filtereData = data.quarters.map((item) => {
-      return { name: item.name };
+      return { name: item.name, id: item.id, cityiD: item.cityID };
     });
     return filtereData;
   } catch (e) {

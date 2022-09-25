@@ -8,7 +8,7 @@ import Section from "./deliveriesComp/Section";
 import Main from "./deliveriesComp/Main";
 // Constants
 
-export default function Deliveries({ forHome, forMagazine }) {
+export default function Deliveries({ forHome, forMagazine, forEkont }) {
   const router = useRouter();
   const [action, setAction] = useState();
 
@@ -17,11 +17,12 @@ export default function Deliveries({ forHome, forMagazine }) {
       "#dostavki": [<Main key="dostavki" />],
       "#delivery": [<Section key="forHome" delivery={forMagazine} />],
       "#magazine": [<Section key="forMagazine" delivery={forHome} />],
+      "#ekont": [<Section key="forEkont" delivery={forEkont} />],
     };
     const hash = window.location.hash.split("#");
     const someData = categoryComp[`#${hash[2]}`] ?? categoryComp["#dostavki"]; // Retrieve data based on URL fragment
     setAction(someData[0]);
-  }, [router, forHome, forMagazine]);
+  }, [router, forHome, forMagazine, forEkont]);
 
   return <div>{action}</div>;
 }

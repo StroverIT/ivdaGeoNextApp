@@ -18,7 +18,7 @@ import createDeliveryMessage from "../../../utils/deliveryMessCart";
 
 export default async function handler(req, res) {
   const { cart, inputs, deliveryInfo, invoice } = req.body;
-  console.log(cart, inputs, deliveryInfo);
+
   try {
     let subTotal = parseFloat(
       cart
@@ -83,8 +83,9 @@ export default async function handler(req, res) {
       comment: inputs.comment,
       invoice,
     };
+    const address = inputs.address;
+
     if (inputs.typeOfDelivery == DELIVERY) {
-      const address = inputs.address;
       data.addressInfo = {
         name: address.fullName,
         telephone: address.phoneNumber,
@@ -93,13 +94,68 @@ export default async function handler(req, res) {
       };
     }
     if (inputs.typeOfDelivery == EKONT) {
+      const senderClient = {
+        name: "Gergana Lazarova",
+        phones: ["0879406621"],
+      };
+      const senderAddress = {
+        city: {
+          country: {
+            code3: "BGR",
+          },
+          name: "София",
+          postCode: "1000",
+          num: deliveryInfo.quarter.id,
+        },
+        street: "Дружба 2",
+        other: "гр.София ПК-1582 Дружба 2 РУМ Дружба 2 срещу блок 204",
+      };
+      const ekontData = {
+        label: {
+          senderClient,
+          senderAddress,
+          receiverClient: {
+            name: address.fullName,
+            phones: [address.phoneNumber],
+          },
+          receiverAddress: {
+            city: {
+              country: {
+                code3: "BGR",
+              },
+              name: deliveryInfo.city.name,
+              postCode: deliveryInfo.city.postCode,
+            },
+            street: deliveryInfo.quarter.name,
+            num: deliveryInfo.quarter.id,
+            other: address.address,
+          },
+          weight: 50,
+          packCount: 1,
+          shipmentDescription: "Баки",
+          shipmentType: "PACK",
+        },
+        mode: "create",
+      };
+      const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(ekontData),
+      };
       if (inputs.address?.office) {
         if (!inputs.address.office) throw { error: "Невалиден офис" };
         // Write needed data when is for office to EKONT
       }
       if (inputs.address?.address) {
         if (!inputs.address.address) throw { error: "Невалиден адрес" };
-
+        const ekontAddRes = await fetch(
+          "http://ee.econt.com/services/Shipments/LabelService.createLabel.json",
+          options
+        );
+        const ekontAddJson = await ekontAddRes.json();
+        ekontAddJson?.innerErrors?.forEach((firstError) => {
+          console.log(firstError);
+        });
         // Write needed data when is for address to EKONT
       }
       // Send to ekont needed data
@@ -111,7 +167,8 @@ export default async function handler(req, res) {
     const qrCodeObj = {
       adminPanel: `${process.env.NEXTAUTH_URL}/adminPanel#dostavki${inputs.typeOfDelivery}#${delivery._id}`,
     };
-    const text = `Успешна направена поръчка - Ивда Гео`;
+
+    const text = `${user.fullName}, успешно направихте поръчка! - Ивда Гео Paint online`;
     const message = await createDeliveryMessage(text, cart, qrCodeObj);
 
     sendEmail(

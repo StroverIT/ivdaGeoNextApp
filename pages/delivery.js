@@ -48,14 +48,13 @@ function Delivery({ cart, userData, cities }) {
   });
   const [invoice, setInvoice] = useState({ isInvoice: false, data: {} });
 
-  const [orderState, setTypeOfOrder] = useState(MAGAZINE);
+  const [orderState, setTypeOfOrder] = useState(null);
 
   const [paymentState, setTypePayment] = useState("cashOnDelivery");
   const [priceState, setPriceState] = useState({
     subTotal: 0,
     totalPrice: 0,
     delivery: 0,
-    dds: 0,
   });
   const [inputs, setInputs] = useState({
     email: userData.email,
@@ -135,20 +134,43 @@ function Delivery({ cart, userData, cities }) {
       totalPrice: subTotal,
       subTotal,
     };
+
     if (selected.name == "София") {
       setPriceState(() => state);
-      setTypeOfOrder(MAGAZINE);
     }
     if (selected.name != "София") {
       const delivery = 2.99;
       state.delivery = delivery;
-      state.totalPrice = subTotal + dds + delivery;
+      state.totalPrice = subTotal + delivery;
       setPriceState(() => state);
-      setTypeOfOrder(EKONT);
     }
+
+    setTypeOfOrder(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
-
+  useEffect(() => {
+    let subTotal = parseFloat(
+      cart
+        .map((item) => {
+          return item.item.price * item.qty;
+        })
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2)
+    );
+    let state = {
+      delivery: 0,
+      totalPrice: priceState.totalPrice,
+      subTotal,
+    };
+    if (orderState == EKONT) {
+      const delivery = 7;
+      state.delivery = 7;
+      state.totalPrice = state.subTotal + delivery;
+    }
+    console.log(state);
+    setPriceState(() => state);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orderState]);
   return (
     <>
       <Head>
@@ -165,6 +187,10 @@ function Delivery({ cart, userData, cities }) {
               setQuarterSelected,
               invoice,
               setInvoice,
+              selected,
+              setSelected,
+              orderState,
+              setTypeOfOrder,
             }}
           >
             <section className="">
@@ -175,9 +201,6 @@ function Delivery({ cart, userData, cities }) {
                   cities={cities}
                 />
                 <MethodOfDeliv
-                  selected={selected}
-                  setSelected={setSelected}
-                  orderState={orderState}
                   changeOrderHandler={changeOrderHandler}
                   priceState={priceState}
                   userData={userData}

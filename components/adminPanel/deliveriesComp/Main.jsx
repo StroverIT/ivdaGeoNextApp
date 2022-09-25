@@ -1,5 +1,5 @@
 import React from "react";
-import { MAGAZINE, DELIVERY } from "../../cart/cartCostants";
+import { MAGAZINE, DELIVERY, EKONT } from "../../cart/cartCostants";
 import { useRouter } from "next/router";
 
 const styling = `text-lg cursor-pointer uppercase bg-primary-lighter hover:text-primary-lighter hover:bg-transparent border border-primary-lighter text-white px-10 py-2 rounded-full`;
@@ -20,6 +20,9 @@ export default function Main() {
       </div>
       <div className={`${styling}`} onClick={() => changeCategory(DELIVERY)}>
         за вкъщи
+      </div>
+      <div className={`${styling}`} onClick={() => changeCategory(EKONT)}>
+        Еконт
       </div>
     </section>
   );

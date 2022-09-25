@@ -12,7 +12,7 @@ export default async function createDeliveryMessage(
 
   return `
   <div>
-  ${!isAdmin ? "Като отидете в магазина покажете QR кода" : ""} </br>
+  ${!isAdmin ? "За ваше улеснение, може да покажете QR кода." : ""} </br>
   <img src="${img}"/>
   </div>
   <h2 style="margin-bottom:40px;margin-top:20px">${text}</h2>

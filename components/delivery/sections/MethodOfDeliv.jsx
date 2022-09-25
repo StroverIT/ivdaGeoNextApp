@@ -25,8 +25,6 @@ import { InputContext } from "../Context";
 import { AiOutlineCar } from "react-icons/ai";
 
 export default function MethodOfDeliv({
-  selected,
-  orderState,
   changeOrderHandler,
   priceState,
   userData,
@@ -34,7 +32,8 @@ export default function MethodOfDeliv({
   setOfficeSelected,
   cities,
 }) {
-  const { invoice, setInvoice } = useContext(InputContext);
+  const { invoice, setInvoice, selected, orderState, setTypeOfOrder } =
+    useContext(InputContext);
 
   const [isOfficeLoading, setIsOfficeLoading] = useState(false);
   const [isQuartersLoading, setQuartesLoading] = useState(false);
@@ -49,6 +48,7 @@ export default function MethodOfDeliv({
 
   const getOfficeData = async () => {
     setIsOfficeLoading(true);
+
     const data = await getOffices(selected.cityId);
     setIsOfficeLoading(false);
     setOfficeData(data);
@@ -130,148 +130,158 @@ export default function MethodOfDeliv({
               </Tab>
             )}
           </Tab.List>
-          <Tab.Panels>
-            <div className="mt-6 ml-10">
-              <h3 className="text-sm uppercase font-roboto">
-                Ще доставим пратката ти до:
-              </h3>
-            </div>
-            <section className="px-4">
-              {selected.name == "София" && (
-                <Tab.Panel>
-                  <MagazinePanel userData={userData} />
-                </Tab.Panel>
+          {orderState ? (
+            <Tab.Panels>
+              {orderState && (
+                <div className="mt-6 ml-10">
+                  <h3 className="text-sm uppercase font-roboto">
+                    Ще доставим пратката ти до:
+                  </h3>
+                </div>
               )}
-              {priceState.totalPrice >= 300 && selected.name == "София" && (
-                <Tab.Panel>
-                  {!isQuartersLoading && (
-                    <DeliveryPanel
-                      userData={userData}
-                      quartersData={quartersData}
-                      quarters={quartersData}
-                    />
-                  )}
-                  {isQuartersLoading && (
-                    <div className="flex items-center justify-center py-5">
-                      <div className="loader"></div>
-                    </div>
-                  )}
-                </Tab.Panel>
-              )}
-              {(priceState.totalPrice < 300 || selected.name != "София") && (
-                <Tab.Panel>
-                  {!isOfficeLoading && (
-                    <EkontPanel
-                      userData={userData}
-                      officeData={officeData}
-                      isOfficeLoading={isOfficeLoading}
-                      selected={officeSelected}
-                      setSelected={setOfficeSelected}
-                    />
-                  )}
-                  {isOfficeLoading && (
-                    <div className="flex items-center justify-center py-5">
-                      <div className="loader"></div>
-                    </div>
-                  )}
-                </Tab.Panel>
-              )}
-            </section>
-            <section className="pb-6 pl-5">
-              <Checkbox
-                text="Фактура"
-                id="invoice"
-                checked={invoice.isInvoice}
-                setChecked={invoiceCheckHandler}
-              />
-              {invoice.isInvoice && (
-                <>
-                  <ListBox
-                    selected={invoiceSelect}
-                    setSelected={setInvoiceSelect}
-                    data={[
-                      { name: "Юридическо лице" },
-                      { name: "Физическо лице" },
-                    ]}
+              <section className="px-4">
+                {selected.name == "София" && (
+                  <Tab.Panel>
+                    <MagazinePanel userData={userData} />
+                  </Tab.Panel>
+                )}
+                {priceState.totalPrice >= 300 && selected.name == "София" && (
+                  <Tab.Panel>
+                    {!isQuartersLoading && (
+                      <DeliveryPanel
+                        userData={userData}
+                        quartersData={quartersData}
+                        quarters={quartersData}
+                      />
+                    )}
+                    {isQuartersLoading && (
+                      <div className="flex items-center justify-center py-5">
+                        <div className="loader"></div>
+                      </div>
+                    )}
+                  </Tab.Panel>
+                )}
+                {(priceState.totalPrice < 300 || selected.name != "София") && (
+                  <Tab.Panel>
+                    {!isOfficeLoading && (
+                      <EkontPanel
+                        userData={userData}
+                        officeData={officeData}
+                        isOfficeLoading={isOfficeLoading}
+                        selected={officeSelected}
+                        setSelected={setOfficeSelected}
+                      />
+                    )}
+                    {isOfficeLoading && (
+                      <div className="flex items-center justify-center py-5">
+                        <div className="loader"></div>
+                      </div>
+                    )}
+                  </Tab.Panel>
+                )}
+              </section>
+              {orderState && (
+                <section className="pb-6 pl-5">
+                  <Checkbox
+                    text="Фактура"
+                    id="invoice"
+                    checked={invoice.isInvoice}
+                    setChecked={invoiceCheckHandler}
                   />
-                  {invoiceSelect.name == "Юридическо лице" && (
-                    <section className="my-6">
-                      <Input
-                        placeholder="Фирма"
-                        id="firm"
-                        type="text"
-                        isReq={true}
-                        onChange={invoiceInputHandler}
-                        defValue={invoice?.firm}
+                  {invoice.isInvoice && (
+                    <>
+                      <ListBox
+                        selected={invoiceSelect}
+                        setSelected={setInvoiceSelect}
+                        data={[
+                          { name: "Юридическо лице" },
+                          { name: "Физическо лице" },
+                        ]}
                       />
-                      <Input
-                        placeholder="МОЛ"
-                        id="mol"
-                        type="text"
-                        isReq={true}
-                        onChange={invoiceInputHandler}
-                        defValue={invoice?.mol}
-                      />
-                      <Input
-                        placeholder="ЕИК"
-                        id="eik"
-                        type="text"
-                        isReq={true}
-                        onChange={invoiceInputHandler}
-                        defValue={invoice?.eik}
-                      />
-                      <ListBoxSearch
-                        selected={citySelected}
-                        setSelected={setCitySelected}
-                        data={cities}
-                      />
-                      <Input
-                        placeholder="Адрес"
-                        id="address"
-                        type="text"
-                        isReq={true}
-                        onChange={invoiceInputHandler}
-                        defValue={invoice?.address}
-                      />
-                    </section>
+                      {invoiceSelect.name == "Юридическо лице" && (
+                        <section className="my-6">
+                          <Input
+                            placeholder="Фирма"
+                            id="firm"
+                            type="text"
+                            isReq={true}
+                            onChange={invoiceInputHandler}
+                            defValue={invoice?.firm}
+                          />
+                          <Input
+                            placeholder="МОЛ"
+                            id="mol"
+                            type="text"
+                            isReq={true}
+                            onChange={invoiceInputHandler}
+                            defValue={invoice?.mol}
+                          />
+                          <Input
+                            placeholder="ЕИК"
+                            id="eik"
+                            type="text"
+                            isReq={true}
+                            onChange={invoiceInputHandler}
+                            defValue={invoice?.eik}
+                          />
+                          <ListBoxSearch
+                            selected={citySelected}
+                            setSelected={setCitySelected}
+                            data={cities}
+                          />
+                          <Input
+                            placeholder="Адрес"
+                            id="address"
+                            type="text"
+                            isReq={true}
+                            onChange={invoiceInputHandler}
+                            defValue={invoice?.address}
+                          />
+                        </section>
+                      )}
+                      {invoiceSelect.name == "Физическо лице" && (
+                        <section className="my-6">
+                          <Input
+                            placeholder="Име"
+                            id="name"
+                            type="text"
+                            isReq={true}
+                            onChange={invoiceInputHandler}
+                            defValue={invoice?.name}
+                          />
+                          <Input
+                            placeholder="ЕГН"
+                            id="egn"
+                            type="text"
+                            isReq={true}
+                            onChange={invoiceInputHandler}
+                            defValue={invoice?.egn}
+                          />
+                          <ListBoxSearch
+                            selected={citySelected}
+                            setSelected={setCitySelected}
+                            data={cities}
+                          />
+                          <Input
+                            placeholder="Адрес"
+                            id="address"
+                            type="text"
+                            isReq={true}
+                            onChange={invoiceInputHandler}
+                            defValue={invoice?.address}
+                          />
+                        </section>
+                      )}
+                    </>
                   )}
-                  {invoiceSelect.name == "Физическо лице" && (
-                    <section className="my-6">
-                      <Input
-                        placeholder="Име"
-                        id="name"
-                        type="text"
-                        isReq={true}
-                        onChange={invoiceInputHandler}
-                        defValue={invoice?.name}
-                      />
-                      <Input
-                        placeholder="ЕГН"
-                        id="egn"
-                        type="text"
-                        isReq={true}
-                        onChange={invoiceInputHandler}
-                        defValue={invoice?.egn}
-                      />
-                      <ListBoxSearch
-                        selected={citySelected}
-                        setSelected={setCitySelected}
-                        data={cities}
-                      />
-                      <Input
-                        placeholder="Адрес"
-                        id="address"
-                        type="text"
-                        isReq={true}
-                        onChange={invoiceInputHandler}
-                        defValue={invoice?.address}
-                      />
-                    </section>
-                  )}
-                </>
+                </section>
               )}
-            </section>
-          </Tab.Panels>
+            </Tab.Panels>
+          ) : (
+            <div className="py-10 text-center">
+              Моля изберете метод на доставка
+            </div>
+          )}
         </Tab.Group>
       </section>
     </section>

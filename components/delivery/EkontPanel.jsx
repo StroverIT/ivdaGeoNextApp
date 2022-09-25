@@ -21,8 +21,13 @@ export default function MagazinePanel({
   selected,
   setSelected,
 }) {
-  const { inputs, setInputs, quarterSelected, setQuarterSelected } =
-    useContext(InputContext);
+  const {
+    inputs,
+    setInputs,
+    quarterSelected,
+    setQuarterSelected,
+    selected: citySelected,
+  } = useContext(InputContext);
 
   const [typeEkont, setTypeEkont] = useState("office");
   const [isQuartersLoading, setQuartesLoading] = useState(true);
@@ -30,7 +35,9 @@ export default function MagazinePanel({
   const [quarters, setQuarters] = useState(null);
 
   const getQuarters = async () => {
-    const data = await quartersFetch(selected.cityId);
+    setQuartesLoading(true);
+    console.log(citySelected);
+    const data = await quartersFetch(citySelected.cityId);
     setQuartesLoading(false);
     setQuarters(data);
   };

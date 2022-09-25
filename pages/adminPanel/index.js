@@ -18,6 +18,7 @@ export default function Index({
   products,
   forDelivery,
   forMagazine,
+  forEkont,
 }) {
   const router = useRouter();
 
@@ -30,6 +31,7 @@ export default function Index({
           key="Deliveries"
           forHome={forDelivery}
           forMagazine={forMagazine}
+          forEkont={forEkont}
         />,
       ],
       "#prodykti": [<Products key="MyOrders" sections={products} />],
@@ -88,13 +90,16 @@ export async function getServerSideProps(context) {
   const forMagazine = deliveries.filter((type) => {
     return type.typeOfDelivery != "magazine";
   });
-
+  const forEkont = deliveries.filter((type) => {
+    return type.typeOfDelivery != "ekont";
+  });
   return {
     props: {
       userData: JSON.parse(JSON.stringify(data)),
       products: JSON.parse(JSON.stringify(products)),
       forDelivery: JSON.parse(JSON.stringify(forDelivery)),
       forMagazine: JSON.parse(JSON.stringify(forMagazine)),
+      forEkont: JSON.parse(JSON.stringify(forEkont)),
     },
   };
 }

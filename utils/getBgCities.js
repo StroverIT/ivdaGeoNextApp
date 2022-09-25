@@ -13,7 +13,11 @@ async function getCities() {
   data.cities.forEach((city) => {
     if (city.regionName.length > 0) {
       if (fullData.findIndex((item) => item.name == city.regionName) == -1) {
-        fullData.push({ name: city.regionName, cityId: city.id });
+        fullData.push({
+          name: city.regionName,
+          cityId: city.id,
+          postCode: city.postCode,
+        });
       }
     }
   });
