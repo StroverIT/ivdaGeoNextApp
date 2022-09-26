@@ -120,7 +120,7 @@ function Delivery({ cart, userData, cities }) {
   };
 
   useEffect(() => {
-    let subTotal = parseFloat(
+    const subTotal = parseFloat(
       cart
         .map((item) => {
           return item.item.price * item.qty;
@@ -131,25 +131,22 @@ function Delivery({ cart, userData, cities }) {
 
     let state = {
       delivery: 0,
-      totalPrice: subTotal,
       subTotal,
+      totalPrice: subTotal,
     };
 
-    if (selected.name == "София") {
-      setPriceState(() => state);
-    }
     if (selected.name != "София") {
-      const delivery = 2.99;
+      const delivery = 7;
       state.delivery = delivery;
       state.totalPrice = subTotal + delivery;
-      setPriceState(() => state);
     }
+    setPriceState(state);
 
     setTypeOfOrder(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   useEffect(() => {
-    let subTotal = parseFloat(
+    const subTotal = parseFloat(
       cart
         .map((item) => {
           return item.item.price * item.qty;
@@ -159,18 +156,21 @@ function Delivery({ cart, userData, cities }) {
     );
     let state = {
       delivery: 0,
-      totalPrice: priceState.totalPrice,
+      totalPrice: subTotal,
       subTotal,
     };
     if (orderState == EKONT) {
       const delivery = 7;
       state.delivery = 7;
-      state.totalPrice = state.subTotal + delivery;
+      state.totalPrice = subTotal + delivery;
     }
     console.log(state);
-    setPriceState(() => state);
+    setPriceState(state);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderState]);
+  useEffect(() => {
+    console.log(priceState);
+  }, [priceState]);
   return (
     <>
       <Head>
