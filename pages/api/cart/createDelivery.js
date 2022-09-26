@@ -143,55 +143,64 @@ export default async function handler(req, res) {
         body: JSON.stringify(ekontData),
       };
       if (inputs.address?.office) {
-        if (!inputs.address.office) throw { error: "Невалиден офис" };
-        // Write needed data when is for office to EKONT
+        if (inputs.address.office == "Избери офис")
+          throw { error: "Невалиден офис" };
+        data.addressInfo = {
+          name: user.fullName,
+          telephone: user.telephone || address.phoneNumber,
+          address: `Office: ${address.office}`,
+        };
       }
       if (inputs.address?.address) {
-        if (!inputs.address.address) throw { error: "Невалиден адрес" };
-        const ekontAddRes = await fetch(
-          "https://ee.econt.com/services/Shipments/LabelService.createLabel.json",
-          options
-        );
-        const ekontAddJson = await ekontAddRes.json();
-        ekontAddJson?.innerErrors?.forEach((firstError) => {
-          console.log(firstError);
-        });
-        // Write needed data when is for address to EKONT
+        if (inputs.address.address == "Избери квартал")
+          throw { error: "Невалиден адрес" };
+        // const ekontAddRes = await fetch(
+        //   "https://ee.econt.com/services/Shipments/LabelService.createLabel.json",
+        //   options
+        // );
+        // const ekontAddJson = await ekontAddRes.json();
+        // ekontAddJson?.innerErrors?.forEach((firstError) => {
+        //   console.log(firstError);
+        // });
+        data.addressInfo = {
+          name: user.fullName,
+          telephone: user.telephone || address.phoneNumber,
+          address: `Квартал: ${deliveryInfo.quarter.name} ; ${address.address}`,
+        };
       }
       // Send to ekont needed data
     }
 
-    // Loop through all products
     const delivery = await Delivery.create(data);
 
-    const qrCodeObj = {
-      adminPanel: `${process.env.NEXTAUTH_URL}/adminPanel#dostavki${inputs.typeOfDelivery}#${delivery._id}`,
-    };
+    // const qrCodeObj = {
+    //   adminPanel: `${process.env.NEXTAUTH_URL}/adminPanel#dostavki${inputs.typeOfDelivery}#${delivery._id}`,
+    // };
 
-    const text = `${user.fullName}, успешно направихте поръчка! - Ивда Гео Paint online`;
-    const message = await createDeliveryMessage(text, cart, qrCodeObj);
+    // const text = `${user.fullName}, успешно направихте поръчка! - Ивда Гео Paint online`;
+    // const message = await createDeliveryMessage(text, cart, qrCodeObj);
 
-    sendEmail(
-      process.env.EMAIL_SEND,
-      user.email,
-      "Направена поръчка в Ивда Гео",
-      message
-    );
-    const adminMess = await createDeliveryMessage(
-      `Нова поръчка в Ивда Гео Paint - online`,
-      cart,
-      qrCodeObj,
-      true
-    );
+    // sendEmail(
+    //   process.env.EMAIL_SEND,
+    //   user.email,
+    //   "Направена поръчка в Ивда Гео",
+    //   message
+    // );
+    // const adminMess = await createDeliveryMessage(
+    //   `Нова поръчка в Ивда Гео Paint - online`,
+    //   cart,
+    //   qrCodeObj,
+    //   true
+    // );
 
     // Must send to ivdageopaint bg
-    sendEmail(
-      process.env.EMAIL_SEND,
-      process.env.EMAIL_SEND,
-      "Нова поръчка",
-      adminMess
-    );
-    res.json({ message: "Успешно направена поръчка" });
+    // sendEmail(
+    //   process.env.EMAIL_SEND,
+    //   process.env.EMAIL_SEND,
+    //   "Нова поръчка",
+    //   adminMess
+    // );
+    res.json({ error: "Успешно направена поръчка" });
   } catch (e) {
     console.log(e);
     res.status(400).json(e);
