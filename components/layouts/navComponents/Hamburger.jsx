@@ -55,13 +55,13 @@ const Hamburger = ({ headRef, menuConctactsRef }) => {
         <div className="hidden text-sm lg:block">Категории</div>
       </div>
       <div
-        className={`w-full  lg:w-full fixed lg:absolute -z-20 bg-white pt-3 pb-10 ${styles.navLinks}  `}
+        className={`w-full  lg:w-full fixed lg:absolute h-screen lg:h-auto -z-20 bg-white pt-3 pb-10 ${styles.navLinks}  `}
         ref={navLinks}
       >
         <NavLinks />
       </div>
       <div
-        className={`blury-bg -z-30 ${!isOpen ? "hidden" : ""}`}
+        className={`blury-bg -z-30 hidden ${!isOpen ? "hidden" : "lg:block"}`}
         onClick={() => menuState(false)}
       ></div>
     </>
