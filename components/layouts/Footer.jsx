@@ -160,12 +160,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="relative flex items-center justify-center py-6 bg-primary-second">
+      <div className="relative flex flex-col items-center justify-center py-6 bg-primary-second">
         <div className="text-sm text-center text-gray-500">
           © 2022 ivdaGeo™. Всички права запазени.
         </div>
-        <div className="absolute right-10">
-          Изработен от{" "}
+        <div className="mt-2 text-center lg:absolute right-10">
+          Изработен от
           <a
             href="https://strover.bg"
             target="_blank"
