@@ -170,7 +170,7 @@ const Footer = () => {
             href="https://strover.bg"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="pl-1 underline"
           >
             Strover
           </a>
