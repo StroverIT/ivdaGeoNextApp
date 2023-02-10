@@ -164,7 +164,7 @@ const Footer = () => {
         <div className="text-sm text-center text-gray-500">
           © 2022 ivdaGeo™. Всички права запазени.
         </div>
-        <div className="mt-2 text-center lg:absolute right-10">
+        {/* <div className="mt-2 text-center lg:absolute right-10">
           Изработен от
           <a
             href="https://strover.bg"
@@ -174,7 +174,7 @@ const Footer = () => {
           >
             Strover
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
